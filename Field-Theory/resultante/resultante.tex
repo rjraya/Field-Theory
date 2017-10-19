@@ -1,0 +1,50 @@
+Utilizando polinomios simétricos vamos a estudiar las raíces comunes de dos polinomios con coeficientes en un dominio de integridad. 
+
+Sea $A$ un dominio de integridad y $K$ su cuerpo de fracciones. Sean $p,q \in K[X]$ de grado $n$ y $m$ respectivamente de la forma $$p = \sum_{i = 0}^n a_iX^i$$ y $$q = \sum_{i = 0}^m b_iX^i$$ 
+
+\begin{proposition}
+Son equivalentes:
+
+1. $mcd(p,q) \neq 1$, esto es, $p,q$ tienen alguna raíz común en $K$.\\
+2. Existen $p_1,q_1 \in A[X] - \{0\}$ con $gr(p_1) \le n-1$, $gr(q_1) \le m-1$ y $pq_1 = qp_1$. \\
+3. $R(p,q) = 0$
+\end{proposition}
+\begin{proof}
+$1. \implies 2.)$ Considere el máximo común divisor de $p,q$, esto es, $mcd(p,q)$. Sabemos que $mcd(p,q)mcm(p,q) = pq$. Como $mcd(p,q) \neq 1$ tenemos que $mcm(p,q) \neq pq$. Por definición de mínimo común múltiplo deben existir $p_1,q_1$ tales que $m = p_1q = q_1p$. Además, claramente, $gr(m) < gr(p),gr(q)$ y como en un dominio de integridad $gr(pq) = gr(p) + gr(q)$ tenemos que como $pq_1 = m$ necesariamente $gr(q_1) < gr(q)$ y análogamente $gr(p_1) < gr(p)$. 
+
+$2. \implies 1.)$ Recíprocamente, supongamos una tal factorización $pq_1 = qp_1$. Como $K[X]$ con $K$ un cuerpo es un dominio euclídeo, se tiene que es un dominio de factorización única. Consideremos la factorización en irreducibles de la ecuación $pq_1 = qp_1$. Como $gr(p_1) < gr(p)$ habrá algún factor de $p$ que sea factor de $p_1$ y por tanto será factor de $q$. En consecuencia, $p,q$ no tienen un máximo común divisor constante. 
+
+Podemos hallar estos polinomios resolviendo la ecuación $pq_1-qp_1 = 0$. 
+\end{proof}
+
+La expresión de la resultante en términos de determinantes es:
+
+
+\begin{theorem}
+En la situación anterior, se verifica:
+
+1. La resultante $R(p,q)$ es un polinomio homogéneo de grado $m$ en los $a_i$ y de grado $n$ en los $b_j$.\\
+2. Existen polinomios $P,Q$ con coeficientes polinomios en los $a_i,b_j$ y grados menores que $n-1,m-1$ respectivamente, verificando que $R(p,q) = pQ+qP$. \\
+3. Sean $\alpha_i$ raíces de $p$ y $\beta_j$ raíces de $q$ en $K[X]$. Entonces, la resultante es salvo constante el producto de las diferencias de las raíces: $$R(p,q) = a_n^m\prod_{i = 0}^n q(\alpha_i) = (-1)^{nm} b_m^n\prod_{j = 1}^m p(\beta_j) = a_n^mb_m^n\prod_{i,j = 1}^{n,m}(\alpha_i - \beta_j)$$
+\end{theorem}
+\begin{proof}
+1. La resultante de los polinomios $Tp,q$ tiene las $m$ primeras filas multiplicadas por $T$. Por las reglas de cálculo con determinantes, tenemos que, $R(Tp,q) = T^{m}R(p,q)$. Por tanto, $R(p,q)$ es un polinomio homogéneo de grado $m$ en los $a_i$. 
+
+2. 
+
+3. Sea $T$ un indeterminada. Definimos $R(T) = R(p,q-T)$ y denotamos $\gamma_i = q(\alpha_i)$. Claramente, $p,q-T$ tienen $\alpha_i$ como raíz común. Por tanto, $R(\gamma_i) = 0$. Obsérvese quién es $q-T$. $q-T$ como polinomio en $T$ es un polinomio lineal. $q-T$ como polinomio en $X$ es el polinomio $q$ donde a su término constante se le ha restado $T$. 
+
+Ahora, como el sumando de mayor grado en $T$ se obtiene al multiplicar los elementos de la diagonal de $R(p,q-T)$, $R(T)$ es un polinomio de grado $n$ cuyo coeficente líder es $(-1)^na_n^m$ y entonces $R(T)$ se escribe como $R(T) = (-1)^na_n^m \prod_{i = 1}^m (T-\gamma_i) = a_n^m \prod_{i = 1}^m (T-\gamma_i)$. (revisar)
+
+Además, $\gamma_i = q(\alpha_i) = b_m \prod_{i = j}^m (\alpha_i - \beta_j)$ y evaluando en $T = 0$ la expresión anterior, queda, $R(p,q) = a_n^mb_m^n \prod_{i = 1}^n\prod_{j = 1}^m (\alpha_i - \beta_j)$.  
+
+\end{proof}
+
+\begin{proposition}[Cálculo efectivo del determinante]
+1. $R(p,q) = (-1)^{nm}R(q,p)$. \\
+2. Sean $p,q \in A[X]$ y sea $r \in A[X]$ el resto de la división euclídea de $q$ entre $p$. Entonces, $R(p,q) = a_n^{m-gr(r)}R(p,r)$. \\
+3. Si $a \in A$ entonces $R(p,a) = a^n$. 
+\end{proposition}
+\begin{proof}
+1. Uno es evidente ya que al permutar dos filas el determinante cambia de signo. Como se permutan las filas $mn$ veces, el resultado es alterado por $(-1)^{nm}$.
+\end{proof}

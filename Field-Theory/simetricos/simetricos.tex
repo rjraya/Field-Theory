@@ -1,0 +1,85 @@
+Sea $A$ un anillo y $A[X_1,\cdots ,X_n]$ el anillo de polinomios en las indeterminadas $X_1,\cdots ,X_n$ con coeficientes en $A$. 
+
+Definamos para cada $\sigma \in S_n$ un homomorfismo de anillos $$f_\sigma:A[X_1,\cdots,X_n] \to A[X_1,\cdots,X_n]$$ tal que $f_\sigma(X_i) = X_{\sigma(i)}$ para todo $1 \le i \le n$. Intuitivamente esta transformación renombra o permuta las variables del polinomio. 
+
+\begin{proposition}
+Para cada $\sigma$, $f_\sigma$ es un isomorfismo de anillos con inverso $f_{\sigma^{-1}}$. 
+\end{proposition}
+
+\begin{definition}[Polinomios simétricos]
+Un polinomio $p \in A[X_1,\cdots,X_n]$ es simétrico si es invariante por $f_\sigma$ para cada $\sigma \in S_n$, esto es, $\forall \sigma \in S_n. f_\sigma(p) = p$. 
+
+El conjunto de los polinomios simétricos de $A[X_1,\cdots,X_n]$ se denota por $Sim(A[X_1,\cdots,X_n])$. 
+
+Se suele usar la notación $\sum X_1^{i_1}X_2^{i_2} \cdots X_n^{i_n}$ para denotar la suma de todos los monomios distintos que se pueden generar mediante permutaciones de las variables sobre el monomio $X_1^{i_1}X_2^{i_2} \cdots X_n^{i_n}$. 
+\end{definition}
+
+\begin{example}
+$$\sum X_1^3 = X_1^3 + X_2^3 + X_3^3$$
+$$\sum X_1^2X_2 = X_1^2X_2 + X_1^2X_3 + X_2^2X_1 + X_2^2X_3 + X_3^2X_2 + X_3^2X_1$$
+\end{example}
+
+\begin{proposition}
+$Sim(A[X_1,\cdots,X_n])$ es un subanillo de $A[X_1,\cdots ,X_n]$ y contiene a $A$. 
+\end{proposition}
+\begin{proof}
+Todo polinomio constante es simétrico. Claramente, el subconjunto de los polinomios constantes es un subanillo de $A[X_1,\cdots ,X_n]$ y por abuso del lenguaje diremos que $A[X_1,\cdots ,X_n]$ contiene a $A$, en realidad, contiene a los polinomios constantes, que son isomorfos a $A$. 
+
+Veamos que $Sim(A[X_1,\cdots,X_n])$ es un subanillo. Por lo anterior, $1,-1 \in Sim(A[X_1,\cdots,X_n])$ y podemos comprobar que la suma y el producto son cerrados en $Sim(A[X_1,\cdots,X_n])$. En efecto, si $p,q \in Sim(A[X_1,\cdots,X_n])$ entonces  $f_\sigma(p+q) = f_\sigma(p) + f_\sigma(q) = p + q \land f_\sigma(pq) = f_\sigma(p)f_\sigma(q) = pq$. Estas condiciones son suficientes para afirmar que $Sim(A[X_1,\cdots,X_n])$ es un subanillo de $A[X_1,\cdots ,X_n]$.
+\end{proof}
+
+\begin{definition}
+Un polinomio es homogéneo si todos sus monomios tienen el mismo grado.
+\end{definition}
+
+\begin{example}
+El polinomio $x^5 + 2x^3y^2+9xy^4$ es un polinomio homogéneo de grado cinco en dos variables.  
+\end{example}
+
+Podemos reducir el estudio de los polinomios simétricos al estudio de los polinomios simétricos homogéneos. 
+
+\begin{proposition}
+1. Todo polinomio de $A[X_1,\cdots,X_n]$ se puede expresar de forma única como una suma de polinomios homogéneos, es decir, $\forall p \in A[X_1,\cdots,X_n]$ p se expresa de forma única como $p = p_0 + \cdots + p_r$ suma de polinomios homogéneos de grado $i$. A los polinomios $p_i$ se les llama componentes homogéneas de $p$. 
+
+2. Un polinomio $p \in A[X_1,\cdots,X_n]$ es simétrico $\iff$ cada una de sus componentes homogéneas lo es.
+\end{proposition}
+
+\begin{definition}[Polinomios simétricos elementales]
+Los polinomios simétricos elementales en las variables $X_1,\cdots,X_n$ son los siguientes: $$e_1 = \sum_{i = 1}^n X_i$$ $$e_2 = \sum_{i_1 < i_2} X_{i_1}X_{i_2}$$ $$\cdots$$ $$e_n = \sum_{i_1 < \cdots < i_n} X_{i_1} \cdots X_{i_n}$$ Esto es se trata de polinomios homogéneos y simétricos que presentan para cada sumando las posibles combinaciones en orden lexicográfico. 
+
+Se suelen denotar $(X_1),\cdots,(X_1 \cdots X_r)$ o $\sum X_1, \cdots , \sum X_1X_2 \cdots X_n$.
+\end{definition}
+
+\begin{proposition}
+Sea $p \in A[X_1,\cdots,X_n,T] = A[T][X_1,\cdots,X_n]$ dado por $$p = (T-X_1) \cdots (T-X_n)$$ Este polinomio como elemento de $A[X_1,\cdots,X_n][T]$ se escribe como $$p = T^n + (-1)e_1T^{n-1} + (-1)^2e_2T^{n-2}+\cdots+(-1)^ne_n$$
+\end{proposition}
+
+Obsérvese que la anterior relación cuando se considera el homomorfismo de evaluación nos da una relación entre las raíces y los coeficientes del polinomio presentado en su forma estándar. 
+
+\begin{theorem}[Teorema fundamental de los polinomios simétricos]
+$Sim(A[X_1,\cdots,X_n]) \cong A[e_1,\cdots ,e_n]$
+\end{theorem}
+\begin{proof}
+Dado un polinomio $F \in A[X_1,\cdots,X_n]$ lo escribo de forma única en función de sus componentes homogéneas $F = F_0 + \cdots + F_m$  y por los resultados anteriores, estudiar que $F$ sea simétrico equivale a estudiar que las componentes homogéneas de $F$ sean simétricas. 
+
+Vamos a describir un método para dado un polinomio homogéneo y simétrico obtenerlo como polinomio en los polinomios simétricos elementales $e_i$ de forma única.
+
+Para empezar definimos la relación $a\prod_{i} X_i^{k_i} > b\prod_{i} X_i^{h_i}$ si el primer índice $t$ para el que las potencias de las variables difieren, se tiene que $k_t > h_t$. Esta relación no ordena todavía los monomios de mi polinomio homogéneo. Falta ver que si dos monomios se escriben igual salvo el coeficiente líder entonces son iguales. Para conseguirlo hacemos una primera transformación, agrupando los términos de la forma $a\prod_{i} X_i^{k_i}$ en un solo monomio. 
+
+Está claro que la relación sobre el conjunto de monomios resultante, es un relación de orden estricto total (antireflexiva, antisimétrica, transitiva y total). Entonces en cada paso puedo elegir un mayor monomio. Sea este $a\prod_{i} X_i^{k_i}$ En este monomio se va a verificar que $\forall i.k_i \ge k_{i+1}$, esto es, los exponentes están ordenados en orden decreciente. Se razona por contradicción. Si existiera $i < j$ tal que $k_i \le k_j$ entonces podríamos construir el monomio $aX_1^{k_1} \cdots X_i^{k_j} \cdots X_j^{k_i} \cdots X_n^{k_n} \ge a\prod_{i} X_i^{k_i}$. En contradicción con que $c\prod_{i} X_i^{k_i}$ era el mayor monomio. (¿por qué esta relación no sirve en el ambiente general de los polinomios simétricos?)
+
+Construimos el polinomio $g=e_1^{k_1-k_2} e_2^{k_2-k_3} \cdots e_{n-1}^{k_{n-1}-k_n}e_n^{k_n}$ y observamos que el término líder de cada $e_i$ es $x_1 \cdots x_i$. Teniendo en cuenta que el término líder respecto a $>$ de un producto es el producto de los términos líderes de los factores, tenemos que el término líder de $g$ es $$x_1^{k_1-k_2}(x_1x_2)^{k_2-k_3} \cdots (x_1 \cdots x_n)^{k_n} = x_1^{k_1-k_2+k_2-k_3+\cdots+k_n} x_2^{k_2-k_3+\cdots+k_n} \cdots x_{n-1}^{k_{n-1}-k_n+k_n}x_n^{k_n} = x_1^{k_1} \cdots x_n^{k_n}$$ Como consecuencia $f$ y $cg$ tienen el mismo término líder y el polinomio $f_1 = f - cg$ es un polinomio simétrico (pues $f$ y $cg$ son simétricos) y homogéneo con un término líder estrictamente menor según el orden definido en $>$. Este proceso debe terminar cuando se llega a un $f_m$ tal que $f_m = 0$ que no tiene términos líder. Si $f_m = f - cg - c_1g_1 - \cdots -c_{m-1}g_{m-1}$, se sigue que $f = cg + c_1g_1+ \cdots +c_{m-1}g_{m-1}$. Cada $g_i$ es un polinomio en los $e_i$. Esto completa la existencia. 
+
+Veamos que la descomposición es única. Consideramos una aplicación $\phi:A[u_1,\cdots,u_n] \to A[x_1,\cdots,x_n]$ dado por $u_i \mapsto e_i$ donde visualizamos $e_i$ como un polinomio en los $x_i$. Claramente, esto define un único homomorfismo entre ambos anillos y la imagen de dicho homomorfismo podría ser denotada (notación, ya que no se puede usar símbolos para variables que hayan sido utilizados para definir polinomios) por $A[e_1,\cdots,e_n]$ los polinomios dados en función de $e_i$. Por ser la imagen por un homomorfismo podemos definir un subanillo $A[e_1,\cdots,e_n]$ y podemos restringir a un homomorfismo $\phi:A[u_1,\cdots,u_n] \to A[e_1,\cdots,e_n]$. Este homomorfismo es sobreyectivo por definición y la unicidad se demuestra provando que $Ker(f) = \{0\}$. 
+
+En efecto, dado un polinomio $h \in A[u_1,\cdots,u_n] - \{0\}$ aplicamos $\phi$ a cada uno de sus términos $c \prod u_i^{b_i}$ transformándolo en $c \prod e_i^{b_i}$ y por un argumento similar al anterior, vemos que el término líder de este polinomio es $cx_1^{b_1+\cdots+b_n}x_2^{b_2+\cdots+b_n}+x_n^{b_n}$. Claramente, la imagen de $h$, $\phi(h)$ será suma de los términos de esta forma. El punto esencial aquí es que la aplicación $(b_1,\cdots,b_n) \mapsto (b_1+\cdots+b_n,b_2+\cdots+b_n,b_n),\cdots,b_n)$ es biyectiva y por tanto los términos líderes no pueden cancelarse de modo que $\phi(h)$ no puede ser $0$. 
+
+
+\end{proof}
+
+\begin{exercise}
+\begin{itemize}
+\item Demostrar que dados $f,g \in F[x_1,\cdots,x_n] \neq 0$ tenemos que $TL(fg) = TL(f)TL(g)$ donde $TL$ denota el término líder de un polinomio. (quizás esto no es necesario por ser ?)
+\item Demostrar que la aplicación $(b_1,\cdots,b_n) \mapsto (b_1+\cdots+b_n,b_2+\cdots+b_n,b_n),\cdots,b_n)$ biyectiva. Considera el término de $h(u_1,\cdots,h_n)$ para el cual $ce_1^{b_1}\cdots e_n^{b_n}$ es maximal. Prueba que este término es de hecho el término líder de $h(e_1,\cdots,e_n)$. Ver que esto implica que si $h \neq 0$ entonces $\phi(h) \neq 0$.  
+\end{itemize}
+\end{exercise}

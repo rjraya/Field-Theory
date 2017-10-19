@@ -1,0 +1,43 @@
+\begin{theorem}[Teorema de Kronecker]
+Sea $K$ un cuerpo y $f \in K[X]$ no constante entonces existe una extensión $\frac{F}{K}$ y un $\alpha \in F$ tal que $f(\alpha) = 0$. 
+\end{theorem}
+\begin{proof}
+Podemos limitarnos al caso en que $f$ sea irreducible. Ya que si $g$ es un factor irreducible de $f$, toda raíz suya, es raíz de $f$. Demostrar que los irreducibles tienen raíces equivale a demostrar que los no constantes (no nulos, no unidades) tienen raíces. 
+
+Sea pues, $f$ irreducible. Entonces, $F = \frac{K[X]}{<f>}$ es un cuerpo. Consideramos la proyección canónica $\phi:K \to F$ tal que $a \mapsto a + <f>$ que es un homomorfismo. Entonces identificamos $K$ con $Img(\phi)$ y tenemos que $F$ es un cuerpo extensión de $K$. 
+
+Haciendo $\alpha = x + <f>$ si $f = \sum a_i X^i$ entonces $$f(\alpha) = \sum (a_i+<f>)(x+<f>)^i = (\sum a_ix^i) + <f> = f+<f> = 0 + <f>$$ Esto es $f(\alpha) = 0$.  
+\end{proof}
+
+\begin{lemma}
+	Sea $K$ un cuerpo. Son equivalentes:
+	
+	1. Todo polinomio $f  \in K[X]$ no constante tiene al menos una raíz en $K$.\\
+	2. Todo polinomio $f  \in K[X]$ no constante descompone en $K$. \\
+	3. Los polinomios irreducibles en $K[X]$ son los polinomios de grado 1. \\
+	4. $K$ no tiene extensiones algebraicas propias. \\
+	5. No existen extensiones algebraicas $\frac{F}{K}$ con $F \neq K$. 
+\end{lemma}
+
+
+\begin{definition}[Cuerpo algebraicamente cerrado]
+	Un cuerpo $K$ es algebraicamente cerrado si cumple cualquiera de las condiciones anteriores. 
+\end{definition}
+
+\begin{theorem}[Teorema de Steinitz]
+	Si $K$ es un cuerpo existe un cuerpo algebraicamente cerrado $F$ extensión de $K$. 
+\end{theorem}
+
+\begin{corollary}
+	Si $K$ es un cuerpo, existe una extensión de $K$ que es algebraica y algebraicamente cerrada. 	
+\end{corollary}
+
+\begin{definition}[Clausura algebraica]
+	Una extensión de cuerpos $\frac{F}{K}$ es una clausura algebraica de $K$ si 
+	
+	1. Es una extensión algebraica. \\
+	2. $F$ es un cuerpo algebraicamente cerrado. 
+\end{definition}
+
+
+

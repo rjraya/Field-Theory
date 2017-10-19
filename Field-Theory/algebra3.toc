@@ -1,0 +1,32 @@
+\select@language {spanish}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {spanish}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Polinomios sim\IeC {\'e}tricos}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1}Resultante y discriminante}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Extensiones de cuerpos}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Preliminares}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Algunas extensiones naturales}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Extensiones algebraicas}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4}Relaci\IeC {\'o}n entre extensiones finitas y algebraicas}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Clausura algebraica}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Cuerpos de descomposici\IeC {\'o}n}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Extensiones normales}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Extensiones separables}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Cuerpos finitos}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1}Existencia y unicidad}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2}Polinomios irreducibles sobre cuerpos finitos}{20}

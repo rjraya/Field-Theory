@@ -1,0 +1,262 @@
+\subsection{Preliminares}
+
+Empezamos con algunos recordatorios del álgebra de anillos. 
+
+\begin{theorem}\label{recordatorio-1}
+Dado un cuerpo $F$ y $f \in F[X]$ no constante entonces son equivalentes:
+
+\begin{itemize}
+\item El polinomio $f$ es irreducible en $F$. 
+\item El ideal $<f>$ es maximal. 
+\item El anillo cociente $F[x]/<f>$ es un cuerpo. 
+\end{itemize}
+\end{theorem}
+
+\begin{example}
+$\frac{\mathbb{R}}{<x^2+1>} \cong \mathbb{C}$  
+\end{example}
+
+\begin{definition}[Extensión de cuerpos]
+Sean $K$ y $F$ son dos cuerpos con $K$ un subcuerpo de $F$. Entonces se dice que $F$ es un cuerpo extensión de $K$ y lo denotaremos por $K \subseteq F$. 
+
+Observando que, todo subcuerpo es un ideal, tenemos definido $\frac{F}{K}$ y lo llamaremos una extensión de cuerpos de $K$. 
+\end{definition}
+
+\begin{proposition}[Estructura de las extensiones como espacio vectorial]
+Si $\frac{F}{K}$ es una extensión de cuerpos, entonces $F$ tiene estructura de espacio vectorial sobre $K$.
+\end{proposition}
+\begin{proof}
+Consideramos como conjunto de escalares $K$ y como conjunto de vectores $F$. Dado que $K$ es un subcuerpo de $F$, tenemos que todas las propiedades de espacio vectorial se verifican por las propiedades de cuerpo de $F$. 
+\end{proof}
+
+\begin{definition}[Grado de una extensión]
+Sea $\frac{F}{K}$ una extensión de cuerpos. El grado de la extensión, $[F:K]$, es la dimensión de $F$ como espacio vectorial sobre $K$. Si $[F:K]$ es finito entonces se dice que la extensión es finita. En otro caso se dice que es infinita. 
+\end{definition}
+
+\begin{definition}[Torre de cuerpos]
+	Una torre de cuerpos es una cadena de subcuerpos de un cuerpo $F$ $F_0 \subseteq \cdots \subseteq F_m = F$. Al menor subcuerpo $F_0$ se le llama cuerpo base. 
+\end{definition}
+
+\begin{lemma}[Base de una torre de cuerpos]
+	Sea $K \subseteq F \subseteq E$ una torre de cuerpos. 
+	
+	Sea $\{u_i\}$ una base de $E$ sobre $F$ y $\{v_j\}$ una base de $F$ sobre $K$. Entonces $\{u_iv_j\}$  es una base de $E$ sobre $K$. 
+\end{lemma}
+\begin{proof}
+	1. $\{u_iv_j\}$ es sistema de generadores. En efecto, podemos escribir para cada $e \in E$: $$e = \sum u_if_i = \sum u_i (\sum v_jk_{ij}) =  \sum (u_iv_i)k_{ij}$$
+	2. $\{u_iv_j\}$ son linealmente independientes. Aplicando la independencia lineal de cada de las bases: $$\sum u_iv_jk_{ij} = \sum u_i (\sum v_jk_{ij}) = 0$$ y se tiene que $k_{ij} = 0$. 
+\end{proof}
+
+\begin{proposition}[Teorema de la torre de cuerpos]
+	Sea $K \subseteq F \subseteq E$ una torre de cuerpos. 
+	
+	$\frac{E}{K}$ es finita $\iff \frac{F}{K},\frac{E}{F}$ son finitas. 
+	
+	En cuyo caso, $[E:K] = [E:F][F:K]$.	
+\end{proposition}
+\begin{proof}
+	Teniendo una base de cada uno de ellos, calculamos la base de la torre de inclusiones, que nos la dimensión. 
+\end{proof}
+
+\begin{corollary}
+1. Sea $F_0 \subseteq \cdots \subseteq F_m$ una torre de cuerpos entonces:
+
+$\frac{F_m}{F_0}$ es finita $\iff$ $\frac{F_{i+1}}{F_i}$ son finitas.
+
+En cuyo caso, $[F_m,F_0] = \prod_{i = m}^{1} [F_i:F_{i-1}]$ 
+
+2. Sea $\frac{F}{K}$ una extensión de grado primo entonces no existe ningún cuerpo intermedio propio. 
+\end{corollary}
+
+\subsection{Algunas extensiones naturales}
+
+Nuestro ahora es describir algunos subanillos y subcuerpos de interés para una extensión $K \subseteq F$. 
+
+\begin{definition}[Subanillo y subcuerpo generados por un conjunto]
+Sea $\frac{F}{K}$ una extensión de cuerpos e $Y \subseteq F$. Definimos los siguientes conjuntos:
+
+1. $K[Y] = \{\sum k_{i_1 \cdots i_r} \prod_{j = 1}^r y_{i_j}:k_{i_1 \cdots i_r} \in K, y_{i_j} \in Y\}$ es el conjunto de las expresiones polinómicas en los elementos de $Y$ con coeficientes en $K$.\\
+2. $K(Y) = Q(K[Y])$, esto es, $K(Y)$ es el cuerpo de fracciones de $K[Y]$. Esto se puede ver como el conjunto de expresiones racionales en los elementos de $Y$ con coeficientes en $K$.  
+\end{definition}
+
+\begin{definition}[Caso finito]
+Si $Y = \{u_1,\cdots,u_r\}$ entonces $K[Y] = K[u_1,\cdots,u_r]$ y $K(Y) = K(u_1,\cdots,u_r)$. Esto es, $K[Y]$ es el conjunto de las expresiones polinómicas en las indeterminadas $u_i$ con coeficientes en $K$ y $K(Y)$ es el conjunto de las expresiones racionales en las indeterminadas $u_i$ con coeficientes en $K$.
+\end{definition}
+
+\begin{definition}[Extensión de generación finita]
+	Cuando $F = K(\alpha_1,\cdots,\alpha_n)$ con $\alpha_i \in F$, se dice que $F$ es de generación finita. 
+	
+	Si $n = 1$ la extensión se dice simple y al generador se le llama elemento primitivo para la extensión. 
+\end{definition}
+
+\begin{proposition}[Generación de subcuerpos por adjunción]
+Sea $\frac{F}{K}$ una extensión de cuerpos e $Y \subseteq F$. 
+
+1. El subanillo generado por $K,Y$ es $K[Y]$\\
+2. El subcuerpo generado por $K,Y$ es $K(Y)$. \\
+3. Si $Z \subseteq Y$ entonces:
+\begin{itemize}
+\item $K[Y \cup Z] = K[Y][Z] = K[Z][Y]$
+\item $K(Y \cup Z) = K(Y)(Z) = K(Z)(Y)$
+\end{itemize}
+
+4. Para cada $\alpha \in K(Y)$ existe $Z \subseteq Y$ finito tal que $\alpha \in K(Z)$. 
+\end{proposition}
+\begin{proof}
+1. Llamemos polinomios en $Y$ al miembro derecho y denotémoslo por $P$. 
+
+Claramente, $P$ es un subanillo de $F$ ya que si tomo $x= \sum k \prod_{j = 1}^r y_{i_j}, y = \sum k' \prod_{j = 1}^r y'_{i_j}$ entonces $x-y = \sum k \prod_{j = 1}^r y_{i_j} - \sum k' \prod_{j = 1}^r y'_{i_j} = \sum k \prod_{j = 1}^r y_{i_j} + \sum (-k') \prod_{j = 1}^r y'_{i_j} \in P$ ya que $K$ es un cuerpo. También el producto es cerrado en $F$, si tomo $x= \sum k \prod_{j = 1}^r y_{i_j}, y = \sum k' \prod_{j = 1}^r y'_{i_j}$ entonces $xy = \sum \sum kk' \prod y_{ij}y'_{ij}$ donde hemos utilizado la propiedad distributiva general. Finalmente, basta tomar un producto vacío y el $1$ de $K$ para poder asegurar que $1 \in P$. 
+
+Veamos ahora que debe coincidir con el mínimo generado por $K$ e $Y$. 
+
+$\subseteq)$ Como $K,Y \subseteq K[Y]$ claramente, $K[Y] \subseteq P$. 
+
+$\supseteq)$ Como un subanillo es cerrado para productos y sumas de sus elementos se deduce que $K[Y] \supseteq P$. 
+
+2. Esto se sigue de que el cuerpo de fracciones es el menor cuerpo que contiene a un anillo. 
+
+3. Hay que tener cuidado ya que $Y$ puede ser infinito. 
+
+$\supseteq)$ Como $K[Y \cup Z]$ es el menor subanillo que contiene a $K,Y,Z$. 
+Como contiene a $K,Y$ contiene al menor subanillo que engendran $K[Y]$ y como contiene a $Z$, contiene al menor subanillo que engendran $K[Y],Z$ esto es $K[Y][Z]$.
+
+$\subseteq)$ Como $K[Y][Z]$ es el menor subanillo que contiene a $K[Y],Z$ y $K[Y]$ es el menor subanillo que contiene a $K,Y$, entonces claramente $K[Y][Z]$ es el menor subanillo que contiene a $K,Y,Z$ y por tanto $K[Y][Z] = K[Y \cup Z]$. 
+
+Análogamente se procede para cuerpos. 
+
+4. Si $\alpha \in K(Y)$ es una función racional en los valores de $Y$. El polinomio del denominador estará en número de variables $r$ y el del denominador en $r'$ tomando el máximo, es claro que $\alpha \in K(\{y_1,\cdots,y_{max(r,r')} \} )$
+\end{proof} 
+
+\begin{definition}[Extensión producto]
+	Sean $E,F$ subcuerpos de un cuerpo $L$ tal que contienen un subcuerpo común $K$. El compuesto de $E$ y $F$ es el menor subcuerpo de $L$ que contiene a $E$ y a $F$. Lo denotaremos por $EF$. 
+	
+	Claramente $EF = E(F) = F(E)$. 
+\end{definition}
+
+
+\subsection{Extensiones algebraicas}
+
+\begin{definition}[Elementos algebraicos y trascendentes]
+Dada $\frac{F}{K}$ una extensión de cuerpos, un elemento $\alpha \in F$ se llama algebraico sobre $K$ si existe un polinomio no nulo $f(x) \in K[X]$ tal que $f(\alpha) = 0$. En caso contrario diremos que es trascendente. 
+
+Si todo elemento de $F$ es algebraico en $K$ entonces la extensión $\frac{F}{K}$ se dice algebraica. 
+\end{definition}
+
+Recuérdese la propiedad universal de los anillos de polinomios, existe un único $h_\alpha$ tal que hace comutar el diagrama inferior y este $h_\alpha$ es de la forma $h_\alpha(f) = f(\alpha)$, esto es, el homomorfismo de evaluación en $\alpha$. 
+
+\begin{tikzcd}
+K \arrow{r}{i} \arrow{d}{i} & 
+F \ni \alpha & \\
+K[X] \arrow{ur}[swap]{h_\alpha} 
+\end{tikzcd}
+
+Claramente, un elemento $\alpha \in K$ es algebraico $\iff$ $Ker(h_\alpha) \neq \{0\}$. 
+
+Obsérvese que $Ker(h_\alpha)$ no es más que el conjunto de las expresiones polinómicas en la variable $\alpha$ y coeficientes en $K$ que son cero. 
+
+\begin{proposition}[Introducción del polinomio mínimo]
+Dada una extensión de cuerpos $\frac{F}{K}$ y $\alpha \in F$ un elemento algebraico sobre $K$, existe un único polinomio irreducible y mónico $f$ tal que $Ker(h_\alpha) = <f>$. Esta última condición se expresa diciendo que $\alpha$ es raíz del polinomio y cualquier otro polinomio del que $\alpha$ sea raíz, es un múltiplo de este. 
+\end{proposition}
+\begin{proof}
+Como $K[X]$ es un dominio euclídeo con función euclídea el grado, en particular es un dominio de ideales principales y ya que $Ker(h_\alpha)$ es un ideal estará generado por un polinomio $f$. Para ver que es irreducible, vemos que:
+
+\begin{itemize}
+\item no es nulo ya que $\alpha$ es algebraico y por tanto $Ker(\alpha) \neq \{0\}$. 
+\item no es unidad ya que las unidades de $K[X]$ son los polinomios constantes, no nulos y $\alpha$ no puede ser raíz de estos. 
+\item Si $f = g_1g_2$ entonces $(g_1g_2)(\alpha) = g_1(\alpha)g_2(\alpha) = 0$ de donde algún $g_i(\alpha) = 0$ pues $K$ es en particular un dominio de integridad supongamos que es $g_1(\alpha) = 0$. Por tanto, $g_1 \in <f>$, esto es, existe un polinomio $h$ tal que $g_1 = hf$ y en consecuencia, $f = g_1g_2 = hfg_2 = hg_2f$ y en consecuencia, como estamos en un dominio de integridad $hg_2 = 1$ luego $g_2 \in U(K[X])$ y por tanto $g_1$ está asociado a $f$. 
+\end{itemize}
+
+Claramente, como $K$ es un cuerpo puedo conseguir que sea mónico multiplicando por la constante inverso del término líder, que es un polinomio asociado al original. 
+
+Finalmente, si $g$ es un polinomio de grado mínimo tal que $g(\alpha) = 0$ entonces, $g \in <f>$ y como antes $g$ es asociado a $f$.
+
+\end{proof}
+
+\begin{definition}[Polinomio mínimo]
+	Al polinomio anterior, se le llama polinomio mínimo de $\alpha$ sobre $K$ y se denota por $Irr(\alpha,K)$. 
+\end{definition}
+
+En general puede no ser sencillo demostrar la igualdad dada por la proposición anterior. En la práctica, se usan criterios equivalentes para reconocer al polinomio mínimo.
+
+\begin{proposition}[Criterios de polinomio mínimo]
+Dada una extensión de cuerpos $\frac{F}{K}$ y $\alpha \in F$ un elemento algebraico sobre $K$. Sea $p \in K[X]$ el polinomio mínimo de $\alpha$ sobre $K$. Si $f \in K[X]$ es un polinomio mónico entonces $f = p$ sí y sólo sí se dan algunas de las siguientes condiciones:
+
+1. $f$ es un polinomio de grado mínimo satisfaciendo $f(\alpha) = 0$.\\
+2. $f$ es irreducible sobre $K$ y $f(\alpha) = 0$. 
+\end{proposition}
+\begin{proof}
+	Véase Cox, página 74. 
+\end{proof}
+
+\begin{proposition}[Propiedades del polinomio mínimo]
+	Dada una extensión de cuerpos $\frac{F}{K}$ y $\alpha \in F$ un elemento algebraico sobre $K$:
+	
+	1. Se verifica que $K(\alpha) \cong \frac{K[X]}{<Irr(\alpha,K)>}$. En particular, $K[\alpha] = K(\alpha)$. 
+	
+	2. $n = [K(\alpha):K] = gr(Irr(\alpha,K))$ y $\{1,\alpha,\cdots,\alpha^{n-1}\}$ es una base de $K(\alpha)$ como $K$-espacio vectorial.
+\end{proposition}
+\begin{proof}
+	1. Por el primer teorema de isomorfía sabemos que $\frac{K[X]}{<Irr(\alpha,K)>} \cong h_\alpha(K[X]) = K[\alpha]$. Por el teorema \ref{recordatorio-1} tenemos que el miembro derecho es un cuerpo y la imagen por un isomorfismo seguirá siéndolo. 
+	
+	Como $K[\alpha]$ es el menor subanillo que contiene a $\alpha,K$ y además resulta que es un cuerpo, también será el menor cuerpo que contiene a $K$ y $\alpha$, esto es $K(\alpha)$. 
+	
+	2. A priori, el primer teorema de isomorfía da un isomorfismo $f_\alpha([g]) = h_\alpha(g)$ por tanto, todo elemento de $K(\alpha)$ se puede poner como $g(\alpha) = \sum_{i = 0}^m b_i \alpha^i$. 
+	
+	Vamos a ver que en realidad podemos tener un sistema de generadores más pequeño. Para ello, basta elegir un representante adecuado. Dado $g$ elijo $g_1$ en su clase tal que $g \equiv g_1 \; mod(Irr(\alpha,K))$ donde hemos utilizado el algoritmo de la división y entonces $gr(g_1) = r < n$ entonces claramente $g(\alpha) = g_1(\alpha) = \sum_{i = 1}^r k_i \alpha^i$ y por tanto $\{1, \alpha,\cdots,\alpha^{n-1}\}$ es un sistema de generadores. 
+	
+	Veamos que son independientes. Si $\sum_{i = 0}^{n-1} k_i \alpha^{i} = 0$ entonces $\alpha$ es raíz del polinomio $\sum_{i = 0}^{n-1} k_i X^{i}$. Pero este polinomio tiene grado menor que $Irr(\alpha,K)$ y está en $<Irr(\alpha,K)>$ luego necesariamente, debe ser nulo y por tanto $k_i = 0$. 
+\end{proof}
+
+Obsérvese que si $\alpha \in F$ es trascendente sobre $K$ entonces $K[X] \cong K[\alpha] \neq K(\alpha)$. 
+
+\begin{example}
+\begin{itemize}
+\item Consideremos la extensión $\mathbb{Q}(\sqrt{2})$ sobre $\mathbb{Q}$. Observemos que el polinomio $Irr(\sqrt{2},\mathbb{Q}) = x^2-2$. Por tanto,  $\mathbb{Q}(\sqrt{2}) \cong \frac{\mathbb{Q}}{<x^2-2>} \cong \{a+b\sqrt{2}:a,b \in \mathbb{Q}\}$
+
+\item El polinomio $p = x^4 - 10x^2 + 1 = (x- \sqrt{2}-\sqrt{3})(x- \sqrt{2} + \sqrt{3})(x+ \sqrt{2} - \sqrt{3})(x+\sqrt{2} + \sqrt{3})$ y por tanto $\sqrt{2}+\sqrt{3}$ es algebraico en $\mathbb{Q}$. Además $p$ es irreducible (para verlo utilícese la reducción a $\mathbb{Z}_3$)y mónico. En particular, $\mathbb{Q}(\sqrt{2},\sqrt{3}) = \{a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}:a,b,c,d \in \mathbb{Q}\}$. (ver Cox, pag. 78)
+\end{itemize}
+\end{example}
+
+\subsection{Relación entre extensiones finitas y algebraicas}
+
+Tenemos por tanto una gama de extensiones finitas determinadas por los $[K(\alpha):K]$ con $\alpha$ algebraico, la pregunta es si estas extensiones son algebraicas. Vamos a ver que todas las finitas lo son.
+
+\begin{proposition}
+Sea $\frac{F}{K}$ una extensión. 
+
+1. Si es finita, entonces es algebraica. Además, si $\alpha \in F$ entonces $gr(Irr(\alpha,K)) | [F:K]$. \\
+2. Es finita de grado $n$ $\iff$ Es de generación finita con $n$ generadores algebraicos. \\ 
+3. Si es generado por generadores algebraicos (no necesariamente de forma finita) entonces es algebraica.
+\end{proposition}
+\begin{proof}
+1. Sea $\alpha \in F$, supongamos que la extensión $\frac{F}{K}$ es finita. Entonces los elementos $\{1,\alpha,\cdots,\alpha^n\}$ son dependientes. Luego existe un polinomio no nulo $f = \sum_{i = 0}^n k_i X^i$ del que $\alpha$ es raíz y por tanto $\alpha$ es algebraico. 
+
+Para la segunda parte, basta considerar la torre de cuerpos $K \subseteq K(\alpha) \subseteq F$ y observar que por el teorema de la torre de cuerpos las extensiones son finitas y se tiene que $[F:K] = [F:K(\alpha)][K(\alpha):K] = [F:K(\alpha)]gr(Irr(\alpha,K))$ y por tanto, $gr(Irr(\alpha,K))|[F:K]$
+
+2. $\Rightarrow)$ Consideramos una base de $F$ como $K$-espacio vectorial. Sea esta $\{\alpha_1,\cdots,\alpha_n\}$. Entonces $F = \{\sum a_i\alpha_i:a_i \in K\} \subseteq K(\alpha_1,\cdots,\alpha_n) \subseteq F$ y esto prueba que $F =  K(\alpha_1,\cdots,\alpha_n)$. Por la proposición anterior tenemos que la extensión es algebraica y por tanto todos los $\alpha_i$ son algebraicos.
+
+$\Leftarrow)$ Sea $F = K(\alpha_1,\cdots,\alpha_n)$ y sean $K_i =  K(\alpha_1,\cdots,\alpha_i)$. Tenemos que $$K_i = F(\alpha_1,\cdots,\alpha_i) = F(\alpha_1,\cdots,\alpha_{i-1})(\alpha_i) = K_{i-1}(\alpha_i)$$ Observe ahora que como $\alpha_i$ es algebraico en $K$ también es algebraico sobre $K_{i-1} \supseteq K$ luego $$[K_i:K_{i+1}] = [K_{i-1}(\alpha_i):K_{i-1}]$$ pero la última extensión es finita por el teorema de estructura como cociente para valores algebraicos. Como $$[F:K] = \prod [K_i:K_{i-1}]$$ y cada factor es finito. Hemos acabado.
+
+3. Si $F$ es generado por generadores algebraicos sobre $K$ $\alpha_i$ entonces tomemos un $\alpha \in F$ y veamos que necesariamente es algebraico. Lo que estamos diciendo es que todo elemento de $F$ pertenece a $K(\{\alpha_i\})$ pero hemos visto que debe existir un subconjunto finito de $\alpha_i$ tal que $\alpha \in K(\alpha_{i_1},\cdots,\alpha_{i_r})$. Esta extensión por el apartado anterior necesariamente es finita y por tanto es algebraica y por tanto $\alpha$ es algebraico sobre $K$. 
+\end{proof}
+
+La pregunta es, ¿toda extensión algebraica es finita? La respuesta es que no. Véase, \cite{link1}
+
+
+\begin{proposition}
+	Sea $K \subseteq F \subseteq E$ una torre de cuerpos. 
+	
+	1. $\frac{E}{K}$ es una extensión algebraica $\iff$ $\frac{E}{F},\frac{F}{K}$ es una extensión algebraica. \\
+	2. $\frac{E}{K}$ es una extensión finita $\iff$ $\frac{E}{F},\frac{F}{K}$ es una extensión finita. 
+	
+	Sea $K \subseteq L \subseteq E$ y $K \subseteq F \subseteq E$ dos torres de cuerpos.
+	
+	3. Si $\frac{L}{K}$ es una extensión algebraica entonces $\frac{LF}{K}$ es una extensión algebraica. \\
+	4. Si $\frac{L}{K}$ es una extensión finita entonces $\frac{LF}{K}$ es una extensión finita.
+	
+	Sea $K \subseteq L \subseteq E$ y $K \subseteq F \subseteq E$ dos torres de cuerpos.
+	
+	3. Si $\frac{L}{K},\frac{F}{K}$ son extensiones algebraicas entonces $\frac{LF}{K}$ es una extensión algebraica. \\
+	4. Si $\frac{L}{K},\frac{F}{K}$ son extensiones finitas entonces $\frac{LF}{K}$ es una extensión finita. \\
+\end{proposition}
+

@@ -1,0 +1,72 @@
+\begin{definition}[Cuerpo de descomposición de un polinomio]
+Sea $f \in K[X]$ un polinomio no constante. Una extensión $\frac{E}{K}$ es un cuerpo de descomposición de $f$ sobre $K$ si $f$ factoriza en $F[X]$ como producto de polinomios lineales, esto es, $f = c \prod (X - \alpha_i)$ con $c \in K$ y $\alpha_i \in E$ y además verifica la propiedad de que $f$ no descompone en ningún subcuerpo intermedio $F$, es decir, $E$ es el menor cuerpo donde esto ocurre. 
+\end{definition}
+
+\begin{proposition}[Existencia del cuerpo de descomposición]
+	Sea $f \in K[X]$ un polinomio no constante de grado $n$ y raíces $\alpha_i$. 
+	
+	1. $K(\alpha_1,\ldots,\alpha_n)$ es un cuerpo de descomposición de $f$. \\
+	2. $[E:K] \le n!$ donde $n$ es el grado de $f$ y $E$ es cualquier cuerpo de descomposición de $f$. 
+\end{proposition}
+\begin{proof}
+	1. Hagamos inducción sobre $n$. Si $n =  1$, $f = a_0x+a_1$ con $a_0 \neq 0$ y $a_0,a_1 \in K$. Haciendo $E = K$ entonces tomando $\alpha_1 = -a_1/a_0$ tenemos que $f = a_0(x-\alpha_1)$ y esto termina este caso. 
+	
+	Suponga el teorema cierto para $n-1$, por el teorema de Kronecker existe una raíz $\alpha_1$ de $f$ en un cuerpo extensión $F_1$ y y entonces $x-\alpha_1$ es un factor de $f$ en $F_1[X]$ de modo que $f = (x-\alpha_1)g$ con $g \in F_1[X]$ de grado $n-1$. Aplicando la hipótesis de inducción a $g$ obtenemos una extensión de $F_1$, $L$, tal que $g = a_0 \prod (x - \alpha_i)$ y por tanto, también $f$ descompone en $L$. 
+	
+	Esta descomposición $f = c \prod (x - \alpha_i)$ en $L$ me dice que en $K(\alpha_1,\cdots,\alpha_n)$, $f$ también descompone y claramente es la mínima extensión que lo verifica. Por tanto, $E = K(\alpha_1,\ldots,\alpha_n)$ es un cuerpo de descomposición para $f$. 
+	
+	2. Por inducción sobre $n$. (Ver Cox, 102)
+\end{proof}
+
+\begin{theorem}[Unicidad del cuerpo de descomposición]
+	Dados dos cuerpos $F_1,F_2$ isomorfos mediante un isomorfismo de cuerpos $\phi$. Sea $f_1 \in F_1[X]$, sea $f_2 = \phi(f_1) \in F_2[X]$. Considérense los cuerpos de descomposición $L_1,L_2$ de $f_1,f_2$. Existe un isomorfismo $\overline{\phi}$ entre $L_1$ y $L_2$ que extiende a $\phi$. 
+	
+	\begin{tikzcd}
+		L_1 \arrow{r}{\overline{\phi}} \arrow[dash]{d} & 
+		L_2 \arrow[dash]{d} & \\
+		F_1 \arrow{r}{\phi} &
+		F_2 
+	\end{tikzcd}
+
+	En particular, si $L_1,L_2$ son dos cuerpos de descomposición de $f \in F[X]$ entonces hay un isomorfismo entre las extensiones $L_1,L_2$ tal que es la identidad en $F$. Por tanto, el cuerpo de descomposición de un polinomio es único salvo isomorfismo. 
+\end{theorem}
+\begin{proof}
+	Hagamos inducción sobre $n = gr(f_1) = gr(f_2)$. 
+	
+	Si $n = 1$ entonces por la proposición anterior $[L_i:F_i] = 1$ y en particular, $L_1 = F_1$ y $L_2 = F_2$ y basta tomar $\overline{\phi} = \phi$. 
+	
+	Supongamos $n > 1$. Podemos asumir $L_1 = F_1(\alpha_1,\ldots,\alpha_n)$ con $\alpha_i$ raíces $f_1$ (fíjate que no asumimos lo mismo para $L_2$). Utilicemos la extensión $F_1(\alpha_1)$ observando  que $L_1$ será el cuerpo de descomposición para el polinomio $g_1 = \frac{g_1}{x- \alpha_1}$. Procedemos en 5 pasos. 
+	
+	1. Sea $h_1 = Irr(\alpha_1,F_1[X])$ tenemos $F_1(\alpha_1) \cong \frac{F_1[X]}{\langle h_1 \rangle}$ con un homomorfismo que lleva $\alpha_1$ a $x+\langle h_1 \rangle$.
+	
+	2. Vamos a encontrar una raíz de $f_2$ que se corresponda con $\alpha_1$. El punto importante es que $\phi$ induce un isomorfismo $\hat \phi$ entre los respectivos anillos de polinomios. Este isomorfismo lleva factores en factores e irreducibles en irreducibles luego en particular lleva a $h_1$ en un factor irreducible $h_2$ de $f_2$. Como $f_2$ descompone completamente sobre $L_2$ también le ocurre lo mismo a $h_2$ (ver los puntos 4.1.2 a 4.1.4 de los apuntes de Mario para confirmar esto). Por tanto, podemos etiquetar las raíces como $\beta_1,\ldots,\beta_n \in L_2$ con $\beta_1$ raíz de $h_2$. 
+	
+	3. La raíz $\beta_1$ de $f_2$ nos da una extensión $F_2(\beta_1)$ y $L_2$ será un cuerpo de descomposicón para $g_2 = \frac{f_2}{x- \beta_1}$ y como en el paso 1 también $F_2(\beta_1) \cong \frac{F_2[X]}{\langle h_2 \rangle}$ ya que $h_2$ es el polinomio mínimo de $\beta_1$ (porque es irreducible y $\beta_1$ es raíz de él). Este isomorfismo lleva $\beta_1$ en $x+\langle h_2 \rangle$. 
+	
+	4. Como $\hat \phi$ lleva $h_1$ en $h_2$, también lleva los $\langle h_1 \rangle$ en $\langle h_2 \rangle$ y por tanto, tenemos un isomorfismo entre los anillos cocientes de manera natural actuando como $\phi$ en los coeficientes y $x+\langle h_1 \rangle$ en $x + \langle h2 \rangle$. Por tanto, tenemos el siguiente isomorfismo $$\phi_1:F_1(\alpha_1) \cong \frac{F_1[X]}{\langle h_1 \rangle} \cong g_2 = \frac{f_2}{x- \beta_1} \cong F_2(\beta_1)$$ tal que lleva $\alpha_1$ en $\beta_1$ y sobre $F_1$ actúa como $\phi$.
+
+	5. En particular, lleva $g_1$ en $g_2$. Entonces tenemos la siguiente situación:
+	
+	\begin{tikzcd}
+		L_1 \arrow[dash]{d} & 
+		L_2 \arrow[dash]{d} & \\
+		F_1(\alpha_1) \arrow[dash]{d} \arrow{r}{\phi_1} &
+		F_2(\beta_1) \arrow[dash]{d} \\
+		F_1 \arrow{r}{\phi} &
+		F_2 
+	\end{tikzcd}
+
+	Como $g_1$ tiene grado $n-1$, el paso 5. implica que podemos aplicar la hipótesis de indución a $g_1$ y $\phi_1$, lo que me da un isomorfphismo $\overline{\phi_1}$ cuya restricción a $F_1(\alpha_1)$ es $\phi_1$ pero como $\phi_1|_{F_1} = \phi$ se sigue que la restricción de $\overline{\phi_1}$ a $F_1$ es $\phi$. 
+	
+	Para el corolario basta tomar $\phi$ la identidad. 
+\end{proof}
+
+El siguiente resultado se reaprovecha en teoría de Galois. 
+
+\begin{proposition}
+	Sea $L$ un cuerpo de descomposición de un polinomio de $F[X]$ y suponga que $h \in F[x]$ es irreducible y tiene dos raíces $\alpha,\beta \in L$. Entonces existe un isomorfismo de cuerpos que es la identidad en $F$ y lleva $\alpha$ en $\beta$. 
+\end{proposition}
+
+
+
+
