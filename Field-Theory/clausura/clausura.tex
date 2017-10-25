@@ -1,13 +1,4 @@
-\begin{theorem}[Teorema de Kronecker]
-Sea $K$ un cuerpo y $f \in K[X]$ no constante entonces existe una extensión $\frac{F}{K}$ y un $\alpha \in F$ tal que $f(\alpha) = 0$. 
-\end{theorem}
-\begin{proof}
-Podemos limitarnos al caso en que $f$ sea irreducible. Ya que si $g$ es un factor irreducible de $f$, toda raíz suya, es raíz de $f$. Demostrar que los irreducibles tienen raíces equivale a demostrar que los no constantes (no nulos, no unidades) tienen raíces. 
 
-Sea pues, $f$ irreducible. Entonces, $F = \frac{K[X]}{<f>}$ es un cuerpo. Consideramos la proyección canónica $\phi:K \to F$ tal que $a \mapsto a + <f>$ que es un homomorfismo. Entonces identificamos $K$ con $Img(\phi)$ y tenemos que $F$ es un cuerpo extensión de $K$. 
-
-Haciendo $\alpha = x + <f>$ si $f = \sum a_i X^i$ entonces $$f(\alpha) = \sum (a_i+<f>)(x+<f>)^i = (\sum a_ix^i) + <f> = f+<f> = 0 + <f>$$ Esto es $f(\alpha) = 0$.  
-\end{proof}
 
 \begin{lemma}
 	Sea $K$ un cuerpo. Son equivalentes:

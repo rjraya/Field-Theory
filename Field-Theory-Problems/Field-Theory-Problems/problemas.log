@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.12)  17 OCT 2017 18:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.12)  20 OCT 2017 18:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1331,17 +1331,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
-{c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./problemas.to
-c
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-LaTeX Info: Redefining \. on input line 4.
-LaTeX Info: Redefining \% on input line 4.
-)
-\tf@toc=\write6
-\openout6 = `problemas.toc'.
-
-
+{c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1351,7 +1341,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[1] (./problema1/problema1.tex
+[1]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1362,95 +1352,8 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
  []
 
 [2]
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
 
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[3])
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[4]
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[5]
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[6]
-
-! LaTeX Error: Command \end{proposition} invalid in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.276 \end{proposition}
-                       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.276 \end{proposition}
-                       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.276 \end{proposition}
-                       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.276 \end{proposition}
-                       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-LaTeX Warning: Empty bibliography on input line 278.
+LaTeX Warning: Empty bibliography on input line 297.
 
 
 AED: lastpage setting LastPage
@@ -1464,7 +1367,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[7] (./problemas.aux
+[3] (./problemas.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 15.
@@ -1475,11 +1378,11 @@ Package logreq Info: Writing requests to 'problemas.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24424 strings out of 492990
- 459874 string characters out of 6136333
+ 24407 strings out of 492990
+ 459645 string characters out of 6136333
  891891 words of memory out of 5000000
- 27467 multiletter control sequences out of 15000+600000
- 11206 words of font info for 62 fonts, out of 8000000 for 9000
+ 27458 multiletter control sequences out of 15000+600000
+ 10451 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,14n,82p,821b,1844s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2017/texm
@@ -1498,10 +1401,10 @@ m/cmsy7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
 fb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><
 c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/te
 xlive/2017/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb>
-Output written on problemas.pdf (8 pages, 194921 bytes).
+Output written on problemas.pdf (4 pages, 177418 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11789 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 10765 words of extra memory for PDF output out of 12000 (max. 10000000)
 

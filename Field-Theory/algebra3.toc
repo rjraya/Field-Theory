@@ -17,16 +17,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4}Relaci\IeC {\'o}n entre extensiones finitas y algebraicas}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Clausura algebraica}{13}
+\contentsline {section}{\numberline {3}Cuerpos de descomposici\IeC {\'o}n}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Cuerpos de descomposici\IeC {\'o}n}{14}
+\contentsline {subsection}{\numberline {3.1}Herramientas previas}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Extensiones normales}{16}
+\contentsline {subsection}{\numberline {3.2}Definici\IeC {\'o}n del cuerpo de descomposici\IeC {\'o}n}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Extensiones separables}{17}
+\contentsline {section}{\numberline {4}Clausura algebraica}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Cuerpos finitos}{18}
+\contentsline {section}{\numberline {5}Extensiones normales}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Existencia y unicidad}{18}
+\contentsline {section}{\numberline {6}Extensiones separables}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Polinomios irreducibles sobre cuerpos finitos}{20}
+\contentsline {section}{\numberline {7}Cuerpos finitos}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1}Existencia y unicidad}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2}Polinomios irreducibles sobre cuerpos finitos}{23}

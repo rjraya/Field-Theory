@@ -127,8 +127,35 @@ Sea $N_m = \{f \in \mathbb{F}_p[X]:\text{f es mónico irreducible de grado m}\}$
 	Obsérvese que $\sum_{m|n} m |N_m| = p^n$ y como $n$ es primo tenemos que $|N_1| + n|N_n| = p^n$. Pero $|N_1| = p$ y se sigue la igualdad del enunciado. 
 \end{proof}
 
+Pero no sólo podemos calcular los polinomios mónicos irreducibles de grado primo. Veamos un ejemplo:
+
+\begin{example}
+	En $\mathbb{F}_p[X]$ los polinomios mónicos lineales son de la forma $x-a$ con $a \in \mathbb{F}_p[X]$ y son todos irreducibles. Por tanto, $N_1 = p$.
+	
+	El teorema implica que $p^2 = 2 |N_2| + |N_1| = 2 |N_2| + p$ luego $|N_2| = \frac{p^2 - p}{2}$, análogamente, $|N_4| = \frac{p^4 - p^2}{4}$.
+\end{example}
+
+Vamos a generalizar esta fórmulas para el cálculo del número de polinomios irreducibles. 
+
+\begin{definition}[Función de Mobius]
+	\[
+	\mu(n) = 
+	\begin{cases} 
+	1 & n = 1 \\
+	(-1)^s & n = \prod_{i = 1}^s p_i  \text{ para primos distinos } p_i \\
+	0   & \text{en otro caso}
+	\end{cases}
+	\]
+\end{definition}
 
 
+\begin{theorem}
+	$N_n = \frac{1}{n} \sum_{m|n} \mu(m) p^{\frac{n}{m}}$
+\end{theorem}
+\begin{proof}
+	Ver COUNTING IRREDUCIBLE POLYNOMIALS OVER FINITE
+	FIELDS USING THE INCLUSION-EXCLUSION PRINCIPLE
+\end{proof}
 
 
 

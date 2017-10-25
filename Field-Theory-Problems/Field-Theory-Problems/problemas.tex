@@ -190,13 +190,13 @@
 % Profundidad del Índice:
 %\setcounter{tocdepth}{1}
 
-\newpage
-\tableofcontents
-\newpage
+%\newpage
+%\tableofcontents
+%\newpage
 
-\section{Problema 1}
-\input{problema1/problema1}
-\newpage
+%\section{Problema 1}
+%\input{problema1/problema1}
+%\newpage
 \section{Problema2}
 
 \begin{exercise}
@@ -226,6 +226,8 @@ Volviendo a nuestro problema, si $\beta^8 = 1$ esto implica que $\beta$ es raíz
 \begin{exercise}
 	Analiza qué ocurre al considerar el elemento $\sigma$ para encontrar elementos que generen las extensiones $\mathbb{F}_{3^2}$ y $\mathbb{F}_{3^3}$.
 \end{exercise}
+
+Como ya habíamos comentado el orden es 104. En el primer caso, el método anterior donde tomamos $\sigma^{\frac{104}{8}} = \sigma^13$ entonces el método funciona y se obtiene cero al comprobar donde el polinomio irreducible del que es raíz $\sigma$ resulta ser $X^2+X+2$. Sin embargo, aunque $\sigma^{\frac{104}{26}} = \sigma^4$ que es un elemento de orden 26, aparentemente no sirve para generar la extensión $\mathbb{F}_{3^3}$. Actualmente, no sabemos por qué se obtiene este resultado. Podríamos ser un poco tramposos y cambiar el polinomio por uno tal que $26$ no divida su orden. Pero dejamos para una posterior revisión determinar la razón de que no funcione para este elemento. 
 
 \begin{exercise}
 	Determina el polinomio $Irr(\alpha,\mathbb{F}_{27})$. Para el elemento $\sigma$ que encontraste al inicio calcula $Irr(\sigma,\mathbb{F}_9)$ y $Irr(\sigma,\mathbb{F}_{27})$
@@ -259,7 +261,7 @@ Una observado lo anterior, cada seis raíces de $\mathbb{F}_{3^6} - \mathbb{F}_{
 \end{proof}
 
 \begin{proposition}
-	Hay 248 generadores de $\mathbb{F}_{729}^x$. Además, si una raíz de un polinomio es generadora (no es generadora) entonces también el resto de las raíces son generadoras (no son generadoras). Como consecuencia de los 116 polinomios irreducibles de grado 6 hay 48 cuyas raíces son generadoras y 68 cuyas raíces no son generadoras. 
+	Hay 248 generadores de $\mathbb{F}_{729}^x$. Además, si una raíz de un polinomio irreducible es generadora (no es generadora) entonces también el resto de las raíces son generadoras (no son generadoras). Como consecuencia de los 116 polinomios irreducibles de grado 6 hay 48 cuyas raíces son generadoras y 68 cuyas raíces no son generadoras. 
 \end{proposition}
 \begin{proof}
 	La proposición sobre las propiedades del orden de un elemento de mis apuntes sobre teoría de grupos muestra que un grupo cíclico tiene $\phi(ord(a))$ generadores donde $a$ es un generador del grupo. Entonces, como $\mathbb{F}_{729}^x$ tiene 728 elementos, basta calcular $\phi(728) = \phi(8) \phi(7) \phi(13) = 248$. 
@@ -271,9 +273,26 @@ Una observado lo anterior, cada seis raíces de $\mathbb{F}_{3^6} - \mathbb{F}_{
 
 Veamos ahora el ejercicio. 
 
-\begin{proposition}
-	1. Cada treinta raíces de $\mathbb{F}_{3^30}-
-\end{proposition}
+En vez de calcular el número explícitamente utilizaremos la fórmula de Gauss para el número de polinomios mónicos irreducibles sobre $\mathbb{F}_p[X]$ de grado $n$ (una prueba de este hecho basada en teoría de básica de cuerpos finitos y el principio de exclusión-inclusión aparece en nuestros apuntes):
+
+$|N_n| = \frac{1}{n} \sum_{m|n} \mu(m) p^{\frac{n}{m}}$
+
+donde $\mu$ es la función de Mobius:
+
+	\[
+	\mu(n) = 
+	\begin{cases} 
+	1 & n = 1 \\
+	(-1)^s & n = \prod_{i = 1}^s p_i \text{ para primos distinos } p_i \\
+	0   & \text{en otro caso}
+	\end{cases}
+	\]
+
+Entonces $$|N_{30}| = \frac{1}{30}(\mu(1)p^{30} + \mu(2)p^{15}+\mu(3)p^{10}+\mu(5)p^6+\mu(6)p^5+\mu(10)p^3+\mu(15)p^2+\mu(30)p)$$ $$|N_{30}| = \frac{1}{30}(p^{30}-p^{15}-p^{10}-p^6+p^5+p^3+p^2-p)$$
+$$|N_{30}| = 6863037256208$$
+
+Por otro lado hay $\phi(3^{30} - 1) = 70207948800000$ generadores de $\mathbb{F}_{30}$ el mismo argumento que hemos hecho para el caso del documento de la práctica sirve aquí y entonces basta dividir por $30$ para obtener el número de polinomios irreducibles de grado 30 cuyas raíces son generadoras. Este número es $2340264960000$. El resto, $67867683840000$ no son generadoras. 
+
 
 \printbibliography
 

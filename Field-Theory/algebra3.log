@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.12)  19 OCT 2017 02:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.12)  24 OCT 2017 17:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1490,7 +1490,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[12] (./clausura/clausura.tex)
+[12] (./descomposicion/descomposicion.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1500,69 +1500,12 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[13] (./descomposicion/descomposicion.tex
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
+[13]
+Overfull \hbox (40.48492pt too wide) in paragraph at lines 75--83
+[]\OT1/cmr/m/it/10 (-20) To-do en-do-mor-fis-mo so-bre ex-ten-sio-nes al-ge-bra
+i-cas $\OML/cmm/m/it/10 F=K$ \OT1/cmr/m/it/10 (-20) es un au-to-mor-fis-mo . []
+ 
  []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[14])
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[15] (./normales/normales.tex)
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[16] (./separable/separable.tex)
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[17] (./finito/finito.tex
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[18]
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[19]
-
-LaTeX Warning: Citation '4' on page 20 undefined on input line 86.
 
 
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
@@ -1574,7 +1517,67 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[20])
+[14]
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[15]
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[16])
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[17] (./clausura/clausura.tex)
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[18] (./normales/normales.tex)
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[19] (./separable/separable.tex)
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[20] (./finito/finito.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1585,6 +1588,40 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
  []
 
 [21]
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[22]
+
+LaTeX Warning: Citation '4' on page 23 undefined on input line 86.
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[23])
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[24]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 222.
 
  (c:/texlive/2017/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -1607,7 +1644,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[22] (./algebra3.aux
+[25] (./algebra3.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 15.
@@ -1626,13 +1663,13 @@ Package logreq Info: Writing requests to 'algebra3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24845 strings out of 492990
- 467681 string characters out of 6136333
- 893867 words of memory out of 5000000
- 27799 multiletter control sequences out of 15000+600000
- 13355 words of font info for 91 fonts, out of 8000000 for 9000
+ 25098 strings out of 492990
+ 473758 string characters out of 6136333
+ 897868 words of memory out of 5000000
+ 28048 multiletter control sequences out of 15000+600000
+ 13514 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,14n,82p,1130b,1844s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,15n,82p,1130b,1844s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2017/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2017/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2017/texmf-dist/fonts/type1
@@ -1651,10 +1688,10 @@ live/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive
 /2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2017
 /texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2017/texmf-dist/font
 s/type1/urw/palatino/uplbi8a.pfb>
-Output written on algebra3.pdf (23 pages, 293469 bytes).
+Output written on algebra3.pdf (26 pages, 308367 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 169 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11789 words of extra memory for PDF output out of 12000 (max. 10000000)
 

@@ -1,21 +1,119 @@
+\subsection{Herramientas previas}
+
+\begin{proposition}[Teorema de Kronecker]
+	Sea $K$ un cuerpo y $f \in K[X]$ no constante entonces existe una extensión $\frac{F}{K}$ y un $\alpha \in F$ tal que $f(\alpha) = 0$. 
+\end{proposition}
+\begin{proof}
+	Podemos limitarnos al caso en que $f$ sea irreducible. Ya que si $g$ es un factor irreducible de $f$, toda raíz suya, es raíz de $f$. Demostrar que los irreducibles tienen raíces equivale a demostrar que los no constantes (no nulos, no unidades) tienen raíces. 
+	
+	Sea pues, $f$ irreducible. Entonces, $F = \frac{K[X]}{\langle f \rangle}$ es un cuerpo. Consideramos la proyección canónica $\phi:K \to F$ tal que $a \mapsto a + \langle f \rangle$ que es un homomorfismo. Entonces identificamos $K$ con $Img(\phi)$ y tenemos que $F$ es un cuerpo extensión de $K$. 
+	
+	Haciendo $\alpha = x + \langle f \rangle$ si $f = \sum a_i X^i$ entonces $$f(\alpha) = \sum (a_i+\langle f \rangle)(x+\langle f \rangle)^i = (\sum a_ix^i) + \langle f \rangle = f+\langle f \rangle = 0 + \langle f \rangle$$ Esto es $f(\alpha) = 0$.  
+\end{proof}
+
+\begin{definition}[Extensión de un homomorfismo]
+	Sean $\frac{F_1}{K_1},\frac{F_2}{K_2}$ extensiones de cuerpos y $\tau:F_1 \to F_2,\sigma:K_1 \to K_2$ homomorfismos. $\tau$ es una extensión de $\sigma$ si $\tau|_{K_1} = \sigma$ y $\tau$ es un homomorfismo sobre $K$ si $\sigma = 1_K$.
+\end{definition}
+
+\begin{proposition}[Propiedades de las extensiones de homomorfismos]
+	Sea $\sigma:K_1 \to K_2$ un isomorfismo de cuerpos:
+	
+	\begin{enumerate}
+		\item Existe un único isomorfismo $\overline{\sigma}$ entre los anillos de polinomios tal que $X \to X$. Además, $\overline{\sigma}$ preserva grados e irreducibles.  
+        \begin{tikzcd}
+        	K_1[X] \arrow[dashed]{r}{\overline{\sigma}} \arrow[dash]{d} & 
+        	K_2[X] \arrow[dash]{d} & \\
+        	K_1 \arrow{r}{\sigma} &
+        	K_2
+        \end{tikzcd}
+		\item Si $\tau:F_1 \to F_2$ es una extensión de $\sigma$ entonces si $u \in F_1$ es raíz de $f \in K_1[X]$ entonces $\tau(u) \in F_2$ es raíz de $\overline{\sigma}(f) \in F_2[X]$. 	
+		\begin{tikzcd}
+			u \in F_1 \arrow{r}{\tau} \arrow[dash]{d} & 
+			F_2 \ni \tau(u) \arrow[dash]{d} & \\
+			f \in K_1[X] \arrow{r}{\overline{\sigma}} \arrow[dash]{d} & 
+			K_2[X] \ni \overline{\sigma}(f) \arrow[dash]{d} & \\
+			K_1 \arrow{r}{\sigma} &
+			K_2
+		\end{tikzcd}
+		\item Sea $f_1$ un polinomio irreducible de $K_1$ y sea $u_1 \in F_1$ una raíz. Supongamos que $u_2 \in F_2$ es raíz de $f_2 = \overline{\sigma}(f_1)$. Entonces existe un único isomorfismo de $\tau: K_1(u_1) \to K_2(u_2)$ tal que $\tau(u_1) = u_2$.
+		
+		Además el número de extensiones $\tau:K(u_1) \to F_2$ sobre $\sigma$ es el número de raíces de $f_2$ en $F_2$.
+		\begin{tikzcd}
+			u_1 \in F_1 \arrow{r}{\tau} \arrow[dash]{d} & 
+			F_2 \ni u_2 \arrow[dash]{d} & \\
+			K_1(u_1) \arrow[dashed]{r}{\tau} \arrow[dash]{d} &
+			K_2(u_2) \arrow[dash]{d} \\
+			f_1 \in K_1[X] \arrow{r}{\overline{\sigma}} & 
+			K_2[X] \ni f_2  \\
+		\end{tikzcd}
+	
+		
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+	Veamos cada una de las cuestiones. 
+	
+	\begin{enumerate}
+		\item Se trata de una aplicación de la propiedad universal del anillo de polinomio donde el homomorfismo que factoriza es la composición del homomorfismo $\sigma$ con la inclusión de $K_2$ en $K_2[X]$ de modo que fijamos $X \in K_2[X]$ y por la propiedad existe un único homomorfismo tal que $X \to X$. Este homomorfismo es una extensión de $\sigma$ ya que $\overline{\sigma} \circ p_1 = p_2 \circ \sigma$ donde $p_i$ son las inmersiones en los anillos de polinomios. 
+		
+		Es fácil observar que $\overline{\sigma}$ preserva grados ya que todo homomorfismo que nace en un cuerpo es inyectivo por tanto $\overline{\sigma}(\sum a_iX^i) = \sum \sigma(a_i)X^i$ y en particular la imagen del de mayor grado no es cero pues $Ker(\sigma) = \{0\}$. 
+		
+		También preserva irreducibles. Sea $f \in K_1[X]$ irreducible y supongamos que $\overline{\sigma}(f)$ no lo es. Entonces sea $\overline{\sigma}(f) = \prod f_i$ una descomposición en factores irreducibles. Aplicando $\overline{\sigma}^{-1}$ entonces $f = \prod \overline{\sigma}^{-1}(f_i)$ y como los isomorfismos preservan el cero y las unidades se concluye que $f$ no es irreducible. Por tanto, $\overline{\sigma}(f)$ debe ser irreducible. 
+		\item Si $f = \sum a_iX^i$ entonces: $$\overline{\sigma}(f)(\tau(u)) = \sum \sigma(a_i)(\tau(u))^i = \sum \tau(a_i)(\tau(u))^i = \tau(\sum a_iu^i) = \tau(0) = 0$$		
+		\item Se hace el siguiente cálculo: $$K(u_1) \cong \frac{K_1[X]}{\langle f_1 \rangle} \cong \frac{K_2[X]}{\langle f_2 \rangle} \cong K(u_2)$$ Los isomorfismos de los extremos son únicos ya que provienen de una aplicación del primer teorema de isomorfía. Para ver que el isomorfismo de la mitad es único de nuevo hay que aplicar la propiedad universal del anillo cociente al siguiente diagrama:
+		 \begin{tikzcd}
+			K_1[X] \arrow{r}{\overline{\sigma}} \arrow{d} & 
+			K_2[X] \arrow{r}{p} & 
+			\frac{K_2[X]}{\langle f_2 \rangle} \\
+			\frac{K_1[X]}{\langle f_1 \rangle} \arrow{urr} &
+		\end{tikzcd}
+		\item Por la proposición anterior, hay uno por cada raíz de $f_2$ pero no puede haber más porque la imagen de $u_1$ determina completamente el morfismo y porque la imagen de una raíz debe ser una raíz. 
+	\end{enumerate}
+\end{proof}
+
+\begin{corollary}
+	Todo endomorfismo sobre extensiones algebraicas $F/K$ es un automorfismo . 
+	\begin{tikzcd}
+		F \arrow{r}{\tau} \arrow[dash]{d} &
+		F \arrow[dash]{d} \\
+		K(u_1,\ldots,u_k) \arrow{r}{\tau_1}  \arrow[dash]{d} &
+		K(u_1,\ldots,u_k)  \arrow[dash]{dl} \\
+		K	
+	\end{tikzcd}
+\end{corollary}
+\begin{proof}
+	Sea $u_1 \in F$, $f = Irr(u,K)$ y $u_i$ las raíces de $f$ en $F$. Observemos que $K(u_1,\ldots,u_k)/K$ es finita ya que el cuerpo extensión es de generación finita mediante generadores algebraicos. 
+	
+	Por el apartado anterior, con $\sigma = 1|_K$  entonces tenemos que $\overline{\sigma}$ fija $K$ y $X$ luego fija todos los polinomios, es decir, es también la identidad. En consecuencia, $\tau(u_i) = u_j$. Pero además, como todo homomorfismo que nace en un cuerpo es inyectivo tenemos que $\tau$ induce una permutación de las raíces de modo que en la imagen están todas. Por tanto, $\tau$ induce un monomorfismo $\tau_1$ en $K(u_1,\ldots,u_k)$.
+	
+	Por otra parte, $\tau_1$ es sobreyectiva ya que tenemos un monomorfismo de espacios vectoriales de dimensión finita. Por tanto, $\tau_1$ es un automorfismo. De nuevo, $\tau$ es monomorfismo por nacer en un cuerpo y será sobreyectiva pues existe $v \in K(u_1,\ldots,u_k)$ tal que $u = \tau_1(v) = \tau_(v)$. 
+\end{proof}
+
+\subsection{Definición del cuerpo de descomposición}
+
 \begin{definition}[Cuerpo de descomposición de un polinomio]
-Sea $f \in K[X]$ un polinomio no constante. Una extensión $\frac{E}{K}$ es un cuerpo de descomposición de $f$ sobre $K$ si $f$ factoriza en $F[X]$ como producto de polinomios lineales, esto es, $f = c \prod (X - \alpha_i)$ con $c \in K$ y $\alpha_i \in E$ y además verifica la propiedad de que $f$ no descompone en ningún subcuerpo intermedio $F$, es decir, $E$ es el menor cuerpo donde esto ocurre. 
+Sea $f \in K[X]$ un polinomio no constante. 
+
+Una extensión $\frac{E}{K}$ es un cuerpo de descomposición de $f$ sobre $K$ si:
+
+\begin{enumerate}
+	\item $f$ factoriza en $F[X]$ como producto de polinomios lineales, $f = c \prod (X - \alpha_i)$ con $c \in K$ y $\alpha_i \in E$.
+	\item $f$ no descompone en ningún subcuerpo intermedio, $E$ es el menor cuerpo donde esto ocurre. 
+\end{enumerate}  
 \end{definition}
 
 \begin{proposition}[Existencia del cuerpo de descomposición]
 	Sea $f \in K[X]$ un polinomio no constante de grado $n$ y raíces $\alpha_i$. 
 	
-	1. $K(\alpha_1,\ldots,\alpha_n)$ es un cuerpo de descomposición de $f$. \\
-	2. $[E:K] \le n!$ donde $n$ es el grado de $f$ y $E$ es cualquier cuerpo de descomposición de $f$. 
+	1. $E = K(\alpha_1,\ldots,\alpha_n)$ es un cuerpo de descomposición de $f$. \\
+	2. $[E:K] \le n!$ donde $n$ es el grado de $f$.
 \end{proposition}
 \begin{proof}
-	1. Hagamos inducción sobre $n$. Si $n =  1$, $f = a_0x+a_1$ con $a_0 \neq 0$ y $a_0,a_1 \in K$. Haciendo $E = K$ entonces tomando $\alpha_1 = -a_1/a_0$ tenemos que $f = a_0(x-\alpha_1)$ y esto termina este caso. 
+	Hagamos inducción sobre $n$. Si $n =  1$, $f = a_0x+a_1$ con $a_0 \neq 0$ y $a_0,a_1 \in K$. Haciendo $E = K = K(\alpha_1)$ entonces tomando $\alpha_1 = -a_1/a_0 \in K$ tenemos que $f = a_0(x-\alpha_1)$ y además $[F:K] = 1$. 
 	
-	Suponga el teorema cierto para $n-1$, por el teorema de Kronecker existe una raíz $\alpha_1$ de $f$ en un cuerpo extensión $F_1$ y y entonces $x-\alpha_1$ es un factor de $f$ en $F_1[X]$ de modo que $f = (x-\alpha_1)g$ con $g \in F_1[X]$ de grado $n-1$. Aplicando la hipótesis de inducción a $g$ obtenemos una extensión de $F_1$, $L$, tal que $g = a_0 \prod (x - \alpha_i)$ y por tanto, también $f$ descompone en $L$. 
+	Suponga el teorema cierto para $n-1$, por el teorema de Kronecker existe una raíz $\alpha_1$ de $f$ en un cuerpo extensión $F_1$ y entonces $x-\alpha_1$ es un factor de $f$ en $F_1[X]$ de modo que $f = (x-\alpha_1)g$ con $g \in F_1[X]$ de grado $n-1$. Aplicando la hipótesis de inducción a $g$ obtenemos una extensión de $F_1$, $L$, tal que $g = a_0 \prod (x - \alpha_i)$ y por tanto, también $f$ descompone en $L$ además sabemos que $[L:F_1] \le (n-1)!$. 
 	
-	Esta descomposición $f = c \prod (x - \alpha_i)$ en $L$ me dice que en $K(\alpha_1,\cdots,\alpha_n)$, $f$ también descompone y claramente es la mínima extensión que lo verifica. Por tanto, $E = K(\alpha_1,\ldots,\alpha_n)$ es un cuerpo de descomposición para $f$. 
-	
-	2. Por inducción sobre $n$. (Ver Cox, 102)
+	Esta descomposición $f = c \prod (x - \alpha_i)$ en $L$ me dice que en $K(\alpha_1,\cdots,\alpha_n)$, $f$ también descompone y claramente es la mínima extensión que lo verifica. Por tanto, $E=K(\alpha_1,\ldots,\alpha_n)$ es un cuerpo de descomposición para $f$ y además como $[F(\alpha_1):K] = gr(Irr(\alpha_1,F)) = n$ se tiene que $[L:K] = [L:F_1][F(\alpha_1):K] \le n!$. 
 \end{proof}
 
 \begin{theorem}[Unicidad del cuerpo de descomposición]
