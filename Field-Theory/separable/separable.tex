@@ -1,0 +1,25 @@
+\subsection{Extensiones separables}
+
+\begin{definition}[Extensión separable]
+Un elemento algebraico $u$ sobre un cuerpo $K$ es separablesi $Irr(u,K)$ no tiene raíces múltiples.
+
+Una extensión algebraica $\frac{F}{K}$ es separable si todos los elementos de $F$ son separables sobre $K$.  
+\end{definition}
+
+\begin{exercise}
+Buscar una extensión normal que no sea separable.
+\end{exercise}
+
+\begin{proposition}[Torres separables]
+Sea $E \supseteq F \supseteq K$ una torre de cuerpos. 
+
+Si $\frac{E}{F}$ es una extensión separable entonces 
+$\frac{E}{F},\frac{F}{K}$ son extensiones separables. 
+\end{proposition}
+\begin{proof}
+$\frac{F}{K}$ es separable ya que todo elemento de $E$ es  sobre $K$ y todo elemento de $F$ está en $E$. 
+
+Para ver que $\frac{E}{F}$ es separable sea $u \in E$ entonces claramente $Irr(u,F)|Irr(u,K)$ ya que $gr(Irr(u,F)) \le gr(Irr(u,K))$ y como $Irr(u,K)(u) = 0$ claramente $Irr(u,K) \in \langle Irr(u,F) \rangle$ y como $Irr(u,K)$ no tiene raíces múltiples, tampoco puede tenerlas $Irr(u,F)$. 
+\end{proof}
+
+\subsection{Cuerpos perfectos}

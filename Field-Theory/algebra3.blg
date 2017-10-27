@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/W32TeX)
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: algebra3.aux
 The style file: biblatex.bst
@@ -27,49 +27,58 @@ Repeated entry---line 29 of file references.bib
  : @online{link3
  :              ,
 I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 47 of file references.bib
+ : 
+ : @online{link5,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Illegal end of database file---line 54 of file references.bib
+ : }
+ :  
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "4"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 4 entries,
+You've used 6 entries,
             6256 wiz_defined-function locations,
-            1188 strings with 9121 characters,
-and the built_in function-call counts, 14495 in all, are:
-= -- 624
-> -- 828
-< -- 105
-+ -- 683
-- -- 568
-* -- 762
-:= -- 1654
+            1192 strings with 9444 characters,
+and the built_in function-call counts, 21154 in all, are:
+= -- 974
+> -- 984
+< -- 155
++ -- 793
+- -- 616
+* -- 1172
+:= -- 2200
 add.period$ -- 0
-call.type$ -- 4
-change.case$ -- 26
+call.type$ -- 6
+change.case$ -- 41
 chr.to.int$ -- 75
-cite$ -- 6
-duplicate$ -- 1392
-empty$ -- 1281
-format.name$ -- 147
-if$ -- 2697
+cite$ -- 10
+duplicate$ -- 2184
+empty$ -- 1989
+format.name$ -- 241
+if$ -- 4137
 int.to.chr$ -- 0
-int.to.str$ -- 8
+int.to.str$ -- 12
 missing$ -- 0
-newline$ -- 90
-num.names$ -- 129
-pop$ -- 1025
+newline$ -- 124
+num.names$ -- 211
+pop$ -- 1697
 preamble$ -- 1
-purify$ -- 32
+purify$ -- 51
 quote$ -- 0
-skip$ -- 560
+skip$ -- 855
 stack$ -- 0
-substring$ -- 880
-swap$ -- 402
-text.length$ -- 109
-text.prefix$ -- 3
+substring$ -- 1294
+swap$ -- 592
+text.length$ -- 159
+text.prefix$ -- 5
 top$ -- 1
-type$ -- 124
+type$ -- 192
 warning$ -- 0
-while$ -- 192
+while$ -- 264
 width$ -- 0
-write$ -- 87
-(There were 2 error messages)
+write$ -- 119
+(There were 4 error messages)

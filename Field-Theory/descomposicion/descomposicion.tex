@@ -35,11 +35,11 @@
 			K_1 \arrow{r}{\sigma} &
 			K_2
 		\end{tikzcd}
-		\item Sea $f_1$ un polinomio irreducible de $K_1$ y sea $u_1 \in F_1$ una raíz. Supongamos que $u_2 \in F_2$ es raíz de $f_2 = \overline{\sigma}(f_1)$. Entonces existe un único isomorfismo de $\tau: K_1(u_1) \to K_2(u_2)$ tal que $\tau(u_1) = u_2$.
+		\item Sea $f_1$ un polinomio irreducible de $K_1$ y sea $u_1 \in F_1$ una raíz. Supongamos que $u_2 \in F_2$ es raíz de $f_2 = \overline{\sigma}(f_1)$. Entonces existe un único isomorfismo $\tau: K_1(u_1) \to K_2(u_2)$ sobre $\sigma$ tal que $\tau(u_1) = u_2$.
 		
 		Además el número de extensiones $\tau:K(u_1) \to F_2$ sobre $\sigma$ es el número de raíces de $f_2$ en $F_2$.
 		\begin{tikzcd}
-			u_1 \in F_1 \arrow{r}{\tau} \arrow[dash]{d} & 
+			u_1 \in F_1 \arrow[dash]{r} \arrow[dash]{d} & 
 			F_2 \ni u_2 \arrow[dash]{d} & \\
 			K_1(u_1) \arrow[dashed]{r}{\tau} \arrow[dash]{d} &
 			K_2(u_2) \arrow[dash]{d} \\
@@ -62,12 +62,15 @@
 		\item Si $f = \sum a_iX^i$ entonces: $$\overline{\sigma}(f)(\tau(u)) = \sum \sigma(a_i)(\tau(u))^i = \sum \tau(a_i)(\tau(u))^i = \tau(\sum a_iu^i) = \tau(0) = 0$$		
 		\item Se hace el siguiente cálculo: $$K(u_1) \cong \frac{K_1[X]}{\langle f_1 \rangle} \cong \frac{K_2[X]}{\langle f_2 \rangle} \cong K(u_2)$$ Los isomorfismos de los extremos son únicos ya que provienen de una aplicación del primer teorema de isomorfía. Para ver que el isomorfismo de la mitad es único de nuevo hay que aplicar la propiedad universal del anillo cociente al siguiente diagrama:
 		 \begin{tikzcd}
-			K_1[X] \arrow{r}{\overline{\sigma}} \arrow{d} & 
+			K_1[X] \arrow{r}{\overline{\sigma}} \arrow{d}{p'} & 
 			K_2[X] \arrow{r}{p} & 
 			\frac{K_2[X]}{\langle f_2 \rangle} \\
-			\frac{K_1[X]}{\langle f_1 \rangle} \arrow{urr} &
+			\frac{K_1[X]}{\langle f_1 \rangle} \arrow[dashed]{urr} &
 		\end{tikzcd}
-		\item Por la proposición anterior, hay uno por cada raíz de $f_2$ pero no puede haber más porque la imagen de $u_1$ determina completamente el morfismo y porque la imagen de una raíz debe ser una raíz. 
+		
+		Además por el estructura del isomorfismo está claro que es un isomorfismo sobre $\sigma$, esto es, preserva el valor de $\sigma$ sobre los elementos de $K_1$. 
+		
+		Por lo anterior, hay uno por cada raíz de $f_2$ pero no puede haber más porque la imagen de $u_1$ determina completamente el morfismo y porque la imagen de una raíz debe ser una raíz. 
 	\end{enumerate}
 \end{proof}
 
@@ -113,58 +116,50 @@ Una extensión $\frac{E}{K}$ es un cuerpo de descomposición de $f$ sobre $K$ si
 	
 	Suponga el teorema cierto para $n-1$, por el teorema de Kronecker existe una raíz $\alpha_1$ de $f$ en un cuerpo extensión $F_1$ y entonces $x-\alpha_1$ es un factor de $f$ en $F_1[X]$ de modo que $f = (x-\alpha_1)g$ con $g \in F_1[X]$ de grado $n-1$. Aplicando la hipótesis de inducción a $g$ obtenemos una extensión de $F_1$, $L$, tal que $g = a_0 \prod (x - \alpha_i)$ y por tanto, también $f$ descompone en $L$ además sabemos que $[L:F_1] \le (n-1)!$. 
 	
-	Esta descomposición $f = c \prod (x - \alpha_i)$ en $L$ me dice que en $K(\alpha_1,\cdots,\alpha_n)$, $f$ también descompone y claramente es la mínima extensión que lo verifica. Por tanto, $E=K(\alpha_1,\ldots,\alpha_n)$ es un cuerpo de descomposición para $f$ y además como $[F(\alpha_1):K] = gr(Irr(\alpha_1,F)) = n$ se tiene que $[L:K] = [L:F_1][F(\alpha_1):K] \le n!$. 
+	Esta descomposición $f = c \prod (x - \alpha_i)$ en $L$ me dice que en $K(\alpha_1,\cdots,\alpha_n)$, $f$ también descompone y claramente es la mínima extensión que lo verifica. Por tanto, $E=K(\alpha_1,\ldots,\alpha_n)$ es un cuerpo de descomposición para $f$ y además como $[F(\alpha_1):K] = gr(Irr(\alpha_1,F)) = n$ se tiene que $$[L:K] = [L:F_1][F(\alpha_1):K] \le n!$$
 \end{proof}
 
 \begin{theorem}[Unicidad del cuerpo de descomposición]
-	Dados dos cuerpos $F_1,F_2$ isomorfos mediante un isomorfismo de cuerpos $\phi$. Sea $f_1 \in F_1[X]$, sea $f_2 = \phi(f_1) \in F_2[X]$. Considérense los cuerpos de descomposición $L_1,L_2$ de $f_1,f_2$. Existe un isomorfismo $\overline{\phi}$ entre $L_1$ y $L_2$ que extiende a $\phi$. 
+	Sea $\sigma:K_1 \to K_2$ un isomorfismo de cuerpos. Sea $K_1[X]$ el cuerpo de descomposición de $f_1$ y $F_2$ es el cuerpo de descomposición de $\sigma(f) \in K_2[X]$. Entonces $F_1 \cong F_2$. 
 	
 	\begin{tikzcd}
-		L_1 \arrow{r}{\overline{\phi}} \arrow[dash]{d} & 
-		L_2 \arrow[dash]{d} & \\
-		F_1 \arrow{r}{\phi} &
-		F_2 
+		F_1 \arrow{r}{?} \arrow[dash]{d} & 
+		F_2 \arrow[dash]{d} & \\
+		K_1 \arrow{r}{\sigma} &
+		K_2 
 	\end{tikzcd}
 
-	En particular, si $L_1,L_2$ son dos cuerpos de descomposición de $f \in F[X]$ entonces hay un isomorfismo entre las extensiones $L_1,L_2$ tal que es la identidad en $F$. Por tanto, el cuerpo de descomposición de un polinomio es único salvo isomorfismo. 
+	Como consecuencia el cuerpo de descomposición de $f \in K[X]$ es único salvo isomorfismo.
 \end{theorem}
 \begin{proof}
-	Hagamos inducción sobre $n = gr(f_1) = gr(f_2)$. 
+	Por inducción sobre $n = gr(f_1)$. Obsérvese que siempre $gr(f_1) = gr(f_2)$ ya que probamos que el isomorfismo $\overline{\sigma}$ preserva grado. 
 	
-	Si $n = 1$ entonces por la proposición anterior $[L_i:F_i] = 1$ y en particular, $L_1 = F_1$ y $L_2 = F_2$ y basta tomar $\overline{\phi} = \phi$. 
+	Si $n = 1$ entonces $gr(f_1) = gr(f_2) = 1$ y tenemos que $F_i = K_i$ de modo que nos sirva el propio $\sigma$ como isomorfismo. 
 	
-	Supongamos $n > 1$. Podemos asumir $L_1 = F_1(\alpha_1,\ldots,\alpha_n)$ con $\alpha_i$ raíces $f_1$ (fíjate que no asumimos lo mismo para $L_2$). Utilicemos la extensión $F_1(\alpha_1)$ observando  que $L_1$ será el cuerpo de descomposición para el polinomio $g_1 = \frac{g_1}{x- \alpha_1}$. Procedemos en 5 pasos. 
+	Si $n > 1$ y supongamos el teorema cierto para polinomios de grado menor. Tomo $u_i \in F_i$ raíces de los polinomios $f_i$ de modo que $Irr(u_2,K_2) = \sigma(Irr(u_1,K_1))$.
 	
-	1. Sea $h_1 = Irr(\alpha_1,F_1[X])$ tenemos $F_1(\alpha_1) \cong \frac{F_1[X]}{\langle h_1 \rangle}$ con un homomorfismo que lleva $\alpha_1$ a $x+\langle h_1 \rangle$.
+	Por el apartado 3. de la proposición con las herramientas auxiliares sabemos que existeun único isomorfismo $\sigma_1:K(u_1) \to K(u_2)$ extensión de $\sigma$ tal que $\sigma_1(u_1) = u_2$. 
 	
-	2. Vamos a encontrar una raíz de $f_2$ que se corresponda con $\alpha_1$. El punto importante es que $\phi$ induce un isomorfismo $\hat \phi$ entre los respectivos anillos de polinomios. Este isomorfismo lleva factores en factores e irreducibles en irreducibles luego en particular lleva a $h_1$ en un factor irreducible $h_2$ de $f_2$. Como $f_2$ descompone completamente sobre $L_2$ también le ocurre lo mismo a $h_2$ (ver los puntos 4.1.2 a 4.1.4 de los apuntes de Mario para confirmar esto). Por tanto, podemos etiquetar las raíces como $\beta_1,\ldots,\beta_n \in L_2$ con $\beta_1$ raíz de $h_2$. 
+	Ahora, aplicamos la hipótesis de inducción a los polinomios $f_i = (X-u_i)g_i$. $F_i$ es un cuerpo de descomposición de $g_i$ sobre $K_i(u_i)$ ya que $(X-u_i) \in K_i(u_i)[X]$ y el algoritmo de la división sobre cuerpos nos dice que $g_i$ en principio también es un polinomio de $K_i(u_i)[X]$. Por tanto, existe una isomorfismo extensión $\tau:F_1 \to F_2$ de $\sigma_1$ y como $\sigma_1$ también extendiende a $\sigma$ se deduce que $\tau$ extiende a $\sigma$. 
 	
-	3. La raíz $\beta_1$ de $f_2$ nos da una extensión $F_2(\beta_1)$ y $L_2$ será un cuerpo de descomposicón para $g_2 = \frac{f_2}{x- \beta_1}$ y como en el paso 1 también $F_2(\beta_1) \cong \frac{F_2[X]}{\langle h_2 \rangle}$ ya que $h_2$ es el polinomio mínimo de $\beta_1$ (porque es irreducible y $\beta_1$ es raíz de él). Este isomorfismo lleva $\beta_1$ en $x+\langle h_2 \rangle$. 
-	
-	4. Como $\hat \phi$ lleva $h_1$ en $h_2$, también lleva los $\langle h_1 \rangle$ en $\langle h_2 \rangle$ y por tanto, tenemos un isomorfismo entre los anillos cocientes de manera natural actuando como $\phi$ en los coeficientes y $x+\langle h_1 \rangle$ en $x + \langle h2 \rangle$. Por tanto, tenemos el siguiente isomorfismo $$\phi_1:F_1(\alpha_1) \cong \frac{F_1[X]}{\langle h_1 \rangle} \cong g_2 = \frac{f_2}{x- \beta_1} \cong F_2(\beta_1)$$ tal que lleva $\alpha_1$ en $\beta_1$ y sobre $F_1$ actúa como $\phi$.
-
-	5. En particular, lleva $g_1$ en $g_2$. Entonces tenemos la siguiente situación:
-	
-	\begin{tikzcd}
-		L_1 \arrow[dash]{d} & 
-		L_2 \arrow[dash]{d} & \\
-		F_1(\alpha_1) \arrow[dash]{d} \arrow{r}{\phi_1} &
-		F_2(\beta_1) \arrow[dash]{d} \\
-		F_1 \arrow{r}{\phi} &
-		F_2 
-	\end{tikzcd}
-
-	Como $g_1$ tiene grado $n-1$, el paso 5. implica que podemos aplicar la hipótesis de indución a $g_1$ y $\phi_1$, lo que me da un isomorfphismo $\overline{\phi_1}$ cuya restricción a $F_1(\alpha_1)$ es $\phi_1$ pero como $\phi_1|_{F_1} = \phi$ se sigue que la restricción de $\overline{\phi_1}$ a $F_1$ es $\phi$. 
-	
-	Para el corolario basta tomar $\phi$ la identidad. 
+	Finalmente, si consideramos el isomorfismo identidad en $K$ entonces obtenemos que hay un isomorfismo entre los posibles distintos cuerpos de descomposición de $K$.
 \end{proof}
 
-El siguiente resultado se reaprovecha en teoría de Galois. 
+\subsection{Cuerpo de descomposición de una familia de polinomios}
 
-\begin{proposition}
-	Sea $L$ un cuerpo de descomposición de un polinomio de $F[X]$ y suponga que $h \in F[x]$ es irreducible y tiene dos raíces $\alpha,\beta \in L$. Entonces existe un isomorfismo de cuerpos que es la identidad en $F$ y lleva $\alpha$ en $\beta$. 
+\begin{definition}
+Sea $\mathcal{F} \subseteq K[X]$ una familia de polinomios no constantes. Una extensión $\frac{E}{K}$ es un cuerpo de descomposición de $\mathcal{F}$ sobre $K$ si para cualquier polinomio $f \in \mathcal{f}$ descompone en factores lineales y $E$ es el menor cuerpo donde esto ocurre.
+\end{definition}
+
+\begin{proposition}[Existencia del cuerpo descomposición de una familia]
+Sea $K$ un cuerpo y $\mathcal{F}$ una familia de polinomios de $K[X]$.
+
+$E = K(\{u \in F:\exists f \in \mathcal{F}. f(u) = 0\})$ es un cuerpo de descomposición de $\mathcal{F}$.
 \end{proposition}
 
+\begin{proposition}[Unicidad del cuerpo de descomposición de una familia]
+el cuerpo de descomposición de una familia de polinomios es único salvo isomorfismo. 
+\end{proposition}
 
 
 

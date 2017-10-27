@@ -1,34 +1,117 @@
+\begin{definition}[Cuerpo algebraicamente cerrado]
+Un cuerpo que no tiene extensiones algebraicas propias es un cuerpo algebraicamente cerrado.
+\end{definition}
 
-
-\begin{lemma}
+\begin{proposition}[Caracterización de los algebraicamente cerrados]
 	Sea $K$ un cuerpo. Son equivalentes:
 	
-	1. Todo polinomio $f  \in K[X]$ no constante tiene al menos una raíz en $K$.\\
-	2. Todo polinomio $f  \in K[X]$ no constante descompone en $K$. \\
+	1. Todo polinomio $f \in K[X]$ no constante tiene al menos una raíz en $K$.\\
+	2. Todo polinomio $f \in K[X]$ no constante descompone en $K$. \\
 	3. Los polinomios irreducibles en $K[X]$ son los polinomios de grado 1. \\
-	4. $K$ no tiene extensiones algebraicas propias. \\
-	5. No existen extensiones algebraicas $\frac{F}{K}$ con $F \neq K$. 
-\end{lemma}
+	4. $K$ no tiene extensiones algebraicas propias. 
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Se obtiene por inducción en el grado del polinomioy utilizando el algoritmo de la división de polinomios sobre un cuerpo.
+\item Si $f \in K[X]$ fuera irreducible, no puede ser constante (pues entonces sería unidad) y por hipótesis descompone en factores lineales $f = \prod c(X-u_i)$ con $u_i \in k \land c \in K$. Pero los polinomios lineales son irreducibles en $K[X]$ y hemos obtenido una factorización de $f$ en términos de irreducibles a menos que el número de factores sea $1$ en cuyo caso $gr(f) = 1$. 
+\item Sea $\frac{E}{K}$ una extensión algebraica y $u \in E$. Como $Irr(u,K)$ es un polinomio irreducible, por hipótesis, debe ser $gr(f) = 1$, pero entonces $E = K$. 
+\item Sea $f \in K[X]$ un polinomio no constante, por el teoremade Kronecker existe una extensión donde $f$ tiene una raíz $\alpha$ y entonces $\frac{K(\alpha)}{K}$ es una extensión algebraica y por hipótesis $K(\alpha) = K$ y claramente se tendrá que $\alpha \in K$. 
+\end{enumerate}
+\end{proof}
 
+\begin{proposition}[Propiedades de los cuerpos algebraicamente cerrados]
+Se verifican las siguientes propiedades:
 
-\begin{definition}[Cuerpo algebraicamente cerrado]
-	Un cuerpo $K$ es algebraicamente cerrado si cumple cualquiera de las condiciones anteriores. 
-\end{definition}
+\begin{enumerate}
+\item Todo cuerpo algebraicamente cerrado es infinito. 
+\item Sea $\frac{E}{K}$ una extensión de cuerpos con $E$ un cuerpo algebraicamente cerrado. Los elementos algebraicos de $K$ forman un cuerpo algebraicamente cerrado. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+Veamos cada una de las propiedades:
 
-\begin{theorem}[Teorema de Steinitz]
-	Si $K$ es un cuerpo existe un cuerpo algebraicamente cerrado $F$ extensión de $K$. 
-\end{theorem}
+\item Si $K$ es un cuerpo finito formo el polinomio $f(x) = \prod_{k \in K} (x-k) + 1$ que no tiene raíces en $K$ y se deduce que el cuerpo no puede ser algebraicamente cerrado. 
+\item Hemos en los ejercicios que el conjunto $F$ de elementos de $E$ que son algebraicos sobre $K$ forma un cuerpo. para ver que es algebraicamente cerrado, tomo un polinomio $f \in F[X]$ no constante. Este polinomio sobre $E[X]$ debe tener una raíz ya que $E$ es algebraicamente cerrado y la raíz $u \in E$ debe ser algebraica sobre $F$, completar con \cite{link4}
+\end{enumerate}
 
-\begin{corollary}
-	Si $K$ es un cuerpo, existe una extensión de $K$ que es algebraica y algebraicamente cerrada. 	
-\end{corollary}
+\end{proof}
 
 \begin{definition}[Clausura algebraica]
-	Una extensión de cuerpos $\frac{F}{K}$ es una clausura algebraica de $K$ si 
-	
-	1. Es una extensión algebraica. \\
-	2. $F$ es un cuerpo algebraicamente cerrado. 
+Una extensión de cuerpos $\frac{E}{K}$ es una clausura algebraica de $K$ si:
+
+\begin{enumerate}
+\item $\frac{E}{K}$ es algebraica. 
+\item $E$ es algebraicamente cerrado. 
+\end{enumerate}
+
+Dicho, de otro modo, la extensión es algebraica y no existe una extensión algebraica mayor. 
 \end{definition}
+
+\begin{proposition}[Caracterización de la clausura algebraica]
+Dada una extensión algebraica $\frac{E}{K}$, son equivalentes:
+
+\begin{enumerate}
+\item $E/K$ clausura algebraica.
+\item $E/K$ algebraica y todo polinomio $f \in K[X]$ no constante  descompone en factores lineales en $E[X]$.
+\item $E$ es cuerpo de descomposición de todos los polinomios no constantes de $K$.
+\item $E/K$ algebraica y todo no constante tiene una raíz en $E$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Veamos cada una de las equivalencias:
+
+\begin{enumerate}
+\item Por defición $\frac{E}{K}$ es algebraica y todo polinomio no constante descompone en factores lineales por la caracterización de los cuerpos algebraicamente cerrados. 
+\item Sea $S = \{u \in E:\exists f \in \mathcal{f}. f(u) = 0\}$
+\end{enumerate}
+\end{proof}
+
+\begin{proposition}[Transitividad de la clausura algebraica]
+Sea $K \subseteq F \subseteq E$ una torre de cuerpos con $\frac{F}{K}$ una extensión algebraica entonces 
+
+$E$ es clausura algebraica de $F \iff$ lo es de $K$. 
+\end{proposition}
+\begin{proof}
+Ser algebraicamentecerrado no depende del cuerpo base de la extensión. Por tanto, basta ver que una extensión es algebraica si y solo si lo es la otro. Pero sabemos que $\frac{E}{K}$ es algebraica $\iff$ $\frac{E}{F},\frac{F}{K}$ son algebraicas y por hipótesis sabemos que $\frac{F}{K}$ es algebraica. 
+\end{proof}
+
+\begin{theorem}[Teorema de Steinitz]
+	Para todo cuerpo $K$ existe una clausura algebraica $\overline{K}$. 
+	
+	Dos clausuras algebraicas de un mismo cuerpo son isomorfas sobre $K$. 
+\end{theorem}
+\begin{proof}
+Sabemos que existe un cuerpo de descomposición para la familia de polinomios de grado mayor que 0 sobre $K$. Pero además por la caracterización de la clausura algebraica este cuerpo será la clausura algebraica de $K$.
+
+Claramente, cualquiera dos algebraicas son cuerpos de descomposición de la familia de polinomios de grado mayor que 0 sobre $K$ pero se ha visto que estos cuerpos de descomposición son isomorfos. 
+\end{proof}
+
+\begin{theorem}[Extensión de un homomorfismo a la clausura bajo extensiones algebraicas]
+Sea $K \subseteq F \subseteq E$ una torre de extensiones algebraicas. Sea $\overline{K}$ la clausura algebraica de $K$. Entonces todo homomorfismo $\sigma:F \to \overline{K}$ sobre $K$ tiene una extensión $\tau:E \to \overline{K}$. 
+
+\begin{tikzcd}
+E \arrow[dashed]{r}{\tau} \arrow[dash]{d} & 
+\overline{K} \arrow[dash]{dd} & \\
+F \arrow{ur}{\sigma} \arrow[dash]{d} & \\
+K \arrow{r}{Id} &
+K
+\end{tikzcd}
+\end{theorem}
+\begin{proof}
+Aplicamos el lema de Zorn al conjunto $$S= \{(E_i,\sigma_i):F \subseteq E_i \subseteq E,\sigma_i:E_i \to \overline{K} \text{ sobre K },\sigma_i|_F = \sigma\}$$ Este no es vacío ya que $(E,\sigma) \in S$ y está ordenado mediante el orden $$(E_i,\sigma_i) \le (E_j,\sigma_j) \iff E_i \subseteq E_j \land \sigma_j|_{E_i}= \sigma_i$$ Cualquier cadena totalmente ordenada está acotada superiormente. En efecto, si $E' = \cup E_i$ y definimos para $z \in E'$ $\sigma'(z) = \sigma_i(z)$ donde $z \in E_i$ tenemos una buena definición pues los homomorfismos se extienden unos a otros y por un razonamiento similar $\sigma'$ es un homomorfismo \cite{link5} y claramente, $(E',\sigma')$ es una cota superior. Por el lema de Zorn existe un elemento maximal del conjunto. Sea este $(E_1,\sigma_1)$.
+
+Veamos que $E_1 = E$ y que $\tau = \sigma_1$. En otro caso tomamos $u \in E \setminus E_1$ y entonces $gr(Irr(u,K)) \ge 2$  y busco una raíz distinta $v$ de $Irr(u,K)$ en $\overline{K}$. Para llegar a una contradicción veo que construyo un homomorfismo de $E_1(u)$ en $\overline{K}$ que lleve una raíz en otra y veo que contiene a este propiamente. Los detalles están en el primer hecho destacado en \cite{link5}. No está claro que podamos usar los teoremas anteriores porque trabajan con extensiones de isomorfismos no de homomorfismos. 
+\end{proof}
+
+\begin{proposition}[Cardinalidad de la clausura algebraica]
+Sea $K$ un cuerpo y $\overline{K}$ su clausura algebraica. 
+
+\begin{enumerate}
+\item Si $K$ es finito, entonces la clausura es $\overline{K}$ es infinito numerable. 
+\item Si $K$ es inifito entonces la clausura algebraica tiene el mismo cardinal que $K$. 
+\end{enumerate}
+\end{proposition}
 
 
 

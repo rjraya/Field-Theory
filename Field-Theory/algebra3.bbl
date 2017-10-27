@@ -17,6 +17,22 @@
 \endgroup
 
 \sortlist[entry]{nty/global/}
+  \entry{link5}{online}{}
+    \name{author}{1}{}{%
+      {{hash=aV}{%
+         family={authors},
+         familyi={a\bibinitperiod},
+         given={Various},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{aV1}
+    \strng{fullhash}{aV1}
+    \field{labelnamesource}{author}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+  \endentry
+
   \entry{link2}{online}{}
     \name{author}{1}{}{%
       {{hash=AV}{%
@@ -68,6 +84,28 @@
     \field{urlday}{02}
     \field{urlmonth}{10}
     \field{urlyear}{2017}
+  \endentry
+
+  \entry{link4}{online}{}
+    \name{author}{1}{}{%
+      {{hash=aV}{%
+         family={authors},
+         familyi={a\bibinitperiod},
+         given={Various},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{aV1}
+    \strng{fullhash}{aV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Is the sub-field of algebraic elements of a field extension
+  of K containing roots of polynomials over K algebraically closed?, year =
+  2017, url =
+  {https://math.stackexchange.com/questions/27647/is-the-sub-field-of-algebraic-elements-of-a-field-extension-of-k-containing-ro
+  }, urldate = {2017-10-13}}
   \endentry
 
   \entry{link3}{online}{}
