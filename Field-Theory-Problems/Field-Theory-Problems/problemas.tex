@@ -197,104 +197,100 @@
 %\section{Problema 1}
 %\input{problema1/problema1}
 %\newpage
-\section{Problema2}
+%\section{Problema2}
+%\input{problema2/problema2}
+\section{Problema 3}
 
 \begin{exercise}
-	Hallar $\sigma \in \mathbb{F}_{3^6}^X$ con $gr(Irr(\sigma,\mathbb{F}_3)) = 6$ y expresarlo como elemento de $\mathbb{F}_3(\alpha)$ donde $\alpha$ es una raíz del polinomio $q = X^6 + X + 2$ (que es un generador de $\mathbb{F}_{3^6}^X$).
+Sea $\frac{E}{K}$ una extensión de cuerpos algebraica y normal y $f \in K[X]$ un polinomio irreducible. Si $f = f_1f_2$ es una factorización en dos irreducibles de $E[X]$. Entonces:
+
+\begin{enumerate}
+\item Prueba que existe un automorfismo $\sigma:\frac{E}{K} \to \frac{E}{K}$ tal que $\overline{\sigma}(f_1) = f_2$ y por tanto $\sigma(f_2) = f_1$. 
+\item Considera el polinomio $f = X^4 - 2 \in \mathbb{Q}[X]$ y el cuerpo $E = \mathbb{Q}(\sqrt{2})$ En $\frac{E}{K}$ tenemos la factorización en irreducibles $f = (X^2 - \sqrt{2})(X^2+\sqrt{2}) = f_1f_2$. Describe $\sigma$ en este caso. 
+\item Justifica que $\frac{\mathbb{Q}(\sqrt{2})}{\mathbb{Q}}, \frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}(\sqrt{2})}$ son extensiones normales y que $\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}}$ no lo es.
+\item Determina la clausura normal $\frac{F}{\mathbb{Q}}$ de $\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}}$.
+\item Calcular el grupo $Aut(\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}})$ y los automorfismos que dejan fijo a $\mathbb{Q}(\sqrt{2})$. 
+\end{enumerate}
 \end{exercise}
+\textbf{Solución:}
+\begin{enumerate}
+\item Con las mismas ideas con las que se prueba la unicidad del cuerpo de descomposición es fácil ver el siguiente resultado. 
 
-Necesitamos un polinomio $p$ mónico e irreducible sobre $\mathbb{F}_3$ tal que algún polinomio $X^{i}$ con $i < 728$ al divirlo por $p$ de resto 1. 
+\begin{corollary}[Elementos conjugados en cuerpos de descomposición]
+Sea $p \in K[X]$ irreducible con cuerpo de descomposición $F$. Sean $\alpha,\beta \in F$ raíces de $p$. Entonces existe un isomorfismo $\sigma:F \to F$ sobre $K$ tal que $\alpha \mapsto \beta$. 
+\end{corollary}
 
-Los factores irreducibles del polinomio $X^{3^6} - X$ son los irreducibles sobre $F_3$ de grado divisor de $6$. En Mathematica esta lista se puede obtener mediante el comando $$Factor[X^{729} - X, Modulus -> 3]$$ Tras un par de comprobaciones el polinomio $p = 2+x+x^2+2x^3+x^6$ verifica que $x^{104}$  da $1$ de resto al dividirse por $p$. Tenemos entonces un $\sigma$ que no puede ser generador. La expresión de $\sigma$ en $\mathbb{F}_3(\alpha)$ se obtiene al dividir $p$ mediante el polinomio $q$ de donde obtenemos el polinomio $2X^3+X^2$ visto como elemento en $\frac{\mathbb{F}_3[X]}{<X^6+X+2>}$ el correspondiente elemento en $\mathbb{F}_3(\alpha)$ es $\alpha^2+2 \alpha^3$. 
+En nuestro caso para $f$ podemos considerar que en la clausura algebraica descompone como $$f = \prod (x - \alpha_i) \prod (x - \beta_i) \prod (x - \gamma_i)$$ donde $\alpha_i$ son raíces del polinomio $f_1$ y $\beta_i$ son raíces del polinomio $f_2$. Seleccionamos dos de estas raíces, sean $\alpha_1, \beta_1$. Por el corolario existe un isomorfismo $\sigma:F \to F$ sobre $K$ tal que $\alpha_1 \mapsto \beta_1$ donde $F$ es un cuerpo de descomposición de $f$. 
 
-\begin{exercise}
-	Un elemento $\beta \in \mathbb{F}_{729}$ de orden 8 en $\mathbb{F}_{3^6}^X$ da una extensión $\mathbb{F}_3(\beta) = \mathbb{F}_9$
-\end{exercise}
+Como $\frac{F}{K}$ es algebraica y $\frac{E}{K}$ es normal, $\frac{FE}{F}$ es normal. Extendemos el codominio de $\sigma:F \to FE$ y obtenemos un homomorfismo sobre $K$.
 
-Observemos primero la construcción sobre la cual trabajan este ejercicio y el posterior. 
+Extiendo $\sigma$ a un automorfismo $\sigma_1:FE \to FE$ sobre $K$ y restringimos su dominio a $\sigma_2:E \to FE$ obteniendo un homomorfismo sobre $K$. Observamos que $FE \subseteq \overline{F}$ ya que $\frac{FE}{F}$ es normal. También observamos que $\overline{F} = \overline{K}$ por la transitividad de la clausura. Esto permite ver $\sigma_2$ con codominio $\overline{K}$ y aplicar la caracterización de normalidad sobre $K$. 
 
-\begin{tikzcd}[tips=false,column sep=1em,row sep=1.5em]
-& \mathbb{F}_{3^6} \ar{dl}{3} \ar{dr}[swap]{2}	\\
-\mathbb{F}_{3^2} \ar{dr}{2} && \mathbb{F}_{3^3} \ar{dl}[swap]{3} \\
-& \mathbb{F}_3
+Como $\frac{E}{K}$ es normal se tendrá que $\sigma_2(E) = E$ de modo que tenemos un automorfismo en $E$ sobre $K$. 
+
+Este automorfismo verifica $\sigma_2(f_1) = f_2$ ya que como $\alpha_1$ es raíz de $f_1$ entonces $$0 = \sigma_2(f_1(\alpha_1)) = \sigma_1(f_1(\alpha_1)) = \overline{\sigma_1}(f)(\sigma_1(\alpha_1)) = \overline{\sigma_2}(f)(\beta_1)$$ es decir que el polinomio imagen, que es irreducible, tiene a $\beta_1$ como raíz. Luego tiene que ser $Irr(\beta_1,E)$ que es igual a $f_2$. 
+
+\item Podemos representar $\mathbb{Q}(\sqrt{2})$ por expresiones de la forma $a + b \sqrt{2}$. Como todo los $\sigma$ hallados fijaban $K$ determinaremos el homomorfismo si determinamos $\sigma(\sqrt{2})$.
+
+Consideramos el cuerpo de descomposición del polinomio $X^4-2$. De forma natural este sería $$\mathbb{Q}(\sqrt[4]{2},-\sqrt[4]{2},i\sqrt[4]{2},-i\sqrt[4]{2}) = \mathbb{Q}(i,\sqrt[4]{2})$$ donde la igualdad se comprueba viendo que la inclusión de los generadores en cada dirección. Por otro lado, en el cuerpo de descomposición $$X^2 + \sqrt{2} = (X - i \sqrt[4]{2})(X + i \sqrt[4]{2})$$ $$X^2 - \sqrt{2} = (X - \sqrt[4]{2})(X + \sqrt[4]{2})$$ Simplemente elegimos que llevaremos $\sqrt[4]{2} \mapsto i \sqrt[4]{2}$ y entonces obtenemos que $$\sigma(\sqrt{2}) = \sigma((\sqrt[4]{2})^2) = (\sigma(\sqrt[4]{2}))^2 = (i \sqrt[4]{2})^2 = - \sqrt{2}$$ esto determina completamente el homomorfismo y comprobaciones rutinarias muestran que $\sigma(f_1) = f_2$. 
+
+\item Usamos que la extensiones finitas y normales se pueden caracterizar por ser cuerpo de descomposición de algún polinomio. 
+
+\begin{proposition}
+Toda extensión $\frac{F}{K}$ de grado dos de un cuerpo es normal.
+\end{proposition}
+ 
+
+Si la extensión es de grado primo, en particular, es finita. Si es finita es algebraica. Tomo $u \in F \setminus K$ por el teorema del grado se verifica que $$[F:K] = [F:K(u)][K(u):K]$$ Si $[K(u):K] = 1$ entonces $K(u) = K$ pero $u \notin K$. Contradicción. Por tanto, $[K(u):K]$ es dos. Como la extensión es algebraica existe $Irr(u,K)$ y $gr(Irr(u,K)) = 2$. Este polinomio tendrá dos raíces en su cuerpo de descomposición, claramente $K(u)$ contiene una raíz pero por las ecuaciones de Cardano-Vieta $$(X - \alpha)(X - \beta) = X^2 - (\alpha+\beta)X + \alpha\beta$$ y sabemos que $\alpha + \beta \in K$ luego teniendo $u$ tengo la otra raíz. De modo $K(u)$ es precisamente el cuerpo de descomposición de $Irr(u,K)$ y por tanto, $\frac{F}{K}$ es normal. 
+
+\begin{enumerate}
+\item $\frac{\mathbb{Q}(\sqrt{2})}{\mathbb{Q}}$ es normal ya que $X^2-2$ es irreducible sobre $\mathbb{Q}$ por el criterio de Eisenstein y por tanto la extensión tiene grado 2. 
+\item $\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}(\sqrt{2})}$ es normal ya que $X^2-\sqrt{2}$ es irreducible sobre $\mathbb{Q}(\sqrt{2})$ con lo cual la extensión tiene grado 2. En efecto, será irreducible si y solo si no tiene raíces. Las raíces son de la forma $a+b\sqrt{2}$ y operando se llega a la ecuación $$a^2+2b^2 = \sqrt{2}(1-2ab)$$ Por distinción de casos, si $1-2ab = 0$ entonces se llega a $\sqrt{2}  = 0$ y si $1-2ab \neq 0$ entonces $\sqrt{2} = \frac{a^2+2b^2}{1-2ab} \in \mathbb{Q}$ ambos casos son contradicciones. 
+\item $\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}}$ no es normal. Si la extensión normal todo polinomio irreducible con una raíz en el cuerpo extensión descompondría en factores lineales. Pero $X^4 - 2$ es un polinomio irreducible sobre $\mathbb{Q}$ por el criterio de Eisenstein y $\sqrt[4]{2}$ es una raíz que está en el cuerpo extensión y sin embargo, no puede descomponer en polinomios lineales ya que este cuerpo sólo contiene las raíces reales y hay dos complejas. 
+\end{enumerate}
+
+\item La clausura normal de una extensión de generación finita está caracterizada como el cuerpo de descomposición del producto de los irreducibles asociados a los generadores. En este caso sólo hay un generador y el cuerpo de descomposición del polinomio mínimo $X^4-2$ es conocido como $\mathbb{Q}(\sqrt[4]{2},i)$.
+
+\item Claramente, $\mathbb{Q}(\sqrt[4]{2})$ es el cuerpo de descomposición del polinomio $X^4 - 2$ y como las extensiones finitas de $\mathbb{Q}$ son separables $\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}}$ es una extensión de Galois. Por tanto, $$Aut(\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}}) = [\mathbb{Q}(\sqrt[4]{2}):\mathbb{Q}] = 8$$ Los candidatos para ser imagen de $\sqrt[4]{2}$ son $\sqrt[4]{2},-\sqrt[4]{2},i\sqrt[4]{2},-i\sqrt[4]{2}$ y los candidatos para ser imagen de $i$ son $i,-i$. Luego en efecto, todas estas posibilidades se dan. 
+
+La correspondencia de Galois viene expresada mediante los siguientes diagrmas:
+
+\begin{tikzcd}
+& & \mathbb{Q}(i,\sqrt[4]{2}) \\
+\mathbb{Q}(\sqrt[4]{2}) \arrow{urr} &
+\mathbb{Q}(i\sqrt[4]{2}) \arrow{ur} &
+\mathbb{Q}(i,\sqrt{2}) \arrow{u} &
+\mathbb{Q}((i+1)\sqrt[4]{2}) \arrow{ul} &
+\mathbb{Q}((1-i)\sqrt[4]{2}) \arrow{ull} \\
+& \mathbb{Q}(\sqrt{2}) \arrow{ul} \arrow{u} \arrow{ur} &
+\mathbb{Q}(i) \arrow{u} &
+\mathbb{Q}(i\sqrt{2}) \arrow{ul} \arrow{u} \arrow{ur} \\
+& & \mathbb{Q} \arrow{ul} \arrow{u} \arrow{ur}
 \end{tikzcd}
 
-Un cuerpo de $p^m$ elementos es subcuerpo de otro con $p^n$ si y sólo si $m|n$. 
+\begin{tikzcd}
+& & \{e\} \arrow{drr} \arrow{dr} \arrow{d}  \arrow{dl} \arrow{dll} \\
+\langle \tau \rangle  \arrow{dr} &
+\langle \sigma^2\tau \rangle \arrow{d}  &
+\langle \sigma^2 \rangle \arrow{dr} \arrow{dl} \arrow{d} \arrow{dr} &
+\langle \sigma\tau \rangle \arrow{d} &
+\langle \sigma^3\tau \rangle  \arrow{dl} \\
+& \langle \sigma^2,\tau \rangle  \arrow{dr}  &
+\langle \sigma \rangle \arrow{d} &
+\langle \sigma^2,\tau^2 \rangle \arrow{dl}  \\
+& & Aut(\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}})
+\end{tikzcd}
+\end{enumerate}
 
-Volviendo a nuestro problema, si $\beta^8 = 1$ esto implica que $\beta$ es raíz del polínomio $X^9 - X$ y por tanto, su polinomio mínimo será un factor irreducible de este. Pero los factores irreducibles de este deben tener grado divisor de $2$. Luego deben ser de grado $1$ o grado $2$. De hecho, si observamos la descomposición en Mathematica mediante la orden $$Factor[X^9-X,Modulus->3]$$ obtenemos los polinomios $X,(1 + X),(2 + X),(1 + X^2),(2 + X + X^2),(2 + 2 X + X^2)$. Como $\beta$ es de orden $8$ $\beta$ no puede ser $0,1,2$ ya que estos tienen orden $\infty,1,2$ respectivamente luego tiene que ser raíz de los de grado $2$. Esto implica que $\mathbb{F}_3(\beta) = \mathbb{F}_9$. 
+donde $$\sigma(\sqrt[4]{2}) = i\sqrt[4]{2}$$
+$$\sigma(i) = i$$ $$\tau(i) = -i$$
+$$\tau(\sqrt[4]{2}) = \sqrt[4]{2}$$
 
-\begin{exercise}
-	Analiza qué ocurre al considerar el elemento $\sigma$ para encontrar elementos que generen las extensiones $\mathbb{F}_{3^2}$ y $\mathbb{F}_{3^3}$.
-\end{exercise}
+Realizando los cálculo en una tabla, tenemos que $\tau$ deja fijo a $\alpha = \sqrt[4]{2}$ por tanto, también deja fijo a $\alpha^2$. Por otro lado, $\sigma^2$ lleva $\alpha^2$ a $\alpha^2$. Por tanto, el subgrupo que deja fijo a $\mathbb{Q}(\sqrt{2})$ será $\langle \sigma^2,\tau \rangle$. 
 
-Como ya habíamos comentado el orden es 104. En el primer caso, el método anterior donde tomamos $\sigma^{\frac{104}{8}} = \sigma^13$ entonces el método funciona y se obtiene cero al comprobar donde el polinomio irreducible del que es raíz $\sigma$ resulta ser $X^2+X+2$. Sin embargo, aunque $\sigma^{\frac{104}{26}} = \sigma^4$ que es un elemento de orden 26, aparentemente no sirve para generar la extensión $\mathbb{F}_{3^3}$. Actualmente, no sabemos por qué se obtiene este resultado. Podríamos ser un poco tramposos y cambiar el polinomio por uno tal que $26$ no divida su orden. Pero dejamos para una posterior revisión determinar la razón de que no funcione para este elemento. 
 
-\begin{exercise}
-	Determina el polinomio $Irr(\alpha,\mathbb{F}_{27})$. Para el elemento $\sigma$ que encontraste al inicio calcula $Irr(\sigma,\mathbb{F}_9)$ y $Irr(\sigma,\mathbb{F}_{27})$
-\end{exercise}
-
-Primero hacemos algunos comentarios al método del guión de prácticas. $\alpha$ es raíz de un polinomio mónico irreducible de grado 3 sobre $\mathbb{F}_3(\delta)$ ya que el grado de la extensión $\frac{\mathbb{F}_{3^6}}{\mathbb{F}_{3^2}}$ es 3. El resto de cálculos tiene sentido porque los elementos de $\mathbb{F}_3(\delta)$ son las imágenes de clases de $\frac{\mathbb{F}_3[X]}{<X^2+X+2>}$ por la evaluación en $\delta$ esto es polinomios $a\delta + b$ con $a,b \in \mathbb{F}_3$. 
-
-Cálculo de $Irr(\alpha,\mathbb{F}_{27})$. Del mismo modo expresamos $\mathbb{F}_{27} = \mathbb{F}_3(\epsilon)$ con $\epsilon$ una raíz del polinomio $X^3 + 2X + 1$.  Se obtienen tres posibles valores para $\epsilon$: $$\alpha^2+2\alpha^3+\alpha^4$$ $$1+\alpha^2+2\alpha^3+\alpha^4$$ $$2+\alpha^2+2\alpha^3+\alpha^4$$ Observamos que los elementos de $\mathbb{F}_3(\epsilon)$ son polinomios de grado dos evaluados en $\epsilon$ y como estamos buscando $Irr(\alpha,\mathbb{F}_{27})$ el sistema a resolver tendrá la forma: $$(b00 + b01*\epsilon + b02*\epsilon^2) + (b10 + b11*\epsilon + b12*\epsilon^2) X + X^2$$ Realizando las sustituciones correspondientes a esta observación se obtiene el polinomio $$2 \epsilon + 2 \epsilon^2 + X (1 + \epsilon) + X^2$$
-
-Cálculo de $Irr(\sigma,\mathbb{F}_9)$. Repitiendo el proceso que aparece en el guión, cambiando el valor de $PF$ a $X^6+2X^3+X^2+X+2$ nos va a aparecer un irreducible de la forma: $$2 + 2 \delta + X (2 + \delta) + X^3$$ 
-
-Cálculo de $Irr(\sigma,\mathbb{F}_{27})$. Tenemos que combinar las modificaciones de los apartados anteriores respecto al valor de $PF$ y respecto al sistema de ecuaciones a resolver. Obtenemos el polinomio: $$2 + 2 \epsilon + 2 \epsilon^2 + X (2 + \epsilon) + X^2$$
-
-\begin{exercise}
-	Determinar el número de polinomios irreducibles de grado 30 sobre $\mathbb{F}_3$ y cuántos de ellos tienen raíces que son generadores del grupo multiplicativo de $\mathbb{F}_{3^{30}}$.
-\end{exercise}
-
-Vamos a clarificar el razonamiento empleado en el texto del ejercicio.
-
-\begin{proposition}
-	Cada seis raíces de $\mathbb{F}_{3^6} - \mathbb{F}_{3^2} - \mathbb{F}_{3^3}$ me están determinando polinomios irreducibles de grado 6 en $\mathbb{F}_3[X]$. Por tanto, hay 116 polinomios irreducibles de grado 6 sobre $\mathbb{F}_3$.
-\end{proposition}
-\begin{proof}
-Nosotros hemos visto que los factores irreducibles de $X^{6^n} - X$ en $\mathbb{F}_3[X]$ son exactamente los polinomios irreducibles de $\mathbb{F}_3[X]$ con grado divisor de $6$. 
-
-Por otro lado, $\mathbb{F}_{3^6}$ es el cuerpo de descomposición del polinomio $X^{6^n} - X$ y por tanto, el cuerpo que contiene a todas sus raíces. 
-
-Entonces los polinomios irreducibles de $\mathbb{F}_3[X]$ con grado divisor de $6$ tienen también sus raíces en $\mathbb{F}_{3^6}$. 
-
-Una observado lo anterior, cada seis raíces de $\mathbb{F}_{3^6} - \mathbb{F}_{3^2} - \mathbb{F}_{3^3}$ me están determinando polinomios irreducibles de grado 6 en $\mathbb{F}_3[X]$. 
-\end{proof}
-
-\begin{proposition}
-	Hay 248 generadores de $\mathbb{F}_{729}^x$. Además, si una raíz de un polinomio irreducible es generadora (no es generadora) entonces también el resto de las raíces son generadoras (no son generadoras). Como consecuencia de los 116 polinomios irreducibles de grado 6 hay 48 cuyas raíces son generadoras y 68 cuyas raíces no son generadoras. 
-\end{proposition}
-\begin{proof}
-	La proposición sobre las propiedades del orden de un elemento de mis apuntes sobre teoría de grupos muestra que un grupo cíclico tiene $\phi(ord(a))$ generadores donde $a$ es un generador del grupo. Entonces, como $\mathbb{F}_{729}^x$ tiene 728 elementos, basta calcular $\phi(728) = \phi(8) \phi(7) \phi(13) = 248$. 
-	
-	Por  otra parte, como todo polinomio de grado $6$ irreducible sobre $\mathbb{F}_3[X]$ con una raíz $\alpha$ admite $6$ raíces distintas $\alpha^{3^i}$ con $i = 0,\cdots,5$, entonces si una raíz $\alpha$ es generadora esto quiere decir que $ord(\alpha) = 728$ y entonces $ord(\alpha^{3^i}) = \frac{728}{mcd(728,3^i)} = 728$ y por tanto siguen siendo generadoras. Si $\alpha$ no fuera generadora entonces el resto no pueden ser generadoras, ya que si alguna lo fuera entonces también lo sería $\alpha$. 
-	
-	Agrupando las generadoras en grupos de $6$ se obtienen 48 polinomios cuyas raíces son generadoras y agrupando los 68 polinomios restantes, se obtienen polinomios cuyas raíces no son generadoras.
-\end{proof}
-
-Veamos ahora el ejercicio. 
-
-En vez de calcular el número explícitamente utilizaremos la fórmula de Gauss para el número de polinomios mónicos irreducibles sobre $\mathbb{F}_p[X]$ de grado $n$ (una prueba de este hecho basada en teoría de básica de cuerpos finitos y el principio de exclusión-inclusión aparece en nuestros apuntes):
-
-$|N_n| = \frac{1}{n} \sum_{m|n} \mu(m) p^{\frac{n}{m}}$
-
-donde $\mu$ es la función de Mobius:
-
-	\[
-	\mu(n) = 
-	\begin{cases} 
-	1 & n = 1 \\
-	(-1)^s & n = \prod_{i = 1}^s p_i \text{ para primos distinos } p_i \\
-	0   & \text{en otro caso}
-	\end{cases}
-	\]
-
-Entonces $$|N_{30}| = \frac{1}{30}(\mu(1)p^{30} + \mu(2)p^{15}+\mu(3)p^{10}+\mu(5)p^6+\mu(6)p^5+\mu(10)p^3+\mu(15)p^2+\mu(30)p)$$ $$|N_{30}| = \frac{1}{30}(p^{30}-p^{15}-p^{10}-p^6+p^5+p^3+p^2-p)$$
-$$|N_{30}| = 6863037256208$$
-
-Por otro lado hay $\phi(3^{30} - 1) = 70207948800000$ generadores de $\mathbb{F}_{30}$ el mismo argumento que hemos hecho para el caso del documento de la práctica sirve aquí y entonces basta dividir por $30$ para obtener el número de polinomios irreducibles de grado 30 cuyas raíces son generadoras. Este número es $2340264960000$. El resto, $67867683840000$ no son generadoras. 
 
 
 \printbibliography
-
 
 \end{document}

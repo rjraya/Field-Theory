@@ -25,22 +25,28 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3}Cuerpo de descomposici\IeC {\'o}n de una familia de polinomios}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Clausura algebraica}{17}
+\contentsline {section}{\numberline {4}Clausura algebraica}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Extensiones normales}{20}
+\contentsline {section}{\numberline {5}Extensiones normales}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Extensiones conjugadas}{20}
+\contentsline {subsection}{\numberline {5.1}Extensiones conjugadas}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Extensiones normales}{21}
+\contentsline {subsection}{\numberline {5.2}Extensiones normales}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Extensiones separables y cuerpos perfectos}{23}
+\contentsline {subsection}{\numberline {5.3}Clausura normal}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Extensiones separables}{23}
+\contentsline {subsection}{\numberline {5.4}Polinomio normal}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Cuerpos perfectos}{23}
+\contentsline {section}{\numberline {6}Extensiones separables y cuerpos perfectos}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Cuerpos finitos}{24}
+\contentsline {subsection}{\numberline {6.1}Extensiones separables}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Existencia y unicidad}{24}
+\contentsline {subsection}{\numberline {6.2}Cuerpos perfectos}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Polinomios irreducibles sobre cuerpos finitos}{26}
+\contentsline {section}{\numberline {7}Teor\IeC {\'\i }a de Galois Finita}{26}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Cuerpos finitos}{27}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1}Existencia y unicidad}{27}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2}Polinomios irreducibles sobre cuerpos finitos}{29}

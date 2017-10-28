@@ -1,9 +1,14 @@
 \subsection{Extensiones separables}
 
-\begin{definition}[Extensión separable]
-Un elemento algebraico $u$ sobre un cuerpo $K$ es separablesi $Irr(u,K)$ no tiene raíces múltiples.
+\begin{definition}[Separabilidad]
+Sea $K$ un cuerpo. 
 
-Una extensión algebraica $\frac{F}{K}$ es separable si todos los elementos de $F$ son separables sobre $K$.  
+\begin{enumerate}
+\item Un polinomio irreducible $p \in K[X]$ es separable si todas son raíces en un cuerpo de descomposición son simples (la multiplicidad de las raíces no depende del cuerpo de descomposición considerado).
+\item Un polinomio $p \in K[X]$ es separable si sus factores irreducibles son separables. 
+\item Un elemento algebraico $u$ sobre un cuerpo $K$ es separable si $Irr(u,K)$ es separable.
+\item Una extensión algebraica $\frac{F}{K}$ es separable si todos los elementos de $F$ son separables sobre $K$.  
+\end{enumerate}
 \end{definition}
 
 \begin{exercise}
@@ -23,3 +28,40 @@ Para ver que $\frac{E}{F}$ es separable sea $u \in E$ entonces claramente $Irr(u
 \end{proof}
 
 \subsection{Cuerpos perfectos}
+
+\begin{definition}[Cuerpo perfecto]
+Un cuerpo $K$ es perfecto si se cumplen alguna de las condiciones de la siguiente proposición. 
+\end{definition}
+
+\begin{proposition}
+Sea $K$ un cuerpo. Las siguientes condiciones son equivalentes:
+
+\begin{enumerate}
+\item Todo polinomio $p \in K[X]$ es separable.
+\item Todo $\alpha$ algebraico sobre $K$ es separable. 
+\item Toda extensión algebraica es separable.
+\item Toda extensión finita es separable.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+\begin{enumerate}
+\item Todo cuerpo de característica 0 o finito es perfecto. 
+\item Todo cuerpo de característica prima no nula es perfecto si y sólo si el endomorfismo de Frobenius es un automorfismo. 
+\end{enumerate}
+\end{proposition}
+
+\begin{example}
+$\mathbb{F}_p(t)$ con $t$ transcendente no es perfecto. 
+\end{example}
+
+
+
+
+
+
+
+
+
+
+

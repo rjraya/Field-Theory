@@ -1,14 +1,14 @@
 \subsection{Extensiones conjugadas}
 
 \begin{definition}[Elementos conjugados]
-$u,v \in \overline{K}$ son conjugados si $Irr(u,K) = Irr(v,K)$. 
+$u,v \in \overline{K}$ son conjugados si se verifica alguna de las siguientes condiciones equivalentes.
 \end{definition}
 
 \begin{proposition}[Caracterización de elementos conjugados]
 Sean $u,v \in \overline{K}$. Entonces:
 
 \begin{enumerate}
-\item $u,v$ son conjugados.
+\item $Irr(u,K) = Irr(v,K)$. 
 \item $\exists \sigma: K(u) \to K(v)$ isomorfismo sobre $K$ tal que $\sigma(u) = v$
 \item $\exists \sigma:K(u) \to \overline{K}$ homomorfismo sobre $K$ tal que $\sigma(u) = v$
 \item $\exists \sigma:\overline{K} \to \overline{K}$ automorfismo sobre $K$ tal que $\sigma(u)= v$
@@ -42,10 +42,10 @@ Dadas dos extensiones algebraicas $\frac{F_1}{K},\frac{F_2}{K}$ son equivalentes
 \subsection{Extensiones normales}
 
 \begin{definition}[Extensión normal]
-Una extensión normal $\frac{F}{K}$ es un subcuerpo de la clausura de $K$ tal que se verifica alguna de las siguientes condiciones.
+Una extensión normal $\frac{F}{K}$ es un subcuerpo de la clausura de $K$ que determina una extensión algebraica y tal que se verifica alguna de las siguientes condiciones.
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}[Condiciones equivalentes para extensión normal]
 Dada una extensión algebraica $\frac{F}{K}$ tal que $F$ un subcuerpo de la clausura de $K$. Son equivalentes:
 
 \begin{enumerate}
@@ -55,9 +55,10 @@ Dada una extensión algebraica $\frac{F}{K}$ tal que $F$ un subcuerpo de la clau
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-Veamos las implicaciones de forma cicrcular
+Veamos las implicaciones de forma circular:
+
 \begin{enumerate}
-\item Sea $f$ un irreducible con $u$ una raíz en $F$. Si $f$ no es lineal entonces tendrá alguna raíz $v$ en un cuerpo extensión. Pero las raíces del mismo irreducibles son elementos conjugados sobre $K$ y por tanto existe un automorfismo en $\overline{K}$ que lleva $u$ en $v$. Este automorfismo restringido a $F$ es un homomorfismo y como todo homomorfismo de $F$ a la clausura deja fijo a $F$, en particular, $v \in F$. Se procede por inducción para demostrarque $F$ descompone en lineales sobre $F[X]$. 
+\item Sea $f$ un irreducible con $u$ una raíz en $F$. Si $f$ no es lineal entonces tendrá alguna raíz $v$ en un cuerpo extensión. Pero las raíces del mismo irreducibles son elementos conjugados sobre $K$ y por tanto existe un automorfismo en $\overline{K}$ que lleva $u$ en $v$. Este automorfismo restringido a $F$ es un homomorfismo y como todo homomorfismo de $F$ a la clausura deja fijo a $F$, en particular, $v \in F$. Se procede por inducción para demostrar que $F$ descompone en lineales sobre $F[X]$. 
 \item Dada $u \in F$, por hipótesis, $Irr(u,F)$ tiene todas sus raíces en $F$. Claramente, $F$ será el cuerpo de descomposición de los polinomios mínimos de sus elementos.
 \item Sea $S$ las raíces de la familia de polinomios que tiene a $F$ como su cuerpo de descomposición. Entonces $F = K(S)$. 
 
@@ -65,7 +66,22 @@ Sea $\sigma:F \to \overline{K}$ un homomorfismo sobre $K$. $\sigma(F) \subseteq 
 \end{enumerate}
 \end{proof}
 
+\begin{proposition}[Extensiones normales finitas]
+Sea $\frac{E}{K}$ una extensión de cuerpos. 
+
+$E$ es el cuerpo de descomposición de un polinomio $p \in K[X]$ $\iff$ $\frac{E}{K}$ es normal y finita.
+\end{proposition}
+
+\begin{example}
+	Veamos que $\mathbb{Q}(\sqrt[3]{2})$ no es el cuerpo de descomposición de ningún
+	polinomio de $\mathbb{Q}[X]$.
+	
+	Tengo que el polinomio $x^3-2$ es irreducible sobre $\mathbb{Q}[X]$ y tiene una raíz sobre $\mathbb{Q}(\sqrt[3]{2})$, entonces por la proposición anterior, forzaríamos a que $X^3-2$ descompusiera completamente sobre $\mathbb{Q}(\sqrt[3]{2})$. Pero esto no es posible ya que este cuerpo se queda en $\mathbb{Q}(\sqrt[3]{2}) \subseteq \mathbb{R}$ y en particular no contiene a las raíces complejas $\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}$.
+\end{example}
+
 \begin{proposition}[Propiedades de las extensiones normales]
+Se verifican las siguientes propiedades:
+
 \begin{enumerate}
 \item Sea $\frac{E}{K}$ una extensión normal y $\frac{F}{K}$ una extensión algebraica. Entonces la extensión $\frac{EF}{F}$ es una extensión normal. 
 \item Sea $K \subseteq F \subseteq E$ una torre de cuerpos con $\frac{E}{K}$ normal. Entonces $\frac{E}{F}$ es una extensión normal. 
@@ -73,18 +89,11 @@ Sea $\sigma:F \to \overline{K}$ un homomorfismo sobre $K$. $\sigma(F) \subseteq 
 \item Sea $\frac{F_\lambda}{K}$ con $\lambda \in \Lambda$ una familia de extensiones normales y sea $E = \cap_\lambda F_\lambda$ entonces la extensión $\frac{E}{K}$ es normal. 
 \end{enumerate}
 \end{proposition}
-
-\begin{definition}[Clausura normal]
-Sea $\frac{F}{K}$ una extensión algebraica, la clausura normal de $\frac{F}{K}$ es una extensión $\frac{E}{K}$ con $$E = \cap \{H:H \supseteq F \land \frac{H}{K} \text{ es normal}\}$$
-\end{definition}
-
-\begin{proposition}[Existencia y unicidad de la clausura normal]
-Para toda extensión algebraica $\frac{F}{K}$existe una clausura normal $\frac{E}{K}$ además es única salvo isomorfismo. 
-\end{proposition}
 \begin{proof}
-La existencia se sigue del de que la intersección que define a la clausura normal es no vacía ya que $\overline{K}$ siempre define una extensión normal utilizando que es algebraica y que todo endomorfismo será un automorfismo.
-
-Si tengo dos clausuras normalescomo son intersección de normales y ambas lo son deben ser las misma!! (revisar)
+\begin{enumerate}
+\item Si $\sigma:EF \to \overline{K}$ es un homomorfismo sobre $K$ entonces $\sigma(EF) = \sigma(E)\sigma(F) = EF$ y por tanto la extensión $\frac{EF}{K}$ es normal. 
+\item Sea $\sigma:E \to \overline{F}$ un homomorfismo sobre $F$. Tenemos que observar que como $\frac{E}{K}$ es normal en particular asumimos que es una extensión algebraica. Esto nos dice que, en particular, $\frac{F}{K}$ es algebraica y gracias a esto podemos aplicar la transitividad de la clausura algebraica para deducir que $\overline{F} = \overline{K}$. Entonces $\sigma:E \to \overline{K}$ es un homomorfismo que en particular fija $K$. Por ser $\frac{E}{K}$ una extensión normal se tiene que verificar que $\sigma(E) = E$ y por tanto, $\frac{E}{F}$ es normal. 
+\end{enumerate}
 \end{proof}
 
 \begin{theorem}[Extensión de homomorfismos a una extensión normal]
@@ -100,13 +109,35 @@ K
 Sea $\tau:F \to E$ un homomorfismo. Cambiamos el codominio por $\overline{K}$ y seguimos teniendo un homomorfismo. Pero, ya que $\frac{E}{K}$ es algebraica por ser normal, podemos extender el homomorfismo a $\tau:E \to K$. Finalmente, por la normalidad este homomorfismo verifica que $\tau(E) = E$. De modo que tenemos un endomorfismo $\tau:E \to E$ y todo homomorfismo de extensiones algebraicas es un automorfismo.
 \end{proof}
 
-\begin{proposition}
-Si $F = K(u_1,\ldots,u_n)$ y $f_i = Irr(u_i,K)$ entonces la clausura normal es elcuerpo de descomposición de $f = \prod f_i$. 
+\subsection{Clausura normal}
+
+\begin{definition}[Clausura normal]
+Sea $\frac{F}{K}$ una extensión algebraica, la clausura normal de $\frac{F}{K}$ es una extensión $\frac{E}{K}$ con $$E = \cap \{H:H \supseteq F \land \frac{H}{K} \text{ es normal}\}$$
+\end{definition}
+
+\begin{proposition}[Existencia y unicidad de la clausura normal]
+Para toda extensión algebraica $\frac{F}{K}$existe una clausura normal $\frac{E}{K}$ además es única salvo isomorfismo. 
 \end{proposition}
+\begin{proof}
+La existencia se sigue del de que la intersección que define a la clausura normal es no vacía ya que $\overline{K}$ siempre define una extensión normal utilizando que es algebraica y que todo endomorfismo será un automorfismo.
+
+Si tengo dos clausuras normalescomo son intersección de normales y ambas lo son deben ser las misma!! (revisar)
+\end{proof}
+
+\begin{proposition}[Clausura de una extensión de generación finita]
+Sea $F = K(u_1,\ldots,u_n)$ y $f_i = Irr(u_i,K)$.
+
+La clausura normal de $F$ es el cuerpo de descomposición del polinomio $f = \prod f_i$. 
+\end{proposition}
+\begin{proof}
+El cuerpo de descomposición de $f$ determina una extensión normal. Además, esta extensión es la mínima que puede ser normal. Continuará. 
+\end{proof}
 
 \begin{proposition}
 La clausura normal de una extensión finita es finita. 
 \end{proposition}
+
+\subsection{Polinomio normal}
 
 \begin{definition}
 Un polinomio irreducible es normal si en todo extensión algebraica que tenga una raíz del polinomio, este descompone en factores lineales. 
@@ -122,9 +153,3 @@ Las siguientes propiedades son equivalentes:
 \end{enumerate}
 \end{proposition}
 
-\begin{example}
-	Veamos que $\mathbb{Q}(\sqrt[3]{2})$ no es el cuerpo de descomposición de ningún
-	polinomio de $\mathbb{Q}[X]$.
-	
-	Tengo que el polinomio $x^3-2$ es irreducible sobre $\mathbb{Q}[X]$ y tiene una raíz sobre $\mathbb{Q}(\sqrt[3]{2})$, entonces por la proposición anterior, forzaríamos a que $X^3-2$ descompusiera completamente sobre $\mathbb{Q}(\sqrt[3]{2})$. Pero esto no es posible ya que este cuerpo se queda en $\mathbb{Q}(\sqrt[3]{2}) \subseteq \mathbb{R}$ y en particular no contiene a las raíces complejas $\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}$.
-\end{example}

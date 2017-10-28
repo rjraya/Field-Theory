@@ -15,11 +15,11 @@
 	Sean $\frac{F_1}{K_1},\frac{F_2}{K_2}$ extensiones de cuerpos y $\tau:F_1 \to F_2,\sigma:K_1 \to K_2$ homomorfismos. $\tau$ es una extensión de $\sigma$ si $\tau|_{K_1} = \sigma$ y $\tau$ es un homomorfismo sobre $K$ si $\sigma = 1_K$.
 \end{definition}
 
-\begin{proposition}[Propiedades de las extensiones de homomorfismos]
+\begin{proposition}[Propiedades de las extensiones de homomorfismos]\label{herramientas}
 	Sea $\sigma:K_1 \to K_2$ un isomorfismo de cuerpos:
 	
 	\begin{enumerate}
-		\item Existe un único isomorfismo $\overline{\sigma}$ entre los anillos de polinomios tal que $X \to X$. Además, $\overline{\sigma}$ preserva grados e irreducibles.  
+		\item Existe un único isomorfismo $\overline{\sigma}$ extensión de $\sigma$ entre los anillos de polinomios tal que $X \mapsto X$. Además, $\overline{\sigma}$ preserva grados e irreducibles.  
         \begin{tikzcd}
         	K_1[X] \arrow[dashed]{r}{\overline{\sigma}} \arrow[dash]{d} & 
         	K_2[X] \arrow[dash]{d} & \\
@@ -35,7 +35,7 @@
 			K_1 \arrow{r}{\sigma} &
 			K_2
 		\end{tikzcd}
-		\item Sea $f_1$ un polinomio irreducible de $K_1$ y sea $u_1 \in F_1$ una raíz. Supongamos que $u_2 \in F_2$ es raíz de $f_2 = \overline{\sigma}(f_1)$. Entonces existe un único isomorfismo $\tau: K_1(u_1) \to K_2(u_2)$ sobre $\sigma$ tal que $\tau(u_1) = u_2$.
+		\item Sea $f_1$ un polinomio irreducible de $K_1$ con raíz $u_1 \in F_1$. Supongamos $u_2 \in F_2$ raíz de $f_2 = \overline{\sigma}(f_1)$. Entonces existe un único isomorfismo $\tau: K_1(u_1) \to K_2(u_2)$ sobre $\sigma$ tal que $\tau(u_1) = u_2$.
 		
 		Además el número de extensiones $\tau:K(u_1) \to F_2$ sobre $\sigma$ es el número de raíces de $f_2$ en $F_2$.
 		\begin{tikzcd}
@@ -54,7 +54,14 @@
 	Veamos cada una de las cuestiones. 
 	
 	\begin{enumerate}
-		\item Se trata de una aplicación de la propiedad universal del anillo de polinomio donde el homomorfismo que factoriza es la composición del homomorfismo $\sigma$ con la inclusión de $K_2$ en $K_2[X]$ de modo que fijamos $X \in K_2[X]$ y por la propiedad existe un único homomorfismo tal que $X \to X$. Este homomorfismo es una extensión de $\sigma$ ya que $\overline{\sigma} \circ p_1 = p_2 \circ \sigma$ donde $p_i$ son las inmersiones en los anillos de polinomios. 
+		\item Se trata de una aplicación de la propiedad universal del anillo de polinomios donde el homomorfismo que factoriza es la composición del homomorfismo $\sigma$ con la inclusión de $K_2$ en $K_2[X]$ de modo que fijamos $X \in K_2[X]$ y por la propiedad existe un único homomorfismo tal que $X \to X$. Este homomorfismo es una extensión de $\sigma$ ya que $\overline{\sigma} \circ p_1 = p_2 \circ \sigma$ donde $p_i$ son las inmersiones en los anillos de polinomios. Se comprueba fácilmente que es un isomorfismo.
+		
+		\begin{tikzcd}
+		K_1 \arrow{r}{p_1} \arrow{dr}[swap]{p_2 \circ \sigma} &
+		K_1[X] \arrow[dashed]{d}{\overline{\sigma}} \\
+		& K_2[X]
+		\end{tikzcd}
+			
 		
 		Es fácil observar que $\overline{\sigma}$ preserva grados ya que todo homomorfismo que nace en un cuerpo es inyectivo por tanto $\overline{\sigma}(\sum a_iX^i) = \sum \sigma(a_i)X^i$ y en particular la imagen del de mayor grado no es cero pues $Ker(\sigma) = \{0\}$. 
 		
@@ -120,7 +127,7 @@ Una extensión $\frac{E}{K}$ es un cuerpo de descomposición de $f$ sobre $K$ si
 \end{proof}
 
 \begin{theorem}[Unicidad del cuerpo de descomposición]
-	Sea $\sigma:K_1 \to K_2$ un isomorfismo de cuerpos. Sea $K_1[X]$ el cuerpo de descomposición de $f_1$ y $F_2$ es el cuerpo de descomposición de $\sigma(f) \in K_2[X]$. Entonces $F_1 \cong F_2$. 
+	Sea $\sigma:K_1 \to K_2$ un isomorfismo de cuerpos. Sea $F_1$ el cuerpo de descomposición de $f \in K_1[X]$ y $F_2$ el cuerpo de descomposición de $\overline{\sigma}(f) \in K_2[X]$. Entonces $F_1 \cong F_2$ mediante un isomorfismo que extiende a $\sigma$. 
 	
 	\begin{tikzcd}
 		F_1 \arrow{r}{?} \arrow[dash]{d} & 
@@ -132,17 +139,22 @@ Una extensión $\frac{E}{K}$ es un cuerpo de descomposición de $f$ sobre $K$ si
 	Como consecuencia el cuerpo de descomposición de $f \in K[X]$ es único salvo isomorfismo.
 \end{theorem}
 \begin{proof}
-	Por inducción sobre $n = gr(f_1)$. Obsérvese que siempre $gr(f_1) = gr(f_2)$ ya que probamos que el isomorfismo $\overline{\sigma}$ preserva grado. 
+	Por inducción sobre $n = gr(f)$. Obsérvese que siempre $gr(f) = gr(\overline{\sigma}(f))$ ya que probamos que el isomorfismo $\overline{\sigma}$ preserva grado. 
 	
-	Si $n = 1$ entonces $gr(f_1) = gr(f_2) = 1$ y tenemos que $F_i = K_i$ de modo que nos sirva el propio $\sigma$ como isomorfismo. 
+	Si $n = 1$ entonces $gr(f) = gr(\overline{\sigma}(f)) = 1$ y tenemos que $F_i = K_i$ de modo que nos sirve el propio $\sigma$ como isomorfismo sobre $\sigma$. 
 	
-	Si $n > 1$ y supongamos el teorema cierto para polinomios de grado menor. Tomo $u_i \in F_i$ raíces de los polinomios $f_i$ de modo que $Irr(u_2,K_2) = \sigma(Irr(u_1,K_1))$.
+	Si $n > 1$ y supongamos el teorema cierto para polinomios de grado menor. Tomo $u_1 \in F_1$ raíz de $f$. Como $Irr(u_1,K)|f$ tenemos que $\sigma(Irr(u_1,K))|\sigma(f)$. Como $\overline{\sigma}$ preserva irreducibles, es claro que $\overline{\sigma}(Irr(u_1,K)|\overline{\sigma}(f)$ y podemos considerar una raíz suya $u_2$ que existe por ser $F_2$ el cuerpo de descomposición de $\overline{\sigma}(f)$. Por la proposición \ref{herramientas} con las herramientas auxiliares sabemos que existe un único isomorfismo $\sigma_1:K(u_1) \to K(u_2)$ extensión de $\sigma$ tal que $\sigma_1(u_1) = u_2$. 
 	
-	Por el apartado 3. de la proposición con las herramientas auxiliares sabemos que existeun único isomorfismo $\sigma_1:K(u_1) \to K(u_2)$ extensión de $\sigma$ tal que $\sigma_1(u_1) = u_2$. 
-	
-	Ahora, aplicamos la hipótesis de inducción a los polinomios $f_i = (X-u_i)g_i$. $F_i$ es un cuerpo de descomposición de $g_i$ sobre $K_i(u_i)$ ya que $(X-u_i) \in K_i(u_i)[X]$ y el algoritmo de la división sobre cuerpos nos dice que $g_i$ en principio también es un polinomio de $K_i(u_i)[X]$. Por tanto, existe una isomorfismo extensión $\tau:F_1 \to F_2$ de $\sigma_1$ y como $\sigma_1$ también extendiende a $\sigma$ se deduce que $\tau$ extiende a $\sigma$. 
+	Ahora, aplicamos la hipótesis de inducción a los polinomios $f_i = (X-u_i)g_i$. $F_i$ es un cuerpo de descomposición de $g_i$ sobre $K_i(u_i)$ ya que como $X-u_i \in K_i(u_i)[X]$, el algoritmo de la división sobre cuerpos nos dice que $g_i \in K_i(u_i)[X]$ y claramente $F_i$ contiene todas sus raíces. Por tanto, existe un isomorfismo extensión $\tau:F_1 \to F_2$ de $\sigma_1$ y como $\sigma_1$ también extiende a $\sigma$ se deduce que $\tau$ extiende a $\sigma$. 
 	
 	Finalmente, si consideramos el isomorfismo identidad en $K$ entonces obtenemos que hay un isomorfismo entre los posibles distintos cuerpos de descomposición de $K$.
+\end{proof}
+
+\begin{corollary}[Elementos conjugados en cuerpos de descomposición]
+Sea $p \in K[X]$ irreducible con cuerpo de descomposición $F$. Sean $\alpha,\beta \in F$ raíces de $p$. Entonces existe un isomorfismo $\sigma:F \to F$ sobre $K$ tal que $\alpha \mapsto \beta$. 
+\end{corollary}
+\begin{proof}
+El proceso es el mismo que en la demostración anterior donde se toma $\sigma = Id$, de modo que las raíces $u_i$ son raíces del mismo polinomio y claramente podemos elegir cualquier de ellas para el isomorfismo $\sigma_1$.
 \end{proof}
 
 \subsection{Cuerpo de descomposición de una familia de polinomios}
@@ -158,7 +170,7 @@ $E = K(\{u \in F:\exists f \in \mathcal{F}. f(u) = 0\})$ es un cuerpo de descomp
 \end{proposition}
 
 \begin{proposition}[Unicidad del cuerpo de descomposición de una familia]
-el cuerpo de descomposición de una familia de polinomios es único salvo isomorfismo. 
+El cuerpo de descomposición de una familia de polinomios es único salvo isomorfismo. 
 \end{proposition}
 
 
