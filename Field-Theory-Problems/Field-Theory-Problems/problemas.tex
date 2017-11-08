@@ -194,13 +194,15 @@
 %\tableofcontents
 %\newpage
 
-%\section{Problema 1}
-%\input{problema1/problema1}
-%\newpage
-%\section{Problema2}
-%\input{problema2/problema2}
+\section{Problema 1}
+\input{problema1/problema1}
+\newpage
+\section{Problema2}
+\input{problema2/problema2}
+\newpage
 \section{Problema 3}
 \input{problema3/problema3}
+\newpage
 \section{Problema 4}
 
 \begin{exercise}
@@ -213,7 +215,8 @@ Consideramos todos los conjugados de $\alpha$, esto es, el conjunto $C = \{\sigm
 \item Prueba que $f(X)$ es irreducible sobre $K$. Como consecuencia $f(X) = Irr(\alpha,K)$.
 \item Considera la extensión $\frac{\mathbb{Q}(\sqrt[3]{3},\sqrt{-3})}{\mathbb{Q}}$, prueba que es una extensión de Galois. 
 \item Determinar  $Gal \Big(\frac{\mathbb{Q}(\sqrt[3]{3},\sqrt{-3})}{\mathbb{Q}}\Big)$ y $Irr(\sqrt[3]{3}+\sqrt{-3},\mathbb{Q})$
-\item Considera la clausura normal $E/\mathbb{Q}$ de $\mathbb{Q}
+\item Considera la clausura normal $E/\mathbb{Q}$ de $\mathbb{Q}(\sqrt[4]{2})/\mathbb{Q}$, que es una extensión de Galois y describe $E$. 
+\item Determina $Gal(E/\mathbb{Q})$ e $Irr(i + \sqrt{2} +\sqrt{-2},\mathbb{Q})$.
 \end{enumerate}
 \end{exercise}
 
@@ -249,19 +252,86 @@ Para hacer los cálculos hay que observar que $\omega = -\frac{1}{2} + \frac{\sq
   \begin{tabular}{ l | c | c | r }
     \hline
     notación & $\sqrt[3]{3}$ & $\sqrt{-3}$ & orden \\ \hline
-    Id & $\sqrt[3]{3}$ & $\sqrt{-3}$ & 1 \\ \hline
-    & $\sqrt[3]{3}$ & $-\sqrt{-3}$ & 2 \\ \hline
-    & $\omega \sqrt[3]{3}$ & $\sqrt{-3}$ & 3 \\ \hline
-    & $\omega \sqrt[3]{3}$ & $-\sqrt{-3}$ & 2 \\ \hline
-    & $\omega^2 \sqrt[3]{3}$ & $\sqrt{-3}$ & 3 \\ \hline
-    & $\omega^2 \sqrt[3]{3}$ & $-\sqrt{-3}$ & 2 \\
+    $Id$ & $\sqrt[3]{3}$ & $\sqrt{-3}$ & 1 \\ \hline
+    $s$ & $\sqrt[3]{3}$ & $-\sqrt{-3}$ & 2 \\ \hline
+    $r$ & $\omega \sqrt[3]{3}$ & $\sqrt{-3}$ & 3 \\ \hline
+    $rs$ & $\omega \sqrt[3]{3}$ & $-\sqrt{-3}$ & 2 \\ \hline
+    $r^2$ & $\omega^2 \sqrt[3]{3}$ & $\sqrt{-3}$ & 3 \\ \hline
+    $r^2s$ & $\omega^2 \sqrt[3]{3}$ & $-\sqrt{-3}$ & 2 \\
     \hline
   \end{tabular}
 \end{center}
 
 En estas condiciones es isomorfo a $D_3$.
 
+Para calcular $Irr(\sqrt[3]{3}+\sqrt{-3},\mathbb{Q})$ tenemos que hacer algunos cálculos:
+
+$$\alpha = \sqrt[3]{3}+\sqrt{-3} \implies (\alpha - \sqrt{-3})^3 = 3 \implies \alpha^3-3\alpha-3 = \sqrt{-3}(\alpha^2-3) \implies \alpha^6 - 6 \alpha^4-6\alpha^3+3\alpha^2+18\alpha+9 = 0$$
+
+Para investigar la naturaleza de este polinomio lo reducimos módulo $2$ obteniendo $p(X) = X^6+X^2+1$. Vemos que no tiene raíces y entonces no puede tener en $\mathbb{Z}[X]$ factores de grado 1 o 5. El único irreducible de grado en $\mathbb{Z}_2[X]$ es $X^2+X+1$ y comprobamos que el resto de la división euclídea es $X+1$ y por tanto, el polinomio no tiene factores de grado 2 o 4. Sin embargo resulta que $p(X) = (X^3+X+1)^2$ lo que nos dice que si tuviera factores serían de grado 3. 
+
+Volviendo a $\mathbb{Z}$ vemos por ensayo y error que $X^6 - 6 X^4-6X^3+3X^2+18X+9 = (X^3-3X-3)^2$ y por el criterio de Eisenstein con $p = 3$ se obtiene que $X^3-3X-3$ es irreducible. De donde, $Irr(\sqrt[3]{3}+\sqrt{-3},\mathbb{Q}) = X^3-3X-3$. 
+
+\item  Claramente, $Irr(\sqrt[4]{2},\mathbb{Q}) = X^4 - 2$ y su cuerpo de descomposición es $\mathbb{Q}(\sqrt[4]{2},i)/\mathbb{Q}$. Esta es la clausura normal ya que la extensión es finita y tiene un solo generador. La clausura normal siempre es una extensión normal y en este caso vemos claramente que la extensión es separable puesto que los generadores tienen polinomios mínimos sobre $\mathbb{Q}$ son $X^4-2,X^2+1$ que tienen todas sus raíces distintas, luego son separables. Por tanto, tenemos una extensión de Galois. Vamos a describir esta extensión. 
+
+Considerando la torre $\mathbb{Q} \subseteq \mathbb{Q}(\sqrt[4]{2}) \subseteq \mathbb{Q}(\sqrt[4]{2},i)$ vemos claramente que la extensión tiene grado 8 y por el teorema de Artin, $|Gal(\mathbb{Q}(\sqrt[4]{2},i)/\mathbb{Q})| = 8$. Para determinar el grupo calculamos los de los elementos.
+
+\begin{center}
+  \begin{tabular}{ l | c | c | r }
+    \hline
+    notación & $i$ & $\sqrt[4]{2}$ & orden \\ \hline
+    $Id$ & $i$ & $\sqrt[4]{2}$ & 1 \\ \hline
+    $\sigma$ & $i$ & $i\sqrt[4]{2}$ & 4 \\ \hline
+    $\sigma^2$ & $i$ & $-\sqrt[4]{2}$ & 2 \\ \hline
+    $\sigma^3$ & $i$ & $-i\sqrt[4]{2}$ & 4 \\ \hline
+    $\tau$ & $-i$ & $\sqrt[4]{2}$ & 2 \\ \hline
+    $\sigma\tau$ & $-i$ & $-\sqrt[4]{2}$ & 2 \\ \hline
+    $\sigma^2\tau$ & $-i$ & $i\sqrt[4]{2}$ & 2 \\ \hline
+    $\sigma^3\tau$ & $-i$ & $-i\sqrt[4]{2}$ & 2 \\ 
+    \hline
+  \end{tabular}
+\end{center}
+
+Si observamos que el grupo no es abeliano entonces tenemos que el grupo es $D_4$. 
+
+La correspondencia de Galois viene expresada mediante los siguientes diagramas:
+
+\begin{tikzcd}
+& & \{e\} \arrow{drr} \arrow{dr} \arrow{d}  \arrow{dl} \arrow{dll} \\
+\langle \tau \rangle  \arrow{dr} &
+\langle \sigma^2\tau \rangle \arrow{d}  &
+\langle \sigma^2 \rangle \arrow{dr} \arrow{dl} \arrow{d} \arrow{dr} &
+\langle \sigma\tau \rangle \arrow{d} &
+\langle \sigma^3\tau \rangle  \arrow{dl} \\
+& \langle \sigma^2,\tau \rangle  \arrow{dr}  &
+\langle \sigma \rangle \arrow{d} &
+\langle \sigma^2,\sigma \tau \rangle \arrow{dl}  \\
+& & Gal(\frac{\mathbb{Q}(\sqrt[4]{2},i)}{\mathbb{Q}})
+\end{tikzcd}
 \end{enumerate}
+
+Los subgrupos de orden 2 son cíclicos por ser 2 un primo y por tanto, están generados por los elementos del grupo de orden 2 y por tanto hay 5. Los subgrupos de orden $4 = 2^2$ son o bien cíclicos o bien producto de cíclicos de orden 2. Estos últimos son los llamados de tipo Klein y para identificarlos debemos tomar dos elementos de orden 2 que conmuten entre sí. Se obtienen los subgrupos representados en la figura superior. 
+
+Observamos también que todos los de orden 4, por ser de índice 2 son subgrupos normales y entre los de orden 2 el único que es normal es el generado por el elemento que está el centro del grupo $\sigma^2$. 
+
+
+\begin{tikzcd}
+& & \mathbb{Q}(i,\sqrt[4]{2}) \\
+\mathbb{Q}(\sqrt[4]{2}) \arrow{urr} &
+\mathbb{Q}(i\sqrt[4]{2}) \arrow{ur} &
+\mathbb{Q}(i,\sqrt{2}) \arrow{u} &
+\mathbb{Q}((i+1)\sqrt[4]{2}) \arrow{ul} &
+\mathbb{Q}((1-i)\sqrt[4]{2}) \arrow{ull} \\
+& \mathbb{Q}(\sqrt{2}) \arrow{ul} \arrow{u} \arrow{ur} &
+\mathbb{Q}(i) \arrow{u} &
+\mathbb{Q}(i\sqrt{2}) \arrow{ul} \arrow{u} \arrow{ur} \\
+& & \mathbb{Q} \arrow{ul} \arrow{u} \arrow{ur}
+\end{tikzcd}
+
+Ahora pasamos a determinar la conexión de Galois entre estos subgrupos y los subcuerpos de la extensión $\mathbb{Q}(\sqrt[4]{2},i)/\mathbb{Q})$. Para ello determinamos los cuerpos fijos por cada subgrupo ya que están en biyección. Para elo vemos como actúa cada isomorfismo sobre los elementos de una $\mathbb{Q}$-base.
+
+
+
 
 
 
