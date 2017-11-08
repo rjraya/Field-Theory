@@ -1,0 +1,86 @@
+\begin{exercise}
+Sea $\frac{E}{K}$ una extensión de cuerpos algebraica y normal y $f \in K[X]$ un polinomio irreducible. Si $f = f_1f_2$ es una factorización en dos irreducibles de $E[X]$. Entonces:
+
+\begin{enumerate}
+\item Prueba que existe un automorfismo $\sigma:\frac{E}{K} \to \frac{E}{K}$ tal que $\overline{\sigma}(f_1) = f_2$ y por tanto $\sigma(f_2) = f_1$. 
+\item Considera el polinomio $f = X^4 - 2 \in \mathbb{Q}[X]$ y el cuerpo $E = \mathbb{Q}(\sqrt{2})$ En $\frac{E}{K}$ tenemos la factorización en irreducibles $f = (X^2 - \sqrt{2})(X^2+\sqrt{2}) = f_1f_2$. Describe $\sigma$ en este caso. 
+\item Justifica que $\frac{\mathbb{Q}(\sqrt{2})}{\mathbb{Q}}, \frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}(\sqrt{2})}$ son extensiones normales y que $\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}}$ no lo es.
+\item Determina la clausura normal $\frac{F}{\mathbb{Q}}$ de $\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}}$.
+\item Calcular el grupo $Aut(\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}})$ y los automorfismos que dejan fijo a $\mathbb{Q}(\sqrt{2})$. 
+\end{enumerate}
+\end{exercise}
+\textbf{Solución:}
+\begin{enumerate}
+\item Con las mismas ideas con las que se prueba la unicidad del cuerpo de descomposición es fácil ver el siguiente resultado. 
+
+\begin{corollary}[Elementos conjugados en cuerpos de descomposición]
+Sea $p \in K[X]$ irreducible con cuerpo de descomposición $F$. Sean $\alpha,\beta \in F$ raíces de $p$. Entonces existe un isomorfismo $\sigma:F \to F$ sobre $K$ tal que $\alpha \mapsto \beta$. 
+\end{corollary}
+
+En nuestro caso para $f$ podemos considerar que en la clausura algebraica descompone como $$f = \prod (x - \alpha_i) \prod (x - \beta_i) \prod (x - \gamma_i)$$ donde $\alpha_i$ son raíces del polinomio $f_1$ y $\beta_i$ son raíces del polinomio $f_2$. Seleccionamos dos de estas raíces, sean $\alpha_1, \beta_1$. Por el corolario existe un isomorfismo $\sigma:F \to F$ sobre $K$ tal que $\alpha_1 \mapsto \beta_1$ donde $F$ es un cuerpo de descomposición de $f$. 
+
+Como $\frac{F}{K}$ es algebraica y $\frac{E}{K}$ es normal, $\frac{FE}{F}$ es normal. Extendemos el codominio de $\sigma:F \to FE$ y obtenemos un homomorfismo sobre $K$.
+
+Extiendo $\sigma$ a un automorfismo $\sigma_1:FE \to FE$ sobre $K$ y restringimos su dominio a $\sigma_2:E \to FE$ obteniendo un homomorfismo sobre $K$. Observamos que $FE \subseteq \overline{F}$ ya que $\frac{FE}{F}$ es normal. También observamos que $\overline{F} = \overline{K}$ por la transitividad de la clausura. Esto permite ver $\sigma_2$ con codominio $\overline{K}$ y aplicar la caracterización de normalidad sobre $K$. 
+
+Como $\frac{E}{K}$ es normal se tendrá que $\sigma_2(E) = E$ de modo que tenemos un automorfismo en $E$ sobre $K$. 
+
+Este automorfismo verifica $\sigma_2(f_1) = f_2$ ya que como $\alpha_1$ es raíz de $f_1$ entonces $$0 = \sigma_2(f_1(\alpha_1)) = \sigma_1(f_1(\alpha_1)) = \overline{\sigma_1}(f)(\sigma_1(\alpha_1)) = \overline{\sigma_2}(f)(\beta_1)$$ es decir que el polinomio imagen, que es irreducible, tiene a $\beta_1$ como raíz. Luego tiene que ser $Irr(\beta_1,E)$ que es igual a $f_2$. 
+
+\item Podemos representar $\mathbb{Q}(\sqrt{2})$ por expresiones de la forma $a + b \sqrt{2}$. Como todo los $\sigma$ hallados fijaban $K$ determinaremos el homomorfismo si determinamos $\sigma(\sqrt{2})$.
+
+Consideramos el cuerpo de descomposición del polinomio $X^4-2$. De forma natural este sería $$\mathbb{Q}(\sqrt[4]{2},-\sqrt[4]{2},i\sqrt[4]{2},-i\sqrt[4]{2}) = \mathbb{Q}(i,\sqrt[4]{2})$$ donde la igualdad se comprueba viendo que la inclusión de los generadores en cada dirección. Por otro lado, en el cuerpo de descomposición $$X^2 + \sqrt{2} = (X - i \sqrt[4]{2})(X + i \sqrt[4]{2})$$ $$X^2 - \sqrt{2} = (X - \sqrt[4]{2})(X + \sqrt[4]{2})$$ Simplemente elegimos que llevaremos $\sqrt[4]{2} \mapsto i \sqrt[4]{2}$ y entonces obtenemos que $$\sigma(\sqrt{2}) = \sigma((\sqrt[4]{2})^2) = (\sigma(\sqrt[4]{2}))^2 = (i \sqrt[4]{2})^2 = - \sqrt{2}$$ esto determina completamente el homomorfismo y comprobaciones rutinarias muestran que $\sigma(f_1) = f_2$. 
+
+\item Usamos que la extensiones finitas y normales se pueden caracterizar por ser cuerpo de descomposición de algún polinomio. 
+
+\begin{proposition}
+Toda extensión $\frac{F}{K}$ de grado dos de un cuerpo es normal.
+\end{proposition}
+ 
+
+Si la extensión es de grado primo, en particular, es finita. Si es finita es algebraica. Tomo $u \in F \setminus K$ por el teorema del grado se verifica que $$[F:K] = [F:K(u)][K(u):K]$$ Si $[K(u):K] = 1$ entonces $K(u) = K$ pero $u \notin K$. Contradicción. Por tanto, $[K(u):K]$ es dos. Como la extensión es algebraica existe $Irr(u,K)$ y $gr(Irr(u,K)) = 2$. Este polinomio tendrá dos raíces en su cuerpo de descomposición, claramente $K(u)$ contiene una raíz pero por las ecuaciones de Cardano-Vieta $$(X - \alpha)(X - \beta) = X^2 - (\alpha+\beta)X + \alpha\beta$$ y sabemos que $\alpha + \beta \in K$ luego teniendo $u$ tengo la otra raíz. De modo $K(u)$ es precisamente el cuerpo de descomposición de $Irr(u,K)$ y por tanto, $\frac{F}{K}$ es normal. 
+
+\begin{enumerate}
+\item $\frac{\mathbb{Q}(\sqrt{2})}{\mathbb{Q}}$ es normal ya que $X^2-2$ es irreducible sobre $\mathbb{Q}$ por el criterio de Eisenstein y por tanto la extensión tiene grado 2. 
+\item $\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}(\sqrt{2})}$ es normal ya que $X^2-\sqrt{2}$ es irreducible sobre $\mathbb{Q}(\sqrt{2})$ con lo cual la extensión tiene grado 2. En efecto, será irreducible si y solo si no tiene raíces. Las raíces son de la forma $a+b\sqrt{2}$ y operando se llega a la ecuación $$a^2+2b^2 = \sqrt{2}(1-2ab)$$ Por distinción de casos, si $1-2ab = 0$ entonces se llega a $\sqrt{2}  = 0$ y si $1-2ab \neq 0$ entonces $\sqrt{2} = \frac{a^2+2b^2}{1-2ab} \in \mathbb{Q}$ ambos casos son contradicciones. 
+\item $\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}}$ no es normal. Si la extensión normal todo polinomio irreducible con una raíz en el cuerpo extensión descompondría en factores lineales. Pero $X^4 - 2$ es un polinomio irreducible sobre $\mathbb{Q}$ por el criterio de Eisenstein y $\sqrt[4]{2}$ es una raíz que está en el cuerpo extensión y sin embargo, no puede descomponer en polinomios lineales ya que este cuerpo sólo contiene las raíces reales y hay dos complejas. 
+\end{enumerate}
+
+\item La clausura normal de una extensión de generación finita está caracterizada como el cuerpo de descomposición del producto de los irreducibles asociados a los generadores. En este caso sólo hay un generador y el cuerpo de descomposición del polinomio mínimo $X^4-2$ es conocido como $\mathbb{Q}(\sqrt[4]{2},i)$.
+
+\item Claramente, $\mathbb{Q}(\sqrt[4]{2})$ es el cuerpo de descomposición del polinomio $X^4 - 2$ y como las extensiones finitas de $\mathbb{Q}$ son separables $\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}}$ es una extensión de Galois. Por tanto, $$Aut(\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}}) = [\mathbb{Q}(\sqrt[4]{2}):\mathbb{Q}] = 8$$ Los candidatos para ser imagen de $\sqrt[4]{2}$ son $\sqrt[4]{2},-\sqrt[4]{2},i\sqrt[4]{2},-i\sqrt[4]{2}$ y los candidatos para ser imagen de $i$ son $i,-i$. Luego en efecto, todas estas posibilidades se dan. 
+
+La correspondencia de Galois viene expresada mediante los siguientes diagrmas:
+
+\begin{tikzcd}
+& & \mathbb{Q}(i,\sqrt[4]{2}) \\
+\mathbb{Q}(\sqrt[4]{2}) \arrow{urr} &
+\mathbb{Q}(i\sqrt[4]{2}) \arrow{ur} &
+\mathbb{Q}(i,\sqrt{2}) \arrow{u} &
+\mathbb{Q}((i+1)\sqrt[4]{2}) \arrow{ul} &
+\mathbb{Q}((1-i)\sqrt[4]{2}) \arrow{ull} \\
+& \mathbb{Q}(\sqrt{2}) \arrow{ul} \arrow{u} \arrow{ur} &
+\mathbb{Q}(i) \arrow{u} &
+\mathbb{Q}(i\sqrt{2}) \arrow{ul} \arrow{u} \arrow{ur} \\
+& & \mathbb{Q} \arrow{ul} \arrow{u} \arrow{ur}
+\end{tikzcd}
+
+\begin{tikzcd}
+& & \{e\} \arrow{drr} \arrow{dr} \arrow{d}  \arrow{dl} \arrow{dll} \\
+\langle \tau \rangle  \arrow{dr} &
+\langle \sigma^2\tau \rangle \arrow{d}  &
+\langle \sigma^2 \rangle \arrow{dr} \arrow{dl} \arrow{d} \arrow{dr} &
+\langle \sigma\tau \rangle \arrow{d} &
+\langle \sigma^3\tau \rangle  \arrow{dl} \\
+& \langle \sigma^2,\tau \rangle  \arrow{dr}  &
+\langle \sigma \rangle \arrow{d} &
+\langle \sigma^2,\tau^2 \rangle \arrow{dl}  \\
+& & Aut(\frac{\mathbb{Q}(\sqrt[4]{2})}{\mathbb{Q}})
+\end{tikzcd}
+\end{enumerate}
+
+donde $$\sigma(\sqrt[4]{2}) = i\sqrt[4]{2}$$
+$$\sigma(i) = i$$ $$\tau(i) = -i$$
+$$\tau(\sqrt[4]{2}) = \sqrt[4]{2}$$
+
+Realizando los cálculo en una tabla, tenemos que $\tau$ deja fijo a $\alpha = \sqrt[4]{2}$ por tanto, también deja fijo a $\alpha^2$. Por otro lado, $\sigma^2$ lleva $\alpha^2$ a $\alpha^2$. Por tanto, el subgrupo que deja fijo a $\mathbb{Q}(\sqrt{2})$ será $\langle \sigma^2,\tau \rangle$. 

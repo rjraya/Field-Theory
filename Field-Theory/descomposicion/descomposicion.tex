@@ -26,7 +26,7 @@
         	K_1 \arrow{r}{\sigma} &
         	K_2
         \end{tikzcd}
-		\item Si $\tau:F_1 \to F_2$ es una extensión de $\sigma$ entonces si $u \in F_1$ es raíz de $f \in K_1[X]$ entonces $\tau(u) \in F_2$ es raíz de $\overline{\sigma}(f) \in F_2[X]$. 	
+		\item Si $\tau:F_1 \to F_2$ es una extensión de $\sigma$ entonces si $u \in F_1$ es raíz de $f \in K_1[X]$ entonces $\tau(u) \in F_2$ es raíz de $\overline{\sigma}(f) \in K_2[X]$. 	
 		\begin{tikzcd}
 			u \in F_1 \arrow{r}{\tau} \arrow[dash]{d} & 
 			F_2 \ni \tau(u) \arrow[dash]{d} & \\
@@ -37,7 +37,7 @@
 		\end{tikzcd}
 		\item Sea $f_1$ un polinomio irreducible de $K_1$ con raíz $u_1 \in F_1$. Supongamos $u_2 \in F_2$ raíz de $f_2 = \overline{\sigma}(f_1)$. Entonces existe un único isomorfismo $\tau: K_1(u_1) \to K_2(u_2)$ sobre $\sigma$ tal que $\tau(u_1) = u_2$.
 		
-		Además el número de extensiones $\tau:K(u_1) \to F_2$ sobre $\sigma$ es el número de raíces de $f_2$ en $F_2$.
+		Además el número de extensiones $\tau:K(u_1) \to F_2$ sobre $\sigma$ es el número de raíces distintas de $f_2$ en $F_2$.
 		\begin{tikzcd}
 			u_1 \in F_1 \arrow[dash]{r} \arrow[dash]{d} & 
 			F_2 \ni u_2 \arrow[dash]{d} & \\
@@ -121,9 +121,9 @@ Una extensión $\frac{E}{K}$ es un cuerpo de descomposición de $f$ sobre $K$ si
 \begin{proof}
 	Hagamos inducción sobre $n$. Si $n =  1$, $f = a_0x+a_1$ con $a_0 \neq 0$ y $a_0,a_1 \in K$. Haciendo $E = K = K(\alpha_1)$ entonces tomando $\alpha_1 = -a_1/a_0 \in K$ tenemos que $f = a_0(x-\alpha_1)$ y además $[F:K] = 1$. 
 	
-	Suponga el teorema cierto para $n-1$, por el teorema de Kronecker existe una raíz $\alpha_1$ de $f$ en un cuerpo extensión $F_1$ y entonces $x-\alpha_1$ es un factor de $f$ en $F_1[X]$ de modo que $f = (x-\alpha_1)g$ con $g \in F_1[X]$ de grado $n-1$. Aplicando la hipótesis de inducción a $g$ obtenemos una extensión de $F_1$, $L$, tal que $g = a_0 \prod (x - \alpha_i)$ y por tanto, también $f$ descompone en $L$ además sabemos que $[L:F_1] \le (n-1)!$. 
+	Suponga el teorema cierto para $n-1$, por el teorema de Kronecker existe una raíz $\alpha_1$ de $f$ en un cuerpo extensión $F$ y entonces $x-\alpha_1$ es un factor de $f$ en $F[X]$ de modo que $f = (x-\alpha_1)g$ con $g \in F[X]$ de grado $n-1$. Aplicando la hipótesis de inducción a $g$ obtenemos una extensión de $F_1$, $L$, tal que $g = a_0 \prod (x - \alpha_i)$ y por tanto, también $f$ descompone en $L$ además sabemos que $[L:F] \le (n-1)!$. 
 	
-	Esta descomposición $f = c \prod (x - \alpha_i)$ en $L$ me dice que en $K(\alpha_1,\cdots,\alpha_n)$, $f$ también descompone y claramente es la mínima extensión que lo verifica. Por tanto, $E=K(\alpha_1,\ldots,\alpha_n)$ es un cuerpo de descomposición para $f$ y además como $[F(\alpha_1):K] = gr(Irr(\alpha_1,F)) = n$ se tiene que $$[L:K] = [L:F_1][F(\alpha_1):K] \le n!$$
+	Esta descomposición $f = c \prod (x - \alpha_i)$ en $L$ me dice que en $K(\alpha_1,\cdots,\alpha_n)$, $f$ también descompone y claramente es la mínima extensión que lo verifica. Por tanto, $E=K(\alpha_1,\ldots,\alpha_n)$ es un cuerpo de descomposición para $f$ y además como $[F(\alpha_1):K] = gr(Irr(\alpha_1,F)) = n$ se tiene que $$[L:K] = [L:F][F(\alpha_1):K] \le n!$$
 \end{proof}
 
 \begin{theorem}[Unicidad del cuerpo de descomposición]
@@ -136,7 +136,7 @@ Una extensión $\frac{E}{K}$ es un cuerpo de descomposición de $f$ sobre $K$ si
 		K_2 
 	\end{tikzcd}
 
-	Como consecuencia el cuerpo de descomposición de $f \in K[X]$ es único salvo isomorfismo.
+	Como consecuencia el cuerpo de descomposición de $f \in K[X]$ es único salvo isomorfismo sobre $K$. 
 \end{theorem}
 \begin{proof}
 	Por inducción sobre $n = gr(f)$. Obsérvese que siempre $gr(f) = gr(\overline{\sigma}(f))$ ya que probamos que el isomorfismo $\overline{\sigma}$ preserva grado. 
@@ -163,14 +163,13 @@ El proceso es el mismo que en la demostración anterior donde se toma $\sigma = 
 Sea $\mathcal{F} \subseteq K[X]$ una familia de polinomios no constantes. Una extensión $\frac{E}{K}$ es un cuerpo de descomposición de $\mathcal{F}$ sobre $K$ si para cualquier polinomio $f \in \mathcal{f}$ descompone en factores lineales y $E$ es el menor cuerpo donde esto ocurre.
 \end{definition}
 
-\begin{proposition}[Existencia del cuerpo descomposición de una familia]
+\begin{proposition}[Existencia y unicidad del cuerpo descomposición de una familia]
 Sea $K$ un cuerpo y $\mathcal{F}$ una familia de polinomios de $K[X]$.
 
-$E = K(\{u \in F:\exists f \in \mathcal{F}. f(u) = 0\})$ es un cuerpo de descomposición de $\mathcal{F}$.
-\end{proposition}
-
-\begin{proposition}[Unicidad del cuerpo de descomposición de una familia]
-El cuerpo de descomposición de una familia de polinomios es único salvo isomorfismo. 
+\begin{enumerate}
+\item $E = K(\{u \in F:\exists f \in \mathcal{F}. f(u) = 0\})$ es un cuerpo de descomposición de $\mathcal{F}$.
+\item El cuerpo de descomposición de una familia de polinomios sobre $K$ es único salvo isomorfismo sobre $K$.  
+\end{enumerate}
 \end{proposition}
 
 

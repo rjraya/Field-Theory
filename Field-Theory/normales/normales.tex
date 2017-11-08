@@ -1,7 +1,9 @@
 \subsection{Extensiones conjugadas}
 
-\begin{definition}[Elementos conjugados]
-$u,v \in \overline{K}$ son conjugados si se verifica alguna de las siguientes condiciones equivalentes.
+\begin{definition}[Elementos conjugados sobre un cuerpo]
+Sea $K$ un cuerpo. 
+
+$u,v \in \overline{K}$ son conjugados sobre $K$ si se verifica alguna de las siguientes condiciones equivalentes.
 \end{definition}
 
 \begin{proposition}[Caracterización de elementos conjugados]
@@ -20,7 +22,7 @@ Veamos circulamente las implicaciones.
 \begin{enumerate}
 \item $K(u) \cong \frac{K[X]}{\langle f(X) \rangle} \cong K(v)$. Este isomorfismo deja invariante a $K$ pues la evaluación de una constante es la constante. 
 \item Basta tomar como codominio $\overline{K}$.
-\item Como $\overline{K}$ es la clausura algebraica de $K$ por la transitividad de la clausura también es clausura algebraica de $K(u)$, en particular, la extensión $\frac{\overline{K}}{K(u)}$ es algebraica. En estas condiciones teníamos que se podía extender el homorfismo desde la extensión algebraica $\overline{K}$ hasta la clausura algebraica $\overline{K}$. Pero todo endomorfismo sobre extensiones algebraicas es automorfismo.
+\item Como $\overline{K}$ es la clausura algebraica de $K$ por la invarianza de la clausura mediante extensiones algebraicas también es clausura algebraica de $K(u)$, en particular, la extensión $\frac{\overline{K}}{K(u)}$ es algebraica. En estas condiciones teníamos que se podía extender el homorfismo desde la extensión algebraica $\overline{K}$ hasta la clausura algebraica $\overline{K}$. Pero todo endomorfismo sobre extensiones algebraicas es automorfismo.
 \item Trabajamos con la extensión del automorfismo $\sigma$ a anillos de polinomios $\overline{\sigma}$. Sea $f = Irr(u,K) = \sum a_iX^i$. Entonces $$0 = \overline{\sigma}(f(u)) = \sum \sigma(a_i)\sigma(u)^i = \sum a_i v^i$$ como este isomorfismo lleva irreducibles en irreducibles pues también $f = Irr(v,K)$. 
 \end{enumerate}
 \end{proof}
@@ -49,7 +51,7 @@ Una extensión normal $\frac{F}{K}$ es un subcuerpo de la clausura de $K$ que de
 Dada una extensión algebraica $\frac{F}{K}$ tal que $F$ un subcuerpo de la clausura de $K$. Son equivalentes:
 
 \begin{enumerate}
-\item Para todo homomorfismo $\sigma:F \to \overline{K}$ sobre $K$ se verifica que $\sigma(F) = F$. 
+\item Para todo homomorfismo $\sigma:F \to \overline{K}$ sobre $K$ se verifica que $\sigma(F) = F$, es decir, todo homomorfismo de la extensión a la clausura factoriza como automorfismo por la extensión.
 \item Todo polinomio irreducible sobre $K$ que tiene una raíz en $F$ descompone en factores lineales en $F[X]$. 
 \item $F$ es el cuerpo de descomposición de una familia de polinomios. 
 \end{enumerate}
@@ -71,6 +73,11 @@ Sea $\frac{E}{K}$ una extensión de cuerpos.
 
 $E$ es el cuerpo de descomposición de un polinomio $p \in K[X]$ $\iff$ $\frac{E}{K}$ es normal y finita.
 \end{proposition}
+\begin{proof}
+$\Rightarrow)$ Si $E$ es un cuerpo de descomposición de un polinomio en $K$ entonces $\frac{E}{K}$ es finita ya que es de generación finita mediante generadores algebraicos y además es normal pues es el cuerpo de descomposición de una familia (con un elemento) de polinomios. 
+
+$\Leftarrow)$ Si la extensión es finita de nuevo debe ser generada por una colección finita de elementos algebraicos sobre $K$. Denotemos $Irr(\alpha_i,K)$ al polinomio mínimo de $\alpha_i$ sobre $K$. Este polinomio es irreducible y tiene una raíz en $F$ por tanto, descompone en $F$ completamente. Entonces basta considerar $f = \prod Irr(\alpha_i,K)$ y ver que su cuerpo de descomposición tiene que ser exactamente igual a $E$.
+\end{proof}
 
 \begin{example}
 	Veamos que $\mathbb{Q}(\sqrt[3]{2})$ no es el cuerpo de descomposición de ningún
@@ -91,13 +98,15 @@ Se verifican las siguientes propiedades:
 \end{proposition}
 \begin{proof}
 \begin{enumerate}
-\item Si $\sigma:EF \to \overline{K}$ es un homomorfismo sobre $K$ entonces $\sigma(EF) = \sigma(E)\sigma(F) = EF$ y por tanto la extensión $\frac{EF}{K}$ es normal. 
-\item Sea $\sigma:E \to \overline{F}$ un homomorfismo sobre $F$. Tenemos que observar que como $\frac{E}{K}$ es normal en particular asumimos que es una extensión algebraica. Esto nos dice que, en particular, $\frac{F}{K}$ es algebraica y gracias a esto podemos aplicar la transitividad de la clausura algebraica para deducir que $\overline{F} = \overline{K}$. Entonces $\sigma:E \to \overline{K}$ es un homomorfismo que en particular fija $K$. Por ser $\frac{E}{K}$ una extensión normal se tiene que verificar que $\sigma(E) = E$ y por tanto, $\frac{E}{F}$ es normal. 
+\item Si $\sigma:EF \to \overline{F}$ es un homomorfismo sobre $F$ entonces $\sigma(EF) = \sigma(E)\sigma(F) = EF$ y por tanto la extensión $\frac{EF}{F}$ es normal. Obsérvese que lo anterior es vaĺido ya que todo homomorfismo que sale de un cuerpo es monomorfismo y que también hemos utilizado la preservación de la clausura mediante extensiones algebraicas de modo que $\overline{F} = \overline{K}$ y en particular hemos podido utilizar la propiedad de normalidad de $E$.
+\item Sea $\sigma:E \to \overline{F}$ un homomorfismo sobre $F$. Tenemos que observar que como $\frac{E}{K}$ es normal en particular asumimos que es una extensión algebraica. Esto nos dice que, en particular, $\frac{F}{K}$ es algebraica y gracias a esto podemos aplicar la invarianza de la clausura mediante extensiones algebraicas para deducir que $\overline{F} = \overline{K}$. Entonces $\sigma:E \to \overline{K}$ es un homomorfismo que en particular fija $K$. Por ser $\frac{E}{K}$ una extensión normal se tiene que verificar que $\sigma(E) = E$ y por tanto, $\frac{E}{F}$ es normal. 
+\item Si $\sigma:EF \to \overline{K}$ es un homomorfismo sobre $K$ entonces $\sigma(EF) = \sigma(E)\sigma(F) = EF$ y por tanto la extensión $\frac{EF}{K}$ es normal. Obsérvese que lo anterior es vaĺido ya que todo homomorfismo que sale de un cuerpo es monomorfismo. 
+\item  Si $\sigma: \cap F_k \to \overline{K}$ es un homomorfismo sobre $K$ entonces, como la intersección arbitraria de cuerpos es un cuerpo, el homomorfismo es inyectivo y por tanto respecta intersecciones. Por tanto, $\sigma(\cap F_k) = \cap \sigma(F_k) = \cap F_k$ por la normalidad de los $F_k$. 
 \end{enumerate}
 \end{proof}
 
 \begin{theorem}[Extensión de homomorfismos a una extensión normal]
-Sea $K \subseteq F \subseteq E$ una torre de cuerpos con $\frac{E}{K}$ normal. Entonces todo homomorfismo $\tau:F \to E$ se extiende a un automorfismo $\overline{\tau}:E \to E$. 
+Sea $K \subseteq F \subseteq E$ una torre de cuerpos con $\frac{E}{K}$ normal. Entonces todo homomorfismo $\tau:F \to E$ sobre $K$ se extiende a un automorfismo $\overline{\tau}:E \to E$. 
 \begin{tikzcd}
 E \arrow[dashed]{r}{\overline{\tau}} \arrow[dash]{d} &
 E  & \\
@@ -106,50 +115,71 @@ K
 \end{tikzcd}
 \end{theorem}
 \begin{proof}
-Sea $\tau:F \to E$ un homomorfismo. Cambiamos el codominio por $\overline{K}$ y seguimos teniendo un homomorfismo. Pero, ya que $\frac{E}{K}$ es algebraica por ser normal, podemos extender el homomorfismo a $\tau:E \to K$. Finalmente, por la normalidad este homomorfismo verifica que $\tau(E) = E$. De modo que tenemos un endomorfismo $\tau:E \to E$ y todo homomorfismo de extensiones algebraicas es un automorfismo.
+Sea $\tau:F \to E$ un homomorfismo. Cambiamos el codominio por $\overline{K}$ y seguimos teniendo un homomorfismo. Pero, ya que $\frac{E}{K}$ es algebraica por ser normal, podemos extender el homomorfismo a $\tau:E \to \overline{K}$. Finalmente, por la normalidad este homomorfismo verifica que $\tau(E) = E$. De modo que tenemos un endomorfismo $\tau:E \to E$ y todo homomorfismo de extensiones algebraicas es un automorfismo.
 \end{proof}
 
 \subsection{Clausura normal}
 
 \begin{definition}[Clausura normal]
-Sea $\frac{F}{K}$ una extensión algebraica, la clausura normal de $\frac{F}{K}$ es una extensión $\frac{E}{K}$ con $$E = \cap \{H:H \supseteq F \land \frac{H}{K} \text{ es normal}\}$$
+Sea $\frac{F}{K}$ una extensión algebraica, la clausura normal de $\frac{F}{K}$ es una extensión $\frac{E}{K}$ con $$E = \cap \{H:H \supseteq F \land \frac{H}{K} \text{ es normal}\}$$ En otros términos, la clausura normal es la menor extensión normal que contiene a $F$.
 \end{definition}
 
 \begin{proposition}[Existencia y unicidad de la clausura normal]
-Para toda extensión algebraica $\frac{F}{K}$existe una clausura normal $\frac{E}{K}$ además es única salvo isomorfismo. 
+1. Para toda extensión algebraica $\frac{F}{K}$ existe una clausura normal $\frac{E}{K}$. \\
+2. Dos clasuras normales de de la extensión algebraica $\frac{F}{K}$ están relacionadas mediante un isomorfismo sobre $F$.  
 \end{proposition}
 \begin{proof}
-La existencia se sigue del de que la intersección que define a la clausura normal es no vacía ya que $\overline{K}$ siempre define una extensión normal utilizando que es algebraica y que todo endomorfismo será un automorfismo.
+1. La existencia se sigue del de que la intersección que define a la clausura normal es no vacía ya que $\overline{K}$ siempre define una extensión normal utilizando que es algebraica y que todo endomorfismo será un automorfismo.
 
-Si tengo dos clausuras normalescomo son intersección de normales y ambas lo son deben ser las misma!! (revisar)
+2. La unicidad se sigue de la unicidad de las clausuras algebraicas. En efecto, si tengo dos clausuras normales $E_1,E_2$ entonces como son algebraicas existe una extensión sobre $K$ a las clausuras que contengan a $E_1,E_2$. Sean $\overline{K}_1,\overline{K_2}$ estas clausuras y $\sigma,\sigma'$ los respectivos homomorfismos desde los $E$. Observamos que  $\overline{K}_1 \cong \overline{K_2}$ y denotamos por $\tau$ al isomorfismo. 
+
+Entonces $\sigma(K) = K \land \sigma'(K') = K'$, como la normalidad se preserva por isomorfismo tenemos que $\tau(K) \cap K'$ es normal sobre $F$ y como $\tau(K) \cap K' \cap K'$ y $K'$ es una clausura normal, necesariamente $\tau(K) = K'$ (si no no sería la menor). Es decir, tenemos que ambas clausuras son isomorfas. 
 \end{proof}
 
-\begin{proposition}[Clausura de una extensión de generación finita]
+\begin{proposition}[Clausura de una extensión de finita]
 Sea $F = K(u_1,\ldots,u_n)$ y $f_i = Irr(u_i,K)$.
 
 La clausura normal de $F$ es el cuerpo de descomposición del polinomio $f = \prod f_i$. 
+
+Como consecuencia toda clausura normal de una extensión finita determina una extensión finita. 
 \end{proposition}
 \begin{proof}
-El cuerpo de descomposición de $f$ determina una extensión normal. Además, esta extensión es la mínima que puede ser normal. Continuará. 
+El cuerpo de descomposición del polinomio $\prod f_i$ determina una extensión normal y finita. Por ser finita, la consecuencia esta clara. 
+
+Toda clausura normal, debería contener a las raíces de los $f_i$ pues todo polinomio irreducible que tenga sus raíces en la clausura debe descomponer totalmente. Además la clausura normal contiene al cuerpo al que se refiere. En definitiva, el cuerpo de descomposición es la menor extensión normal candidata a ser clausura. 
 \end{proof}
 
-\begin{proposition}
-La clausura normal de una extensión finita es finita. 
+Claramente, la clausura algebraica determina una extensión normal. El carácter de normalidad se preserva mediante reducciones locales de este concepto. 
+
+\begin{proposition}[Subextensiones de una extensión normal]
+Sea $K \subseteq F \subseteq E$ una torre de extensiones algebraicas con $\frac{E}{K}$ una extensión normal. Entonces: $$\frac{F}{K} \text{ es normal } \iff \forall \sigma:E \to E \text{ sobre K verifica que } \sigma(F) = F$$
 \end{proposition}
+\begin{proof}
+$\Rightarrow)$ Dado $\sigma:E \to E$ sobre $K$ se extiende a la clausura y se restringe a $F$, por la normalidad $\sigma(F) = F$. 
+
+$\Leftarrow)$ Dado un homomorfismos $\sigma:F \to \overline{K}$ por ser $\frac{E}{K}$ algebraica podemos extenderlo hasta $E$. Esta extensión $\overline{\sigma}$ verifica que preserva $E$ y en estas condiciones las hipótesis implican que $F = \overline{\sigma}(F) = \sigma(F)$. 
+\end{proof}
 
 \subsection{Polinomio normal}
 
-\begin{definition}
-Un polinomio irreducible es normal si en todo extensión algebraica que tenga una raíz del polinomio, este descompone en factores lineales. 
+\begin{definition}[Polinomio normal]
+Un polinomio irreducible es normal si ocurre alguna de las condiciones de la siguiente proposición. 
 \end{definition}
 
-\begin{proposition}
-Las siguientes propiedades son equivalentes:
+\begin{proposition}[Condiciones equivalentes para que un polinomio sea normal]
+Sea $f \in K[X]$ un polinomio irreducible. Las siguientes propiedades son equivalentes:
 
 \begin{enumerate}
-\item f es normal sobre $K$.
-\item El cuerop de descomposición de $f$ sobre $K$ es $K(u)$ con $u$ una raíz de $f$. 
+\item En toda extensión algebraica $F/K$ con una raíz de $f$, $f$ descompone en factores lineales. 
+\item El cuerpo de descomposición de $f$ sobre $K$ es $K(u)$ con $u$ una raíz arbitraria de $f$. 
 \item Todas las raíces de $f$ se expresan como polinomios en una cualquiera de ellas. 
 \end{enumerate}
 \end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Tenemos que en $K(u)/K$ para $u$ una raíz de $f$ es una extensión algebraica que contiene una raíz de $f$, por tanto, $f$ descompone en factores lineales. Claramente, ninguna extensión intermedia podría ser cuerpo de descomposición pues debería contener a alguna raíz que por la inclusión debería ser $u$. 
+\item Como $K(u)$ es el cuerpo de descomposición se sigue que todas las raíces están en $K(u)$ y por tanto, se expresan a priori como expresiones fraccionarias en $u$. Sin embargo, por las propiedades del polinomio mínimo sabemos que $K(u) = K[u]$ y por tanto, la expresión es en términos polinómicos. 
+\item Cualquier extensión algebraica con una raíz $u$ contendría a $K(u)$. Como todas las raíces se expresan como polinomios en $u$ la extensión contendría a todas las raíces y entonces $f$ descompodría en polinomios lineales. 
+\end{enumerate}
+\end{proof}
 

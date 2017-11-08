@@ -1,5 +1,5 @@
 \begin{definition}[Cuerpo algebraicamente cerrado]
-Un cuerpo que no tiene extensiones algebraicas propias es un cuerpo algebraicamente cerrado.
+Un cuerpo es algebraicamente cerrado si verifica alguna de las siguientes propiedades.
 \end{definition}
 
 \begin{proposition}[Caracterización de los algebraicamente cerrados]
@@ -31,8 +31,10 @@ Se verifican las siguientes propiedades:
 \begin{enumerate}
 Veamos cada una de las propiedades:
 
+\begin{enumerate}
 \item Si $K$ es un cuerpo finito formo el polinomio $f(x) = \prod_{k \in K} (x-k) + 1$ que no tiene raíces en $K$ y se deduce que el cuerpo no puede ser algebraicamente cerrado. 
 \item Hemos en los ejercicios que el conjunto $F$ de elementos de $E$ que son algebraicos sobre $K$ forma un cuerpo. para ver que es algebraicamente cerrado, tomo un polinomio $f \in F[X]$ no constante. Este polinomio sobre $E[X]$ debe tener una raíz ya que $E$ es algebraicamente cerrado y la raíz $u \in E$ debe ser algebraica sobre $F$, completar con \cite{link4}
+\end{enumerate}
 \end{enumerate}
 
 \end{proof}
@@ -49,28 +51,29 @@ Dicho, de otro modo, la extensión es algebraica y no existe una extensión alge
 \end{definition}
 
 \begin{proposition}[Caracterización de la clausura algebraica]
-Dada una extensión algebraica $\frac{E}{K}$, son equivalentes:
+Dada una extensión $\frac{E}{K}$, son equivalentes:
 
 \begin{enumerate}
 \item $E/K$ clausura algebraica.
 \item $E/K$ algebraica y todo polinomio $f \in K[X]$ no constante  descompone en factores lineales en $E[X]$.
 \item $E$ es cuerpo de descomposición de todos los polinomios no constantes de $K$.
-\item $E/K$ algebraica y todo no constante tiene una raíz en $E$.
+\item $E/K$ algebraica y todo polinomio no constante tiene una raíz en $E$.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-Veamos cada una de las equivalencias:
+Veamos que $1 \implies 2 \implies 3 \implies 1$ y dejaremos la equivalencia con $4$ para más adelante:
 
 \begin{enumerate}
 \item Por defición $\frac{E}{K}$ es algebraica y todo polinomio no constante descompone en factores lineales por la caracterización de los cuerpos algebraicamente cerrados. 
-\item Sea $S = \{u \in E:\exists f \in \mathcal{f}. f(u) = 0\}$
+\item Sea $\mathcal{F}$ la familia de polinomios no constantes y sea $S$ el conjunto de las raíces de los polinomios de $\mathcal{F}$. Como todo polinomio descompone en $E$ claramente $E \supseteq S,K$ luego $E \supseteq K(S)$. Para ver la igualdad, obsérvese que como la extensión es algebraica todo elemento de $E$ está en $K(S)$. 
+\item Claramente $E$ es una extensión algebraica de $K$ ya que $E = K(S)$ con $S$ el conjunto de las raíces de los polinomios no constantes y las raíces son raíces de polinomios sobre $K$ y los elementos de $K$ son raíces de los polinomios sobre $K$, $X-k$. 
+
+Vamos a ver que $E$ no admite extensiones algebraicas propias. En efecto, supongamos un polinomio $g \in E[X]$ con cierta raíz $u \notin E$. Claramente, la extensión $\frac{E(u)}{E}$ es algebraica y como $\frac{E}{K}$ es algebraica tendremos que $\frac{E(u)}{K}$ es algebraica. Entonces el polinomio mínimo de $u$ sobre $K$ debe descomponer en $E$ por ser $E$ el cuerpo de descomposición de todos los polinomios no constantes sobre $K$, esto es, $f = Irr(u,K) = \prod (x-u_i)$. Como $f(u) = 0$ existirá un $i$ tal que $u_i = u \in E$. Contradicción. 
 \end{enumerate}
 \end{proof}
 
-\begin{proposition}[Transitividad de la clausura algebraica]
-Sea $K \subseteq F \subseteq E$ una torre de cuerpos con $\frac{F}{K}$ una extensión algebraica entonces 
-
-$E = \overline{F} \iff E = \overline{K}$. 
+\begin{proposition}[Invarianza de la clausura mediante extensiones algebraicas]
+Sea $\frac{F}{K}$ una extensión algebraica entonces $\overline{F} = \overline{K}$.
 \end{proposition}
 \begin{proof}
 Ser algebraicamente cerrado no depende del cuerpo base de la extensión. Por tanto, basta ver que una extensión es algebraica si y solo si lo es la otro. Pero sabemos que $\frac{E}{K}$ es algebraica $\iff$ $\frac{E}{F},\frac{F}{K}$ son algebraicas y por hipótesis sabemos que $\frac{F}{K}$ es algebraica. 
@@ -88,7 +91,7 @@ Claramente, cualquiera dos algebraicas son cuerpos de descomposición de la fami
 \end{proof}
 
 \begin{theorem}[Extensión de un homomorfismo a la clausura bajo extensiones algebraicas]
-Sea $K \subseteq F \subseteq E$ una torre de extensiones algebraicas. Sea $\overline{K}$ la clausura algebraica de $K$. Entonces todo homomorfismo $\sigma:F \to \overline{K}$ sobre $K$ tiene una extensión $\tau:E \to \overline{K}$. 
+Sea $K \subseteq F \subseteq E$ una torre de extensiones algebraicas. Sea $\overline{K}$ la clausura algebraica de $K$. Entonces todo homomorfismo $\sigma:F \to \overline{K}$ sobre $K$ tiene una extensión $\tau:E \to \overline{K}$ (también sobre $K$). 
 
 \begin{tikzcd}
 E \arrow[dashed]{r}{\tau} \arrow[dash]{d} & 
@@ -104,14 +107,38 @@ Aplicamos el lema de Zorn al conjunto $$S= \{(E_i,\sigma_i):F \subseteq E_i \sub
 Veamos que $E_1 = E$ y que $\tau = \sigma_1$. En otro caso tomamos $u \in E \setminus E_1$ y entonces $gr(Irr(u,K)) \ge 2$  y busco una raíz distinta $v$ de $Irr(u,K)$ en $\overline{K}$. Para llegar a una contradicción veo que construyo un homomorfismo de $E_1(u)$ en $\overline{K}$ que lleve una raíz en otra y veo que contiene a este propiamente. Los detalles están en el primer hecho destacado en \cite{link5}. No está claro que podamos usar los teoremas anteriores porque trabajan con extensiones de isomorfismos no de homomorfismos. 
 \end{proof}
 
+Para entender la siguiente prueba hace falta la noción de cardinalidad de conjuntos. De forma intuitiva, la biyección de conjuntos define una relación de equivalencia en el conjunto de todos los conjuntos. Se llama número cardinal a una de estas clases de equivalencia. 
+
+En el conjunto de las clases de equivalencia se definen las siguientes operaciones:
+
+\begin{enumerate}
+\item $C_1+C_2 = [A_1]+[A_2] = [A_1 \dot{\bigcup} A_2]$
+\item $C_1 \times C_2 = [A_1] \times [A_2] = [A_1 \times A_2]$
+\end{enumerate}
+
+Una referencia adecuada es el apéndice de \cite{algebra-lang}.
+
 \begin{proposition}[Cardinalidad de la clausura algebraica]
 Sea $K$ un cuerpo y $\overline{K}$ su clausura algebraica. 
 
 \begin{enumerate}
 \item Si $K$ es finito, entonces la clausura es $\overline{K}$ es infinito numerable. 
-\item Si $K$ es inifito entonces la clausura algebraica tiene el mismo cardinal que $K$. 
+\item Si $K$ es infinito entonces la clausura algebraica tiene el mismo cardinal que $K$. 
 \end{enumerate}
 \end{proposition}
+\begin{proof}
+Llamemos $M_n$ al conjunto de todos los polinomios mónicos de grado $n$ sobre $K$. Claramente, $M_n$ y $K^n$ son biyectivos. Además $K[X] = \dot{\bigcup} M_n$. En particular $|K[X]| = \sum_{n \in \mathbb{N}} |M_n|$. 
+
+La extensión $\frac{\overline{K}}{K}$ es algebraica y en general tenemos una cota dada por $|K[X]||\mathbb{N}|$ ya que si $S$ denota a las raíces de los polinomios no constantes con coeficientes en $K$ entonces $\overline{K} \subseteq S$
+
+\begin{enumerate}
+\item Si $K$ es un cuerpo finito observamos que $\overline{K}$ no puede ser finita. Esto es así porque si $\overline{K}$ fuera finita con $p$ elementos, entonces sus elementos serían raíces de $X^p-X$ y por tanto $X^p-X$ no puede tener raíces en $\overline{K}$ y esto contradice que $\overline{K}$ es algebraicamente cerrado. Por tanto, el cardinal de $\overline{K}$ no puede ser finito. 
+
+Observemos que si $K$ es finito entonces $|K[X]| = |K|\sum_{n \in \mathbb{N}} |M_n|$ donde $M_n$ es el conjunto de los polinomios mónicos de grado $n$. Pero $|M_n| = |K|^n$ y tenemos claramente que $|K[X]|$ es numerable. Por la cota anterior sabemos que $|\overline{K}| = |K[X]||\mathbb{N}|$ y por tanto, $\overline{K}$ es numerable. 
+
+\item Si $K$ es infinito, $|K|^n = |K|$ y entonces $|K[X]| = |K|$. De nuevo por nuestra cota tendremos que $|\overline{K}| = |K|$. 
+\end{enumerate}
+\end{proof}
 
 
 

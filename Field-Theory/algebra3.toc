@@ -27,26 +27,36 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Clausura algebraica}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Extensiones normales}{21}
+\contentsline {section}{\numberline {5}Extensiones normales}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Extensiones conjugadas}{21}
+\contentsline {subsection}{\numberline {5.1}Extensiones conjugadas}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Extensiones normales}{22}
+\contentsline {subsection}{\numberline {5.2}Extensiones normales}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}Clausura normal}{23}
+\contentsline {subsection}{\numberline {5.3}Clausura normal}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}Polinomio normal}{24}
+\contentsline {subsection}{\numberline {5.4}Polinomio normal}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Extensiones separables y cuerpos perfectos}{25}
+\contentsline {section}{\numberline {6}Extensiones separables y cuerpos perfectos}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Extensiones separables}{25}
+\contentsline {subsection}{\numberline {6.1}Caracter\IeC {\'\i }stica y derivada}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Cuerpos perfectos}{25}
+\contentsline {subsection}{\numberline {6.2}Separabilidad}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Teor\IeC {\'\i }a de Galois Finita}{26}
+\contentsline {subsection}{\numberline {6.3}Cuerpos perfectos}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Cuerpos finitos}{27}
+\contentsline {subsection}{\numberline {6.4}Extensiones separables}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}Existencia y unicidad}{27}
+\contentsline {section}{\numberline {7}Teor\IeC {\'\i }a de Galois finita}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Polinomios irreducibles sobre cuerpos finitos}{29}
+\contentsline {subsection}{\numberline {7.1}Automorfismos de extensiones de cuerpos}{35}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2}Extensiones de Galois}{37}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3}Conexi\IeC {\'o}n de Galois}{38}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Cuerpos finitos}{40}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1}Existencia y unicidad}{40}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2}Polinomios irreducibles sobre cuerpos finitos}{41}

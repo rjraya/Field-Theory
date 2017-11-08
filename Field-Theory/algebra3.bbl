@@ -17,22 +17,6 @@
 \endgroup
 
 \sortlist[entry]{nty/global/}
-  \entry{link5}{online}{}
-    \name{author}{1}{}{%
-      {{hash=aV}{%
-         family={authors},
-         familyi={a\bibinitperiod},
-         given={Various},
-         giveni={V\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{aV1}
-    \strng{fullhash}{aV1}
-    \field{labelnamesource}{author}
-    \field{sortinit}{A}
-    \field{sortinithash}{A}
-  \endentry
-
   \entry{link2}{online}{}
     \name{author}{1}{}{%
       {{hash=AV}{%
@@ -86,6 +70,27 @@
     \field{urlyear}{2017}
   \endentry
 
+  \entry{link5}{online}{}
+    \name{author}{1}{}{%
+      {{hash=aV}{%
+         family={authors},
+         familyi={a\bibinitperiod},
+         given={Various},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{aV1}
+    \strng{fullhash}{aV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Extending Homomorphism into Algebraically Closed Field, year
+  = 2017, url =
+  {https://math.stackexchange.com/questions/897660/extending-homomorphism-into-algebraically-closed-field
+  }, urldate = {2017-10-13}}
+  \endentry
+
   \entry{link4}{online}{}
     \name{author}{1}{}{%
       {{hash=aV}{%
@@ -126,6 +131,49 @@
     \field{title}{Roots and Irreducibles, year = 2017, url =
   {http://www.math.uconn.edu/~kconrad/blurbs/galoistheory/rootirred.pdf },
   urldate = {2017-10-13}}
+  \endentry
+
+  \entry{algebra-lang}{book}{}
+    \name{author}{1}{}{%
+      {{hash=LS}{%
+         family={Lang},
+         familyi={L\bibinitperiod},
+         given={Serge},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{LS1}
+    \strng{fullhash}{LS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Algebra}
+    \field{year}{2002}
+  \endentry
+
+  \entry{counting-irreducible}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SKCJM}{%
+         family={Sunil K.\bibnamedelima Chebolu},
+         familyi={S\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim
+  C\bibinitperiod},
+         given={Jan\bibnamedelima Minac},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SKCJM1}
+    \strng{fullhash}{SKCJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Counting irreducible polynomials over finite fields using the
+  inclusion-exclusion principle}
+    \field{year}{2011}
   \endentry
 \endsortlist
 \endinput

@@ -1,31 +1,179 @@
-\subsection{Extensiones separables}
+\subsection{Característica y derivada}
+
+\begin{proposition}
+Sea $A$ un anillo. Entonces existe un único homomorfismo $f:\mathbb{Z} \to A$ tal que $f(1) = 1 \land f(n) = n \cdot 1$.
+\end{proposition}
+\begin{proof}
+Defino $f: \mathbb{Z} \to A$ como $n \to n \cdot 1$. $f$ está bien definido ya que si $n \in \mathbb{N}$ entonces $n \cdot 1$ está de forma natural definiado y si $n \in \mathbb{Z}$ entonces $n1 = (-n)(-1)$ también está naturalmente definido. 
+
+Por otro lado, $f(1) = 1 \cdot 1 = 1$ y es un homomorfismo ya que $$f(n+m) = (n+m) \cdot 1 = n \cdot 1 + m \cdot 1 = f(n) + f(m)$$
+
+Claramente cualquier otro homomorfismo verificando las condiciones sería igual a $f$. 
+\end{proof}
+
+\begin{definition}[Característica de un anillo]
+Sea $A$ un anillo. Consideramos el homomorfismo característico $f:\mathbb{Z} \to A$ tal que $n \mapsto n \cdot 1$. Definimos la característica de $K$ como el generador del ideal $Ker(f)$. Lo denotamos por $Car(A)$. 
+\end{definition}
+
+\begin{proposition}[Propiedades de la característica]
+Sea $A$ un anillo. Se verifican las siguientes propiedades:
+
+\begin{enumerate}
+\item $Car(A)$ es el menor número entero positivo o nulo $n$ tal que $\forall a \in A. n \cdot a = 0$. 
+\item Si $Car(A) = 0$ entonces $f(\mathbb{Z}) \cong \mathbb{Z}$. Si $n = Car(A) \neq 0$ entonces $f(\mathbb{Z}) \cong \mathbb{Z}_n$ y además $\forall a \in A.na  = 0$. 
+\item Si $A$ es un dominio de integridad entonces $Car(A)$ es cero o un número primo.
+\item Sea $A$ un anillo de característica prima $p$ entonces la aplicación $R(a) = a^p$ es un endomorfismo conocido como endomorfismo de Frobenius.
+\item Si $f: A \to B$ es un homomorfismo entonces $car(B)|car(A)$. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item No puede haber ningún elemento menor que él que anule a todos pues entonces generaría al núcleo. 
+\item Utilícese el primer teorema de isomorfía y la definición de característica.
+\item Si $Car(A) = 0$ hemos acabado. Si $n = Car(A) \neq 0$ entonces si $n$ no fuera primo, $0 = n \cdot 1 = (n_1n_2) \cdot 1 = (n_1 \cdot 1)(n_2 \cdot 1) \implies n_1 \cdot 1 = 0 \lor n_2 \cdot 1 = 0$ donde hemos utilizado la propiedad asociativa general.
+\item Escribamos $(\alpha+\beta)^p = \alpha^p + \beta^p + \sum \binom{p}{i} \alpha{p-i}\beta^i$ con $1 \le i \le p-1$. Claramente, $p$ divide a cada uno de los coeficientes binomiales y como $F$ tiene característica $p$, se deduce que $(\alpha+\beta)^p = \alpha^p+\beta^p$. Las otras propiedades son triviales.
+\item $0 = f(0) = f(1 Car(A)) = 1 Car(A)$ y como $Car(B)$ debe ser el mínimo que anule a uno, tendrá que ser $Car(B)|Car(A)$.  
+\end{enumerate}
+\end{proof}
+
+\begin{definition}[Subanillo característico]
+Sea $A$ un anillo y $f$ el homomorfismo característico de $A$. 
+
+El subanillo característico de $A$, $S$, es la intersección de todos los subanillos de $A$. Equivalentemente, $S$ es el menor subanillo que contiene a $f(\mathbb{Z})$. 
+\end{definition}
+
+\begin{proposition}[Clasificación del subanillo característico]
+La característica clasifica al subanillo característico:
+
+\begin{enumerate}
+\item $Car(A) = 0 \iff \cong \mathbb{Z}$ 
+\item $Car(A) = n > 0 \iff S \cong \mathbb{Z}_n$
+\end{enumerate}
+\end{proposition}
+
+\begin{definition}[Subcuerpo característico]
+Sea $K$ un cuerpo y $f$ el homomorfismo característico de $K$. 
+
+El subcuerpo característico de $A$, $C$ es la intersección de todos los subcuerpos de $K$. Equivalentemente, $C$ es el menor subcuerpo que contiene a $f(\mathbb{Z})$.
+\end{definition}
+
+Obsérvese que en la definición anterior, $C$ sería el cuerpo de fracciones del dominio de integridad $S$, subanillo característico de $K$. 
+
+\begin{proposition}[Clasificación del subcuerpo característico]
+La característica clasifica al subcuerpo característico:
+
+\begin{enumerate}
+\item $Car(K) = 0 \iff C \cong \mathbb{Q}$ 
+\item $Car(K) = p \neq 0 \iff C \cong \mathbb{Z}_p$ con $p$ un entero primo positivo. 
+\end{enumerate}
+\end{proposition}
+
+\begin{definition}[Derivada de un polinomio]
+La derivada de un polinomio $f = \sum a_i X^i$ es $Df = \sum ia_iX^{i-1}$
+\end{definition}
+
+\begin{definition}[Multiplicidad de una raíz]
+Sea $f \in K[X]$ un polinomio. $u \in F$ una raíz de $f$ en alguna extensión $F$ tienen multiplicidad $k$ si $f = (X-u)^kf_1$ con $f_1(u) \neq 0$. 
+
+Decimos que $u$ es una raíz simple si $k = 1$ y que $u$ es una raíz múltiple si $k > 1$. 
+\end{definition}
+
+\subsection{Separabilidad}
+
+\begin{proposition}[La separabilidad es invariante frente al cuerpo de descomposición]
+La multiplicidad de las raíces de un polinomio no depende del cuerpo de descomposición. 
+\end{proposition}
+\begin{proof}
+Supongamos que $f \in K[X]$ es un polinomio no constante y descompone como $$f(X) = \prod (X - \alpha_i)^{m_i} = \prod (X - \beta_i)^{n_i}$$ donde se entiende que las raíces son distintas y los exponentes son sus multiplicidades. 
+
+Recordemos que los cuerpos de descomposición son isomorfos por un isomorfismo $\tau$ sobre $K$. La extensión canónica $\overline{1_K}$ de la identidad a polinomios da la identidad. Por tanto, $\tau$, que extiende a $K$ y es isomorfismo debe llevar las raíces $\{\alpha_i \}$ en raíces $\{\alpha_i \}$. Pero $\tau$ es inyectiva y tenemos sobre las raíces, que forman un conjunto finito, una aplicación inyectiva. Por tanto debe ser sobreyectiva. Lo que se tiene es una permutación de las raíces. 
+
+Que la multiplicidad no varía se deduce de que el homomorfismo extendido a polinomios no varía grados. 
+\end{proof}
+
+
+\begin{lemma}[Criterio de raíces simples]
+Sea $f \in K[X]$ un polinomio no constante. 
+
+Las raíces de $f$ son todas simples $\iff$ $f,Df$ son primos relativos. 
+\end{lemma}
+
+\begin{lemma}[Multiplicidad de las raíces de un irreducible]
+Todas las raíces de un irreducible tienen la misma multiplicidad.
+\end{lemma}
+\begin{proof}
+La prueba aparece en el libro de Gallian. Básicamente, tenemos un polinomio $f \in K[X]$ irreducible y nos vamos a un cuerpo de descomposición. Sabemos que dos cuerpos de descomposición son isomorfos y como corolario obtuvimos que dadas dos raíces de un polinomio irreducible (para que la extensión de la identidad me de el mismo polinomio en la imagen) existirá un isomorfismo del cuerpo de descomposición que me lleve una raíz en otra. Sea $\phi$ este isomorfismos entonces si $f(X) = (X-\alpha)^mg(X)$: $$f(X) = \phi(f(X)) = (X - \beta)^m \phi(g(X))$$ Esto prueba que la multiplicidad de $\alpha$ es menor o igual que la multiplicidad de $\beta$. Intercambiando los papeles de $\alpha, \beta$ se obtiene la otra desigualdad. 
+\end{proof}
 
 \begin{definition}[Separabilidad]
 Sea $K$ un cuerpo. 
 
 \begin{enumerate}
-\item Un polinomio irreducible $p \in K[X]$ es separable si todas son raíces en un cuerpo de descomposición son simples (la multiplicidad de las raíces no depende del cuerpo de descomposición considerado).
-\item Un polinomio $p \in K[X]$ es separable si sus factores irreducibles son separables. 
-\item Un elemento algebraico $u$ sobre un cuerpo $K$ es separable si $Irr(u,K)$ es separable.
+\item Un polinomio $p \in K[X]$ es separable si sus factores irreducibles sobre $K$ tienen todas sus raíces simples. 
+\item Un elemento algebraico $u$ sobre un cuerpo $K$ es separable si $Irr(u,K)$ no tiene raíces múltiples.
 \item Una extensión algebraica $\frac{F}{K}$ es separable si todos los elementos de $F$ son separables sobre $K$.  
 \end{enumerate}
 \end{definition}
 
-\begin{exercise}
-Buscar una extensión normal que no sea separable.
-\end{exercise}
+\begin{corollary}[Separabilidad de irreducibles según la característica]
+Sea $K$ un cuerpo. 
 
-\begin{proposition}[Torres separables]
-Sea $E \supseteq F \supseteq K$ una torre de cuerpos. 
+\begin{enumerate}
+\item Si $Car(K) = 0$ entonces todo irreducible no constante es separable. 
+\item Si $Car(K) = p \neq 0$ con $p$ un número primo positivo y $f$ un irreducible no constante entonces:
 
-Si $\frac{E}{F}$ es una extensión separable entonces 
-$\frac{E}{F},\frac{F}{K}$ son extensiones separables. 
+\begin{enumerate}
+\item $f$ es separable $\iff Df \neq 0$.
+\item $f$ no es separable $\iff f(X) = g(X^p)$ es un polinomio en $X^p$. 
+\end{enumerate}   
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+\begin{enumerate}
+\item Sea $f$ un polinomio irreducible sobre un cuerpo de característica 0. Por ser irreducible $mcd(f,Df) = Df$ o $mcd(f,Df) = 1$. El primer caso, no puede darse pues entonces $Df|f$ y como $Df$ es de grado menor tendríamos una factorización propia de $f$, de modo que no sería irreducible. En el segundo caso, tendríamos por el criterio de raíces simples que $f$ es separable. 
+
+\item $\Leftarrow)$ Si $Df \neq 0$ entonces $mcd(f,Df) = f,1$ por ser $f$ irreducible. Pero $f$ no puede dividir a $Df$ por ser $f$ de grado mayor. Por tanto, $mcd(f,Df) = 1$ y las raíces son simples.  
+
+$\Rightarrow)$ Por contrarrecíproco, si $Df = 0$ entonces $mcd(f,Df) = mcd(f,0) = f$ y como $f$ es irreducible se tiene que las raíces $f$ no son todas simples, esto es, que existe al menos una raíz múltiple. 
+
+Para ver que $f = g(X^p)$ escribimos $f = \sum a_iX^i$ y $Df = \sum ia_iX^{i-1}$. Como $Df = 0$ tendremos que $ia_i = 0$. Como $K[X]$ es un dominio de integridad de característica $p$ para cada índice tal que $p \nmid i$ se tendría que $a_i = 0$ y entonces $f$ se escribe como $f = a_0 + a_p(X^p) + \ldots + a_{p^r}(X^p)^r$. 
+
+Recíprocamente la derivada de este polinomio es $0$ ya que todos los monomios quedan afectados por un múltiplo de $p$ y la característica anula a todos los elementos del anillo. 
+\end{enumerate}
+\end{proof}
+
+Damos ahora otra caracterización de la separabilidad para cuerpos de característica prima. 
+
+\begin{theorem}[Caracterización de separabilidad en característica prima]
+Sea $K$ un cuerpo de característica prima $p$ no nula. 
+
+Todo irreducible no constante es separable $\iff$ el endomorfismo de Frobenius es un automorfismo. 
+\end{theorem}
+\begin{proof}
+Veamos cada implicación:
+
+$\Rightarrow)$ Consideramos $a \in K$  y el polinomio $f = X^p - a$. Si $\alpha$ es una raíz de $f$ en un cuerpo de descomposición $F$, entonces en ese cuerpo $f$ debe descomponer como $f = (X - \alpha)^p$ ya que estamos en característica $p$ y entonces $\alpha^p = \alpha$. 
+
+Por tanto, cada factor irreducible sobre $K$ de $f$ tiene también una única raíz $\alpha$ que a priori podría ser múltiple. Pero por hipótesis, debe ser simple y el único factor irreducible de $f$ resulta ser $X - \alpha$. Por tanto, $\alpha \in K$ y $a = \alpha^p$ de donde el endomorfismo de Frobenius es sobreyectivo y por tanto es automorfismo. 
+
+$\Leftarrow)$ Por reducción al absurdo, si $f$ es irreducible no constante con $Df = 0$ entonces tiene raíces múltiples y en particular $f = g(X^p)$. 
+
+Escribamos $g = \sum b_iX^i$. Entonces, si el endomorfismo de Frobenius fuera automorfismo entonces $b_i = c_i^p$ y en particular $f = (\sum c_iX^i)^p$ de modo que no sería irreducible. Esto es una contradicción. Por tanto, $Df \neq 0$ y todas las raíces son simples. 
+\end{proof}
+
+Establecemos ahora un lema que permite descomponer torres separables para dar un ejemplo extra de cuerpos perfectos. Posteriormente daremos la otra implicación. 
+
+\begin{proposition}[Descomposición de torres separables y algebraicas]
+Sea $E \supseteq F \supseteq K$ una torre algebraica de cuerpos. 
+
+Si $\frac{E}{K}$ separable entonces  $\frac{E}{F},\frac{F}{K}$ son separables. 
 \end{proposition}
 \begin{proof}
-$\frac{F}{K}$ es separable ya que todo elemento de $E$ es  sobre $K$ y todo elemento de $F$ está en $E$. 
+$F/K$ es separable ya que cada elemento $\alpha \in F$ está en $E$ y por tanto es separable sobre $K$. 
 
-Para ver que $\frac{E}{F}$ es separable sea $u \in E$ entonces claramente $Irr(u,F)|Irr(u,K)$ ya que $gr(Irr(u,F)) \le gr(Irr(u,K))$ y como $Irr(u,K)(u) = 0$ claramente $Irr(u,K) \in \langle Irr(u,F) \rangle$ y como $Irr(u,K)$ no tiene raíces múltiples, tampoco puede tenerlas $Irr(u,F)$. 
+Sea ahora $\beta \in E$ entonces $Irr(\beta,F)|Irr(\beta,K)$ y como $Irr(\beta,K)$ es separable, también lo será $Irr(\beta,F)$. Por tanto, $\beta$ es separable sobre $F$. 
 \end{proof}
+
 
 \subsection{Cuerpos perfectos}
 
@@ -33,34 +181,133 @@ Para ver que $\frac{E}{F}$ es separable sea $u \in E$ entonces claramente $Irr(u
 Un cuerpo $K$ es perfecto si se cumplen alguna de las condiciones de la siguiente proposición. 
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}[Criterios de cuerpo perfecto]
 Sea $K$ un cuerpo. Las siguientes condiciones son equivalentes:
 
 \begin{enumerate}
 \item Todo polinomio $p \in K[X]$ es separable.
-\item Todo $\alpha$ algebraico sobre $K$ es separable. 
-\item Toda extensión algebraica es separable.
-\item Toda extensión finita es separable.
+\item Toda extensión algebraica sobre $K$  es separable.
+\item Toda extensión finita sobre $K$ es separable.
+\item $Car(K) = 0 \lor Car(K) = p$ prima y el endomorfismo de Frobenius es sobreyectivo. 
 \end{enumerate}
 \end{proposition}
-
-\begin{proposition}
+\begin{proof}
+Vamos a ver de forma circular, $1,2,3$ y luego $1 \iff 4$.
 \begin{enumerate}
-\item Todo cuerpo de característica 0 o finito es perfecto. 
-\item Todo cuerpo de característica prima no nula es perfecto si y sólo si el endomorfismo de Frobenius es un automorfismo. 
+\item Si $F/K$ es una extensión algebraica entonces para cada $\alpha \in F$, $Irr(\alpha,K)$ es un polinomio separable sobre $K$. Luego $\alpha$ es un elemento separable sobre $K$ y por tanot $F/K$ es separable.
+\item Ya que toda extensión algebraica es separable. 
+\item Si $f$ es un polinomio irreducible no constante y $F$ es su cuerpo de descomposición entonces $F/K$ es una extensión finita ($[F:K] \le gr(f)!$) y por tanto es separable. Como consecuencia, cada raíz de $f$ es separable y por tanto, $f$ es un polinomio separable. 
+
+\item Veamos que $1 \iff 4$. Basta observar que la característica de un dominio de integridad es 0 o prima no nula. Si $Car(K) = 0$ entonces todo polinomio es separable y si $Car(K) = p$ entonces todo polinomio es separable si y sólo si el endomorfismo de Frobenius es sobreyectivo (ya que siempre es inyectivo por nacer en un cuerpo). 
+\end{enumerate}
+\end{proof}
+
+\begin{proposition}[Ejemplos de cuerpos perfectos]
+Los siguientes cuerpos son cuerpos perfectos:
+
+\begin{enumerate}
+\item Los cuerpos de característica 0. 
+\item Los cuerpos finitos. 
+\item Los cuerpos algebraicamente cerrados. 
+\item Las extensiones algebraicas de cuerpos perfectos.
+\item Los cuerpos de característica prima no nula si y sólo si el endomorfismo de Frobenius es automorfismo.
 \end{enumerate}
 \end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Véase los criterios de cuerpo perfecto. 
+\item En cuerpos finitos la característica siempre es un primo no nulo y además el endomorfismo de Frobenius que debe de ser inyectivo por salir de un cuerpo, será sobreyectiva por la finitud del cuerpo. Esto nos da que deben ser cuerpos perfectos. 
+\item En un cuerpo algebraicamente cerrado, los irreducibles son los lineales. Estos polinomios no pueden tener más que una raíz simple y por tanto, todo polinomio es separable.
+\item Supongamos que $K$ es un cuerpo perfecto y que $F/K$ es una extensión algebraica. Para ver que $F$ es un cuerpo perfecto tomamos cualquier extensión algebraica de $E/F$. Tenemos que $E/K$ es algebraica y por tanto separable. Por la descomposición de torres separables y algebraicas (en un sentido), tenemos que $E/F$ es separable. Como $E/K$ es una extensión algebraica arbitraria tenemos que $F$ es perfecto.  
+\end{enumerate}
+\end{proof}
 
 \begin{example}
 $\mathbb{F}_p(t)$ con $t$ transcendente no es perfecto. 
 \end{example}
 
+\subsection{Extensiones separables}
 
+\begin{exercise}
+Buscar una extensión normal que no sea separable.
+\end{exercise}
 
+Vamos a contar homomorfismos de un cuerpo $K$ sobre él mismo a su clausura, lo que nos será útil en la siguiente sección. 
 
+\begin{definition}[Grado separable de un cuerpo]
+Sea $\overline{K} \supseteq F \supseteq K$ una torre de cuerpos. 
 
+El grado separable de $F$ sobre $K$ es el cardinal del conjunto de homomorfismos de $F$ en $\overline{K}$ sobre $K$, esto es, $[F:K]_s = |\{\sigma:F \to \overline{K} \text{ sobre K } \}|$
+\end{definition}
 
+\begin{proposition}[Grado separable en torres algebraicas]
+Sea $K \subseteq F \subseteq E \subseteq \overline{K}$ una torre algebraica de cuerpos. Entonces: $$[E:K]_s = [E:F]_s[F:K]_s$$
+\end{proposition}
+\begin{proof}
+Realizamos la prueba en cuatro pasos.
 
+\begin{enumerate}
+\item Sea $\tau_i$ los homomorfismos de $E \to \overline{K}$ sobre $F$ y sean $\sigma_i$ los homomorfismos de $F$ en $\overline{K}$ sobre $K$. Sabemos que podemos extender los $\sigma_i$ a la clausura $\overline{K}$ obteniendo unos endomorfismos $\overline{\sigma_i}$ que serán automorfismos puesto que todo endomorfismo de extensiones algebraicas es automorfismo. Entonces $\overline{\sigma_i}\tau_i$ serán homomorfismos $E \to \overline{K}$ sobre $K$. 
+\item Vemos que son todos distintos. En efecto, si $\overline{\sigma_i} \tau_j = \overline{\sigma_h}\tau_k$ entonces, para cada $f \in F$: $$\sigma_i(f) = \overline{\sigma}\tau(f) = \overline{\sigma_h}\tau_k(f) = \sigma_h(f)$$ Por tanto, los $\sigma_i$ son iguales sobre $F$ y tendríamos que $\overline{\sigma_i} = \overline{\sigma_h}$ y entonces por ser cada $\overline{\sigma_i}$ automorfismo tendríamos que $\tau_j = \tau_k$. 
+
+Esto demuestra que $[E:K]_S \ge [E:F]_S[F:K]_S$. 
+\item Veamos que todo homomorfismo $E \to \overline{K}$ sobre $K$ es de esta forma. Sea $\sigma$ un homomorfismo de esta familia. Podemos restrigir $\sigma|_F$ y a partir de este construir una extensión a la clausura $\tau$ que como antes será automorfismo. También podemos extender los $\sigma$ a la clausura obteniendo $\overline{\sigma}$. Como $\tau|_F = \sigma|_F$ tendríamos que $\overline{\sigma} \circ \tau^{-1}$ deja fijo a $F$ entonces los homomorfismos buscados son $\overline{\sigma} \circ \tau^{-1}|_E$ y $\sigma|_F$. 
+
+\item Además son todos distintos ya que si $\sigma|_F = \sigma'|_F$ entonces las extensiones $\tau$ las hemos tomado iguales. Veamos que esto no puede pasar. Si ocurriese, $\sigma \circ \tau^{-1} = \sigma' \circ \tau^{-1}|_E $  y como $\tau{-1}$ es sobreyectiva entonces $\overline{\sigma}|_E = \overline{\sigma}'|_E$ y por tanto $\sigma = \sigma'$ (revisar).
+
+Esto demuestra que $[E:K]_S \le [E:F]_S [F:K]_S$. 
+\end{enumerate}
+\end{proof}
+
+\begin{proposition}[Relación entre grado y grado separable en extensiones finitas]
+En el ambiente finito se verifican los siguientes resultados:
+\begin{enumerate}
+\item Sea $\frac{E}{K}$ una extensión finita, entonces $[E:K]_s\Big|[E:K]$. En particular, $[E:K]_s \le [E:K]$.
+\item Sea $K \subseteq F \subseteq E$ una torre de cuerpos con $\frac{E}{K}$ finita. Entonces: $$[E:K]_s = [E:K] \iff [E:F]_s = [E:F] \land [F:K]_s = [F:K]$$
+\item Sea $\frac{E}{K}$ una extensión finita entonces es separable $\iff [E:K]_s = [E:K]$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Una extensión es finita si y sólo si es de generación finita por generados algebraicos. Nos aprovechamos de esto para proceder por distinción de casos. 
+
+\begin{enumerate}
+\item Caso simple: sea $K(u)$ la extensión con polinomio $Irr(u,K)$ de grado $n$. Ya habíamos demostrado en las herramientas previas a los cuerpos de descomposición que el número de homomorfismos de $K(u)$ a una extensión era el número de raíces en esa extensión (considerando $\sigma = Id$). Como la clausura algebraica contiene todas las raíces y todas las raíces de un polinomio irreducible tienen la misma multiplicidad se tendrá que si llamamos $m$ a esta multiplicidad, el número de homomorfismos a la clausura desde $K(u)$ será el número de raíces, esto es, $\frac{n}{m}$.
+\item Caso compuesto: podemos aplicar inducción sobre el grado de la extensión. Gracias a nuestro estudio del grado separable en torres. Tendremos que: $$[E:K]_S = [E:K(u)]_S[K(u):K]_S | [E:K(u)][K(u):K] = [E:K]$$ Donde se ha utilizado la hipótesis de inducción y el caso simple.  
+\end{enumerate}
+
+\item Razónese a partir de la siguiente cadena: $$[E:K]_S = [E:F]_S[F:K]_S \le [E:F][F:K] = [E:K]$$ De aquí está claro que se da la implicación izquierda. La implicación derecha se da por consideraciones de divisibilidad si llamamos $a = [E:F]_S, b = [F:K]_S, c = [E:F], d = [F:K]$ entonces tenemos que $a|b \land c|d$ pero en la implicación derecha se da también la igualdad $ac = bd$ y por tanto, $b|a \land c|d$ esto me dice que son asociados, esto es, $a \sim b,c \sim d$ y como son positivos y enteros tienen que ser iguales. 
+
+\item $\Rightarrow)$ Sabemos que siempre $[E:K]_S \le [E:K]$. Procedemos por inducción sobre $n = [E:K]$. 
+
+Si $n = 1$ entonces como tenemos que la identidad es un homomorfismo a la clausura tendremos $[E:K]_S = [E:K]$. Supongamos $n > 1$, entonces tomando una extensión $[F:K] = 1$ entonces para $\alpha \in F \setminus K$, llamando $f(X) = Irr(\alpha,K)$ con $gr(f) = m$, tenemos que $[F:K(\alpha)] = \frac{n}{m}$ y por hipótesis de inducción $[F:K(\alpha)] =  \frac{n}{m}$. 
+
+Como $\alpha$ es separable sobre $K$, $f$ tiene exactamente $m$ raíces y por tanto, $[K(\alpha):K] = m$, por el grado separable en torres tendremos que $[F:K] = n$ como queríamos. 
+
+\item Si $F/K$ es una extensión finita de grado $n$ que no es separable, entonces existe $\alpha \in F$ tal que $Irr(\alpha,K)$ no es separable sobre $K$, es decir tiene raíces múltiples. Por tanto, el número de raíces distintas $m_0 < gr(f) = m$. Además $[K(\alpha):K] = m_0 < m$. Tenemos que, $[F:K(\alpha)]_S \le [F:K(\alpha)] = \frac{n}{m}$ y por tanto $$n = [F:K]_S = [F:K(\alpha)][K(\alpha):K] < \frac{n}{m}m = n$$ Esto es una contradicción. 
+
+\end{enumerate}
+
+\end{proof}
+
+\begin{proposition}[Descomposición de torres separables y algebraicas revisitada en el caso finito]
+Sea $E \supseteq F \supseteq K$ una torre finita de cuerpos. 
+
+$\frac{E}{K}$ es separable $\iff$ $\frac{E}{F},\frac{F}{K}$ son separables. 
+\end{proposition}
+\begin{proof}
+$\Rightarrow)$ Toda extensión algebraica. 
+
+$\Leftarrow)$ En torres finita la separabilidad equivale a la separabilidad de las intermedias. 
+\end{proof}
+
+\begin{corollary}[Extensiones algebraicas generadas por elementos separables]
+Sea $E = K(\alpha_1,\ldots,\alpha_n)$ una extensión algebraica. 
+
+$E/K$ es separable $\iff$ los elementos $\alpha_i$ son separables.
+\end{corollary}
+
+Para extender estos resultados véase Lang, a partir de la página 241.
 
 
 

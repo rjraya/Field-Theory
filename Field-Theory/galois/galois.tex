@@ -1,14 +1,211 @@
-Sea $Hom(\frac{F}{K},\frac{E}{K})$ de homomorfismos de cuerpos entre $\frac{F}{K}$ y $\frac{E}{K}$. 
+\subsection{Automorfismos de extensiones de cuerpos}
 
-Sea $Hom_K(F,E)$ el conjunto de homomorifismos de $K$-espacios vectoriales.
+\begin{definition}
+Sean $\frac{F}{K},\frac{E}{K}$ extensiones de cuerpos. 
+
+$Hom(F,E)$ es el conjunto de los homomorfismos de cuerpos entre $F$ y $E$. 
+
+$Hom_K(F,E)$ es el conjunto de homomorfismos de $K$-espacios vectoriales entre $F$ y $E$.
+\end{definition}
 
 \begin{proposition}
-Damos estructura a los espacios anteriores. 
+Sean $\frac{F}{K},\frac{E}{K}$ extensiones de cuerpos. 
+
 \begin{enumerate}
-\item $Hom(\frac{F}{K},\frac{E}{K}) \subseteq Hom_K(F,E)$
-\item $Hom_K(F,E)$ tiene estrucutra de $E$-espacio vectorial.
+\item $Hom(F,E) \subseteq Hom_K(F,E)$
+\item $Hom_K(F,E)$ tiene estructura de $E$-espacio vectorial.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-
+\begin{enumerate}
+\item Recordemos que $\frac{E}{K},\frac{F}{K}$ son $K$-espacios vectoriales. Entonces las propiedades de homomorfismo de cuerpo me dan las propiedades de homomorfismo de espacios vectoriales. 
+\item La suma es la suma convencional de homomorfismos $(\phi + \psi)(x) = \phi(x) + \psi(x)$ y el producto por escalares de $E$ es de forma natural $e \phi(x) = e \cdot \phi(x)$. 
+\end{enumerate}
 \end{proof}
+
+\begin{lemma}[Lema de independencia de Dedekind]
+Dados $\frac{F}{K},\frac{E}{K}$ dos extensiones de cuerpos y $\mathcal{F} \subseteq Hom(F,E)$. 
+
+$\mathcal{F}$ es linealmente independiente en $Hom_K(F,E) \iff$ todos sus elementos son distintos. 
+\end{lemma}
+\begin{proof}
+$\Rightarrow)$ Si hubiera dos iguales, serían linealmente dependientes. 
+
+$\Leftarrow)$ Lo que se prueba a continuación es que todo conjunto de homomorfismos de un grupo $G$ en el grupo de las unidades de un cuerpo $F^*$ donde los homomorfismos son distintos entonces son linealmente independientes. 
+
+Desde este resultado, para nuestra familia de homomorfismos de cuerpos $F \to E$ tenemos que cuando son restringidos a homomorfismos $F^* \to E^*$ son linealmente independientes. La clave es entonces que como todo homomorfismo que nace en un cuerpo es inyectivo esta restricción tiene sentido pues no hay ningún elemento no nulo que vaya al cero. Finalmente, si agregamos el $0$, como todos los homomorfismos valdrían cero esto no cambia que los homomorfismos sean independientes o no. 
+
+Supongamos que son todos distintos. Y procedamos por inducción sobre el número de elementos $n$. 
+
+Si $n = 1$ entonces el conjunto $\{\sigma_1\}$ es linealmente independiente. Si $n > 1$ procedemos por inducción fuerte asumiendo que cada subconjunto de menos de $n$ elementos es linealmente independiente. 
+
+Consideremos una familia $\{\sigma_1, \ldots, \sigma_n \} \subseteq \{\sigma_i:i \in I \}$ y una combinación lineal igualada a $0$, $\sum_{i = 1}^n e_i\sigma_i = 0$ con $e_i \in E$, queremos ver que todos los $e_i = 0$. 
+
+Como son todos distintos, en particular $\sigma_1 \neq \sigma_n$. Sea $y \in F^*$ tal que $\sigma_1(y) \neq \sigma_n(y) \neq 0$. Apliquemos la ecuación anterior a $x,xy$: $$\sum_{i = 1}^n e_i\sigma_i(x) = 0$$ $$\sum_{i = 1}^n e_i\sigma_i(xy) = \sum_{i = 1}^n  e_i\sigma_i(x)\sigma_i(y) = 0$$ Multiplicando por $\sigma_n(y)^{-1}$ se obtiene que $$\sum_{i = 1}^{n-1} e_i\sigma_i(x)\sigma_i(y)\sigma_n(y)^{-1} + e_n \sigma_n(x) = 0$$ Restando ambas ecuaciones se tendrá para todo $x$ que: $$\sum_{i = 1}^{n-1} (e_i-e_i\sigma_i(y)\sigma_n(y)^{-1})\sigma_i(x) = 0$$ y por tanto: $$\sum_{i = 1}^{n-1} (e_i-e_i\sigma_i(y)\sigma_n(y)^{-1})\sigma_i = 0$$ Como el conjunto $\{\sigma_1,\ldots,\sigma_{n-1}\}$ son independientes por hipótesis, tendremos que todos los coeficientes son nulos, en particular el primero: $$e_1 - e_1 \sigma_1(y)\sigma_n(y)^{-1} = e_1(1 - \sigma_1(y)\sigma_n(y)^{-1}) = 0 \implies e_1 = 0 \lor \sigma_1(y) = \sigma_n(y) \implies e_1 = 0$$ Y por tanto nos queda una combinación lineal $\sum_{i = 2}^{n} e_i\sigma_i = 0$ que por hipótesis son independientes y por tanto los $e_i$ son todos nulos. Como queríamos. $  $
+\end{proof}
+
+\begin{corollary}[Acotación del número de homomorfismos entre extensiones de cuerpos]
+Dadas $\frac{F}{K},\frac{E}{K}$ dos extensiones de cuerpos.
+
+Si $\frac{F}{K}$ es una extensión finita entonces $|Hom(F,E)| \le [F:K]$. 
+
+En particular, $|Aut(F)| \le [F:K]$.
+\end{corollary} 
+\begin{proof}
+Por reducción al absurdo, supongamos que $\{\sigma_i\}_{1 \le i \le n+1} \subseteq Hom(F,E)$. Como la extensión es finita tenemos una base $\{f_i\}_{1 \le i \le n}$ de $F$ como $K$-espacio vectorial. Para ver que los elementos $\sigma_i$ no son distintos basta ver que no son linealmente independientes por el lema de Dedekind. 
+
+Supongamos que $\sum_{i = 1}^{n+1} e_i\sigma_i = 0$ aplicando esta ecuación funcional a la base anterior obtendríamos $n$ ecuaciones indexadas por $j$ de la forma $\sum_{i = 1}^{n+1} e_i\sigma_i(f_j) = 0$. En particular, los $e_i$ son una solución del sistema de $n$ ecuaciones y $n+1$ incógnitas $\sum_{i = 1}^{n+1} X_i\sigma_i(f_j) = 0$. Dado que el sistema es homógeneo, existe una solución no trivial. Esto me dice que los correspondientes $e_i$ me dan la dependencia lineal de los $\sigma_i$ y por tanto, tiene que haber repetidos entre los $\sigma_i$. Como queríamos. 
+\end{proof}
+
+\begin{definition}[Cuerpo fijo por un subgrupo de automorfismos]
+Sea $E$ un cuerpo y $G \le Aut(E)$ un subgrupo del grupo de automorfismos de $E$. El cuerpo fijo de $E$ por $G$ es: $$E^G = \{u \in E:\forall \sigma \in G.\sigma(u) = u \}$$
+\end{definition}
+
+\begin{theorem}[Teorema de Artin]
+Sea $E$ un cuerpo y $G \le Aut(E)$ un subgrupo finito del grupo de automorfismos de $E$ entonces $E^G$ es un subcuerpo de $E$ y $[E:E^G] = |G|$. 
+\end{theorem}
+
+\subsection{Extensiones de Galois}
+
+\begin{definition}[Extensión finita de Galois]
+Una extensión finita $\frac{E}{K}$ es una extensión de Galois si existe un subgrupo $G \le Aut(E)$ tal que $K = E^G$. En su caso, al subgrupo $G$ se le llama grupo de Galois de la extensión y se le denota por $Gal(\frac{E}{K})$. 
+\end{definition}
+
+\begin{proposition}[Caracterización de las extensiones de Galois finitas]
+Sea $\frac{E}{K}$ una extensión finita. Son equivalentes:
+
+\begin{enumerate}
+\item $\frac{E}{K}$ es una extensión de Galois.
+\item $\frac{E}{K}$ es normal y separable.
+\item $E$ es el cuerpo de descomposición de un polinomio separable sobre $K$. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Veamos primeramente $1 \iff 2$ y luego $2 \iff 3$
+
+\begin{enumerate}
+\item Supongamos que $\frac{E}{K}$ es de Galois con $Gal(\frac{E}{K}) = G$. Cada uno de estos automorfismos sobre $K$ se pueden extender como homomorfismos a la clausura $\overline{K}$. Por tanto, el $$[E:K]_S \ge |G| = [E:K] \ge [E:K]_S$$ Hemos utilizado que todo automorfismo se puede extender a la clausura mediante extensiones algebraicas, el lema de Artin y que el grado separable en extensiones finitas es menor que el grado de la extensión. 
+
+Como, $[E:K]_S = [E:K]$ y como la extensión es finita, debe ser separable. Como $[E:K]_S = |G|$, todos los homomorfismos que puede enviar a la clausura algebraica son automorfismos y en particular tenemos que $\sigma(E) = E$ para esos automorfismos de modo que las extensiones son normales. 
+
+\item Supongamos que $\frac{E}{K}$ es normal y separable. Por ser separable y finita, $[E:K]_S = [E:K]$ y por ser normal tendremos que cada homomorfismo $\sigma$ a la clausura verifica que $\sigma(E) = E$. 
+
+Si restringimos el codominio, a $E$ tenemos que el número de endomorfismos en $E$ sobre $K$ es $[E:K]$ y como todo endomorfismo entre extensiones algebraicas es automorfismo tendremos que $|Aut(\frac{E}{K})| = [E:K]$ esto es que el número de automorfismos de $E$ sobre $K$ está dado por $[E:K]$. Nadie ha demostrado hasta ahora que estos fijen sólo a $K$ sino que podrían fijar más elementos. Esto no ocurre gracias al teorema de Artin que nos dice que $[E:E^{Aut(\frac{E}{K})}] = [E:K]$ y por el teorema del grado tenemos que $[E^{Aut(\frac{E}{K})}:K] = 1$ y por tanto $Gal(\frac{E}{K}) = E^{Aut(\frac{E}{K})}$.
+
+\item Como la extensión es normal y finita, necesariamente debe ser el cuerpo de descomposición de algún polinomio $f \in K[X]$. Dado que la extensión es separable, $f$ será separable sobre $K$. 
+
+\item Si $E$ es el cuerpo de descomposición de un polinomio $f \in K[X]$ separable sobre $K$ entonces la extensión es finita y normal. Además como $f$ es separable, el cuerpo de descomposición que genera también es separable. 
+\end{enumerate}
+\end{proof}
+
+El siguiente resultado muestra que como extensiones normales, las extensiones de Galois no son una clase distinguida de extensiones en general ya que las subextensiones no son siempre de Galois. 
+
+\begin{proposition}[Extensiones de Galois en torres]
+Supongamos que $\frac{E}{K}$ es una extensión de Galois y $K \subseteq F \subseteq E$ entonces $\frac{E}{F}$ es de Galois. 
+\end{proposition}
+\begin{proof}
+Como $\frac{E}{K}$ es de Galois, entonces es normal y separable. Por ser normal, la extensión $\frac{E}{F}$ es normal y por ser separable, las extensiones $\frac{E}{F},\frac{F}{K}$ son separables. Por tanto, $\frac{E}{F}$ es una extensión de Galois. 
+\end{proof}
+
+
+\subsection{Conexión de Galois}
+
+\begin{definition}[Subgrupo de automorfismos que fijan un subcuerpo]
+Sea $E$ un cuerpo y $F \subseteq E$ un subcuerpo. El subgrupo de automorfismos de $E$ que fijan $F$ es: $$G^F = \{\sigma \in G: \forall x \in F. \sigma(x) = x \}$$
+\end{definition}
+
+\begin{definition}[Correspondencia de Galois]
+Sea $E$ un cuerpo y $G \le Aut(E)$ un subgrupo de su grupo de automorfismos. Sea $H(E)$ el conjunto de subcuerpos de $E$ y $S(E)$ al conjunto de subgrupos de $G$.
+
+Consideremos las aplicaciones $G^{(\cdot)}:H(E) \to S(E)$ tal que $G \to G^{F}$ y $E^{(\cdot)}:S(E) \to H(E)$ con $H \to E^H$. Al par $(G^{(\cdot)},E^{(\cdot)})$ se le llama conexión de Galois entre $H(E)$ y $S(E)$. 
+\end{definition}
+
+\begin{proposition}[Propiedades de las conexiones de Galois]
+Sean $F,F_1,F_2$ subcuerpo intermedios de la extensión de cuerpos $\frac{E}{K}$ y sean $H,H_1,H_2$ subgrupos del grupo de Galois $G = Gal(\frac{E}{K})$ entonces:
+
+\begin{enumerate}
+\item $F_1 \subseteq F_2 \implies G^{F_1} \ge G^{F_2} \land H_1 \le H_2 \implies E^{H_1} \subseteq E^{H_2}$
+\item $F \subseteq E^{G^F} \land H \le G^{E^H}$
+\item $E^{G^{E^H}} = E^H \land G^{E^{G^F}} = G^F$
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Si $F_1 \subseteq F_2$ entonces para cada $\sigma \in G^{F_2}$ se tiene que para cada $x \in F_2$, $\sigma(x) = x$, luego en particular para cada $x \in F_1$ se tendrá que $\sigma(x) = x$ y por tanto, $\sigma \in G^{F_1}$.
+
+Si $x \in E^{H_2}$ entonces para cada $\sigma \in H_2$ se verifica que $\sigma(x) = x$ y como $H_1 \le H_2$ entonces para cada $\sigma \in H_1 \le H_2$ se tendrá que $\sigma(x) = x$ y por tanto, $x \in E^{H_1}$. 
+
+\item Si $x \in F$ entonces para cada $\sigma \in G^F$ se tiene que $\sigma(x) = x$ y esto ocurre si y sólo si $x \in E^{G^F}$. 
+
+Si $\sigma \in H$ entonces para cada $x \in E^H$ se verifica que $\sigma(x) = x$ y esto ocurre si y sólo si $\sigma \in G^{E^H}$. 
+
+\item Aplicando 2. tenemos que $E^H \subseteq E^{G^{E^H}}$ y también tenemos que $H \subseteq G^{E^H}$ y por la propiedad 1. se tiene la igualdad. La otra es análoga. 
+\end{enumerate}
+\end{proof}
+
+Nuestro objetivo es dar subcuerpos $F$ de $E$ y subgrupos $H$ de $G$ tales que $G^{E^H} = H$ (C1) y $E^{G^F} = F$ (C2). El siguiente teorema muestra que existe una biyección entre los cuerpos que verifican (C2) y los grupos que verifican (C1) y que ambos conjuntos forman subretículos de los retículos de cuerpos y de los retículos de automorfismos. Para remarcar el hecho de que estamos estudiando subretículos hagamos previamente la siguiente observación:
+
+\begin{proposition}
+Sea $E/K$ una extensión finita de Galois con grupo de Galois $G = Gal(E/K)$. Entonces se verifica que:
+
+\begin{enumerate}
+\item $K = E^G$
+\item $G$ es el único subgrupo de $Aut(E)$ tal que $K = E^G$. 
+\end{enumerate}
+
+Como consecuencia, dada una extensión finita $E/K$, es de Galois $\iff K = E^G$ con $G = Aut(E/K) \subseteq Aut(E)$.
+\end{proposition}
+\begin{proof}
+Lo único que hay que desmostrar es que sólo hay un subgrupo de los automorfismos que fija a $K$. Si $H$ fuera otro subgrupo que fija $K$, debería estar contenido en $G$ y entonces por el teorema de Artin $|H| = [E:E^H] = [E:K] = |G|$ luego ambos deben ser iguales. 
+\end{proof}
+
+\begin{theorem}[Teorema fundamental de la teoría de Galois]
+Sea $\frac{E}{K}$ una extensión de Galois finita con $G = Gal(\frac{E}{K})$ y consideremos la conexión de Galois dada por $(G^{(\cdot)},E^{(\cdot)})$ entre $H(E/K)$ y $S(G)$ entonces:
+
+\begin{enumerate}
+\item La conexión de Galois es una biyección entre $H(E/K)$ y $S(G)$. 
+\item La conexión invierte el orden:
+
+\begin{enumerate}
+\item $F_1 \subseteq F_2 \iff  G^{F_1} \ge G^{F_2}$
+\item $H_1 \le H_2 \iff E^{H_1} \supseteq E^{H_2}$
+\end{enumerate}
+
+\item La conexión de Galois es un antiisomorfismo de retículos tal que:
+
+\begin{enumerate}
+\item $G^{F_1F_2} = G^{F_1} \cap G^{F_2}$
+\item $G^{F_1 \cap F_2} = G^{F_1} \lor G^{F_2}$
+\item $E^{H_1 \lor H_2} = E^{H_1} \cap E^{H_2}$
+\item $E^{H_1 \cap H_2} = E^{H_1} E^{H_2}$
+\end{enumerate}  
+
+En particular, si $F_1/K, F_2/K$ son extensiones intermedias entonces  
+
+\begin{enumerate}
+\item $Gal(E/F_1F_2) = Gal(E/F_1) \cap Gal(E/F_2)$
+\item $Gal(E/(F_1 \cap F_2)) = Gal(E/F_1) \lor Gal(E/F_2)$
+\end{enumerate}
+
+\item Dos extensiones $F_1/K,F_2/K$ son conjugadas si existe $\sigma \in Gal(E/K)$ tal que $\sigma(F_1) = F_2$ y sus correspondientes subgrupos $H_1,H_2$ serán conjugados si existe $\sigma \in G. H_1 = \sigma H_2 \sigma^{-1}$. Entonces se verifica: 
+
+$F_1/K$ y $F_2/K$ son conjugadas $\iff$ 
+$H_1$ y $H_2$ son conjugados en $G$.
+
+Como consecuencia, 
+
+$F/K$ es una extensión de Galois $\iff Gal(E/F)$ es un subgrupo normal de $G$. Además: $$Gal(F/K) \cong G/Gal(E/F)$$
+\item Para una extensión intermedia $K \subseteq F \subseteq E$, si $Gal(E/F) = H$ y notamos por $(G:H)$ al índice del subgrupo $H$ en $G$ (el número de clases laterales a izquierda o derecha) entonces:
+
+Para $H \le G$ se verifica $|H| = [E:F]$ y $(G:H)=[F:K]$. 
+\end{enumerate}
+\end{theorem}
+
+Ver proposiciones sobre 
+
+
+
+
+
+
+

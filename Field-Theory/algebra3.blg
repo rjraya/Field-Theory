@@ -32,53 +32,54 @@ I was expecting a `,' or a `}'---line 47 of file references.bib
  : @online{link5,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Illegal end of database file---line 54 of file references.bib
- : }
- :  
+I was expecting a `,' or a `}'---line 56 of file references.bib
+ : 
+ : @book{algebra-lang,
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "4"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 6 entries,
+You've used 8 entries,
             6256 wiz_defined-function locations,
-            1192 strings with 9444 characters,
-and the built_in function-call counts, 21154 in all, are:
-= -- 974
-> -- 984
-< -- 155
-+ -- 793
-- -- 616
-* -- 1172
-:= -- 2200
+            1202 strings with 9830 characters,
+and the built_in function-call counts, 29581 in all, are:
+= -- 1497
+> -- 1149
+< -- 213
++ -- 916
+- -- 664
+* -- 1776
+:= -- 2901
 add.period$ -- 0
-call.type$ -- 6
-change.case$ -- 41
+call.type$ -- 8
+change.case$ -- 69
 chr.to.int$ -- 75
-cite$ -- 10
-duplicate$ -- 2184
-empty$ -- 1989
-format.name$ -- 241
-if$ -- 4137
+cite$ -- 14
+duplicate$ -- 3034
+empty$ -- 2884
+format.name$ -- 336
+if$ -- 5971
 int.to.chr$ -- 0
-int.to.str$ -- 12
+int.to.str$ -- 17
 missing$ -- 0
-newline$ -- 124
-num.names$ -- 211
-pop$ -- 1697
+newline$ -- 167
+num.names$ -- 304
+pop$ -- 2349
 preamble$ -- 1
-purify$ -- 51
+purify$ -- 83
 quote$ -- 0
-skip$ -- 855
+skip$ -- 1178
 stack$ -- 0
-substring$ -- 1294
-swap$ -- 592
-text.length$ -- 159
-text.prefix$ -- 5
+substring$ -- 2169
+swap$ -- 832
+text.length$ -- 209
+text.prefix$ -- 7
 top$ -- 1
-type$ -- 192
+type$ -- 260
 warning$ -- 0
-while$ -- 264
+while$ -- 337
 width$ -- 0
-write$ -- 119
+write$ -- 160
 (There were 4 error messages)

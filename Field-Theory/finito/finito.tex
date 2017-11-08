@@ -1,42 +1,6 @@
 \subsection{Existencia y unicidad}
 
-\begin{proposition}
-Sea $A$ un anillo. Entonces existe un único homomorfismo $f:\mathbb{Z} \to A$ tal que $f(1) = 1 \land f(n) = n \cdot 1$.
-\end{proposition}
-\begin{proof}
-Defino $f: \mathbb{Z} \to A$ como $n \to n \cdot 1$. $f$ está bien definido ya que si $n \in \mathbb{N}$ entonces $n \cdot 1$ está de forma natural definiado y si $n \in \mathbb{Z}$ entonces $n1 = (-n)(-1)$ también está naturalmente definido. 
 
-Por otro lado, $f(1) = 1 \cdot 1 = 1$ y es un homomorfismo ya que $$f(n+m) = (n+m) \cdot 1 = n \cdot 1 + m \cdot 1 = f(n) + f(m)$$
-
-Claramente cualquier otro homomorfismo verificando las condiciones sería igual a $f$. 
-\end{proof}
-
-\begin{definition}
-Sea $A$ un anillo.
-
-La característica de $A$, $car(A)$, es el número entero positivo o nulo $n$ tal que $Ker(f) = n\mathbb{Z}$. 
-\end{definition}
-
-Obsérvese que es una buena definición ya que $\mathbb{Z}$ es un dominio de ideales principales.
-
-\begin{proposition}[Propiedades de la característica]
-1. Si $Car(A) = 0$ entonces $f(\mathbb{Z}) \cong \mathbb{Z}$. Si $n = Car(A) \neq 0$ entonces $f(\mathbb{Z}) \cong \mathbb{Z}_n$ y además $\forall a \in A.na  = 0$. 
-
-2. Si $A$ es un dominio de integridad entonces $Car(A)$ es cero o un número primo. 
-
-3. Sea $A$ un anillo de característica prima $p$ entonces la aplicación $R(a) = a^p$ es un endomorfismo conocido como endomorfismo de Frobenius.
-
-4. Si $f: A \to B$ es un homomorfismo entonces $car(B)|car(A)$. 
-\end{proposition}
-\begin{proof}
-1. Utilícese el primer teorema de isomorfía y la definición de característica.
-
-2. Si $Car(A) = 0$ hemos acabado. Si $n = Car(A) \neq 0$ entonces si $n$ no fuera primo, $0 = n \cdot 1 = (n_1n_2) \cdot 1 = (n_1 \cdot 1)(n_2 \cdot 1) \implies n_1 \cdot 1 = 0 \lor n_2 \cdot 1 = 0$ donde hemos utilizado la propiedad asociativa general.  
-
-3. Escribamos $(\alpha+\beta)^p = \alpha^p + \beta^p + \sum \binom{p}{i} \alpha{p-i}\beta^i$ con $1 \le i \le p-1$. Claramente, $p$ divide a cada uno de los coeficientes binomiales y como $F$ tiene característica $p$, se deduce que $(\alpha+\beta)^p = \alpha^p+\beta^p$. Las otras propiedades son triviales.
-
-4. $0 = f(0) = f(1 Car(A)) = 1 Car(A)$ y como $Car(B)$ debe ser el mínimo que anule a uno, tendrá que ser $Car(B)|Car(A)$.  
-\end{proof}
 
 \begin{theorem}
 1. Si K es un cuerpo finito, entonces su $|K| = p^n$ con $p$ un número primo que es la característica del cuerpo y $n \ge 1$. 
@@ -76,7 +40,7 @@ Para ver la existencia, demostramos que el cuerpo de descomposición para $f$ ti
 \end{proof}
 
 \begin{proposition}[Retículo de subcuerpos de un cuerpo finito]
-	Sean $\mathbb{F}_{q^m}, \mathbb{F}_{p^n}$ cuerpos finitos. Entonces $\mathbb{F}_{q^m}$ es isomorfo a un subcuerpo de $\mathbb{F}_{p^n}$ si y sólo si $p = q \land m|n$. 
+	$Sub(\mathbb{F}_{p^n}) = \{\mathbb{F}_{p^m}:m|n\}$
 \end{proposition}
 \begin{proof}
 	$\Rightarrow)$ Supongamos que $\mathbb{F}_{q^m}$ es isomorfo a un subcuerpo de $\mathbb{F}_{p^n}$ entonces la aplicación inclusión de $\mathbb{F}_{q^m}$ en $\mathbb{F}_{p^n}$ debe ser un homomorfismo. Por las propiedades de la característica $p|q$ y como ambos son primos necesariamente $p = q$. 
@@ -98,7 +62,7 @@ La representación de cuerpos finitos $\mathbb{F}_{p^n}$ como cocientes $\frac{F
 	\cite{link3}
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}[Polinomios irreducibles de $\mathbb{F}_p$]
 	Los factores irreducibles de $X^{p^n} - X$ en $\mathbb{F}_p[X]$ son exactamente los polinomios irreducibles de $\mathbb{F}_p[X]$ con grado divisor de $n$. 
 \end{proposition} 
 \begin{proof}
@@ -153,8 +117,7 @@ Vamos a generalizar esta fórmulas para el cálculo del número de polinomios ir
 	$N_n = \frac{1}{n} \sum_{m|n} \mu(m) p^{\frac{n}{m}}$
 \end{theorem}
 \begin{proof}
-	Ver COUNTING IRREDUCIBLE POLYNOMIALS OVER FINITE
-	FIELDS USING THE INCLUSION-EXCLUSION PRINCIPLE
+	Ver \cite{counting-irreducible}
 \end{proof}
 
 
