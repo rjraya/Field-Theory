@@ -1,8 +1,6 @@
-\subsection{Existencia y unicidad}
+\subsection{Resultados generales}
 
-
-
-\begin{theorem}
+\begin{theorem}[Caracterización de los cuerpos finitos]
 1. Si K es un cuerpo finito, entonces su $|K| = p^n$ con $p$ un número primo que es la característica del cuerpo y $n \ge 1$. 
 
 2. Teorema de Moore: para cada primo $p$ y cada $n \ge 1$ existe un único cuerpo de orden $p^n$, este es, el cuerpo de descomposición del polinomio $X^{p^n} - X$ sobre $\mathbb{F}_p$. 
@@ -16,38 +14,67 @@ Ahora, $K$ tiene estructura de espacio vectorial sobre $\mathbb{F}_p$ y dado que
 
 Para ver la existencia, demostramos que el cuerpo de descomposición para $f$ tiene exactamente $p^n$ elementos. Como $f' = -1$ tenemos que $f,f'$ no tienen raíces comunes y por tanto, no hay raíces múltiples de $f$, en consecuencia el cuerpo de descomposición contiene exactamente $p^n$ raíces (esto es lo mismo que decir que el polinomio es separable). Para terminar la prueba, necesito ver que el conjunto de dichas raíces es un subcuerpo del cuerpo de descomposición. En efecto, tenemos las siguientes propiedades, sean $u,v$ raíces de $f$ entonces:
 
-\begin{itemize}
+\begin{enumerate}
 \item $(u+v)^{p^n} - (u+v) = u^{p^n}-u+v^{p^n}-v = 0$
 \item $(uv)^{p^n}-uv = u^{p^n}v^{p^n} - uv = 0$
 \item $(-u)^{p^n} - (-u) = 0$
 \item $(u^{-1})^{p^n} - u^{-1} = 0$
 \item $(1)^{p_n} - 1 = 0$
-\end{itemize}
+\end{enumerate}
 \end{proof}
 
-\begin{proposition}
-	Sea $F^x = F - \{0\}$ el grupo de las unidades para el producto del cuerpo finito $F$. Se verifica que $F^x$ es un grupo cíclico de orden $|F|-1$. 
+\begin{definition}[Cuerpos de Galois]
+El cuerpo de Galois con $q$ elementos es el único cuerpo con $q = p^n$ elementos, con $p$ un número primo. Lo notaremos por $\mathbb{F}_q$. 
+\end{definition}
+
+\begin{proposition}[Grupo multiplicativo de un cuerpo es cíclico]
+	Todo subgrupo finito del grupo multiplicativo $F^x = F \setminus \{0\}$ de un cuerpo (no necesariamente finito $F$) es cíclico. 
 \end{proposition}
 \begin{proof}
-	Ver \cite{link2}
+	Sea $G$ un subgrupo finito de $F$. 
+	
+	Ya que $G$ es un grupo finito que será abeliano pues estamos asumiendo que los cuerpos tienen producto conmutativo. Por la clasificación de los grupos abelianos finitos mediante factores invariantes, tenemos que $G \cong \prod_{i = 1}^r C_{n_i}$ con $\forall 1 \ge i < r. n_i|n_{i+1}$.
+	
+	Observemos que $mcm(n_i) = n_r$ y como para cada $a_i \in C_{n_i}$ se verifica que $a_i^{n_i} = 1$, también se verificará que $a_i^{n_r} = 1$. Por tanto, cualquier $a \in G$ verificará que $a^{n_r} = 1$. Por tanto, $a$ será raíz de $X^{n_r}-1$, que como mucho tiene $n_r$ raíces, esto me dice que $|G| \le n_r$. Pero por el isomorfismo tendría que ser $|G| = \prod_{i = 1}^r n_i$, de donde necesariamente todos los $n_i = 1$ salvo el último y tenemos que $G \cong C_{n_r}$. 
 \end{proof}
 
-\begin{proposition}
-	Si $f \in \mathbb{F}_p[X]$ entonces el número de raíces de $f$ in $\mathbb{F}_{p^n}$ es el grado del polinomio $gcd(f,X^{p^n}-X)$.
-\end{proposition}
+\begin{theorem}[Estudio de la extensión $\mathbb{F}_q/\mathbb{F}_p$]
+Sea $p$ un número primo y $q = p^n$ tenemos que:
+
+\begin{enumerate}
+\item $\mathbb{F}_q/\mathbb{F}_p$ es una extensión de Galois. 
+\item $Gal(\mathbb{F}_q/\mathbb{F}_p)$ es un grupo cíclico de orden $n$ generado por el automorfismo de Frobenius. 
+\end{enumerate}
+\end{theorem}
 \begin{proof}
-	Ver Cox, 291.
+\begin{enumerate}
+\item Como $\mathbb{F}_p$ es cuerpo finito es perfecto y resulta que la extensión $\mathbb{F}_q/\mathbb{F}_p$ es separable. Por el teorema de Moore, $\mathbb{F}_q$ es el cuerpo de descomposición del polinomio $X^q - X$ y por tanto, la extensión es normal. Esto es, la extensión es de Galois. 
+
+\item Comencemos observando que por el teorema de Artin, $n = [\mathbb{F}_q:\mathbb{F}_p] = |Gal(\mathbb{F}_q/\mathbb{F}_p)|$. Además, el automorfismo de Frobenius $\phi \in Gal(\mathbb{F}_q/\mathbb{F}_p)$ ya que como $\mathbb{F}_q$ es un cuerpo finito y por tanto perfecto. Como es de característica prima, necesariamente $\phi$ es automorfismo. Y además, fija $\mathbb{F}_p$ ya que $\phi(a) = a^p = a$, por ejemplo porque $\mathbb{F}_p$ es cuerpo de descomposición de $X^p - X$. 
+
+Para $0 \le i < n$, $\phi^i \in Gal(\mathbb{F}_q/\mathbb{F}_p)$. Tendríamos: $$\phi^i(\alpha) = \phi \phi^{i-1}(\alpha) = \phi(\alpha{p^{i-1}}) = \phi(\alpha{p^{i-1}}) = \alpha{p^i}$$ Finalmente, se comprueba que los $\phi^i$ son distintos ya que si $\phi^i = \phi^j$ con $i > j$ entonces $\phi{i-j} = 1$ y entonces $\alpha = 1(\alpha) = \phi^i(\alpha) = \alpha^{p^i}$ y entonces todo elemento de $\mathbb{F}_q$ sería raíz del polinomio $X^{p^i} - X$ que tiene un máximo de $p^i$ raíces. Contradicción. 
+\end{enumerate}
 \end{proof}
 
-\begin{proposition}[Retículo de subcuerpos de un cuerpo finito]
+\begin{proposition}[Retículo de subcuerpos de un cuerpo finito y estudio de extensiones intermedias]
+	Si denotamos por $Sub(F)$ a los subcuerpos de $F$ tendremos:
+	
 	$Sub(\mathbb{F}_{p^n}) = \{\mathbb{F}_{p^m}:m|n\}$
+	
+	En particular, la extensión $\mathbb{F}_{p^m} \subseteq \mathbb{F}_{p^n}$ es de Galois con grupo de Galois cíclico de orden $n/m$ y generado por $\phi^m$.
 \end{proposition}
 \begin{proof}
-	$\Rightarrow)$ Supongamos que $\mathbb{F}_{q^m}$ es isomorfo a un subcuerpo de $\mathbb{F}_{p^n}$ entonces la aplicación inclusión de $\mathbb{F}_{q^m}$ en $\mathbb{F}_{p^n}$ debe ser un homomorfismo. Por las propiedades de la característica $p|q$ y como ambos son primos necesariamente $p = q$. 
+	Veamos la igualdad de conjuntos por doble inclusión. 
+	
+	$\subseteq)$ Supongamos que $\mathbb{F}_{q^m}$ es isomorfo a un subcuerpo de $\mathbb{F}_{p^n}$ entonces la aplicación inclusión de $\mathbb{F}_{q^m}$ en $\mathbb{F}_{p^n}$ debe ser un homomorfismo. Por las propiedades de la característica $p|q$ y como ambos son primos necesariamente $p = q$. 
 	
 	Por el teorema del grado como tenemos la torre $\mathbb{F}_{p} \subseteq \mathbb{F}_{p^m} \subseteq \mathbb{F}_{p^n}$ se tendrá que $$n = [\mathbb{F}_{p^n}:\mathbb{F}_{p}] = [\mathbb{F}_{p^n}:\mathbb{F}_{p^m}]m$$ y por tanto $m|n$. 
 	
-	$\Leftarrow)$ Hay que utilizar extensiones de Galois o bien utilizar otras herramientas de la característica como en \cite{4}.
+	$\supseteq)$ Supongamos que $m|n$ con $n = md$. Por lo anterior, $Gal(\mathbb{F}_{p^n}/\mathbb{F}_p)$ es cíclico de orden $n$ y generado por el automorfismo de Frobenius $\phi$. 
+	
+	Recordando el retículo de subgrupos de un grupo cíclico tiene que existir un único subgrupo $H$ de orden $d$ que será cíclico  y por tanto estará generado por $\phi^m$. 
+	
+	Utilización la conexión de Galois $H$ se corresponde con el subcuerpo $E = (\mathbb{F}_{p^n})^H$. Observemos que como $H$ es subgrupo de un cíclico, que es abeliano, $H$ debe ser normal y esto implica qque $E/\mathbb{F}_p$ es de Galois y $Gal(E/\mathbb{F}_p) \cong Gal(\mathbb{F}_{p^n}/\mathbb{F}_p)/Gal(\mathbb{F}_{p^n}/E)$ que tiene orden $n/d = m$ de donde $E = \mathbb{F}_{p^m}$ y por tanto, tenemos la implicación y la consecuencia del enunciado. 
 \end{proof}
 
 
@@ -106,7 +133,7 @@ Vamos a generalizar esta fórmulas para el cálculo del número de polinomios ir
 	\mu(n) = 
 	\begin{cases} 
 	1 & n = 1 \\
-	(-1)^s & n = \prod_{i = 1}^s p_i  \text{ para primos distinos } p_i \\
+	(-1)^s & n = \prod_{i = 1}^s p_i  \text{ para primos distintos } p_i \\
 	0   & \text{en otro caso}
 	\end{cases}
 	\]

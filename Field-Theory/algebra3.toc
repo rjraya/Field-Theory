@@ -57,6 +57,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8}Cuerpos finitos}{40}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}Existencia y unicidad}{40}
+\contentsline {subsection}{\numberline {8.1}Resultados generales}{40}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Polinomios irreducibles sobre cuerpos finitos}{41}
+\contentsline {subsection}{\numberline {8.2}Polinomios irreducibles sobre cuerpos finitos}{42}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9}Extensiones ciclot\IeC {\'o}micas. Ra\IeC {\'\i }ces de la unidad}{44}

@@ -194,146 +194,35 @@
 %\tableofcontents
 %\newpage
 
-\section{Problema 1}
+\section*{Problema 1}
 \input{problema1/problema1}
 \newpage
-\section{Problema2}
+\section*{Problema2}
 \input{problema2/problema2}
 \newpage
-\section{Problema 3}
+\section*{Problema 3}
 \input{problema3/problema3}
 \newpage
-\section{Problema 4}
+\section*{Problema 4}
+\input{problema4/problema4}
+\newpage
+\section*{Problema 5}
 
 \begin{exercise}
-Sea $\frac{E}{K}$ una extensión finita de Galois y $\alpha \in \frac{E}{K}$. Vamos a determinar el polinomio irreducible de $\alpha$ sobre $K$. 
-
-Consideramos todos los conjugados de $\alpha$, esto es, el conjunto $C = \{\sigma(\alpha):\sigma \in Gal(\frac{E}{K}) \}$ en el que no hay elementos repetidos ya que es un conjunto, y definimos $f(X) = \prod_{\beta \in C} (X - \beta)$. Entonces $\alpha$ es una raíz de $f(X)$. 
-
-\begin{enumerate}
-\item Prueba que $f(X) \in K[X]$
-\item Prueba que $f(X)$ es irreducible sobre $K$. Como consecuencia $f(X) = Irr(\alpha,K)$.
-\item Considera la extensión $\frac{\mathbb{Q}(\sqrt[3]{3},\sqrt{-3})}{\mathbb{Q}}$, prueba que es una extensión de Galois. 
-\item Determinar  $Gal \Big(\frac{\mathbb{Q}(\sqrt[3]{3},\sqrt{-3})}{\mathbb{Q}}\Big)$ y $Irr(\sqrt[3]{3}+\sqrt{-3},\mathbb{Q})$
-\item Considera la clausura normal $E/\mathbb{Q}$ de $\mathbb{Q}(\sqrt[4]{2})/\mathbb{Q}$, que es una extensión de Galois y describe $E$. 
-\item Determina $Gal(E/\mathbb{Q})$ e $Irr(i + \sqrt{2} +\sqrt{-2},\mathbb{Q})$.
-\end{enumerate}
+Sea $F$ un cuerpo finito y $0 \neq \alpha \in F$. Prueba que existen elementos $a,b \in F$ tales que $1+a^2 - \alpha b^2 = 0$. 
 \end{exercise}
 
 \textbf{Solución:}
 
-Discutamos primero la información que proporciona el enunciado. Teníamos la definición de conjugados sobre un cuerpo $K$ que podía ser caracterizada como aquellos elementos de la clausura $u,v \in \overline{K}$ que tenían el mismo polinomio mínimo sobre el cuerpo, $Irr(u,K) = Irr(v,K)$.
+Resovemos la ecuación general $a_1 x_1^2 + a_2 x_2^2 = 1$ con $a_1,a_2 \neq 0$. Para ello consideremos los conjuntos: $$S = \{a_1x_1^2:x_1 \in \mathbb{F} \}$$ $$T = \{1-a_2 x_2^2:x_2 \in \mathbb{F} \}$$ Vamos a calcular el número de elementos de estos conjuntos. Ahora, $$a_1 x_1^2 = a_2 x_1'^2 \implies x_1^2 = x_1'^2 \implies 0 = (x_1 - x_1')(x_1+x_1') \implies x_1 = x_1' \lor x_1 = -x_1' \implies x_1 = -x_1 \implies 2x_1 = 0$$ Si $Car(F) \neq 2$ entonces tenemos que $x_1 = 0$ eso me dice que cada elemento $a_1x_1^2$ tiene dos elementos de $F$, $x_1,-x_1$ salvo que $x_1 = 0$ donde el término recoge sólo el valor cero. En consecuencia, $|S| = (|F|-1)/2 + 1 = (F+1)/2$. Análogamente, se demuestra que $|T| = (F+1)/2$. Como $|S|+|T| > |F|$ el principio del palomar da que $\exists x \in S \cap T$ de donde $\exists x_1,x_2.1-a_2 x_2^2 = x = a_1 x_1^2$ y por la igualdad de los extremos, la ecuación tiene solución. 
 
-Desde aquí vamos a observar que dado un $\alpha \in E \setminus K$, sus elementos conjugados son precisamente los que dice el enunciado (si $\alpha \in K$ él es su único conjugado). 
+Si $Car(F) = 2$ entonces las ecuaciones $x_1 = x_1' \lor x_1 = -x_1'$ dan que $x_1 = x_1'$ y por tanto, cada término $a_1x_1^2$ recoge un único elemento del cuerpo. Por tanto, $|S| = |T| = |F|$ y de nuevo por el principio del palomar existe un elemento en la intersección que determina una pareja de valores $x_1,x_2$ solución de la ecuación. 
 
-Observamos que los automorfismos $\sigma \in Gal(\frac{E}{K})$ extienden a la identidad en $K$ pues por definición fijan los elementos de $K$. Como el isomorfismo extendido a polinomios con $X \to X$ de la identidad es $\overline{1_K} = 1_{K[X]}$ en particular se tiene que $Irr(\alpha,K) = Irr(\sigma(\alpha),K)$. Por tanto, $C$ está incluido en los conjugados de $\alpha$. 
+Obsérvese que si $a_1 = 0 \lor a_2 = 0$ entonces la ecuación degenera en una del tipo $a_1 x_1^2 = 1$.  que tiene solución si y sólo si $a_1$ es un cuadrado en $\mathbb{F}$ ya que por la conmutatividad del cuerpo finito (si hay dudas, úsese el teorema de Wedderburn) tendríamos $1 = a_1x_1^2 = (t_1x_1)^2$ y bastaría tomar $x_1 = t_1^{-1}$. Recíprocamente, si suponemos que $a_1$ no es cuadrado entonces $a_1^{-1}$ tampoco lo es y entonces $a_1^{-1} = x_1^2$ no tiene solución. 
 
-Pero también se da el recíproco, esto es los conjugados de $\alpha$ están todos en $E$. En efecto, como la extensión es de Galois finita entonces en particular es normal y entonces $Irr(\alpha,K)$ al ser irreducible y tener una raíz en $E$ descompone en factores lineales en $E$ luego cualquier conjugado de $\alpha$ también está en $E$. 
+Centrándonos en nuestra ecuación tenemos que $1 = \alpha b^2  - a^2$. El hecho de pedir $\alpha \neq 0$ es para evitar que degenere ya que entonces quedaría la ecuación $1 = (-1)a^2$ y no está claro a priori en qué cuerpos finitos $-1$ es un cuadrado de algún elemento. Tenemos que $a_1 = \alpha \neq 0 \land a_2 = -1 \neq 0$ y por lo anterior, está ecuación siempre tiene solución. \begin{center}
 
-Finalmente, como $Gal(\frac{E}{K})$ es un grupo claramente $\alpha \in C$ con $\sigma = 1$. 
-
-Volviendo al ejercicio:
-
-\begin{enumerate}
-\item Sea $\sigma \in Gal(\frac{E}{K})$ sabemos que como $\sigma$ extiende a la identidad las raíces del polinomio $f$ se aplican en raíces del polinomio $f$ mediante $\sigma$ y como $\sigma$ es un automorfismo, determina sobre las raíces una permutación. 
-
-Entonces cuando consideramos la extensión de $\sigma$ a los polinomios con $X \to X$ que denotamos por $\overline{\sigma}$ lo que obtenemos es $$\overline{\sigma}(f)(x) = \overline{\sigma}(\prod (x - \beta)) = \prod (x - \sigma(\beta)) = f(x)$$ Por tanto, $\sigma$ deja invariantes a los coeficientes del polinomio y como esta igualdad no depende de $\sigma$ se tiene que $f \in E^G[X] = K[X]$
-\item Por la observación previa tenemos que $C$ y el conjunto de los conjugados de $\alpha$ coinciden y en particular tienen el mismo cardinal. 
-
-Observamos también que como la extensión es de Galois finita, es una extensión separable, esto quiere decir que el polinomio $Irr(\alpha,K)$ no tiene raíces múltiples en $E$, cuerpo en el que descompone totalmente. Por tanto, cada conjugado determina un único factor lineal esto es, $$gr(f) = |\{ \text{conjugados de  } \alpha \}|= gr(Irr(\alpha,K))$$ y dado que $\alpha$ es raíz de $f$ tenemos que $f$ es un polinomio de grado mínimo del que $\alpha$ es raíz. Por tanto, $f$ es irreducible sobre $K$ y $f = Irr(\alpha,K)$. 
-
-\item La extensión es de Galois puesto que es el cuerpo de descomposición del polinomio: $$(X^3-3)(X^2+3) \in \mathbb{Q}[X]$$ que es separable por ser $\mathbb{Q}$ un cuerpo de característica cero y por tanto perfecto. 
-
-\item Consideramos la torre: $$\mathbb{Q} \subseteq \mathbb{Q}(\sqrt[3]{3}) \subseteq \mathbb{Q}(\sqrt[3]{3},\sqrt{-3})$$ El polinomio $X^3-3$ es irreducible sobre $\mathbb{Q}$ ya que no tiene raíces en $\mathbb{Q}$ y entonces la primera extensión es de grado 3. La base de la segunda extensión está incluída en $\mathbb{R}$ y entonces claramente el polinomio $X^2 + 3$ es irreducible sobre $\mathbb{Q}(\sqrt[3]{3})$ y por tanto la segunda extensión es de grado 2. Por el teorema del grado, la extensión total es de grado 6. Por tanto, hay exactamente 6 elementos en el grupo de Galois de la extensión. Como grupos de orden $2p$ con $p$ primo sólo hay un cíclico y un diédrico. Por tanto, para clasificar este grupo estudiamos el orden de sus elementos. 
-
-Para hacer los cálculos hay que observar que $\omega = -\frac{1}{2} + \frac{\sqrt{-3}}{2}$ y que $\omega^2 = -\frac{1}{2} - \frac{\sqrt{-3}}{2}$.
-
-\begin{center}
-  \begin{tabular}{ l | c | c | r }
-    \hline
-    notación & $\sqrt[3]{3}$ & $\sqrt{-3}$ & orden \\ \hline
-    $Id$ & $\sqrt[3]{3}$ & $\sqrt{-3}$ & 1 \\ \hline
-    $s$ & $\sqrt[3]{3}$ & $-\sqrt{-3}$ & 2 \\ \hline
-    $r$ & $\omega \sqrt[3]{3}$ & $\sqrt{-3}$ & 3 \\ \hline
-    $rs$ & $\omega \sqrt[3]{3}$ & $-\sqrt{-3}$ & 2 \\ \hline
-    $r^2$ & $\omega^2 \sqrt[3]{3}$ & $\sqrt{-3}$ & 3 \\ \hline
-    $r^2s$ & $\omega^2 \sqrt[3]{3}$ & $-\sqrt{-3}$ & 2 \\
-    \hline
-  \end{tabular}
-\end{center}
-
-En estas condiciones es isomorfo a $D_3$.
-
-Para calcular $Irr(\sqrt[3]{3}+\sqrt{-3},\mathbb{Q})$ tenemos que hacer algunos cálculos:
-
-$$\alpha = \sqrt[3]{3}+\sqrt{-3} \implies (\alpha - \sqrt{-3})^3 = 3 \implies \alpha^3-3\alpha-3 = \sqrt{-3}(\alpha^2-3) \implies \alpha^6 - 6 \alpha^4-6\alpha^3+3\alpha^2+18\alpha+9 = 0$$
-
-Para investigar la naturaleza de este polinomio lo reducimos módulo $2$ obteniendo $p(X) = X^6+X^2+1$. Vemos que no tiene raíces y entonces no puede tener en $\mathbb{Z}[X]$ factores de grado 1 o 5. El único irreducible de grado en $\mathbb{Z}_2[X]$ es $X^2+X+1$ y comprobamos que el resto de la división euclídea es $X+1$ y por tanto, el polinomio no tiene factores de grado 2 o 4. Sin embargo resulta que $p(X) = (X^3+X+1)^2$ lo que nos dice que si tuviera factores serían de grado 3. 
-
-Volviendo a $\mathbb{Z}$ vemos por ensayo y error que $X^6 - 6 X^4-6X^3+3X^2+18X+9 = (X^3-3X-3)^2$ y por el criterio de Eisenstein con $p = 3$ se obtiene que $X^3-3X-3$ es irreducible. De donde, $Irr(\sqrt[3]{3}+\sqrt{-3},\mathbb{Q}) = X^3-3X-3$. 
-
-\item  Claramente, $Irr(\sqrt[4]{2},\mathbb{Q}) = X^4 - 2$ y su cuerpo de descomposición es $\mathbb{Q}(\sqrt[4]{2},i)/\mathbb{Q}$. Esta es la clausura normal ya que la extensión es finita y tiene un solo generador. La clausura normal siempre es una extensión normal y en este caso vemos claramente que la extensión es separable puesto que los generadores tienen polinomios mínimos sobre $\mathbb{Q}$ son $X^4-2,X^2+1$ que tienen todas sus raíces distintas, luego son separables. Por tanto, tenemos una extensión de Galois. Vamos a describir esta extensión. 
-
-Considerando la torre $\mathbb{Q} \subseteq \mathbb{Q}(\sqrt[4]{2}) \subseteq \mathbb{Q}(\sqrt[4]{2},i)$ vemos claramente que la extensión tiene grado 8 y por el teorema de Artin, $|Gal(\mathbb{Q}(\sqrt[4]{2},i)/\mathbb{Q})| = 8$. Para determinar el grupo calculamos los de los elementos.
-
-\begin{center}
-  \begin{tabular}{ l | c | c | r }
-    \hline
-    notación & $i$ & $\sqrt[4]{2}$ & orden \\ \hline
-    $Id$ & $i$ & $\sqrt[4]{2}$ & 1 \\ \hline
-    $\sigma$ & $i$ & $i\sqrt[4]{2}$ & 4 \\ \hline
-    $\sigma^2$ & $i$ & $-\sqrt[4]{2}$ & 2 \\ \hline
-    $\sigma^3$ & $i$ & $-i\sqrt[4]{2}$ & 4 \\ \hline
-    $\tau$ & $-i$ & $\sqrt[4]{2}$ & 2 \\ \hline
-    $\sigma\tau$ & $-i$ & $-\sqrt[4]{2}$ & 2 \\ \hline
-    $\sigma^2\tau$ & $-i$ & $i\sqrt[4]{2}$ & 2 \\ \hline
-    $\sigma^3\tau$ & $-i$ & $-i\sqrt[4]{2}$ & 2 \\ 
-    \hline
-  \end{tabular}
-\end{center}
-
-Si observamos que el grupo no es abeliano entonces tenemos que el grupo es $D_4$. 
-
-La correspondencia de Galois viene expresada mediante los siguientes diagramas:
-
-\begin{tikzcd}
-& & \{e\} \arrow{drr} \arrow{dr} \arrow{d}  \arrow{dl} \arrow{dll} \\
-\langle \tau \rangle  \arrow{dr} &
-\langle \sigma^2\tau \rangle \arrow{d}  &
-\langle \sigma^2 \rangle \arrow{dr} \arrow{dl} \arrow{d} \arrow{dr} &
-\langle \sigma\tau \rangle \arrow{d} &
-\langle \sigma^3\tau \rangle  \arrow{dl} \\
-& \langle \sigma^2,\tau \rangle  \arrow{dr}  &
-\langle \sigma \rangle \arrow{d} &
-\langle \sigma^2,\sigma \tau \rangle \arrow{dl}  \\
-& & Gal(\frac{\mathbb{Q}(\sqrt[4]{2},i)}{\mathbb{Q}})
-\end{tikzcd}
-\end{enumerate}
-
-Los subgrupos de orden 2 son cíclicos por ser 2 un primo y por tanto, están generados por los elementos del grupo de orden 2 y por tanto hay 5. Los subgrupos de orden $4 = 2^2$ son o bien cíclicos o bien producto de cíclicos de orden 2. Estos últimos son los llamados de tipo Klein y para identificarlos debemos tomar dos elementos de orden 2 que conmuten entre sí. Se obtienen los subgrupos representados en la figura superior. 
-
-Observamos también que todos los de orden 4, por ser de índice 2 son subgrupos normales y entre los de orden 2 el único que es normal es el generado por el elemento que está el centro del grupo $\sigma^2$. 
-
-
-\begin{tikzcd}
-& & \mathbb{Q}(i,\sqrt[4]{2}) \\
-\mathbb{Q}(\sqrt[4]{2}) \arrow{urr} &
-\mathbb{Q}(i\sqrt[4]{2}) \arrow{ur} &
-\mathbb{Q}(i,\sqrt{2}) \arrow{u} &
-\mathbb{Q}((i+1)\sqrt[4]{2}) \arrow{ul} &
-\mathbb{Q}((1-i)\sqrt[4]{2}) \arrow{ull} \\
-& \mathbb{Q}(\sqrt{2}) \arrow{ul} \arrow{u} \arrow{ur} &
-\mathbb{Q}(i) \arrow{u} &
-\mathbb{Q}(i\sqrt{2}) \arrow{ul} \arrow{u} \arrow{ur} \\
-& & \mathbb{Q} \arrow{ul} \arrow{u} \arrow{ur}
-\end{tikzcd}
-
-Ahora pasamos a determinar la conexión de Galois entre estos subgrupos y los subcuerpos de la extensión $\mathbb{Q}(\sqrt[4]{2},i)/\mathbb{Q})$. Para ello determinamos los cuerpos fijos por cada subgrupo ya que están en biyección. Para elo vemos como actúa cada isomorfismo sobre los elementos de una $\mathbb{Q}$-base.
-
-
-
-
-
+\end{center} 
 
 \printbibliography
 
