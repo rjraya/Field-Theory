@@ -197,7 +197,7 @@
 \section*{Problema 1}
 \input{problema1/problema1}
 \newpage
-\section*{Problema2}
+\section*{Problema 2}
 \input{problema2/problema2}
 \newpage
 \section*{Problema 3}
@@ -207,22 +207,27 @@
 \input{problema4/problema4}
 \newpage
 \section*{Problema 5}
+\input{problema5/problema5}
+\newpage
+\section*{Problema 6}
+\input{problema6/problema6}
+\newpage
+\section*{Problema 7}
 
 \begin{exercise}
-Sea $F$ un cuerpo finito y $0 \neq \alpha \in F$. Prueba que existen elementos $a,b \in F$ tales que $1+a^2 - \alpha b^2 = 0$. 
+Se considera $f \in \mathbb{Q}$ un polinomio de grado seis tal que $Gal(f/\mathbb{Q}) \cong S_6$. Llamamos $E = \mathbb{Q}[f]$ al cuerpo de descomposición de $f$. 
+
+\begin{enumerate}
+\item Determina cuántos cuerpos intermedios $\mathbb{Q} \subseteq F \subseteq E$ existen tales que $[E:F] = 9$. 
+\item Prueba que la intersección de los cuerpos $F$,del apartado anterior, contiene propiamente a $\mathbb{Q}$. 
+\item Si $\alpha_1 \in E$ es una raíz de $f$, prueba que $Gal(E/\mathbb{Q}(\alpha_1)) \cong S_5$. 
+\item Prueba que $\mathbb{Q}(\alpha)$ no está contenido en ningún $F$. 
+\item Si $\alpha_1 \neq \alpha_2 \in E$ es otra raíz de $f$, prueba que $Irr(\alpha_2,\mathbb{Q}(\alpha_1))$ tiene grado 5. 
+\end{enumerate}
 \end{exercise}
 
-\textbf{Solución:}
 
-Resovemos la ecuación general $a_1 x_1^2 + a_2 x_2^2 = 1$ con $a_1,a_2 \neq 0$. Para ello consideremos los conjuntos: $$S = \{a_1x_1^2:x_1 \in \mathbb{F} \}$$ $$T = \{1-a_2 x_2^2:x_2 \in \mathbb{F} \}$$ Vamos a calcular el número de elementos de estos conjuntos. Ahora, $$a_1 x_1^2 = a_2 x_1'^2 \implies x_1^2 = x_1'^2 \implies 0 = (x_1 - x_1')(x_1+x_1') \implies x_1 = x_1' \lor x_1 = -x_1' \implies x_1 = -x_1 \implies 2x_1 = 0$$ Si $Car(F) \neq 2$ entonces tenemos que $x_1 = 0$ eso me dice que cada elemento $a_1x_1^2$ tiene dos elementos de $F$, $x_1,-x_1$ salvo que $x_1 = 0$ donde el término recoge sólo el valor cero. En consecuencia, $|S| = (|F|-1)/2 + 1 = (F+1)/2$. Análogamente, se demuestra que $|T| = (F+1)/2$. Como $|S|+|T| > |F|$ el principio del palomar da que $\exists x \in S \cap T$ de donde $\exists x_1,x_2.1-a_2 x_2^2 = x = a_1 x_1^2$ y por la igualdad de los extremos, la ecuación tiene solución. 
 
-Si $Car(F) = 2$ entonces las ecuaciones $x_1 = x_1' \lor x_1 = -x_1'$ dan que $x_1 = x_1'$ y por tanto, cada término $a_1x_1^2$ recoge un único elemento del cuerpo. Por tanto, $|S| = |T| = |F|$ y de nuevo por el principio del palomar existe un elemento en la intersección que determina una pareja de valores $x_1,x_2$ solución de la ecuación. 
-
-Obsérvese que si $a_1 = 0 \lor a_2 = 0$ entonces la ecuación degenera en una del tipo $a_1 x_1^2 = 1$.  que tiene solución si y sólo si $a_1$ es un cuadrado en $\mathbb{F}$ ya que por la conmutatividad del cuerpo finito (si hay dudas, úsese el teorema de Wedderburn) tendríamos $1 = a_1x_1^2 = (t_1x_1)^2$ y bastaría tomar $x_1 = t_1^{-1}$. Recíprocamente, si suponemos que $a_1$ no es cuadrado entonces $a_1^{-1}$ tampoco lo es y entonces $a_1^{-1} = x_1^2$ no tiene solución. 
-
-Centrándonos en nuestra ecuación tenemos que $1 = \alpha b^2  - a^2$. El hecho de pedir $\alpha \neq 0$ es para evitar que degenere ya que entonces quedaría la ecuación $1 = (-1)a^2$ y no está claro a priori en qué cuerpos finitos $-1$ es un cuadrado de algún elemento. Tenemos que $a_1 = \alpha \neq 0 \land a_2 = -1 \neq 0$ y por lo anterior, está ecuación siempre tiene solución. \begin{center}
-
-\end{center} 
 
 \printbibliography
 

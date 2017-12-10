@@ -62,3 +62,11 @@
 \contentsline {subsection}{\numberline {8.2}Polinomios irreducibles sobre cuerpos finitos}{42}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {9}Extensiones ciclot\IeC {\'o}micas. Ra\IeC {\'\i }ces de la unidad}{44}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1}Ra\IeC {\'\i }ces de la unidad}{44}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.2}Extensiones ciclot\IeC {\'o}micas}{45}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.3}Polinomios ciclot\IeC {\'o}micos}{45}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.4}Polinomios ciclot\IeC {\'o}micos con coeficientes racionales}{45}

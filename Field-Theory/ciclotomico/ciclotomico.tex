@@ -1,0 +1,126 @@
+\subsection{Raíces de la unidad}
+
+\begin{definition}[Raíces n-ésimas de la unidad]
+Dado un cuerpo $K$ y una clausura algebraica $\overline{K}$. 
+
+Las raíces n-ésimas de la unidad son las raíces del polinomio $X^n-1$ en $\overline{K}$.
+\end{definition}
+
+\begin{proposition}[Condición para que las raíces n-ésimas de la unidad sean distintas]
+Sea $K$ un cuerpo. 
+
+Las raíces n-ésimas de la unidad son todas distintas si y sólo si $Car(K) \nmid n$. En particular, si la característica es cero. 
+
+Si $p = Car(K) | n$ entonces si $n = mp^r$ existen $m$ raíces n-ésimas de la unidad distintas y todas tienen multiplicidad $p^r$. 
+\end{proposition}
+\begin{proof}
+Las raíces serán distintas si y sólo si $X^n - 1$ no tiene raíces mútiples, lo que equivale a que su derivada, $nX^{n-1}$, sea distinto de cero. Esto ocurre si y sólo si $Car(K) \nmid n$. En particular, si la característica es cero. 
+
+Si $p = Car(K) | n$ entonces el criterio de la derivada nos dice que existen raíces múltiples. En particular, como $p \neq 0$ tenemos el endomorfismo de Frobenius, que nos dice que si $n = mp^r$ entonces $X^n - 1 = (X^m - 1)^{p^r}$ de modo que aplicando el caso anterior existen $m$ raíces n-ésimas de la unidad distintas y tienen multiplicidad $p^r$. 
+\end{proof}
+
+En lo sucesivo asumiremos que existen $n$ raíces n-ésimas distintas de la unidad. Suponemos también que el cuerpo $K$ es fijo. 
+
+\begin{proposition}[Raíces n-ésimas como subgrupo cíclico]
+Las raíces n-ésimas de la unidad forman un subgrupo cíclico de orden $n$ del grupo multiplicativo de $\overline{K}$ que denotamos $\mu_n$.
+\end{proposition}
+\begin{proof}
+Para ver que es un subgrupo tomo $a,b$ raíces n-ésimas. Entonces $(ab^{-1})^n = a^nb^{-n} = 1$ de donde $ab^{-1}$ también es una raíz n-ésima de la unidad. Además, el subgrupo es cíclico pues todo subgrupo finito del grupo multiplicativo de un cuerpo es cíclico como ya vimos en cuerpos finitos. 
+\end{proof}
+
+\begin{definition}[Raíz n-ésimas primitiva de la unidad]
+Una raíz n-ésimas primitiva de la unidad es un generador del grupo de las raíces n-ésimas de la unidad. 
+\end{definition}
+
+\begin{proposition}[Retículo de raíces n-ésimas]
+$Sub(\mu_n) = \{\mu_d:d | n \}$. Además, si $a$ es una raíz n-ésima primitiva entonces $a^{n/d}$ es una raíz désima primitiva. 
+\end{proposition}
+\begin{proof}
+Esta proposición es la clasificación de los grupos cíclicos de orden finito, que se tiene de la teoría de grupos. 
+\end{proof}
+
+\subsection{Extensiones ciclotómicas}
+
+\begin{definition}[Extensión ciclotómica]
+Una extensión ciclotómica de $K$ es un cuerpo de descomposición sobre $K$ de un polinomio del tipo $X^n-1$. Equivalentemente, es una extensión simple generada por una raíz n-ésima primitiva de la unidad. 
+\end{definition}
+
+\begin{theorem}[Estructura de Galois de una extensión ciclotómica]
+Sea $F/K$ una extensión ciclotómica generada por el polinomio $X^n-1$. 
+
+$F/K$ es una extensión de Galois con grupo de Galois isomorfo a un subgrupo de $U(\mathbb{Z}_n)$.
+\end{theorem}
+
+\subsection{Polinomios ciclotómicos}
+
+\begin{definition}[Polinomio ciclotómico]
+Sea $F/K$ una extensión ciclotómica. 
+
+El n-ésimo polinomio ciclotómico en $K$ es $\Phi_n(X) = \prod (X-a_i)$ con $a_i$ las raíces n-ésimas primitivas de la unidad en $F$. 
+\end{definition}
+
+\begin{proposition}[Propiedades de los polinomios ciclotómicos]
+Se verifican las siguientes propiedades:
+
+\begin{enumerate}
+\item $X^n - 1 = \prod_{d|n} \Phi_d(X)$
+\item Los coeficientes de $\Phi_n(X)$ pertenecen al cuerpo característico de $K$. Si $Car(K) = 0$ entonces pertenecen a $\mathbb{Z}$. Además, $gr(\Phi_n(X)) = \phi(n)$ y $\Phi_n(X)$ es mónico. 
+\item Cálculo del n-ésimo polinomio ciclotómico: $\Phi_n(X) = \frac{X^n - 1}{\prod_{d|n \land d \neq n} \Phi_d(X)}$ 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item 
+\item 
+\item Es consecuencia directa de la propiedad 1. 
+\end{enumerate}
+\end{proof}
+
+\begin{proposition}[Cálculo de polinomios ciclotómicos]
+Se verifican las siguientes propiedades:
+
+\begin{enumerate}
+\item Si $p$ es primo $\Phi_p(X) = X^{p-1} + X^{p-2} + \dots + X + 1$.
+\item $\Phi_{p^e}(x) = \Phi_p(x^{p^{e-1}})$
+\item $\Phi_{p_1^{e_1}p_2^{e_2}\dots p_r^{e_r}}(x) = \Phi_{p_1\dots p_r}(x^{p_1^{e_1-1}\dots p_r^{e_r-1}})$
+\item $\Phi_n(x) = \prod_{d\mid n} (x^{d}-1)^{\mu(n/d)}$
+\end{enumerate}
+\end{proposition}
+
+\subsection{Polinomios ciclotómicos con coeficientes racionales}
+
+\cite{cox} ofrece una versión restringida a $\mathbb{Q}$ de los resultados generales en cualquier cuerpo a partir de la página 231. Puede ser de provecho. En particular, las raíces, tienen una expresión explícita en términos de la exponencial compleja. 
+
+\begin{proposition}[Irreducibilidad de los polinomios ciclotómicos racionales]
+Para cada $n \in \mathbb{N}$, $\Phi_n(X)$ es irreducible sobre $\mathbb{Q}$.
+\end{proposition}
+\begin{proof}
+Sea $\xi$ una raíz n-ésima primitiva de la unidad y $f(X) = Irr(\xi,K)$. Veamos que $\phi_n(X) = f(X)$ con lo que $\phi_n(X)$ será irreducible. 
+\end{proof}
+
+\begin{corollary}[Grado de las extensiones ciclótomicas]
+Sea $\xi$ una raíz n-ésima primitiva de la unidad entonces:
+
+$[\mathbb{Q}(\xi):\mathbb{Q}] = gr(\Phi_n(X)) = \phi(n)$
+\end{corollary}
+
+\begin{proposition}[Grupo de Galois de las extensiones ciclotómicas racionales]
+Sea $\xi$ una raíz n-ésima primitiva de la unidad, entonces:
+
+$Gal(\mathbb{Q}(\xi)/\mathbb{Q}) \cong U(\mathbb{Z}_n)$ mediante el isomorfismo $\sigma \mapsto l$ con $\sigma(\xi) = \xi^l$. 
+\end{proposition}
+\begin{proof}
+Obsérvese que como $\phi_n$ es irreducible en $\mathbb{Q}$, necesariamente, $\sigma(\xi)$ será raíz de $\phi_n$. Como el grupo de las raíces n-ésimas de la unidad es cíclico, tendremos que, $\sigma(\xi) = \xi^l$ donde $l$ será primo relativo con $n$ (debe ser raíz primitiva y por tanto, el orden del subgrupo que genera debe ser $n$). Esto prueba que la aplicación $f$ que dará el isomorfismo está bien definida. 
+
+En estas condiciones, $f$ es un monomorfismo pues si $\sigma(\xi) = l \land \eta(\xi) = k$ entonces $$(\sigma \circ \eta)(\xi) = \sigma(\eta(\xi)) = \xi^{kl}$$ y por tanto, $f(\sigma \circ \eta) = kl = f(\sigma) f(\eta)$. Por tanto, $f$ es un homomorfismo. Que es inyectivo se sigue de que: $$f(\sigma) = 1 \implies \sigma(\xi) = \xi \implies \sigma = Id$$
+
+Como $|Gal(\mathbb{Q}(\xi)/\mathbb{Q})| = [\mathbb{Q}(\xi):\mathbb{Q}] = \phi(n) = |U(\mathbb{Z}_n)|$, tenemos una aplicación inyectiva entre conjuntos de igual cardinal finito, luego debe ser biyectiva. 
+\end{proof}
+
+
+
+
+
+
+
+

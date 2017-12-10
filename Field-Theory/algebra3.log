@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.5)  28 NOV 2017 21:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.5)  30 NOV 2017 23:22
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1811,7 +1811,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[43] (./ciclotomico/ciclotomico.tex)
+[43] (./ciclotomico/ciclotomico.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1822,6 +1822,26 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
  []
 
 [44]
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[45])
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[46]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 227.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -1849,7 +1869,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[45] (./algebra3.aux
+[47] (./algebra3.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 15.
@@ -1860,11 +1880,11 @@ Package logreq Info: Writing requests to 'algebra3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25185 strings out of 493013
- 476586 string characters out of 6135682
- 899901 words of memory out of 5000000
+ 25183 strings out of 493013
+ 476566 string characters out of 6135682
+ 898901 words of memory out of 5000000
  28098 multiletter control sequences out of 15000+600000
- 15127 words of font info for 104 fonts, out of 8000000 for 9000
+ 15019 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,15n,82p,1202b,1842s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1872,24 +1892,25 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
-o/uplbi8a.pfb>
-Output written on algebra3.pdf (46 pages, 404142 bytes).
+1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
+uplbi8a.pfb>
+Output written on algebra3.pdf (48 pages, 422822 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
+ 244 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  12813 words of extra memory for PDF output out of 14400 (max. 10000000)
 

@@ -37,49 +37,48 @@ I was expecting a `,' or a `}'---line 56 of file references.bib
  : @book{algebra-lang,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "4"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 8 entries,
             6256 wiz_defined-function locations,
-            1202 strings with 9830 characters,
-and the built_in function-call counts, 29581 in all, are:
-= -- 1497
-> -- 1149
-< -- 213
-+ -- 916
-- -- 664
-* -- 1776
-:= -- 2901
+            1203 strings with 9635 characters,
+and the built_in function-call counts, 28556 in all, are:
+= -- 1533
+> -- 887
+< -- 203
++ -- 682
+- -- 427
+* -- 1777
+:= -- 2669
 add.period$ -- 0
 call.type$ -- 8
-change.case$ -- 69
-chr.to.int$ -- 75
+change.case$ -- 75
+chr.to.int$ -- 51
 cite$ -- 14
-duplicate$ -- 3034
-empty$ -- 2884
-format.name$ -- 336
-if$ -- 5971
+duplicate$ -- 2973
+empty$ -- 2878
+format.name$ -- 337
+if$ -- 5978
 int.to.chr$ -- 0
-int.to.str$ -- 17
+int.to.str$ -- 18
 missing$ -- 0
-newline$ -- 167
-num.names$ -- 304
-pop$ -- 2349
+newline$ -- 163
+num.names$ -- 312
+pop$ -- 2352
 preamble$ -- 1
-purify$ -- 83
+purify$ -- 89
 quote$ -- 0
-skip$ -- 1178
+skip$ -- 1174
 stack$ -- 0
-substring$ -- 2169
-swap$ -- 832
-text.length$ -- 209
+substring$ -- 2213
+swap$ -- 800
+text.length$ -- 199
 text.prefix$ -- 7
 top$ -- 1
 type$ -- 260
 warning$ -- 0
-while$ -- 337
+while$ -- 319
 width$ -- 0
-write$ -- 160
+write$ -- 156
 (There were 4 error messages)

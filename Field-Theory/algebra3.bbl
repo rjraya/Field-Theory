@@ -17,33 +17,6 @@
 \endgroup
 
 \sortlist[entry]{nty/global/}
-  \entry{link2}{online}{}
-    \name{author}{1}{}{%
-      {{hash=AV}{%
-         family={Authors},
-         familyi={A\bibinitperiod},
-         given={Various},
-         giveni={V\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{AV1}
-    \strng{fullhash}{AV1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{A}
-    \field{sortinithash}{A}
-    \field{title}{Confusion about the proof that the multiplicative group of a
-  finite field is cyclic}
-    \verb{url}
-    \verb https://math.stackexchange.com/questions/1434065/confusion-about-the-
-    \verb proof-that-the-multiplicative-group-of-a-finite-field-is-cyc?rq=1
-    \endverb
-    \field{year}{2017}
-    \field{urlday}{13}
-    \field{urlmonth}{10}
-    \field{urlyear}{2017}
-  \endentry
-
   \entry{link1}{online}{}
     \name{author}{1}{}{%
       {{hash=AV}{%
@@ -111,6 +84,28 @@
   2017, url =
   {https://math.stackexchange.com/questions/27647/is-the-sub-field-of-algebraic-elements-of-a-field-extension-of-k-containing-ro
   }, urldate = {2017-10-13}}
+  \endentry
+
+  \entry{cox}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CDA}{%
+         family={Cox},
+         familyi={C\bibinitperiod},
+         given={David\bibnamedelima A.},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley}%
+    }
+    \strng{namehash}{CDA1}
+    \strng{fullhash}{CDA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Galois Theory}
+    \field{year}{2004}
   \endentry
 
   \entry{link3}{online}{}

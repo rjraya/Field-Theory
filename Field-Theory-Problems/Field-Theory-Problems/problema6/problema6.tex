@@ -1,0 +1,52 @@
+\begin{exercise}
+Sea $\xi = \xi_{14}$ una raíz primitiva décimo cuarta de la unidad sobre $\mathbb{Q}$. 
+
+\begin{enumerate}
+\item Calcula el polinomio ciclotómico $\phi_{14}(X)$ y describe los elementos $\mathbb{Q}(\xi)/\mathbb{Q}$. En particular, queremos conocer el grado de esta extensión. 
+\item Calcula el grupo $G = Gal(\mathbb{Q}(\xi)/\mathbb{Q})$ y el retículo de subgrupos. 
+\item Da un generador $\sigma$ del grupo $G$; sólo tienes que dar la imagen de $\xi$. 
+\item Observa que la extensión $\mathbb{Q}(\xi)/\mathbb{Q}(\xi) \cap \mathbb{R}$ es de grado 2 y que por tanto corresponde a un subgrupo $N$ de $G$ de orden $2$ e índice $3$, generado por $\sigma^3$. 
+\item Comprueba que $\mathbb{Q}(\xi) \cap \mathbb{R} = \mathbb{Q}(\xi + \xi^{-1})$. Estamos interesados en calcular $Irr(\xi+\xi^{-1},\mathbb{Q})$; da un método para calcularlo. Entre otras formas puedes calcularlo: (1) resolviendo un sistema de ecuaciones lineales haciendo uso de las potencias, (2) directamente utilizando los conjugados ó (3) haciendo uso de la resultante.
+\item A partir del subgrupo $H$, de orden 3, de $G$, determina el cuerpo intermedio $\mathbb{Q} \subseteq F \subseteq \mathbb{Q}(\xi)$ tal que $[\mathbb{Q}(\xi):F] = 2$ y da un generador $\theta$ de la extensión $F/\mathbb{Q}$. Calcula el polinomio irreducible $Irr(\theta,\mathbb{Q})$. 
+\end{enumerate}
+\end{exercise}
+
+\textbf{Solución:}
+
+\begin{enumerate}
+\item Si aplicamos la fórmula del cálculo del n-ésimo polinomio ciclotómico mediante la función de Moebius, tenemos que: $$\phi_{14}(x) = \frac{(x-1)(x^{14}-1)}{(x^2 - 1)(x^7 - 1)} = \frac{x^{14}-1}{(x+1)(x^7-1)} = x^6-x^5+x^4-x^3+x^2-x+1$$
+
+Si retornamos a la demostración de que $\Phi_n(X)$ es irreducible teníamos un corolario que nos decía que el grado de una extensión ciclotómica era $\phi(n)$. En nuestro caso es $\phi(14) = \phi(2) \phi(7) = 6$. En particular, una base del espacio vectorial es $\{1,\xi,\xi^2,\xi^3,\xi^4,\xi^5 \}$ y los elementos de la extensión se expresan como combinaciones lineales de esta base. 
+
+\item Nosotros hemos dedicado en nuestras notas un apartado a clarificar el caso de polinomios ciclotómicos racionales basados en el libro de David Cox. En particular, resulta que el grupo de galois de las extensiones ciclotómicas racionales es isomorfo al grupo de las unidades correspondiente. En nuestro caso: $$Gal(\mathbb{Q}(\xi)/\mathbb{Q}) \cong U(\mathbb{Z}_{14})$$ Los órdenes de los elementos son $\{3 \mapsto 6,5 \mapsto 6,9 \mapsto 3, 11 \mapsto 3, 13 \mapsto 2 \}$.
+
+El isomorfismo que construimos en los apuntes nos dice que de forma natural, los correspondientes a $\langle 13 \rangle, \langle 9 \rangle$ son $\sigma_{13}(\xi) = \xi^{13},\sigma_{9}(\xi) = \xi^9$ y tendríamos el siguiente diagrama:
+
+\begin{tikzcd}
+& \langle \sigma_{5} = \sigma_{13}\sigma_{9} \rangle \arrow[dash]{dl} \arrow[dash]{dr} \\
+\langle \sigma_{13} \rangle \arrow[dash]{dr} & & \langle \sigma_{9} \rangle \arrow[dash]{dl} \\
+& 1
+\end{tikzcd}
+
+\item Hemos dado ya el generador $\sigma_{5}$ que actúa como $\sigma_{5}(\xi) = \xi^5$.
+
+\item Sabemos que en general, el inverso de $c \in \mathbb{C}$ es $\overline{c}/N(c)$ donde $N$ es la norma del complejo. Como trabajamos con raíces de la unidad $N(c) = 1$ y por tanto $c^{-1} = \overline{c}$. Esto es interesante pues entonces $c+c^{-1} = c+\overline{c} \in \mathbb{R}$. Vamos a demostrar que  $\mathbb{Q}(\xi) \cap \mathbb{R} = \mathbb{Q}(\xi + \xi^{-1})$. 
+
+En efecto, por lo observado, se tiene la siguiente torre de cuerpos: $$\mathbb{Q}(\xi) \supseteq \mathbb{Q}(\xi) \cap \mathbb{R} \supseteq \mathbb{Q}(\xi + \xi^{-1})$$ Si observamos que $\xi$ es raíz del polinomio $(X-\xi)(X-\xi^{-1}) = X^2-(\xi^{-1}+\xi)X+1$. La extensión total no puede ser de grado 1 pues entonces $\mathbb{Q}(\xi) \subseteq \mathbb{R}$. Tampoco puede ser la extensión de la izquierda de grado 1 por idénticos motivos. Queda por tanto, que la extensión de la derecha es de grado 1 y por tanto, $\mathbb{Q}(\xi) \cap \mathbb{R} = \mathbb{Q}(\xi + \xi^{-1})$. En particular, el grado de la extensión de la izquierda es 2 y por el teorema fundamental de la Teoría de Galois, el subgrupo que lo fija tendrá orden 2. Pero en nuestro retículo ya hemos visto que este sólo puede ser $\sigma_{13}$ y, con nuestra notación, lo que pide el enunciado es comprobar que $(\sigma_{5})^3 = \sigma_{13}$. Pero esto se sigue de que $125 \equiv 13 \; mod(14)$.
+
+\item La primera parte está hecha. Para calcular el irreducible, vamos a utilizar el método de los conjugados. La idea es que el grupo de Galois $G$ es cíclico y por tanto es abeliano. Por tanto, sus subgrupos serán normales y por el teorema de fundamental de la Teoría de Galois: $$Gal(\mathbb{Q}(\alpha)/\mathbb{Q}) = Gal(\mathbb{Q}(\xi)/\mathbb{Q})/Gal(\mathbb{Q}(\xi)/\mathbb{Q}(\alpha)) \cong Gal(\mathbb{Q}(\xi)/\mathbb{Q})/\langle \sigma_{13} \rangle$$ donde $\alpha = \xi + \xi^{-1}$ y el grupo cociente tendrá tres clases de equivalencia que serán $\{1,\sigma_{13}\}$, $\{\sigma_{3},\sigma_{11} \}$, $\{\sigma_{5},\sigma_{9} \}$. 
+
+El irreducible $f(X) = Irr(\alpha, \mathbb{Q})$ debe contener a todas las raíces conjugadas, es decir a todas las raíces que resultan de aplicar uno de los representantes de las clases del grupo de Galois. Como $\alpha$ es raíz y $f$ es el mínimo polinomio del que es raíz necesarimente tendrá que ser $f$. 
+
+$f(X) = (X-\alpha)(X-\sigma_3(\alpha))(X-\sigma_5(\alpha)) = (X-(\xi+\xi^{-1}))(X-(\xi^3+\xi^{-3}))(X-(\xi^5+\xi^{-5}))$ 
+
+Desarrollando este producto se tiene que:
+
+$f(X) = X^3-(\xi+\xi^{-1}+\xi^{3}+\xi^{-3}+\xi^{5}+\xi^{-5})X^2 + ((\xi^{3}+\xi^{-3})(\xi^5+\xi^{-5})+(\xi^{3}+\xi^{-3})(\xi^1+\xi^{-1})+(\xi^{1}+\xi^{-1})(\xi^5+\xi^{-5}))X+(\xi^5+\xi^{-5})(\xi^1+\xi^{-1})(\xi^3+\xi^{-3})$
+
+El proceso para obtener estos coeficientes, es calcular su expresión como polinomios (sin exponentes negativos) y luego dividir por el polinomio mínimo de $\xi$ esto es, el polinomio ciclotómico calculado en el primer apartado. En estas condiciones se obtiene que:
+
+$f(X) = X^3-X^2-2X+1$
+
+\item El subgrupo de orden 2 es el generado por $\sigma_{13}$. Por el teorema fundamental de la teoría de Galois tendremos que $|\langle \sigma_{13} \rangle| = [\mathbb{Q}(\xi):F] = 2$ para un único subcuerpo $F$. De aquí, $[F:\mathbb{Q}] = 3$ y por tanto, la extensión tiene que ser primitiva. Observando que $\xi + \xi^{-1}$ queda fija por $\sigma_{13}$, la extensión admite como generador a $\xi + \xi^{-1}$ y su irreducible es el del apartado anterior. 
+\end{enumerate}
