@@ -70,3 +70,9 @@
 \contentsline {subsection}{\numberline {9.3}Polinomios ciclot\IeC {\'o}micos}{45}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {9.4}Polinomios ciclot\IeC {\'o}micos con coeficientes racionales}{45}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10}Aplicaciones}{47}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11}Extensiones c\IeC {\'\i }clicas}{48}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {12}Extensiones solubles y radicales}{50}

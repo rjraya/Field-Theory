@@ -1,0 +1,31 @@
+\begin{definition}[Extensión soluble]
+Una extensión finita y separable $F/K$ es soluble si hay una extensión $E/K$ de Galois con grupo de Galois soluble y $K \subseteq F \subseteq E$.
+\end{definition}
+
+\begin{proposition}[Definición equivalente de solubilidad de una extensión]
+Una extensión finita y separable $F/K$ es soluble si la clausura normal de $F/K$ tiene grupo de Galois soluble. 
+\end{proposition}
+\begin{proof}
+Habría que demostrar dos implicaciones. 
+
+Si asumimos que la clausura normal de $F/K$ tiene grupo de Galois soluble entonces ciertamente existe una extensión $E/K$ de Galois con grupo de Galois soluble que contiene a $F$, esta es, la propia clausura. 
+
+Si asumimos que hay una extensión $E/K$ de Galois con grupo de Galois soluble que contiene a $F$ entonces observamos que la clausura normal $M$ debe verificar que $K \subseteq M \subseteq E$. Como ciertamente, $M/K$ es de Galois, el teorema fundamental nos dice que $Gal(E/M)$ es normal y que $Gal(M/K) \cong Gal(E/K)/Gal(E/M)$. Pero el cociente por un subgrupo normal de un grupo soluble es soluble. 
+\end{proof}
+
+\begin{definition}[Extensión soluble por radicales]
+Una extensión $F/K$ finita separable es soluble por radicales cuando $mcd([F:K],car(K)) = 1$ y hay una torre: $$K = E_0 \subseteq E_1 \subseteq \ldots \subseteq E_m = E$$ tal que $F \subseteq E$ y siendo cada $E_{i+1}/E_i$ de una de estas dos formas:
+
+\begin{itemize}
+\item $E_{i+1} = E_i(\xi)$ con $\xi$ raíz de la unidad (extensión ciclotómica)
+\item $E_{i+1} = E_i(\alpha)$ con $\alpha$ raíz de un polinomio $X^n-a \in E_i[X]$, si $p = Car(K) \neq 0$ entonces $p \nmid m$ y existe $\xi \in E_i$ raíz n-ésima primitiva de la unidad (primer tipo de extensión cíclica).
+\item $E_{i+1} = E_i(\alpha)$ con $\alpha$ raíz de un polinomio $X^p - X -a \in E_i[X]$ y $Car(K) = p$ primo (segundo tipo de extensión cíclica).
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Teorema de Galois]
+Sea $F/K$ una extensión finita y separable. Entonces:
+
+$F/K$ es soluble por radicales $\iff$ $F/K$ es soluble. 
+\end{theorem}
+

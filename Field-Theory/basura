@@ -1,0 +1,58 @@
+% 
+
+\subsubsection{10.2.3. Propiedades de las solubles por radicales}
+\label{sec-9-2-3}
+Sea $F/K$ soluble por radicales:
+
+\begin{enumerate}
+\item Dada $L > K$, $FL/L$ es soluble por radicales.
+\item Dada $L > F > K$, $L/K$ soluble por radicales ssi $F/K, L/F$ solubles
+por radicales.
+\item $F/K, L/K$ solubles por radicales da $FL/K$ soluble por radicales.
+\end{enumerate}
+
+\begin{enumerate}
+\item {\bfseries\sffamily TODO} Demostración
+\label{sec-9-2-3-1}
+\end{enumerate}
+
+\subsubsection{10.2.4. Caracterización de solubilidad por radicales}
+\label{sec-9-2-4}
+Sea $F/K$ separable finita. Es soluble por radicales ssi existe:
+
+\[L_0 < L_1 < \dots < L_m = L > F\]
+
+Con cada paso soluble por radicales y $L/K$ Galois.
+
+\begin{enumerate}
+\item {\bfseries\sffamily TODO} Demostración
+\label{sec-9-2-4-1}
+\end{enumerate}
+
+\subsubsection{10.2.5. Teorema de Galois}
+\label{sec-9-2-5}
+Sea $F/K$ separable finita. Es soluble por radicales ssi es soluble.
+
+\begin{enumerate}
+\item {\bfseries\sffamily TODO} Demostración
+\label{sec-9-2-5-1}
+\end{enumerate}
+
+\subsubsection{10.2.6. Propiedades de las solubles}
+\label{sec-9-2-6}
+Cumplen:
+
+\begin{enumerate}
+\item Dada $L > F > K$, $L/K$ soluble ssi $F/K,L/F$ solubles.
+\item Dada $F/K$ soluble $L/K$ arbitraria, $FL/L$ es soluble.
+\item Dadas $F/K,L/K$ solubles, $FL/K$ es soluble.
+\end{enumerate}
+
+\begin{enumerate}
+\item {\bfseries\sffamily TODO} Demostración
+\label{sec-9-2-6-1}
+Aplicando el \hyperref[sec-9-2-5]{Teorema de Galois} a las propiedades de \hyperref[sec-9-2-3]{solubles por 
+radicales}.
+\end{enumerate}
+
+%

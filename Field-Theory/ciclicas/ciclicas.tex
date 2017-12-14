@@ -1,0 +1,92 @@
+\begin{definition}[Extensiones cíclicas y abelianas]
+Una extensión $E/K$ es cíclica si es de Galois y su grupo de Galois es cíclico.
+
+Una extensión $E/K$ es abeliana si su grupo de Galois es un grupo abeliano.  
+\end{definition}
+
+\begin{theorem}[Teorema 90 de Hilbert]
+Sea $E/K$ extensión cíclica de grado $n$ con grupo $G = Gal(E/K) = \langle \sigma\rangle$, y
+sea $\beta \in E$, prueba que son equivalentes:
+
+\begin{enumerate}
+\item $N_{E/K}(\beta) = 1$
+\item Existe $0 \neq \alpha \in E$ tal que $\beta = \frac{\alpha}{\sigma(\alpha)}$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+\item 
+Los automorfismos $1,\sigma,\dots,\sigma^n$ son distintos y por tanto linealmente
+independientes, luego no es la aplicación cero:
+
+\[
+\tau 
+= 
+1 + \beta\sigma + (\beta \sigma(\beta))\sigma^2 + 
+\dots +
+(\beta \sigma(\beta)\dots \sigma^{n-2}\beta) \sigma^{n-1}
+\]
+
+Y existe $\tau(\theta) \neq 0$. Evaluando $\sigma(\tau(\theta))$ y multiplicando por $\beta$ nos queda
+que $\beta \sigma(\tau(\theta)) = \tau(\theta)$.
+
+\item 
+Usando que la norma es homomorfismo:
+
+\[
+N_{E/K}(\beta) = \frac{N_{E/K}(\alpha)}{N_{E/K}(\sigma(\alpha))} = 1
+\]
+\end{itemize}
+\end{proof}
+
+\begin{theorem}[Teorema de Lagrange]
+Sea $K$ cuerpo y $n \in \mathbb{N} \setminus \{0\}$. 
+
+Si $p = Car(K) \neq 0$ supondremos además que $p \nmid n$. 
+
+Supongamos que existe una raíz n-ésima primitiva de la unidad en $K$.
+
+\begin{enumerate}
+\item Si $E/K$ es una extensión cíclica de grado $n$, entonces existe $\alpha \in E$ tal que: $$E = K(\alpha) \text{ y } Irr(\alpha,K) = X^n-a \text{ para algún } a \in K$$
+\item Sea $a \in K$. Si $\alpha$ es una raíz de $X^n-a$, entonces se tiene $K(\alpha)/K$ es una extensión cíclica de grado $d$ con $d \mid n$ y $\alpha^d \in K$.
+\end{enumerate}
+\end{theorem}
+
+La lectura adecuada del teorema anterior sería que considerando cuerpos de característica nula o prima $p$ donde $p$ no divide a cierto $n$ que representa un grado de extensión o un índice de raíz, se tiene que toda extensión cíclica de grado $n$ se obtiene como una extensión simple generada por una raíz n-ésima. Recíprocamente, partiendo de una raíz n-ésima genero una extensión cíclica de grado divisor de $n$ tal que cierta potencia se puede ver en $K$ (y no en $E$).
+
+\begin{theorem}[Teorema de Artin-Schreier]
+Sea $K$ un cuerpo de característica $p$. Se verifica:
+
+\begin{enumerate}
+\item Si $E/K$ es una extensión cíclica de grado $p$, entonces existe $\alpha \in E$ tal que: $$E = K(\alpha) \text{ y } Irr(\alpha,K) = X^p-X-a \text{ para algún } a \in K$$ 
+\item Sea $a \in K$. Tenemos dos casos según la estructura de $X^p-X-a$:
+
+\begin{enumerate}
+\item Tiene una raíz en $K$. En este caso, todas las raíces están en $K$ (no da extensión cíclica).
+\item Es irreducible. En este caso, si $\alpha$ es una raíz, la extensión $K(\alpha)/K$ es cíclica de grado $p$.
+\end{enumerate}
+\end{enumerate}
+\end{theorem}
+
+Este teorema completaría una caracterización de las extensiones cíclicas. Por un lado, se tiene el caso en que $p \nmid n$. Por otro lado, el caso en que $p|n$. Este caso se ha disgregado implícitamente en dos subcasos. El caso $n = p$ que es el caso anterior y el caso $n = p^mt$ con $m \ge 1$. Este caso, se puede reducir al caso anterior.
+
+En efecto, como el grupo de Galois de la extensión es cíclico tenemos para cada divisor un subgrupo de ese orden. Entonces, haciendo la correspondencia entre grupos y cuerpos obtendríamos un diagrama similar al siguiente:
+
+\begin{tikzcd}
+E_n \arrow[dash]{d}{p} & \\
+E_{n-1}  \arrow[dash]{d}{p} & \\
+\ldots \arrow[dash]{d}{p} & \\
+E_{1}  \arrow[dash]{d}{t} & \\
+K
+\end{tikzcd}
+
+donde todas las extensiones que nacen son cíclicas y se pueden estudiar mediante los criterios anteriores. 
+
+
+
+
+
+
+
+
+

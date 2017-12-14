@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.5)  7 DEC 2017 01:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.5)  11 DEC 2017 13:28
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1533,8 +1533,18 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
  []
 
 [17]
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
 
-LaTeX Warning: Empty bibliography on input line 232.
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[18]
+
+LaTeX Warning: Empty bibliography on input line 251.
 
 
 AED: lastpage setting LastPage
@@ -1548,7 +1558,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[18] (./problemas.aux
+[19] (./problemas.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 15.
@@ -1561,7 +1571,7 @@ Package logreq Info: Writing requests to 'problemas.run.xml'.
 Here is how much of TeX's memory you used:
  24940 strings out of 493013
  472722 string characters out of 6135682
- 900923 words of memory out of 5000000
+ 900924 words of memory out of 5000000
  27920 multiletter control sequences out of 15000+600000
  12139 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1583,10 +1593,10 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
 fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/palatino/uplbi8a.pfb>
-Output written on problemas.pdf (19 pages, 261218 bytes).
+Output written on problemas.pdf (20 pages, 266024 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
+ 142 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11789 words of extra memory for PDF output out of 12000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.5)  30 NOV 2017 23:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.5)  14 DEC 2017 02:01
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1841,8 +1841,48 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[46]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 227.
+[46] (./aplicaciones/aplicaciones.tex)
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[47] (./ciclicas/ciclicas.tex
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[48])
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[49] (./soluble/soluble.tex)
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[50]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 238.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -1852,7 +1892,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (56.77928pt too wide) in paragraph at lines 228--228
+Overfull \hbox (56.77928pt too wide) in paragraph at lines 239--239
 \OT1/cmr/m/it/10 (-20) poly-no-mials over K al-ge-brai-cally clo-sed?, year = 2
 017, url = https://math.stackexchange.com/questions/27647/is-
  []
@@ -1869,7 +1909,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[47] (./algebra3.aux
+[51] (./algebra3.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 15.
@@ -1880,11 +1920,11 @@ Package logreq Info: Writing requests to 'algebra3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25183 strings out of 493013
- 476566 string characters out of 6135682
- 898901 words of memory out of 5000000
- 28098 multiletter control sequences out of 15000+600000
- 15019 words of font info for 103 fonts, out of 8000000 for 9000
+ 25246 strings out of 493013
+ 478017 string characters out of 6135682
+ 898900 words of memory out of 5000000
+ 28147 multiletter control sequences out of 15000+600000
+ 15127 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,15n,82p,1202b,1842s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1907,10 +1947,10 @@ e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplbi8a.pfb>
-Output written on algebra3.pdf (48 pages, 422822 bytes).
+Output written on algebra3.pdf (52 pages, 433068 bytes).
 PDF statistics:
- 244 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
+ 257 PDF objects out of 1000 (max. 8388607)
+ 181 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  12813 words of extra memory for PDF output out of 14400 (max. 10000000)
 
