@@ -1,0 +1,63 @@
+\begin{proposition}[Inmersión del grupo de Galois en el grupo de permutaciones]
+Sea $f \in K[X]$ un polinomio separable de grado $n$  y $E$ su cuerpo de descomposición sobre $K$. Denotemos por $\alpha_i$ a las raíces de $f$ en una clausura algebraica $\overline{K}$ de $K$. 
+
+La aplicación $Gal(E/K) \to S_n$ tal que $\sigma \mapsto \tau$ con $\sigma(\alpha_i) = \alpha_{\tau(i)}$ es un monomorfismo de grupos. Denotaremos por $Gal(f/K)$ al subgrupo imagen por este monomorfismo. 
+\end{proposition}
+
+Este monomorfismo es la representación de la acción $\phi:Gal(E/K) \times \{1,\ldots,n\}\to S_n$ tal que $(g,i) \mapsto \phi(g)(i)$. Una vez reconocido esto, podemos hablar de la transitividad de esta acción y de sus órbitas. En términos de las raíces las órbitas serán aquellas raíces que estén relacionadas mediante un homomorfismo y la acción será transitiva cuando sólo hay una órbita. Los siguientes resultados muestran que las órbitas se corresponden con los factores irreducibles de $f$. 
+
+\begin{proposition}[Órbitas de la acción generada por la inmersión]
+En las condiciones anteriores, 
+
+\begin{enumerate}
+\item $f$ es irreducible $\iff Gal(f/K) \le S_n$ es un subgrupo transitivo.
+\item Supongamos que $f = \prod f_i$ con $f_i$ irreducibles. Las órbitas para la acción $\phi$ coinciden con el conjunto formado por los conjuntos dados por las raíces de cada $f_i$. 
+\end{enumerate}
+\end{proposition}
+
+El teorema de los irracionales naturales es teorema clásico que permite relacionar los grupos de permutaciones asociados a las raíces de un polinomio en un cuerpo de descomposición cuando cambia el cuerpo base. Para entender el nombre de este teorema debería consultarse \cite{cox}.
+
+\begin{theorem}[Teorema de los irracionales naturales]
+En las condiciones anteriores, tenemos un monomorfismo de grupos $Gal(f/F) \to Gal(f/K)$ dado por $\phi \to \phi|_E$.
+\end{theorem}
+\begin{proof}
+Observemos que $E = K(\alpha_1,\ldots,\alpha_n)$ y que el cuerpo de descomposición para $F$ sería $F' = F(\alpha_1,\ldots,\alpha_n)$.
+
+Dado $\phi \in Gal(F'/F)$ como $\phi$ determina una permutación de las raíces, entonces $\phi(E) \subseteq E$ y por tanto, $\phi|_E \in Gal(E/K)$. 
+
+La aplicación $\phi \to \phi|_E$ es inyectiva ya que si $\phi|_E = \psi_E$ como al extender el homomorfismo se debe preservar el valor sobre las raíces claramente, $\phi = \psi$. También se verifica que es un homomorfismo de grupos ya que para cualquier automorfismo de $F'$, $\phi(E) \subseteq E$, tenemos que $(\phi \circ \psi)|_E = \phi_E \circ \psi|_E$.
+
+Claramente, este monomorfismo se traslada a un monomorfismo de grupos permutaciones si recordamos la inmersión del grupo de Galois en el grupo de permutaciones.
+\end{proof}
+
+\begin{corollary}
+Si $Gal(f/K)$ es un grupo simple entonces $Gal(f/F) = Gal(f/K)$ o es trivial. 
+\end{corollary}
+\begin{proof}
+Por el teorema anterior, $Gal(f/F)$ se ve como un subgrupo de $Gal(f/K)$. Pero además es un subgrupo normal. 
+\end{proof}
+
+\begin{theorem}[Criterio del discriminante]
+En la situación anterior, recordamos que $\Delta{f} = \prod_{i < j} (\alpha_i - \alpha_j)^2$. Se verifica que $\Delta{f}$ es invariante por los elementos de $Gal(f/K)$ y en particular, $\Delta(f) \in K$. 
+
+Considerando $\sqrt{\Delta(f)} = \prod_{i < j} (\alpha_i - \alpha_j)$, observamos que cuando $car(K) \neq 2$ entonces los elementos de $Gal(f/K)$ que fijan $\sqrt{\Delta(f)}$ son exactamente $Gal(f/K) \cap A_n$.
+
+Como consecuencia, $Gal(f/K) \subseteq A_n \iff \Delta(f)$ es un cuadrado en $K$. 
+\end{theorem}
+\begin{proof}
+Sea $\sigma \in Gal(f/K) \cap A_n$ y $F$ el cuerpo fijo $Gal(f/K) \cap A_n$ por  entonces $\sigma(\sqrt{\Delta(f)}) = \sqrt{\Delta(f)}$ pues el número de trasposiciones de las raíces es par. Por tanto, $\sqrt{\Delta(f)}$ es fijo por el subgrupo y $K(\sqrt{\Delta(f)}) \subseteq F$. 
+
+Ahora bien, $Gal(f/K) \cap A_n$ tiene o índice uno o dos.
+
+Si tuviera índice uno entonces $[F:K] = 1$ y por tanto, $F = K$ y por lo anterior tenemos la cadena $F = K = K(\sqrt{\Delta(f)}) \subseteq F$ y en particular, tenemos el enunciado. 
+
+Si tuviera índice dos entonces $[F:K] = 2$ entonces tenemos la situación $K \subset F$ y $K \subseteq K(\sqrt{\Delta(f)}) \subseteq F$ y el problema se reduce a determinar si la primera inclusión es propia. Se razona por reducción al absurdo. Se supone que $K(\sqrt{\Delta(f)}) \neq F$ y por tanto, debería haber una permutación impar $\sigma$ tal que $\sigma(\sqrt{\Delta(f)}) = \sqrt{\Delta(f)}$ pero es claro que también se verifica que $\sigma(\sqrt{\Delta(f)}) = - \sqrt{\Delta(f)}$ de donde $2\sqrt{\Delta(f)} = 0$ y como la característica no es 2 se tendrá que $\sqrt{\Delta(f)} = 0$ en contradicción con que $f$ es separable. 
+
+Veamos ahora la consecuencia: $$Gal(f/K) \subseteq A_n \iff Gal(f/K) \cap A_n = Gal(f/K(\sqrt{\Delta(f)})) \iff Gal(f/K) = Gal(f/K(\sqrt{\Delta(f)})) \iff  \sqrt{\Delta(f)} \in K$$ Esto es acaba la consecuencia. 
+\end{proof}
+
+
+
+
+
+

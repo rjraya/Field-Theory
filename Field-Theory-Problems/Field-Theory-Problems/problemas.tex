@@ -213,41 +213,54 @@
 \input{problema6/problema6}
 \newpage
 \section*{Problema 7}
+\input{problema7/problema7}
+\newpage
+\section*{Problema 8}
 
 \begin{exercise}
-Se considera $f \in \mathbb{Q}$ un polinomio de grado seis tal que $Gal(f/\mathbb{Q}) \cong S_6$. Llamamos $E = \mathbb{Q}[f]$ al cuerpo de descomposición de $f$. 
+Se considera $f \in \mathbb{Q}[X]$ un polinomio de grado siete tal que $Gal(f/\mathbb{Q}) \cong S_7$. Llamamos $\mathbb{Q}(f)$ al cuerpo de descomposición de $f$. 
 
 \begin{enumerate}
-\item Determina cuántos cuerpos intermedios $\mathbb{Q} \subseteq F \subseteq E$ existen tales que $[E:F] = 9$. 
-\item Prueba que la intersección de los cuerpos $F$,del apartado anterior, contiene propiamente a $\mathbb{Q}$. 
-\item Si $\alpha_1 \in E$ es una raíz de $f$, prueba que $Gal(E/\mathbb{Q}(\alpha_1)) \cong S_5$. 
-\item Prueba que $\mathbb{Q}(\alpha_1)$ no está contenido en ningún $F$. 
-\item Si $\alpha_1 \neq \alpha_2 \in E$ es otra raíz de $f$, prueba que $Irr(\alpha_2,\mathbb{Q}(\alpha_1))$ tiene grado 5. 
+\item Determina cuántos cuerpos intermedios $\mathbb{Q} \subseteq F \subseteq E$ existen tales que $[E:F] = 9$.
+\item Prueba que la intersección de los cuerpos $F$ del apartado anterior, contiene propiamente a $\mathbb{Q}$.
+\item Si $\alpha_1 \in E$ es una raíz de $f$, determina a cuántos de los $F$ pertenece $\alpha_1$.
+\item Si $\alpha_1 \neq \alpha_2 \in E$ es otra raíz de $f$, prueba que $Irr(\alpha_2,\mathbb{Q}(\alpha_1))$ tiene grado 6. 
 \end{enumerate}
 \end{exercise}
 
-\textbf{Solución: }
+\textbf{Solución:}
 
 \begin{enumerate}
-\item Si $[E:F] = 9$ habrá tantos como subgrupos de orden 9 tenga $S_6$. Estos pueden ser a priori, tipo $C_9$ o tipo $C_3 \times C_3$. Usando la descomposición de permutaciones en ciclos disjuntos y que permutaciones disjuntas tienen como orden el mínimo commún múltiplo de los órdenes de las permutaciones, se deduce que el máximo orden es 6. Por tanto, todos deben ser tipo $C_3 \times C_3$. 
+\item Si $[E:F] = 9$ habrá tantos como subgrupos de orden 9 tenga $S_7$. Estos pueden ser a priori, tipo $C_9$ o tipo $C_3 \times C_3$. Usando la descomposición de permutaciones en ciclos disjuntos y que permutaciones disjuntas tienen como orden el mínimo commún múltiplo de los órdenes de las permutaciones, se deduce que no hay ningún ciclo de orden 9. Por tanto, todos deben ser tipo $C_3 \times C_3$.
 
-Los subgrupos de este tipo son generados por ciclos disjuntos de la forma $\langle (123),(456) \rangle$. Hay por tanto, $\frac{\binom{6}{3}}{2} = 10$ subgrupos. 
+Los subgrupos de este tipo son generados por ciclos disjuntos de la forma $\langle (123),(456) \rangle$. Para ello, primero se observa que este grupo tiene que tener 9 elementos. En efecto, como los generadores conmutan, el grupo generado tiene que ser de la forma $(123)^{n_1} (456)^{n_2}$ con $n_1,n_2 \in \mathbb{N}$. Como los ciclos son de orden 3 tenemos a priori nueve elementos que serán claramente distintos. 
+
+Por otro lado, observemos que los subgrupos de orden 9 son p-subgrupos de Sylow ya que 9 es la mayor potencia de 3 que divide a $6!$. Por el segundo teorema de Sylow, los p-subgrupos son conjugados y recordando la acción de la conjugación $\alpha (123) \alpha^{-1} = (\alpha(1)\alpha(2)\alpha(3))$ sobre ciclos, observaremos que en la expresión $(123)^{n_1} (456)^{n_2}$ podemos hacer actuar la conjugación en cada elemento generador como $\alpha(123)^{n_1} (456)^{n_2}\alpha^{-1} = \alpha(123)^{n_1}\alpha^{-1}\alpha(456)^{n_2}\alpha^{-1}$ de modo que se obtiene la expresión del subgrupo $\langle (\alpha(1)\alpha(2)\alpha(3)),(\alpha(4)\alpha(5)\alpha(6)) \rangle$. 
+
+Hay por tanto, $\frac{\binom{7}{3}\binom{4}{3}}{2} = 70$  subgrupos. 
 
 \item Primero, por la teoría de Galois, sabemos que $\cap F$ se corresponde con $\lor H$ donde los $H$ son los subgrupos que fijan los $F$. 
 
-Segundo, para los ciclos anterior se verifica $\langle (123),(456) \rangle = \langle 123 \rangle \cdot \langle (456) \rangle = \langle (123) \rangle \lor \langle (456) \rangle$ donde hemos utilizado la descripción de los subgrupos generados por conjuntos finitos y el teorema del producto de Lederman (en nuestras le damos este nombre). 
+Segundo, para los ciclos anteriores se verifica $\langle (123),(456) \rangle = \langle (123) \rangle \cdot \langle (456) \rangle = \langle (123) \rangle \lor \langle (456) \rangle$ donde hemos utilizado el hecho de que los generadores conmutan y el teorema del producto de Lederman (en nuestras notas le damos este nombre). 
 
-En consecuencia, el subgrupo buscado es $\lor H = \lor \text{ 3-ciclos de } S_6 \le A_6$ está formado por permutaciones pares y en consecuencia, no puede ser el total. De nuevo, por la correspondencia de Galois el cuerpo correspondiente no es $\mathbb{Q}$.
+En consecuencia, el subgrupo buscado es $\lor H = \lor \text{ 3-ciclos de } S_7 \le A_7$ está formado por permutaciones pares y en consecuencia, no puede ser el total. De nuevo, por la correspondencia de Galois el cuerpo correspondiente no es $\mathbb{Q}$.
 
-\item Para este apartado utilizamos el teorema de los irracionales naturales de forma práctica tal como aparece en el libro de Cox. En un ambiente Galois finito se tiene el isomorfismo: $$Gal(KL/K) \cong Gal(L/K \cap L)$$ Si llamamos $K = \mathbb{Q}(\alpha_1), l =  \mathbb{Q}(\alpha_2,\ldots,\alpha_6)$ entonces tendremos:  $$Gal(E/\mathbb{Q}(\alpha_1)) \cong Gal(\mathbb{Q}(\alpha_2,\ldots,\alpha_6))$$ Por otro lado, sabemos que existe un homomorfismo inyectivo de $Gal(\mathbb{Q}(\alpha_2,\ldots,\alpha_n))$ a $S_5$ y al ser $Gal(E/\mathbb{Q}) \cong S_6$ cualquier permutación de las 5 raíces está en este grupo (la primera raíz se deja fija en el grupo $Gal(E/\mathbb{Q}$). En consecuencia, $Gal(\mathbb{Q}(\alpha_2,\ldots,\alpha_6)) \cong S_5$. 
+\item Tenemos que: $$\alpha_1 \in F_i \iff \forall \sigma \in Gal(E/F_i).\sigma(\alpha_1) = \alpha_1$$ Si tenemos en cuenta que hemos identificado los grupos $Gal(E/F_i)$ con subgrupos del grupo de permutaciones de la forma $G^{F_i} = \langle (123),(456) \rangle$ nos encontramos que bastaría asegurar que $1$ no aparece en los ciclos generadores. Por tanto, $\alpha_1$ pertenece a $10 = \frac{\binom{6}{3}}{2}$ subgrupos $F$.
 
-\item Si $\mathbb{Q}(\alpha_1) \subseteq F$ entonces $H \le S_5$ donde $H$ es el subgrupo que fija a $F$. Pero esto es imposible ya que $9 = |F| \nmid |S_5| = 120$. 
+\item Como $Gal(f/\mathbb{Q}) \cong S_7$ sabemos que $f$ es irreducible ya que $S_7$ es transitivo en $S_7$. Por tanto, $[\mathbb{Q}(\alpha_1):F] = 7$ y $|Gal(E/\mathbb{Q}(\alpha_1))| = [E:\mathbb{Q}(\alpha)] = 6!$. Pero es claro que las permutaciones de $Gal(f/\mathbb{Q})$ se ven como permutaciones de $S_{6}$ si las obligamos a fijar $\alpha_1$. Por tanto, $Gal(E/\mathbb{Q}(\alpha_1)) \cong S_6$.
 
-\item El polinomio $\prod_{i = 2}^6 (x-\alpha_i) \in \mathbb{Q}(\alpha_1)[X]$ por el algoritmo de la división sobre cuerpos. Claramente, $\alpha_2$ es una raíz de este polinomio y dado qque hemos visto que el grupo de Galois es $S_5$ que es un subgrupo transitivo de $S_5$, tendremos que el polinomio es irreducible. Por tanto: $$Irr(\alpha_2,\mathbb{Q}(\alpha_1)) = \prod_{i = 2}^6 (x-\alpha_i)$$ que tiene grado 5. 
+El polinomio $\prod_{i = 2}^7 (x-\alpha_i) \in \mathbb{Q}(\alpha_1)[X]$ por el algoritmo de la división sobre cuerpos. Claramente, $\alpha_2$ es una raíz de este polinomio y dado que hemos visto que el grupo de Galois es $S_6$ que es un subgrupo transitivo de $S_6$, tendremos que el polinomio es irreducible. Por tanto: $$Irr(\alpha_2,\mathbb{Q}(\alpha_1)) = \prod_{i = 2}^6 (x-\alpha_i)$$ que tiene grado 6. 
 \end{enumerate}
-
-
 
 \printbibliography
 
 \end{document}
+
+
+
+
+
+
+
+
+
