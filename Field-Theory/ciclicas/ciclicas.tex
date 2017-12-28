@@ -4,9 +4,13 @@ Una extensión $E/K$ es cíclica si es de Galois y su grupo de Galois es cíclic
 Una extensión $E/K$ es abeliana si su grupo de Galois es un grupo abeliano.  
 \end{definition}
 
+\subsection{Teorema 90 de Hilbert}
+
+Los siguientes dos teoremas se pueden entender como descriptores del núcleo de los homomorfismos norma y traza definidos en el apartado anterior, en el caso de extensiones cíclicas. 
+
 \begin{theorem}[Teorema 90 de Hilbert]
-Sea $E/K$ extensión cíclica de grado $n$ con grupo $G = Gal(E/K) = \langle \sigma\rangle$, y
-sea $\beta \in E$, prueba que son equivalentes:
+Sea $E/K$ extensión cíclica de grado $n$ con grupo $G = Gal(E/K) = \langle \sigma\rangle$ y
+sea $\beta \in E$. Son equivalentes:
 
 \begin{enumerate}
 \item $N_{E/K}(\beta) = 1$
@@ -14,12 +18,13 @@ sea $\beta \in E$, prueba que son equivalentes:
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-\begin{itemize}
-\item 
-Los automorfismos $1,\sigma,\dots,\sigma^n$ son distintos y por tanto linealmente
-independientes, luego no es la aplicación cero:
+$\Leftarrow)$ Usando que la norma es homomorfismo multiplicativo, se tiene que: \[
+N_{E/K}(\beta) = \frac{N_{E/K}(\alpha)}{N_{E/K}(\sigma(\alpha))} = 1
+\]
 
-\[
+$\Rightarrow)$ Si tomamos $\beta$ con $N(\beta) = 1$ esto implica que $\beta \neq 0$. Además, los automorfismos $1,\sigma,\dots,\sigma^{n-1}$ son distintos dos a dos ya que si $\sigma^i = \sigma^j$ con $i > j$ entonces se deduciría que el orden del grupo de Galois es menor que $n$ y entonces por el teorema de Artin, el grado de la extensión no sería $n$. 
+
+Como los automorfismos son todos distintos, por el lema de Dedekind son linealmente independientes como homomorfismos de espacios vectoriales sobre $K$. En particular, la aplicación: \[
 \tau 
 = 
 1 + \beta\sigma + (\beta \sigma(\beta))\sigma^2 + 
@@ -27,17 +32,19 @@ independientes, luego no es la aplicación cero:
 (\beta \sigma(\beta)\dots \sigma^{n-2}\beta) \sigma^{n-1}
 \]
 
-Y existe $\tau(\theta) \neq 0$. Evaluando $\sigma(\tau(\theta))$ y multiplicando por $\beta$ nos queda
-que $\beta \sigma(\tau(\theta)) = \tau(\theta)$.
-
-\item 
-Usando que la norma es homomorfismo:
-
-\[
-N_{E/K}(\beta) = \frac{N_{E/K}(\alpha)}{N_{E/K}(\sigma(\alpha))} = 1
-\]
-\end{itemize}
+no es idénticamente cero. En particular, $\exists \theta \in E.\tau(\theta) \neq \theta$. Sea $\alpha = \tau(\theta)$. Calculamos $\sigma(\alpha)$ en la expresión anterior y multiplicamos por $\beta$. Teniendo en cuenta que $\sigma^n = 1$ y $\beta \sigma(\beta) \ldots \sigma^{n-1}(\beta))\sigma^n(\beta) = 1$ quedaría $\beta \sigma(\alpha) = \alpha$. 
 \end{proof}
+
+\begin{theorem}[Teorema 90 de Hilbert aditivo]
+Sea $K$ un cuerpo y $E/K$ una extensión cíclica de grado $n$ con grupo $G = Gal(E/K) = \langle \sigma \rangle$ y sea $\beta \in E$. Son equivalentes: 
+
+\begin{enumerate}
+\item $T_{E/K}(\beta) = 0$.
+\item $\exists \alpha \in E. \beta = \alpha - \sigma(\alpha)$. 
+\end{enumerate}
+\end{theorem}
+
+\subsection{Clasificación de los grupos cíclicos}
 
 \begin{theorem}[Teorema de Lagrange]
 Sea $K$ cuerpo y $n \in \mathbb{N} \setminus \{0\}$. 
@@ -52,7 +59,9 @@ Supongamos que existe una raíz n-ésima primitiva de la unidad en $K$.
 \end{enumerate}
 \end{theorem}
 
-La lectura adecuada del teorema anterior sería que considerando cuerpos de característica nula o prima $p$ donde $p$ no divide a cierto $n$ que representa un grado de extensión o un índice de raíz, se tiene que toda extensión cíclica de grado $n$ se obtiene como una extensión simple generada por una raíz n-ésima. Recíprocamente, partiendo de una raíz n-ésima genero una extensión cíclica de grado divisor de $n$ tal que cierta potencia se puede ver en $K$ (y no en $E$).
+La lectura adecuada del teorema anterior sería que considerando cuerpos de característica nula o prima $p$ donde $p$ no divide a cierto $n$ que representa un grado de extensión o un índice de raíz, se tiene que toda extensión cíclica de grado $n$ se obtiene como una extensión simple generada por una raíz n-ésima. Recíprocamente, partiendo de una raíz n-ésima genero una extensión cíclica de grado divisor de $n$ tal que cierta potencia se puede ver en $K$ (y no en $K(\alpha)$).
+
+Un ejemplo sencillo de lo anterior nos lo da $X^2+1$ cuyo grupo de Galois consiste de la conjugación compleja y de la identidad. 
 
 \begin{theorem}[Teorema de Artin-Schreier]
 Sea $K$ un cuerpo de característica $p$. Se verifica:

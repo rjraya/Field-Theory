@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.5)  16 DEC 2017 16:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.5)  19 DEC 2017 21:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1339,7 +1339,17 @@ LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 4.
 LaTeX Info: Redefining \% on input line 4.
-)
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[1])
 \tf@toc=\write6
 \openout6 = `algebra3.toc'.
 
@@ -1353,7 +1363,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[1] (./simetricos/simetricos.tex
+[2] (./simetricos/simetricos.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1363,7 +1373,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[2]
+[3]
 Overfull \hbox (5.25157pt too wide) detected at line 71
 \OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]x[]\OT1/cmr/m/n/10 )[]
  [] (\OML/cmm/m/it/10 x[] [] x[]\OT1/cmr/m/n/10 )[] = \OML/cmm/m/it/10 x[]x[] [
@@ -1380,7 +1390,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[3]
+[4]
 Overfull \hbox (4.31776pt too wide) in paragraph at lines 82--83
 []\OT1/cmr/m/n/10 (-20) Demostrar que da-dos $\OML/cmm/m/it/10 f; g \OMS/cmsy/m
 /n/10 2 \OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (-20) [\OML/cmm/m/it/10 x[]; []  ; x[
@@ -1401,7 +1411,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[4]
+[5]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1411,7 +1421,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[5])
+[6])
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1421,17 +1431,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[6] (./extensiones/extensiones.tex
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[7]
+[7] (./extensiones/extensiones.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1462,6 +1462,16 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
  []
 
 [10]
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[11]
 Overfull \hbox (12.23486pt too wide) in paragraph at lines 214--215
 []\OT1/cmr/m/n/10 (-20) Consideremos la ex-ten-si^^Son $\U/msb/m/n/10 Q\OT1/cmr
 /m/n/10 (-20) ([])$ so-bre $\U/msb/m/n/10 Q$\OT1/cmr/m/n/10 (-20) . Ob-ser-ve-m
@@ -1479,7 +1489,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[11]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 259--261
 
  []
@@ -1494,24 +1504,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[12] (./descomposicion/descomposicion.tex
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[13]
-Overfull \hbox (40.48492pt too wide) in paragraph at lines 85--93
-[]\OT1/cmr/m/it/10 (-20) To-do en-do-mor-fis-mo so-bre ex-ten-sio-nes al-ge-bra
-i-cas $\OML/cmm/m/it/10 F=K$ \OT1/cmr/m/it/10 (-20) es un au-to-mor-fis-mo . []
- 
- []
-
-
+[13] (./descomposicion/descomposicion.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1522,6 +1515,13 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
  []
 
 [14]
+Overfull \hbox (40.48492pt too wide) in paragraph at lines 85--93
+[]\OT1/cmr/m/it/10 (-20) To-do en-do-mor-fis-mo so-bre ex-ten-sio-nes al-ge-bra
+i-cas $\OML/cmm/m/it/10 F=K$ \OT1/cmr/m/it/10 (-20) es un au-to-mor-fis-mo . []
+ 
+ []
+
+
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1541,7 +1541,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[16])
+[16]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1551,7 +1551,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[17] (./clausura/clausura.tex
+[17])
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1561,7 +1561,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[18]
+[18] (./clausura/clausura.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1581,7 +1581,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[20])
+[20]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1591,7 +1591,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[21] (./normales/normales.tex
+[21])
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1601,7 +1601,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[22]
+[22] (./normales/normales.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1631,7 +1631,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[25])
+[25]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1641,7 +1641,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[26] (./separable/separable.tex
+[26])
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1651,7 +1651,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[27]
+[27] (./separable/separable.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1711,7 +1711,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[33])
+[33]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1721,7 +1721,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[34] (./galois/galois.tex
+[34])
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1731,7 +1731,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[35]
+[35] (./galois/galois.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1761,7 +1761,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[38])
+[38]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1771,7 +1771,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[39] (./finito/finito.tex
+[39])
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1781,7 +1781,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[40]
+[40] (./primitivo/primitivo.tex)
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1791,7 +1791,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[41]
+[41] (./finito/finito.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1801,7 +1801,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[42])
+[42]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1811,7 +1811,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[43] (./ciclotomico/ciclotomico.tex
+[43]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1822,6 +1822,17 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
  []
 
 [44]
+Overfull \hbox (73.69841pt too wide) detected at line 157
+\OML/cmm/m/it/10 R[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10  \OM
+S/cmsy/m/n/10 2 \U/msb/m/n/10 F[] \OT1/cmr/m/n/10 : [\U/msb/m/n/10 F[]\OT1/cmr/
+m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ) : \U/msb/m/n/10 F[]\OT1/cmr/m/n/10 
+] = \OML/cmm/m/it/10 n\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\O
+ML/cmm/m/it/10  \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 F[] \OT1/cmr/m/n/10 : \OML/cm
+m/m/it/10 []\U/msb/m/n/10 F[]\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = \U/msb/m/n/1
+0 F[] \OMS/cmsy/m/n/10 n [[]\U/msb/m/n/10 F[]
+ []
+
+
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1841,7 +1852,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[46] (./permutaciones/permutaciones.tex
+[46] (./ciclotomico/ciclotomico.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1852,6 +1863,86 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
  []
 
 [47]
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[48]
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[49])
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[50] (./norma/norma.tex)
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[51] (./ciclicas/ciclicas.tex
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[52])
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[53] (./soluble/soluble.tex)
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[54] (./permutaciones/permutaciones.tex
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[55]
 Overfull \hbox (71.98041pt too wide) detected at line 56
 \OML/cmm/m/it/10 Gal\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f=K\OT1/cmr/m/n/10 ) \OMS
 /cmsy/m/n/10 ^^R \OML/cmm/m/it/10 A[]  \OMS/cmsy/m/n/10 ([])  \OML/cmm/m/it/10 
@@ -1873,38 +1964,8 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[48] (./ciclicas/ciclicas.tex
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[49])
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[50] (./soluble/soluble.tex)
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.57385pt too wide) has occurred while \output is active
-[]$[]$ 
- []
-
-[51]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 238.
+[56]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 244.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -1914,7 +1975,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (56.77928pt too wide) in paragraph at lines 239--239
+Overfull \hbox (56.77928pt too wide) in paragraph at lines 245--245
 \OT1/cmr/m/it/10 (-20) poly-no-mials over K al-ge-brai-cally clo-sed?, year = 2
 017, url = https://math.stackexchange.com/questions/27647/is-
  []
@@ -1931,7 +1992,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[52] (./algebra3.aux
+[57] (./algebra3.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 15.
@@ -1942,13 +2003,13 @@ Package logreq Info: Writing requests to 'algebra3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25251 strings out of 493013
- 478063 string characters out of 6135682
+ 25261 strings out of 493013
+ 478206 string characters out of 6135682
  898901 words of memory out of 5000000
- 28148 multiletter control sequences out of 15000+600000
- 15343 words of font info for 106 fonts, out of 8000000 for 9000
+ 28150 multiletter control sequences out of 15000+600000
+ 15286 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,15n,82p,1202b,1842s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,15n,82p,1299b,1853s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
@@ -1969,10 +2030,10 @@ e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplbi8a.pfb>
-Output written on algebra3.pdf (53 pages, 440720 bytes).
+Output written on algebra3.pdf (58 pages, 454936 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 183 compressed objects within 2 object streams
+ 276 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  12813 words of extra memory for PDF output out of 14400 (max. 10000000)
 

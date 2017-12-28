@@ -3,76 +3,84 @@
 \defcounter {refsection}{0}\relax 
 \select@language {spanish}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Polinomios sim\IeC {\'e}tricos}{2}
+\contentsline {section}{\numberline {1}Polinomios sim\IeC {\'e}tricos}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1}Resultante y discriminante}{4}
+\contentsline {subsection}{\numberline {1.1}Resultante y discriminante}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Extensiones de cuerpos}{7}
+\contentsline {section}{\numberline {2}Extensiones de cuerpos}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Preliminares}{7}
+\contentsline {subsection}{\numberline {2.1}Preliminares}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Algunas extensiones naturales}{8}
+\contentsline {subsection}{\numberline {2.2}Algunas extensiones naturales}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Extensiones algebraicas}{9}
+\contentsline {subsection}{\numberline {2.3}Extensiones algebraicas}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}Relaci\IeC {\'o}n entre extensiones finitas y algebraicas}{11}
+\contentsline {subsection}{\numberline {2.4}Relaci\IeC {\'o}n entre extensiones finitas y algebraicas}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Cuerpos de descomposici\IeC {\'o}n}{13}
+\contentsline {section}{\numberline {3}Cuerpos de descomposici\IeC {\'o}n}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Herramientas previas}{13}
+\contentsline {subsection}{\numberline {3.1}Herramientas previas}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Definici\IeC {\'o}n del cuerpo de descomposici\IeC {\'o}n}{15}
+\contentsline {subsection}{\numberline {3.2}Definici\IeC {\'o}n del cuerpo de descomposici\IeC {\'o}n}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Cuerpo de descomposici\IeC {\'o}n de una familia de polinomios}{16}
+\contentsline {subsection}{\numberline {3.3}Cuerpo de descomposici\IeC {\'o}n de una familia de polinomios}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Clausura algebraica}{18}
+\contentsline {section}{\numberline {4}Clausura algebraica}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Extensiones normales}{22}
+\contentsline {section}{\numberline {5}Extensiones normales}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Extensiones conjugadas}{22}
+\contentsline {subsection}{\numberline {5.1}Extensiones conjugadas}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Extensiones normales}{23}
+\contentsline {subsection}{\numberline {5.2}Extensiones normales}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}Clausura normal}{25}
+\contentsline {subsection}{\numberline {5.3}Clausura normal}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}Polinomio normal}{26}
+\contentsline {subsection}{\numberline {5.4}Polinomio normal}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Extensiones separables y cuerpos perfectos}{27}
+\contentsline {section}{\numberline {6}Extensiones separables y cuerpos perfectos}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Caracter\IeC {\'\i }stica y derivada}{27}
+\contentsline {subsection}{\numberline {6.1}Caracter\IeC {\'\i }stica y derivada}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Separabilidad}{28}
+\contentsline {subsection}{\numberline {6.2}Separabilidad}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3}Cuerpos perfectos}{30}
+\contentsline {subsection}{\numberline {6.3}Cuerpos perfectos}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.4}Extensiones separables}{32}
+\contentsline {subsection}{\numberline {6.4}Extensiones separables}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Teor\IeC {\'\i }a de Galois finita}{35}
+\contentsline {section}{\numberline {7}Teor\IeC {\'\i }a de Galois finita}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Automorfismos de extensiones de cuerpos}{35}
+\contentsline {subsection}{\numberline {7.1}Automorfismos de extensiones de cuerpos}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Extensiones de Galois}{37}
+\contentsline {subsection}{\numberline {7.2}Extensiones de Galois}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.3}Conexi\IeC {\'o}n de Galois}{38}
+\contentsline {subsection}{\numberline {7.3}Conexi\IeC {\'o}n de Galois}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Cuerpos finitos}{40}
+\contentsline {section}{\numberline {8}Elementos primitivos}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}Resultados generales}{40}
+\contentsline {section}{\numberline {9}Cuerpos finitos}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Polinomios irreducibles sobre cuerpos finitos}{42}
+\contentsline {subsection}{\numberline {9.1}Resultados generales}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Extensiones ciclot\IeC {\'o}micas. Ra\IeC {\'\i }ces de la unidad}{44}
+\contentsline {subsection}{\numberline {9.2}Polinomios irreducibles sobre cuerpos finitos}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1}Ra\IeC {\'\i }ces de la unidad}{44}
+\contentsline {section}{\numberline {10}Extensiones ciclot\IeC {\'o}micas. Ra\IeC {\'\i }ces de la unidad}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.2}Extensiones ciclot\IeC {\'o}micas}{45}
+\contentsline {subsection}{\numberline {10.1}Ra\IeC {\'\i }ces de la unidad}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.3}Polinomios ciclot\IeC {\'o}micos}{45}
+\contentsline {subsection}{\numberline {10.2}Extensiones ciclot\IeC {\'o}micas}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.4}Polinomios ciclot\IeC {\'o}micos con coeficientes racionales}{45}
+\contentsline {subsection}{\numberline {10.3}Polinomios ciclot\IeC {\'o}micos}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Grupo de Galois como grupo de permutaciones}{47}
+\contentsline {subsection}{\numberline {10.4}Polinomios ciclot\IeC {\'o}micos con coeficientes racionales}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11}Extensiones c\IeC {\'\i }clicas}{49}
+\contentsline {section}{\numberline {11}Norma y traza}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12}Extensiones solubles y radicales}{51}
+\contentsline {section}{\numberline {12}Extensiones c\IeC {\'\i }clicas}{52}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.1}Teorema 90 de Hilbert}{52}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.2}Clasificaci\IeC {\'o}n de los grupos c\IeC {\'\i }clicos}{52}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {13}Extensiones solubles y radicales}{54}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {14}Grupo de Galois como grupo de permutaciones}{55}

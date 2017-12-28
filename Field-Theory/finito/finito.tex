@@ -28,16 +28,16 @@ El cuerpo de Galois con $q$ elementos es el único cuerpo con $q = p^n$ elemento
 \end{definition}
 
 \begin{proposition}[Subgrupo multiplicativo finito de un cuerpo es cíclico]
-	Todo subgrupo finito del grupo multiplicativo $F^x = F \setminus \{0\}$ de un cuerpo $F$, no necesariamente finito, es cíclico.
+	Sea $F$ un cuerpo arbitrario y $G$ un subgrupo finito de $F^x = F \setminus \{0\}$. Entonces, $G$ es cíclico.
 	
-	En particular, si el cuerpo es finito, su grupo de unidades es cíclico. 
+	En particular, si $F$ es finito, su grupo de unidades es cíclico. 
 \end{proposition}
 \begin{proof}
 	Sea $G$ un subgrupo finito de $F$. 
 	
-	Ya que $G$ es un grupo finito que será abeliano pues estamos asumiendo que los cuerpos tienen producto conmutativo. Por la clasificación de los grupos abelianos finitos mediante factores invariantes, tenemos que $G \cong \prod_{i = 1}^r C_{n_i}$ con $\forall 1 \ge i < r. n_i|n_{i+1}$.
+	Ya que $G$ es un grupo finito que será abeliano pues estamos asumiendo que los cuerpos tienen producto conmutativo. Por la clasificación de los grupos abelianos finitos mediante factores invariantes, tenemos que $G \cong \prod_{i = 1}^r C_{n_i}$ con $\forall 1 \le i < r. n_i|n_{i+1}$.
 	
-	Observemos que $mcm(n_i) = n_r$ y como para cada $a_i \in C_{n_i}$ se verifica que $a_i^{n_i} = 1$, también se verificará que $a_i^{n_r} = 1$. Por tanto, cualquier $a \in G$ verificará que $a^{n_r} = 1$. Por tanto, $a$ será raíz de $X^{n_r}-1$, que como mucho tiene $n_r$ raíces, esto me dice que $|G| \le n_r$. Pero por el isomorfismo tendría que ser $|G| = \prod_{i = 1}^r n_i$, de donde necesariamente todos los $n_i = 1$ salvo el último y tenemos que $G \cong C_{n_r}$. 
+	Observemos que $mcm(n_i) = n_r$ y como para cada $a_i \in C_{n_i}$ se verifica que $a_i^{n_i} = 1$, también se verificará que $a_i^{n_r} = 1$. Por tanto, cualquier $a \in G$ verificará que $a^{n_r} = 1$. Por tanto, $a$ será raíz de $X^{n_r}-1$, que como mucho tiene $n_r$ raíces, esto me dice que $|G| \le n_r$. Pero por el isomorfismo tendría que ser $|G| = \prod_{i = 1}^r n_i = n_r$, de donde necesariamente todos los $n_i = 1$ salvo el último y tenemos que $G \cong C_{n_r}$. 
 \end{proof}
 
 \begin{theorem}[Estudio de la extensión $\mathbb{F}_q/\mathbb{F}_p$]
@@ -50,20 +50,24 @@ Sea $p$ un número primo y $q = p^n$ tenemos que:
 \end{theorem}
 \begin{proof}
 \begin{enumerate}
-\item Como $\mathbb{F}_p$ es cuerpo finito es perfecto y resulta que la extensión $\mathbb{F}_q/\mathbb{F}_p$ es separable. Por el teorema de Moore, $\mathbb{F}_q$ es el cuerpo de descomposición del polinomio $X^q - X$ y por tanto, la extensión es normal. Esto es, la extensión es de Galois. 
+\item Como por el teorema de Moore, $\mathbb{F}_q$ es el cuerpo de descomposición del polinomio $X^q - X$, la extensión es normal y finita. 
 
-\item Comencemos observando que por el teorema de Artin, $n = [\mathbb{F}_q:\mathbb{F}_p] = |Gal(\mathbb{F}_q/\mathbb{F}_p)|$. Además, el automorfismo de Frobenius $\phi \in Gal(\mathbb{F}_q/\mathbb{F}_p)$ ya que como $\mathbb{F}_q$ es un cuerpo finito y por tanto perfecto. Como es de característica prima, necesariamente $\phi$ es automorfismo. Y además, fija $\mathbb{F}_p$ ya que $\phi(a) = a^p = a$, por ejemplo porque $\mathbb{F}_p$ es cuerpo de descomposición de $X^p - X$. 
+Como $\mathbb{F}_p$ es cuerpo finito, es perfecto. Como toda extensión finita de un cuerpo perfecto es separable, resulta que $\mathbb{F}_q/\mathbb{F}_p$ es separable. 
 
-Para $0 \le i < n$, $\phi^i \in Gal(\mathbb{F}_q/\mathbb{F}_p)$. Tendríamos: $$\phi^i(\alpha) = \phi \phi^{i-1}(\alpha) = \phi(\alpha{p^{i-1}}) = \phi(\alpha{p^{i-1}}) = \alpha{p^i}$$ Finalmente, se comprueba que los $\phi^i$ son distintos ya que si $\phi^i = \phi^j$ con $i > j$ entonces $\phi{i-j} = 1$ y entonces $\alpha = 1(\alpha) = \phi^i(\alpha) = \alpha^{p^i}$ y entonces todo elemento de $\mathbb{F}_q$ sería raíz del polinomio $X^{p^i} - X$ que tiene un máximo de $p^i$ raíces. Contradicción. 
+En consecuencia, la extensión es de Galois. 
+
+\item Comencemos observando que por el teorema de Artin, $n = [\mathbb{F}_q:\mathbb{F}_p] = |Gal(\mathbb{F}_q/\mathbb{F}_p)|$. 
+
+Como $\mathbb{F}_q$ es un cuerpo finito, es perfecto. Como $Car(\mathbb{F}_q) = p$ necesariamente, el homomorfismo de Frobenius $\phi$ es sobreyectivo. Y siempre es monomorfismo puesto que sale de un cuerpo. Por tanto, $\phi$ es automorfismo.  Además, fija $\mathbb{F}_p$ ya que $\phi(a) = a^p = a$, pues por el teorema de Moore $\mathbb{F}_p$ es el conjunto de las raíces de $X^p - X$. Por tanto, $\phi \in Gal(\mathbb{F}_q/\mathbb{F}_p)$.
+
+Para $0 \le i < n$, $\phi^i \in Gal(\mathbb{F}_q/\mathbb{F}_p)$ y $\alpha \in \mathbb{F}_q$, tendríamos por inducción: $$\phi^i(\alpha) = \phi \phi^{i-1}(\alpha) = \phi(\alpha^{p^{i-1}}) = \phi(\alpha^{p^{i-1}}) = \alpha^{p^i}$$ Pero los $\phi^i$ son distintos ya que si $\phi^i = \phi^j$ con $i > j$ entonces $\phi^{i-j} = 1$ y entonces: $$\alpha = 1(\alpha) = \phi^{i-j}(\alpha) = \alpha^{p^{i-j}}$$ y entonces todo elemento de $\mathbb{F}_q$ sería raíz del polinomio $X^{p^{i-j}} - X$ que tiene un máximo de $p^{i-j} < p^n$ raíces. Esto daría un subcuerpo intermedio que sería cuerpo de descomposición de $X^{p^n}-X$ en contradicción de la definición de cuerpo de descomposición. 
 \end{enumerate}
 \end{proof}
 
-\begin{proposition}[Retículo de subcuerpos de un cuerpo finito y estudio de extensiones intermedias]
+\begin{proposition}[Retículo de subcuerpos de un cuerpo finito]
 	Si denotamos por $Sub(F)$ a los subcuerpos de $F$ tendremos:
 	
 	$Sub(\mathbb{F}_{p^n}) = \{\mathbb{F}_{p^m}:m|n\}$
-	
-	En particular, la extensión $\mathbb{F}_{p^m} \subseteq \mathbb{F}_{p^n}$ es de Galois con grupo de Galois cíclico de orden $n/m$ y generado por $\phi^m$.
 \end{proposition}
 \begin{proof}
 	Veamos la igualdad de conjuntos por doble inclusión. 
@@ -79,41 +83,37 @@ Para $0 \le i < n$, $\phi^i \in Gal(\mathbb{F}_q/\mathbb{F}_p)$. Tendríamos: $$
 	Utilización la conexión de Galois $H$ se corresponde con el subcuerpo $E = (\mathbb{F}_{p^n})^H$. Observemos que como $H$ es subgrupo de un cíclico, que es abeliano, $H$ debe ser normal y esto implica qque $E/\mathbb{F}_p$ es de Galois y $Gal(E/\mathbb{F}_p) \cong Gal(\mathbb{F}_{p^n}/\mathbb{F}_p)/Gal(\mathbb{F}_{p^n}/E)$ que tiene orden $n/d = m$ de donde $E = \mathbb{F}_{p^m}$ y por tanto, tenemos la implicación y la consecuencia del enunciado. 
 \end{proof}
 
+\begin{corollary}[Estudio de las extensiones finitas intermedias]
+ Sea $p$ un número primo y $n,m \in \mathbb{N}$ con $m|n$, tenemos que:
+ 
+ \begin{enumerate}
+ \item $\mathbb{F}_{p^m} \subseteq \mathbb{F}_{p^n}$ es una extensión de Galois. 
+ \item $Gal(\mathbb{F}_{p^n} /\mathbb{F}_{p^m}) \cong \langle \phi^m \rangle$
+ \end{enumerate}
+\end{corollary}
+\begin{proof}
+Es consecuencia de la demostración de la inclusión a la derecha del teorema anterior. 
+\end{proof}
+
 
 \subsection{Polinomios irreducibles sobre cuerpos finitos}
 
-La representación de cuerpos finitos $\mathbb{F}_{p^n}$ como cocientes $\frac{F_p[X]}{f}$ con $f \in \mathbb{F}_p[X]$ un polinomio irreducible de grado $n$ es esencial en los computadores. Necesitamos por tanto, un buen conocimiento de los polinomios irreducibles sobre $\mathbb{F}_p[X]$.
-
-\begin{proposition}[Raíces de un irreducible en $\mathbb{F}_p$]
-	Sea $p \in \mathbb{F}_p[X]$ un irreducible de grado $d$. Consideremos un cuerpo extensión $F$ donde $p$ tiene una raíz $\alpha$. Entonces $p$ admite $d$ raíces distintas $\alpha^{p^i}$ con $i = 0,\cdots,d-1$. 
-\end{proposition}
-\begin{proof}
-	\cite{link3}
-\end{proof}
-
-\begin{proposition}[Polinomios irreducibles de $\mathbb{F}_p$]
-	Los factores irreducibles de $X^{p^n} - X$ en $\mathbb{F}_p[X]$ son exactamente los polinomios irreducibles de $\mathbb{F}_p[X]$ con grado divisor de $n$. 
-\end{proposition} 
-\begin{proof}
-	$\Rightarrow$ Si $g$ es un factor irreducible de $X^{p^n} - X$ entonces vemos claramente que su grado divide a $n$. En efecto, $g$ tendrá alguna raíz $\alpha$ y $\alpha$ también es raíz de $X^{p^n} - X$ pues $g$ es factor de él. Por tanto, tenemos la siguiente torre de cuerpos $\mathbb{F}_{p^n} \supseteq \mathbb{F}_{p}(\alpha) \supseteq \mathbb{F}_p$. Por el teorema del grado, $gr(g) = [\mathbb{F}(\alpha):\mathbb{F}_p] | [\mathbb{F}_{p^n}:\mathbb{F}_p]$l
-	
-	$\Leftarrow$ Los irreducibles de grado divisor de $n$ son factores. En efecto, sea $g$ un irreducible de grado $m$ con $m|n$. Si tomo una raíz $\alpha$ de $g$ en algún cuerpo de descomposición, observo que $\mathbb{F}(\alpha) \cong \mathbb{F}_{p^m}$ y como $m|n$ tenemos que $\mathbb{F}_{p^m} \subseteq \mathbb{F}_{p^n}$, esto es, las raíces están contenidas en las raíces de $X^{p^n} - X$ y entonces claramente $g|f$. 
-\end{proof}
-
-Para más detalles véase \cite{link3}
-
 Sea $N_m = \{f \in \mathbb{F}_p[X]:\text{f es mónico irreducible de grado m}\}$
 
-\begin{proposition}
-	$\sum_{m|n} m |N_m| = p^n$
-\end{proposition}
+\begin{theorem}[Polinomios irreducibles de $\mathbb{F}_p$]
+	Los factores irreducibles de $X^{p^n} - X$ en $\mathbb{F}_p[X]$ son exactamente los polinomios irreducibles de $\mathbb{F}_p[X]$ con grado divisor de $n$. En particular, $$X^{p^n} - X = \prod_{f \in N_m, m|n} f$$ y por tanto, $\sum_{m|n} m |N_m| = p^n$.
+\end{theorem} 
 \begin{proof}
-	Vimos en la prueba del teorema de Moore que $X^{p^n} - X$ es separable y en particular sus raíces en cuerpo de descomposición son todas simples. Esto implica que sus factores irreducibles en $\mathbb{F}_p[X]$ son todos distintos. Además como es mónico, podemos obtener su factorización como producto de polinomios mónicos. 
+$\Rightarrow$ Si $g$ es un factor irreducible de $X^{p^n} - X$ entonces vemos claramente que su grado divide a $n$. En efecto, $g$ tendrá alguna raíz $\alpha$ y $\alpha$ también es raíz de $X^{p^n} - X$ pues $g$ es factor de él. Por tanto, tenemos la siguiente torre de cuerpos $\mathbb{F}_{p^n} \supseteq \mathbb{F}_{p}(\alpha) \supseteq \mathbb{F}_p$. Por el teorema del grado, $gr(g) = [\mathbb{F}(\alpha):\mathbb{F}_p] | [\mathbb{F}_{p^n}:\mathbb{F}_p]$.
 	
-	La proposición anterior nos dice que debemos considerar como factores todos los irreducibles sobre $\mathbb{F}_p[X]$ que tengan grado divisor de $n$. En resumen, podemos escribir $$X^{p^n} - X = \prod_{f \in N_m, m|n} f$$ Tomando grados en ambos miembros obtenemos la fórmula del enunciado. 
+$\Leftarrow$ Los irreducibles de grado divisor de $n$ son factores. En efecto, sea $g$ un irreducible de grado $m$ con $m|n$. Si tomo una raíz $\alpha$ de $g$ en algún cuerpo de descomposición, observo que $\mathbb{F}_p(\alpha) \cong \mathbb{F}_{p^m}$ y como $m|n$ tenemos que $\mathbb{F}_{p^m} \subseteq \mathbb{F}_{p^n}$, esto es, las raíces están contenidas en las raíces de $X^{p^n} - X$ y entonces claramente $g|f$. 
+	
+Para obtener la descomposición en irreducibles, razonamos del siguiente modo. Por lo anterior, los factores son irreducibles con grado divisor. Cada factor puede aparecer únicamente una vez ya que si apareciera dos veces entonces teniendo en cuenta que, por el teorema de Moore, $X^{p^n}-X$ tiene $p^n$ raíces distintas obtendríamos menos raíces de las necesarias puesto que no habría una por cada unidad del grado. Además, como $X^{p^n}-X$ es mónico podemos tomar los factores también como polinomios mónicos. 
+	
+En resumen, podemos escribir $$X^{p^n} - X = \prod_{f \in N_m, m|n} f$$ Tomando grados en ambos miembros obtenemos la fórmula del enunciado. 
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}[Cálculo con $n$ primo]
 	Si $n$ es un número primo entonces $|N_n| = \frac{p^n-p}{n}$
 \end{corollary}
 \begin{proof}
@@ -142,12 +142,36 @@ Vamos a generalizar esta fórmulas para el cálculo del número de polinomios ir
 \end{definition}
 
 
-\begin{theorem}
-	$N_n = \frac{1}{n} \sum_{m|n} \mu(m) p^{\frac{n}{m}}$
+\begin{theorem}[Fórmula de Gauss]
+Sea $p$ un número primo y $N_n$ el conjunto de los polinomios mónicos irreducibles de grado $n$ sobre $\mathbb{F}_p$. Se tiene que:
+
+$N_n = \frac{1}{n} \sum_{m|n} \mu(m) p^{\frac{n}{m}}$
 \end{theorem}
 \begin{proof}
-	Ver \cite{counting-irreducible}
+La siguiente prueba se encuentra en \cite{counting-irreducible}. 
+	
+Se procede por inducción sobre $n$. 
+	
+Si $n = 1$ entonces el polinomio $x-a$ es irreducible en $\mathbb{F}_p$ para cualquier $a$ por tanto, $N_1| = p = \mu(1)p$. 
+	
+Si $n > 1$ y definimos $R_n$ como el conjunto de las raíces de los polinomios de $N_n$. Podemos observar que dichas raíces pertenecen a $\mathbb{F}_{p^n}$ gracias al teorema que da los polinomios irreducibles sobre $\mathbb{F}_p$. Como las raíces en este cuerpo son todas distintas por el teorema de Moore, se deduce que $|R_n| = n |N_n|$. El problema se reduce a calcular este $|R_n|$. Pongamos $n = \prod_{i = 1}^k p_i^{e_i}$. Observamos que: $$R_n = \{\alpha \in \mathbb{F}_{p^n}:[\mathbb{F}_p(\alpha):\mathbb{F}_p] = n \} = \{ \alpha \in \mathbb{F}_{p^n}: \alpha \text{ no    contenido en ningún subcuerpo maximal de } \mathbb{F}_{p^n} \} = \mathbb{F}_{p^n} \setminus \cup_i \mathbb{F}_{p^{n/p_i}}$$ Finalmente, se utiliza el principio de inclusión-exclusión obteniéndose: $$|R_n| = p^n - | \cup_i \mathbb{F}_{p^{n/ p_i} }| = p^n - (\sum_{i = 1}^k p^{n/p_i}) + (\sum_{i,j = 1, i < j}^k p^{n/p_i p_j}) - \ldots +(-1)^k p^{n/ \prod p_i}$$ Recordando la expresión de la función de Mobius: $$\mu(1)p^{n/1}+\sum_{p_i |n} \mu(p_i)p^{n/p_i}+ \ldots \mu(\prod p_i) p^{n/\prod p_i}$$ Obsérvese que para cualquier otro divisor $\mu(d) = 0$. Si se quieren los irreducibles no necesariamente mónicos bastaría multiplicar por $p-1$. 
+	
+	
 \end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

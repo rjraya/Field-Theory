@@ -1,0 +1,29 @@
+\begin{definition}[Norma y traza]
+Sea $F/K$ una extensión finita y separable con $[F:K] = n$. En estas condiciones se tiene 
+que $[F:K]_s = [F:K]$, es decir hay $n$ homomorfismos de $F$ a la clausura de $K$. Sea $\alpha \in F$.
+
+\begin{enumerate}
+\item La norma de $\alpha$ en $F/K$ es $N_{F/K}(\alpha) = \prod \sigma_i(\alpha)$. 
+\item La traza de $\alpha$ en $F/K$ es $T_{F/K}(\alpha) = \sum \sigma_i(\alpha)$. 
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Propiedades generales]
+Sea $F/K$ una extensión finita y separable de grado $n$. 
+
+\begin{enumerate}
+\item La norma es un homomorfismo multiplicativo en $F$ con imagen $K$. \\
+Análogamente, la traza es un 
+homomorfismo aditivo en $F$ con imagen $K$. \\
+Además, $N(1) = 1$, $T(0) = 0$. 
+\item Comportamiento frente a escalares. Si $a \in K$ y $\alpha \in F$ entonces: $$N(a \alpha) = a^n N(\alpha) \land T(a\alpha) = na T(\alpha)$$
+\item Fórmulas de transitividad. Para $K \subseteq F \subseteq E$ con $E/K$ finita y separable y $\alpha \in E$: $$N_{F/K}(N_{E/F}(\alpha)) = N_{E/K}(\alpha) \land T_{F/K}(T_{E/F}(\alpha)) = T_{E/K}(\alpha)$$ 
+
+\item Sea $\alpha \in F$ con $Irr(\alpha,K) = \sum_{i = 0}^r a_iX^i$ entonces $N(\alpha) = (-1)^n(a_0)^{n/r} \land T(\alpha) = -(n/r)a_{r-1}$.
+\end{enumerate}
+\end{proposition}
+
+
+
+
+

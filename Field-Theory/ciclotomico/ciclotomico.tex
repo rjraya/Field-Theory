@@ -11,12 +11,12 @@ Sea $K$ un cuerpo.
 
 Las raíces n-ésimas de la unidad son todas distintas si y sólo si $Car(K) \nmid n$. En particular, si la característica es cero. 
 
-Si $p = Car(K) | n$ entonces si $n = mp^r$ existen $m$ raíces n-ésimas de la unidad distintas y todas tienen multiplicidad $p^r$. 
+Si $0 \neq p = Car(K) | n$ entonces si $n = mp^r$ existen $m$ raíces n-ésimas de la unidad distintas y todas tienen multiplicidad $p^r$. 
 \end{proposition}
 \begin{proof}
-Las raíces serán distintas si y sólo si $X^n - 1$ no tiene raíces mútiples, lo que equivale a que su derivada, $nX^{n-1}$, sea distinto de cero. Esto ocurre si y sólo si $Car(K) \nmid n$. En particular, si la característica es cero. 
+Las raíces serán distintas si y sólo si $X^n - 1$ no tiene raíces mútiples. Por el criterio de las raíces simples, esto ocurre cuando $mcd(f,Df) = 1$. En nuestro caso, cuando $mcd(X^n - 1,nX^{n-1}) = 1$. Distinguimos tres casos. Si $0 \neq p = Car(K) | n$ entonces claramente $mcd(X^n - 1,nX^{n-1}) = mcd(X^n - 1,0) = X^n - 1 \neq 1$. Si $Car(K) = 0 \lor p = Car(K) \nmid n$ entonces el polinomio $nX^{n-1}$ tiene grado $n-1$ y el único irreducible que lo divide es $X$ como $X$ no divide a $X^n - 1$ se deduce que ambos son primos relativos. 
 
-Si $p = Car(K) | n$ entonces el criterio de la derivada nos dice que existen raíces múltiples. En particular, como $p \neq 0$ tenemos el endomorfismo de Frobenius, que nos dice que si $n = mp^r$ entonces $X^n - 1 = (X^m - 1)^{p^r}$ de modo que aplicando el caso anterior existen $m$ raíces n-ésimas de la unidad distintas y tienen multiplicidad $p^r$. 
+Si $0 \neq p = Car(K) | n$ entonces el criterio de la derivada nos dice que existen raíces múltiples. En particular, como $p \neq 0$ tenemos el endomorfismo de Frobenius, que nos dice que si $n = mp^r$ entonces $X^n - 1 = (X^m - 1)^{p^r}$ de modo que aplicando el caso anterior existen $m$ raíces n-ésimas de la unidad distintas y tienen multiplicidad $p^r$. 
 \end{proof}
 
 En lo sucesivo asumiremos que existen $n$ raíces n-ésimas distintas de la unidad. Suponemos también que el cuerpo $K$ es fijo. 
@@ -33,7 +33,7 @@ Una raíz n-ésimas primitiva de la unidad es un generador del grupo de las raí
 \end{definition}
 
 \begin{proposition}[Retículo de raíces n-ésimas]
-$Sub(\mu_n) = \{\mu_d:d | n \}$. Además, si $a$ es una raíz n-ésima primitiva entonces $a^{n/d}$ es una raíz désima primitiva. 
+$Sub(\mu_n) = \{\mu_d:d | n \}$. Además, si $a$ es una raíz n-ésima primitiva, esto es, $\mu_n = \langle a \rangle$ entonces $a^{n/d}$ es una raíz d-ésima primitiva de la unidad, esto es, $\mu_d = \langle a^{n/d} \rangle$. 
 \end{proposition}
 \begin{proof}
 Esta proposición es la clasificación de los grupos cíclicos de orden finito, que se tiene de la teoría de grupos. 
@@ -46,10 +46,29 @@ Una extensión ciclotómica de $K$ es un cuerpo de descomposición sobre $K$ de 
 \end{definition}
 
 \begin{theorem}[Estructura de Galois de una extensión ciclotómica]
-Sea $F/K$ una extensión ciclotómica generada por el polinomio $X^n-1$. 
+Sea $F/K$ una extensión ciclotómica generada por el polinomio $X^n-1$ y sea $\xi$ raíz n-ésima primitiva de la unidad. Entonces:
 
-$F/K$ es una extensión de Galois con grupo de Galois isomorfo a un subgrupo de $U(\mathbb{Z}_n)$.
+\begin{enumerate}
+\item $F/K$ es una extensión de Galois. 
+\item $Gal(F/K) \cong H \le U(\mathbb{Z}_n)$ mediante el isomorfismo $\sigma \to i$ tal que $\sigma(\xi) = \xi^i$.
+\item $|Gal(F/K)| | \phi(n)$. 
+\end{enumerate}
 \end{theorem}
+\begin{proof}
+\begin{enumerate}
+\item $F/K$ es una extensión normal por ser el cuerpo de descomposición del polinomio $X^n - 1$ sobre $K$. Hemos asumido además que las raíces de $X^n - 1$ son distintas. En particular, también lo son las raíces de sus factores irreducibles, esto es, el polinomio es separable. Como el cuerpo de descomposición está formado por sus raíces, necesariamente, la extensión es separable. Por tanto, es de Galois. 
+
+\item  Tenemos que $\sigma \in Gal(F/K)$ queda determinado por su valor sobre $\xi$. Queremos ver que si $\sigma(\xi) = \xi^i$ entonces $i \in U(\mathbb{Z}_n)$. 
+
+En efecto, si tomamos $j$ tal que $\sigma^{-1}(\xi) = \xi^j$ entonces $\xi = (\sigma \sigma^{-1})( \xi) = \xi^{ji}$. Como $\xi$ tiene orden $n$, esta ecuación se formula de manera equivalente como $ij = 1$ en $\mathbb{Z}_n$ y por tanto $i,j \in \mathbb{Z}_n$ como queríamos. 
+
+Por tanto, la aplicación dada en el enunciado está bien definida. Además es un homomorfismo de grupos ya que si $\tau \in Gal(F/K)$ viene dada por $\tau(\xi) = \xi^k$ entonces $\sigma \circ \tau (\xi) = \xi^{ik}$. 
+
+Además, si $\sigma \in Ker$ entonces $\sigma(\xi) = \xi^i = \xi$ de modo que $\sigma = Id_F$ y por tanto, tenemos un monomorfismo. Por el primer teorema de isomorfía, $Gal(F/K) \cong Im \le U(\mathbb{Z}_n)$.
+
+\item Es consecuencia del teorema de Lagrange y de que $\phi(n) = |U(\mathbb{Z}_n)|$. 
+\end{enumerate}
+\end{proof}
 
 \subsection{Polinomios ciclotómicos}
 
@@ -66,26 +85,24 @@ Se verifican las siguientes propiedades:
 \item $X^n - 1 = \prod_{d|n} \Phi_d(X)$
 \item Los coeficientes de $\Phi_n(X)$ pertenecen al cuerpo característico de $K$. Si $Car(K) = 0$ entonces pertenecen a $\mathbb{Z}$. Además, $gr(\Phi_n(X)) = \phi(n)$ y $\Phi_n(X)$ es mónico. 
 \item Cálculo del n-ésimo polinomio ciclotómico: $\Phi_n(X) = \frac{X^n - 1}{\prod_{d|n \land d \neq n} \Phi_d(X)}$ 
+\item Fórmula de Gauss: 
+$\Phi_n(x) = \prod_{d\mid n} (x^{d}-1)^{\mu(n/d)}$
 \end{enumerate}
 \end{proposition}
 \begin{proof}
 \begin{enumerate}
-\item 
-\item 
-\item Es consecuencia directa de la propiedad 1. 
+\item Escribimos $\phi_d(X) = \prod X-\xi_i$ con $\xi_i$ raíces d-ésimas de la unidad. Es claro, que todas estas raíces son raíces n-ésimas de la unidad cuyo orden es $d$ y recíprocamente. Es claro, que juntando estos productos obtenemos $X^n - 1$ como producto de los $\phi_d$ para cada $d|n$. 
+
+\item Se hace por inducción sobre $n$.
+  
+\item Basta ver que hay $\phi(n)$ raíces primitivas de las unidad. Esto es así ya que un grupo cíclico de orden $n$ tiene $\phi(n)$ generadores distintos como se vio en la teoría de grupos. Por tanto, $\phi_n$ tiene grado $\phi(n)$. 
+
+\item  
 \end{enumerate}
 \end{proof}
 
-\begin{proposition}[Cálculo de polinomios ciclotómicos]
-Se verifican las siguientes propiedades:
+Una forma de recordar la fórmula de Gauss y la fórmula que relaciona distintos ciclótomicos es ver que hay una dualidad entre $\phi$ y polinomios $X^m - 1$. Además, en nuestras fórmulas, $\mu$ siempre a alternado un argumento simétrico tipo $d, \frac{m}{d}$. 
 
-\begin{enumerate}
-\item Si $p$ es primo $\Phi_p(X) = X^{p-1} + X^{p-2} + \dots + X + 1$.
-\item $\Phi_{p^e}(x) = \Phi_p(x^{p^{e-1}})$
-\item $\Phi_{p_1^{e_1}p_2^{e_2}\dots p_r^{e_r}}(x) = \Phi_{p_1\dots p_r}(x^{p_1^{e_1-1}\dots p_r^{e_r-1}})$
-\item $\Phi_n(x) = \prod_{d\mid n} (x^{d}-1)^{\mu(n/d)}$
-\end{enumerate}
-\end{proposition}
 
 \subsection{Polinomios ciclotómicos con coeficientes racionales}
 
@@ -95,7 +112,7 @@ Se verifican las siguientes propiedades:
 Para cada $n \in \mathbb{N}$, $\Phi_n(X)$ es irreducible sobre $\mathbb{Q}$.
 \end{proposition}
 \begin{proof}
-Sea $\xi$ una raíz n-ésima primitiva de la unidad y $f(X) = Irr(\xi,K)$. Veamos que $\phi_n(X) = f(X)$ con lo que $\phi_n(X)$ será irreducible. 
+Sea $\xi$ una raíz n-ésima primitiva de la unidad y $f(X) = Irr(\xi,\mathbb{Q})$. Veamos que $\phi_n(X) = f(X)$ con lo que $\phi_n(X)$ será irreducible. 
 \end{proof}
 
 \begin{corollary}[Grado de las extensiones ciclótomicas]
@@ -103,6 +120,7 @@ Sea $\xi$ una raíz n-ésima primitiva de la unidad entonces:
 
 $[\mathbb{Q}(\xi):\mathbb{Q}] = gr(\Phi_n(X)) = \phi(n)$
 \end{corollary}
+
 
 \begin{proposition}[Grupo de Galois de las extensiones ciclotómicas racionales]
 Sea $\xi$ una raíz n-ésima primitiva de la unidad, entonces:
