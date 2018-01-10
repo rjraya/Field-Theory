@@ -29,7 +29,7 @@ Para ver que es un subgrupo tomo $a,b$ raíces n-ésimas. Entonces $(ab^{-1})^n 
 \end{proof}
 
 \begin{definition}[Raíz n-ésimas primitiva de la unidad]
-Una raíz n-ésimas primitiva de la unidad es un generador del grupo de las raíces n-ésimas de la unidad. 
+Una raíz n-ésima primitiva de la unidad es un generador del grupo de las raíces n-ésimas de la unidad. 
 \end{definition}
 
 \begin{proposition}[Retículo de raíces n-ésimas]
@@ -50,7 +50,7 @@ Sea $F/K$ una extensión ciclotómica generada por el polinomio $X^n-1$ y sea $\
 
 \begin{enumerate}
 \item $F/K$ es una extensión de Galois. 
-\item $Gal(F/K) \cong H \le U(\mathbb{Z}_n)$ mediante el isomorfismo $\sigma \to i$ tal que $\sigma(\xi) = \xi^i$.
+\item $Gal(F/K) \cong H \le U(\mathbb{Z}_n)$ mediante el isomorfismo $\sigma \mapsto i$ tal que $\sigma(\xi) = \xi^i$.
 \item $|Gal(F/K)| | \phi(n)$. 
 \end{enumerate}
 \end{theorem}
@@ -60,7 +60,7 @@ Sea $F/K$ una extensión ciclotómica generada por el polinomio $X^n-1$ y sea $\
 
 \item  Tenemos que $\sigma \in Gal(F/K)$ queda determinado por su valor sobre $\xi$. Queremos ver que si $\sigma(\xi) = \xi^i$ entonces $i \in U(\mathbb{Z}_n)$. 
 
-En efecto, si tomamos $j$ tal que $\sigma^{-1}(\xi) = \xi^j$ entonces $\xi = (\sigma \sigma^{-1})( \xi) = \xi^{ji}$. Como $\xi$ tiene orden $n$, esta ecuación se formula de manera equivalente como $ij = 1$ en $\mathbb{Z}_n$ y por tanto $i,j \in \mathbb{Z}_n$ como queríamos. 
+En efecto, si tomamos $j$ tal que $\sigma^{-1}(\xi) = \xi^j$ entonces $\xi = (\sigma \sigma^{-1})( \xi) = \xi^{ji}$. Como $\xi$ tiene orden $n$, esta ecuación se formula de manera equivalente como $ij = 1$ en $\mathbb{Z}_n$ y por tanto $i,j \in U(\mathbb{Z}_n)$ como queríamos. 
 
 Por tanto, la aplicación dada en el enunciado está bien definida. Además es un homomorfismo de grupos ya que si $\tau \in Gal(F/K)$ viene dada por $\tau(\xi) = \xi^k$ entonces $\sigma \circ \tau (\xi) = \xi^{ik}$. 
 

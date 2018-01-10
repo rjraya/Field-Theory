@@ -9,6 +9,21 @@ Sea $F/K$ una extensión finita.
 
 $F/K$ es simple $\iff$ Existe un número finito de cuerpos intermedios. 
 \end{theorem}
+\begin{proof}
+$\Rightarrow)$ Sea $F = K(\alpha)$ y $K \subseteq L \subseteq F$ un cuerpo intermedio. Sea $f = Irr(\alpha,K)$ y $g = Irr(\alpha,L)$ donde sabemos por la introducción del polinomio mínimo que $g|f$. Esto nos dice que las extensiones intermedias tienen como polinomio mínimo para $\alpha$ un factor del polinomio mínimo de la extensión total. Además, observamos que los coeficientes del polinomio mínimo sobre un cuerpo, por definición deben de pertenecer al cuerpo. 
+
+Entonces sea  $L$ un extensión intermedia cualquiera, por lo anterior $g|f$. Tomemos una segunda extensión generada por los coeficientes de $g$, $E$. Entonces claramente, $E \subseteq L$ y $g = Irr(\alpha,E)$ ya que si $Irr(\alpha,E)$ fuera de grado menor entonces $g$ también sería de grado menor. Pero $[K(\alpha):E] = gr(Irr(\alpha,E)) = gr(Irr(\alpha,L)) = [K(\alpha):E]$, de donde $E = L$. En consecuencia, hay un número finito de cuerpos intermedios, uno por cada factor de $f$. 
+
+$\Leftarrow)$ Distiguimos casos, según la cardinalidad de $K$. 
+
+\begin{itemize}
+\item Si $K$ es finito, entonces la extensión finita da un cuerpo $F$ finito (recuérdese el carácter vectorial de las extensiones). Pero sabemos que el grupo de las unidades de un cuerpo finito es cíclico y por tanto, bastará con dar un generador del cíclo para la extensión. 
+
+\item Como la extensión es finita, tiene que ser de generación finita. Bastará probar que $K(a,b)$ es simple y luego procederíamos por inducción para probar el resto. 
+
+Utilizando la hipótesis de que sólo puede haber un número finito de cuerpos intermedios es claro que entre los de la forma $K(a+bx)$ con $x \in K$ debe haber repetidos ya que el cardinal de $K$ es infinito. Sean $x,y \in K$ con $x \neq y$ tales que $K(a+bx) = K(a+by)$, entonces elemento $b = \frac{(a+bx)-(a+by)}{x-y} \in K(a+bx) = K(a+by)$ de modo que $K(a+bx) \subseteq K(a,b)$ y siempre se tenía que $K(a,b) \subseteq K(a+bx)$. Por tanto, $K(a,b) = K(a+bx)$ y tenemos que la extensión es simple. 
+\end{itemize}
+\end{proof}
 
 \begin{proposition}[Ejemplos de extensiones primitivas]
 Los siguientes son ejemplos de extensiones simples:

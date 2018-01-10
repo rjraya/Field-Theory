@@ -97,6 +97,15 @@ Sea $f \in K[X]$ un polinomio no constante.
 
 Las raíces de $f$ son todas simples $\iff$ $f,Df$ son primos relativos. 
 \end{lemma}
+\begin{proof}
+$\Rightarrow)$ Si todas las raíces de $f(X)$ son simples, en un cuerpo de descomposición: $$f(X) = a \prod_{i = 1}^r (X - \alpha_i) \text{ con } \alpha_i \text{ distintos y } Df(X) = a \sum_{i = 1}^r (X-\alpha_1) \ldots (X - \alpha_{i-1}) (X - \alpha_{i+1}) \ldots (X - \alpha_r)$$
+
+Es claro que como $K[X]$ es un DFU, los polinomios de grado 1 determinan clases de asociación irreducibles distintas. Recordando que $mcd(f,g) = \prod_{p \in \mathcal{P}} p^{min(e(p,f),e(p,g)}$ con $\mathcal{P}$ un conjunto de representantes de los irreducibles para la relación de asociación, bastará ver que ningún factor de $f$ es factor de $Df$. Esto es sencillo ya que cada $(X-\alpha_i)$ divide a todos los sumandos de $Df(X)$ salvo a uno que no puede dividir porque no coincide con ninguno de los factores. 
+
+En consecuencia, $mcd(f,Df) = 1$. 
+
+$\Leftarrow)$ Se procede por contrarrecíproco. Supongamos que $f$ tiene una raíz múltiple $\alpha$ de multiplicidad $m \ge 2$ y sea $d(X) = mcd(f(X),Df(X))$. En el cuerpo de descomposición podemos escribir: $$f(X) = (X - \alpha)^m g(X) \text{ y } Df(X) = (X - \alpha)^m Dg(X) + m(X - \alpha)^{m-1}g(X)$$ Por tanto, en el cuerpo de descomposición $(X - \alpha)$ es un factor común de $f$ y $Df$, con lo que $d(X) \neq 1$. Bastaría entonces con observar que el máximo común divisor de dos polinomios no depende del cuerpo extensión. Para ello observaremos que $f,g$ se escriben del mismo modo en la extensión (aunque sean factorizables) y por tanto, el algoritmo de Euclides no varía, obteniéndose en particular los mismos resultados.
+\end{proof}
 
 \begin{lemma}[Multiplicidad de las raíces de un irreducible]
 Todas las raíces de un irreducible tienen la misma multiplicidad.
@@ -152,9 +161,7 @@ Todo irreducible no constante es separable $\iff$ el endomorfismo de Frobenius e
 \begin{proof}
 Veamos cada implicación:
 
-$\Rightarrow)$ Consideramos $a \in K$  y el polinomio $f = X^p - a$. Si $\alpha$ es una raíz de $f$ en un cuerpo de descomposición $F$, entonces en ese cuerpo $f$ debe descomponer como $f = (X - \alpha)^p$ ya que estamos en característica $p$ y entonces $\alpha^p = \alpha$. 
-
-Por tanto, cada factor irreducible sobre $K$ de $f$ tiene también una única raíz $\alpha$ que a priori podría ser múltiple. Pero por hipótesis, debe ser simple y el único factor irreducible de $f$ resulta ser $X - \alpha$. Por tanto, $\alpha \in K$ y $a = \alpha^p$ de donde el endomorfismo de Frobenius es sobreyectivo y por tanto es automorfismo. 
+$\Rightarrow)$ Consideramos $a \in K$  y el polinomio $f = X^p - a$. Si $\alpha$ es una raíz de $f$ en un cuerpo de descomposición $F$, entonces en ese cuerpo $f$ debe descomponer como $f = (X - \alpha)^p$ ya que estamos en característica $p$. Por tanto, cada factor irreducible sobre $K$ de $f$ tiene también una única raíz $\alpha$ que a priori podría ser múltiple. Pero por hipótesis, debe ser simple y el único factor irreducible de $f$ resulta ser $X - \alpha$. Por tanto, $\alpha \in K$ y $a = \alpha^p$ de donde el endomorfismo de Frobenius es sobreyectivo y por tanto es automorfismo. 
 
 $\Leftarrow)$ Por reducción al absurdo, si $f$ es irreducible no constante con $Df = 0$ entonces tiene raíces múltiples y en particular $f = g(X^p)$. 
 

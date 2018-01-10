@@ -12,10 +12,11 @@ Un cuerpo es algebraicamente cerrado si verifica alguna de las siguientes propie
 \end{proposition}
 \begin{proof}
 \begin{enumerate}
-\item Se obtiene por inducción en el grado del polinomioy utilizando el algoritmo de la división de polinomios sobre un cuerpo.
+\item Se obtiene por inducción en el grado del polinomio y utilizando el algoritmo de la división de polinomios sobre un cuerpo.
 \item Si $f \in K[X]$ fuera irreducible, no puede ser constante (pues entonces sería unidad) y por hipótesis descompone en factores lineales $f = \prod c(X-u_i)$ con $u_i \in k \land c \in K$. Pero los polinomios lineales son irreducibles en $K[X]$ y hemos obtenido una factorización de $f$ en términos de irreducibles a menos que el número de factores sea $1$ en cuyo caso $gr(f) = 1$. 
-\item Sea $\frac{E}{K}$ una extensión algebraica y $u \in E$. Como $Irr(u,K)$ es un polinomio irreducible, por hipótesis, debe ser $gr(f) = 1$, pero entonces $E = K$. 
-\item Sea $f \in K[X]$ un polinomio no constante, por el teoremade Kronecker existe una extensión donde $f$ tiene una raíz $\alpha$ y entonces $\frac{K(\alpha)}{K}$ es una extensión algebraica y por hipótesis $K(\alpha) = K$ y claramente se tendrá que $\alpha \in K$. 
+\item Sea $\frac{E}{K}$ una extensión algebraica y $u \in E$. Como $Irr(u,K)$ es un polinomio irreducible, por hipótesis, debe ser $gr(f) = 1$, pero entonces $E = K$.
+ 
+\item Sea $f \in K[X]$ un polinomio no constante, por el teorema de Kronecker existe una extensión donde $f$ tiene una raíz $\alpha$ y entonces $\frac{K(\alpha)}{K}$ es una extensión algebraica y por hipótesis $K(\alpha) = K$ y claramente se tendrá que $\alpha \in K$. 
 \end{enumerate}
 \end{proof}
 

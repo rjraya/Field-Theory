@@ -216,41 +216,42 @@
 \input{problema7/problema7}
 \newpage
 \section*{Problema 8}
+\input{problema7/problema7}
+\newpage
+\section*{Problema 9}
 
 \begin{exercise}
-Se considera $f \in \mathbb{Q}[X]$ un polinomio de grado siete tal que $Gal(f/\mathbb{Q}) \cong S_7$. Llamamos $\mathbb{Q}(f)$ al cuerpo de descomposición de $f$. 
-
-\begin{enumerate}
-\item Determina cuántos cuerpos intermedios $\mathbb{Q} \subseteq F \subseteq E$ existen tales que $[E:F] = 9$.
-\item Prueba que la intersección de los cuerpos $F$ del apartado anterior, contiene propiamente a $\mathbb{Q}$.
-\item Si $\alpha_1 \in E$ es una raíz de $f$, determina a cuántos de los $F$ pertenece $\alpha_1$.
-\item Si $\alpha_1 \neq \alpha_2 \in E$ es otra raíz de $f$, prueba que $Irr(\alpha_2,\mathbb{Q}(\alpha_1))$ tiene grado 6. 
-\end{enumerate}
+Elabora un programa, en el lenguaje de programación que desees, que calcule el grupo de Galois de un polinomio de grado 5 sobre el cuerpo de los números racionales. El polinomio dado no tiene por qué ser irreducible.
 \end{exercise}
 
 \textbf{Solución:}
 
-\begin{enumerate}
-\item Si $[E:F] = 9$ habrá tantos como subgrupos de orden 9 tenga $S_7$. Estos pueden ser a priori, tipo $C_9$ o tipo $C_3 \times C_3$. Usando la descomposición de permutaciones en ciclos disjuntos y que permutaciones disjuntas tienen como orden el mínimo commún múltiplo de los órdenes de las permutaciones, se deduce que no hay ningún ciclo de orden 9. Por tanto, todos deben ser tipo $C_3 \times C_3$.
+Describimos a continuación los aspectos más relevantes de la implementación de este problema en Sage. 
 
-Los subgrupos de este tipo son generados por ciclos disjuntos de la forma $\langle (123),(456) \rangle$. Para ello, primero se observa que este grupo tiene que tener 9 elementos. En efecto, como los generadores conmutan, el grupo generado tiene que ser de la forma $(123)^{n_1} (456)^{n_2}$ con $n_1,n_2 \in \mathbb{N}$. Como los ciclos son de orden 3 tenemos a priori nueve elementos que serán claramente distintos. 
+Nosotros hemos programado la clasificación de los grupos de Galois de los polinomios desde grado 2 hasta grado 5. 
 
-Por otro lado, observemos que los subgrupos de orden 9 son p-subgrupos de Sylow ya que 9 es la mayor potencia de 3 que divide a $6!$. Por el segundo teorema de Sylow, los p-subgrupos son conjugados y recordando la acción de la conjugación $\alpha (123) \alpha^{-1} = (\alpha(1)\alpha(2)\alpha(3))$ sobre ciclos, observaremos que en la expresión $(123)^{n_1} (456)^{n_2}$ podemos hacer actuar la conjugación en cada elemento generador como $\alpha(123)^{n_1} (456)^{n_2}\alpha^{-1} = \alpha(123)^{n_1}\alpha^{-1}\alpha(456)^{n_2}\alpha^{-1}$ de modo que se obtiene la expresión del subgrupo $\langle (\alpha(1)\alpha(2)\alpha(3)),(\alpha(4)\alpha(5)\alpha(6)) \rangle$. 
+El caso 2 y 3 no tienen dificultad. 
 
-Hay por tanto, $\frac{\binom{7}{3}\binom{4}{3}}{2} = 70$  subgrupos. 
+Para el caso 4 sugerimos utilizar la función discriminant() de la que nos provee Sage ya que o bien la fórmula de los apuntes es errónea o bien la traslación de la fórmula que nosotros hicimos era errónea pero daban resultados distintos. Una condición útil para comprobar que la fórmula es correcta es que vale cero si y sólo si dos coeficientes valen cero. 
 
-\item Primero, por la teoría de Galois, sabemos que $\cap F$ se corresponde con $\lor H$ donde los $H$ son los subgrupos que fijan los $F$. 
+Otro aspecto interesante es la comprobación de la hipótesis c de la proposición 17.2 de los apuntes. Este apartado comprueba que el grupo de Galois es C4 comprobando la pertenecia de dos raíces a un cuerpo extensión por la raíz del discriminante. A la hora de llevar esto a la práctica nos ha resultado útil la observación de Keith Konrad en sus notas \textit{Galois groups of cubics and quartics (not it characteristic 2)} que reduce esta comprobación a comprobar que las raíces multiplicadas por el discriminante del polinomio son cuadrados de números racionales. 
 
-Segundo, para los ciclos anteriores se verifica $\langle (123),(456) \rangle = \langle (123) \rangle \cdot \langle (456) \rangle = \langle (123) \rangle \lor \langle (456) \rangle$ donde hemos utilizado el hecho de que los generadores conmutan y el teorema del producto de Lederman (en nuestras notas le damos este nombre). 
+Para estudiar la factorización de polinomios en cuerpos extensión debemos agradecer a la comunidad de \url{ask.sagemath.org} sus ideas si bien para obtener una solución en especial recomendamos las siguientes cuestiones:
 
-En consecuencia, el subgrupo buscado es $\lor H = \lor \text{ 3-ciclos de } S_7 \le A_7$ está formado por permutaciones pares y en consecuencia, no puede ser el total. De nuevo, por la correspondencia de Galois el cuerpo correspondiente no es $\mathbb{Q}$.
+\begin{itemize}
+\item Factorization of $f \in \mathbb{Q}[X]$ in field extension $\mathbb{Q}(\alpha)$.
+\item Extension field adjoining two roots.
+\end{itemize}
 
-\item Tenemos que: $$\alpha_1 \in F_i \iff \forall \sigma \in Gal(E/F_i).\sigma(\alpha_1) = \alpha_1$$ Si tenemos en cuenta que hemos identificado los grupos $Gal(E/F_i)$ con subgrupos del grupo de permutaciones de la forma $G^{F_i} = \langle (123),(456) \rangle$ nos encontramos que bastaría asegurar que $1$ no aparece en los ciclos generadores. Por tanto, $\alpha_1$ pertenece a $10 = \frac{\binom{6}{3}}{2}$ subgrupos $F$.
 
-\item Como $Gal(f/\mathbb{Q}) \cong S_7$ sabemos que $f$ es irreducible ya que $S_7$ es transitivo en $S_7$. Por tanto, $[\mathbb{Q}(\alpha_1):F] = 7$ y $|Gal(E/\mathbb{Q}(\alpha_1))| = [E:\mathbb{Q}(\alpha)] = 6!$. Pero es claro que las permutaciones de $Gal(f/\mathbb{Q})$ se ven como permutaciones de $S_{6}$ si las obligamos a fijar $\alpha_1$. Por tanto, $Gal(E/\mathbb{Q}(\alpha_1)) \cong S_6$.
+Como observación final notaremos que hemos utilizado en el código que $\mathbb{Q}$ es un cuerpo perfecto y por tanto todo irreducible es separable, esto es, tiene raíces distintas. Esto por ejemplo en el caso de la clasificación de $C_5$. 
 
-El polinomio $\prod_{i = 2}^7 (x-\alpha_i) \in \mathbb{Q}(\alpha_1)[X]$ por el algoritmo de la división sobre cuerpos. Claramente, $\alpha_2$ es una raíz de este polinomio y dado que hemos visto que el grupo de Galois es $S_6$ que es un subgrupo transitivo de $S_6$, tendremos que el polinomio es irreducible. Por tanto: $$Irr(\alpha_2,\mathbb{Q}(\alpha_1)) = \prod_{i = 2}^6 (x-\alpha_i)$$ que tiene grado 6. 
-\end{enumerate}
+El programa completo se encuentra en el archivo \textit{galois.ipynb}. También contiene algunos ejemplos para comprobar la implementación. En particular, tenemos infinitos ejemplos de cíclicas dadas por la expresión de la quíntica de Emma Lehmer. A este respecto recomendamos en \url{ask.sagemath.org} la pregunta \textit{Any more cyclic quintics}. En concreto, notaremos que la segunda fórmula no puede ser utilizada para parámetros arbitrarios. 
+
+
+
+
+
 
 \printbibliography
 

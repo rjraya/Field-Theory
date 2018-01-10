@@ -64,6 +64,21 @@ Sea $E$ un cuerpo y $G \le Aut(E)$ un subgrupo del grupo de automorfismos de $E$
 \begin{theorem}[Teorema de Artin]
 Sea $E$ un cuerpo y $G \le Aut(E)$ un subgrupo finito del grupo de automorfismos de $E$ entonces $E^G$ es un subcuerpo de $E$ y $[E:E^G] = |G|$. 
 \end{theorem}
+\begin{proof}
+Claramente, $E^G$ es un subcuerpo por la definición de homomorfismo de cuerpos ya que sería un cuerpo con las operaciones heredadas de $E$. También se podría comprobar que es un cuerpo con las operaciones de suma, producto e inversos no nulos. 
+
+Por el lema de Dedekind, como $G \subseteq Hom_{E^G}(E,E)$ tendríamos que $|G| \le [E:E^G]$ (si el grado es infinito, entonces claramente también se verifica la desigualdad). 
+
+Para la otra desigualdad procedemos por reducción al absurdo, si $\sigma_i$ son los $n$ elementos de $G$ y suponemos que tenemos $n+1$ elementos independientes $e_i \in E$ sobre $E^G$, entonces el sistema $\sum_{i = 0}^n \sigma_j(e_i)X_i = 0$ tiene $n$ ecuaciones y $n+1$ incógnitas, será compatible indeterminado y tendrá solución no trivial en $E$ para las incógnitas, $s_i$. Imponemos que sea la solución que tenga el menor número de términos distintos de cero. Como podemos reetiquetar las incógnitas podemos suponer que $\forall 1 \le i \le t. s_i \neq 0$ y $\forall t+1 \le i \le n+1. s_i = 0$. Queda un primer sistema $\sum_{i = 0}^n \sigma_j(e_i)s_i = 0$.
+
+Por ser $G$ un grupo finito es claro que $\sigma \sigma_i$ nos dan todos los automorfismo del grupo, de modo que al aplicar $\sigma \in G$ nos quedan los sistemas $\sum_{i = 0}^n \sigma(\sigma_j(e_i))\sigma(s_i) = 0$ y queda un segundo sistema $\sum_{i = 0}^n \sigma_j(e_i)\sigma(s_i) = 0$.
+
+Tomando el primer sistema multiplicado por $\sigma(s_0)$ y restando el segundo sistema multiplicado por $s_0$ nos queda $\sum_{i = 1}^n [\sigma_j(e_i)s_i\sigma(s_0)-\sigma_j(e_i)\sigma(s_i)s_0] = 0$ y agrupando, $\sum_{i = 0}^n \sigma_j(e_i)[s_i\sigma(s_0) - \sigma(s_i)s_0] = 0$. 
+
+Si llamamos $\overline{s_i} = s_i\sigma(s_0) - \sigma(s_i)s_0$ obtenemos una solución para cada $\sigma \in G$ donde los términos a partir del $t+1$ son nulos, pero también es nulo $\overline{s_0}$. Como tienen menos términos nulos, necesariamente deben ser nulas por las hipótesis. Pero entonces para cada $\sigma \in G$ tenemos que $\sigma(s_i/s_0) = s_i/s_0$ y por tanto $s_i/s_0 \in E^G$. 
+
+En particular, lo anterior ocurre para la identidad y entonces la primera ecuación del primer sistema da $\sum_{i = 0}^t e_is_i = 0$ de donde $e_0 = - \sum_{i = 1}^t (s_i/s_0)e_i$ de modo que $e_0$ es una combinación lineal con coeficientes en $E^G$ de $e_i$. Esto contradice la independencia lineal de los $e_i$. 
+\end{proof}
 
 \subsection{Extensiones de Galois}
 

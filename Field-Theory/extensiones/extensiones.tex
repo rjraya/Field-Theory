@@ -155,7 +155,7 @@ Claramente, un elemento $\alpha \in K$ es algebraico $\iff$ $Ker(h_\alpha) \neq 
 Obsérvese que $Ker(h_\alpha)$ no es más que el conjunto de las expresiones polinómicas en la variable $\alpha$ y coeficientes en $K$ que son cero. 
 
 \begin{proposition}[Introducción del polinomio mínimo]
-Dada una extensión de cuerpos $\frac{F}{K}$ y $\alpha \in F$ un elemento algebraico sobre $K$, existe un único polinomio irreducible y mónico $f$ tal que $Ker(h_\alpha) = <f>$. Esta última condición se expresa diciendo que $\alpha$ es raíz del polinomio y cualquier otro polinomio del que $\alpha$ sea raíz, es un múltiplo de este. 
+Dada una extensión de cuerpos $\frac{F}{K}$ y $\alpha \in F$ un elemento algebraico sobre $K$, existe un único polinomio irreducible y mónico $f$ tal que $Ker(h_\alpha) = \langle f \rangle$. Esta última condición se expresa diciendo que $\alpha$ es raíz del polinomio y cualquier otro polinomio del que $\alpha$ sea raíz, es un múltiplo de este. 
 \end{proposition}
 \begin{proof}
 Como $K[X]$ es un dominio euclídeo con función euclídea el grado, en particular es un dominio de ideales principales y ya que $Ker(h_\alpha)$ es un ideal estará generado por un polinomio $f$. Para ver que es irreducible, vemos que:
@@ -168,7 +168,7 @@ Como $K[X]$ es un dominio euclídeo con función euclídea el grado, en particul
 
 Claramente, como $K$ es un cuerpo puedo conseguir que sea mónico multiplicando por la constante inverso del término líder, que es un polinomio asociado al original. 
 
-Finalmente, si $g$ es un polinomio de grado mínimo tal que $g(\alpha) = 0$ entonces, $g \in <f>$ y como antes $g$ es asociado a $f$.
+Finalmente, si $g$ es un polinomio de grado mínimo tal que $g(\alpha) = 0$ entonces, $g \in \langle f \rangle$ y como antes $g$ es asociado a $f$.
 
 \end{proof}
 

@@ -43,7 +43,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.2}Separabilidad}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3}Cuerpos perfectos}{31}
+\contentsline {subsection}{\numberline {6.3}Cuerpos perfectos}{32}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.4}Extensiones separables}{33}
 \defcounter {refsection}{0}\relax 
@@ -55,32 +55,38 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.3}Conexi\IeC {\'o}n de Galois}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Elementos primitivos}{41}
+\contentsline {section}{\numberline {8}Elementos primitivos}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Cuerpos finitos}{42}
+\contentsline {section}{\numberline {9}Cuerpos finitos}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1}Resultados generales}{42}
+\contentsline {subsection}{\numberline {9.1}Resultados generales}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.2}Polinomios irreducibles sobre cuerpos finitos}{44}
+\contentsline {subsection}{\numberline {9.2}Polinomios irreducibles sobre cuerpos finitos}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Extensiones ciclot\IeC {\'o}micas. Ra\IeC {\'\i }ces de la unidad}{47}
+\contentsline {subsubsection}{\numberline {9.2.1}Motivaci\IeC {\'o}n}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.1}Ra\IeC {\'\i }ces de la unidad}{47}
+\contentsline {subsubsection}{\numberline {9.2.2}C\IeC {\'a}lculo del n\IeC {\'u}mero de polinomios irreducibles}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.2}Extensiones ciclot\IeC {\'o}micas}{48}
+\contentsline {subsubsection}{\numberline {9.2.3}Algoritmo de Berlekamp}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.3}Polinomios ciclot\IeC {\'o}micos}{48}
+\contentsline {section}{\numberline {10}Extensiones ciclot\IeC {\'o}micas. Ra\IeC {\'\i }ces de la unidad}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.4}Polinomios ciclot\IeC {\'o}micos con coeficientes racionales}{49}
+\contentsline {subsection}{\numberline {10.1}Ra\IeC {\'\i }ces de la unidad}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11}Norma y traza}{51}
+\contentsline {subsection}{\numberline {10.2}Extensiones ciclot\IeC {\'o}micas}{52}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12}Extensiones c\IeC {\'\i }clicas}{52}
+\contentsline {subsection}{\numberline {10.3}Polinomios ciclot\IeC {\'o}micos}{52}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {12.1}Teorema 90 de Hilbert}{52}
+\contentsline {subsection}{\numberline {10.4}Polinomios ciclot\IeC {\'o}micos con coeficientes racionales}{53}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {12.2}Clasificaci\IeC {\'o}n de los grupos c\IeC {\'\i }clicos}{52}
+\contentsline {section}{\numberline {11}Norma y traza}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {13}Extensiones solubles y radicales}{54}
+\contentsline {section}{\numberline {12}Extensiones c\IeC {\'\i }clicas}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {14}Grupo de Galois como grupo de permutaciones}{55}
+\contentsline {subsection}{\numberline {12.1}Teorema 90 de Hilbert}{56}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.2}Clasificaci\IeC {\'o}n de los grupos c\IeC {\'\i }clicos}{56}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {13}Extensiones solubles y radicales}{58}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {14}Grupo de Galois como grupo de permutaciones}{59}

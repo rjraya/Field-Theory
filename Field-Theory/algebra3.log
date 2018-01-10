@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.5)  19 DEC 2017 21:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.5)  10 JAN 2018 00:53
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1771,7 +1771,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[39])
+[39]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1781,7 +1781,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[40] (./primitivo/primitivo.tex)
+[40])
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1791,7 +1791,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[41] (./finito/finito.tex
+[41] (./primitivo/primitivo.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1801,7 +1801,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[42]
+[42])
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1811,7 +1811,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[43]
+[43] (./finito/finito.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1822,17 +1822,6 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
  []
 
 [44]
-Overfull \hbox (73.69841pt too wide) detected at line 157
-\OML/cmm/m/it/10 R[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10  \OM
-S/cmsy/m/n/10 2 \U/msb/m/n/10 F[] \OT1/cmr/m/n/10 : [\U/msb/m/n/10 F[]\OT1/cmr/
-m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ) : \U/msb/m/n/10 F[]\OT1/cmr/m/n/10 
-] = \OML/cmm/m/it/10 n\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\O
-ML/cmm/m/it/10  \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 F[] \OT1/cmr/m/n/10 : \OML/cm
-m/m/it/10 []\U/msb/m/n/10 F[]\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = \U/msb/m/n/1
-0 F[] \OMS/cmsy/m/n/10 n [[]\U/msb/m/n/10 F[]
- []
-
-
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1842,7 +1831,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[45])
+[45]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1852,7 +1841,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[46] (./ciclotomico/ciclotomico.tex
+[46]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1863,6 +1852,17 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
  []
 
 [47]
+Overfull \hbox (73.69841pt too wide) detected at line 177
+\OML/cmm/m/it/10 R[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10  \OM
+S/cmsy/m/n/10 2 \U/msb/m/n/10 F[] \OT1/cmr/m/n/10 : [\U/msb/m/n/10 F[]\OT1/cmr/
+m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ) : \U/msb/m/n/10 F[]\OT1/cmr/m/n/10 
+] = \OML/cmm/m/it/10 n\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\O
+ML/cmm/m/it/10  \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 F[] \OT1/cmr/m/n/10 : \OML/cm
+m/m/it/10 []\U/msb/m/n/10 F[]\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = \U/msb/m/n/1
+0 F[] \OMS/cmsy/m/n/10 n [[]\U/msb/m/n/10 F[]
+ []
+
+
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1892,7 +1892,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[50] (./norma/norma.tex)
+[50] (./ciclotomico/ciclotomico.tex
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1902,7 +1902,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[51] (./ciclicas/ciclicas.tex
+[51]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1912,7 +1912,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[52])
+[52]
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1922,7 +1922,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[53] (./soluble/soluble.tex)
+[53])
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1932,7 +1932,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[54] (./permutaciones/permutaciones.tex
+[54] (./norma/norma.tex)
 Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
@@ -1942,7 +1942,47 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[55]
+[55] (./ciclicas/ciclicas.tex
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[56])
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[57] (./soluble/soluble.tex)
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[58] (./permutaciones/permutaciones.tex
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+
+Overfull \hbox (13.57385pt too wide) has occurred while \output is active
+[]$[]$ 
+ []
+
+[59]
 Overfull \hbox (71.98041pt too wide) detected at line 56
 \OML/cmm/m/it/10 Gal\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f=K\OT1/cmr/m/n/10 ) \OMS
 /cmsy/m/n/10 ^^R \OML/cmm/m/it/10 A[]  \OMS/cmsy/m/n/10 ([])  \OML/cmm/m/it/10 
@@ -1964,7 +2004,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[56]
+[60]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 244.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -1992,7 +2032,7 @@ Overfull \hbox (13.57385pt too wide) has occurred while \output is active
 []$[]$ 
  []
 
-[57] (./algebra3.aux
+[61] (./algebra3.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 15.
@@ -2003,13 +2043,13 @@ Package logreq Info: Writing requests to 'algebra3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25261 strings out of 493013
- 478206 string characters out of 6135682
- 898901 words of memory out of 5000000
- 28150 multiletter control sequences out of 15000+600000
- 15286 words of font info for 106 fonts, out of 8000000 for 9000
+ 25269 strings out of 493013
+ 478302 string characters out of 6135682
+ 899900 words of memory out of 5000000
+ 28154 multiletter control sequences out of 15000+600000
+ 15418 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,15n,82p,1299b,1853s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,15n,82p,1422b,1842s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
@@ -2027,13 +2067,14 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
-uplbi8a.pfb>
-Output written on algebra3.pdf (58 pages, 454936 bytes).
+1/public/amsfonts/symbols/msbm5.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/up
+lbi8a.pfb>
+Output written on algebra3.pdf (62 pages, 484140 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
+ 294 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  12813 words of extra memory for PDF output out of 14400 (max. 10000000)
 

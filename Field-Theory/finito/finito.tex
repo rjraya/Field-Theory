@@ -10,7 +10,7 @@ Si $K$ es finito, necesariamente su característica ha de ser un número primo y
 
 Ahora, $K$ tiene estructura de espacio vectorial sobre $\mathbb{F}_p$ y dado que $K$ es finito, considerando todos los elementos de $K$ como vectores del espacio vectorial sobre $\mathbb{F}_p$, claramente, $K$ es finitamente generado por sus elementos. Sabemos del álgebra lineal que todo espacio vectorial finitamente generado tiene una base. El cardinal de esta base nos dará la dimensión $n$ y todo vector de $K$ se expresa de forma en función de $n$ vectores. Por tanto, hay exactamente $p^n$ elementos en $K$. 
 
-2. La prueba de la unicidad nos dará pista para demostrar la existencia. Demostremos la unicidad. Sea $K$ un cuerpo con $p^n$. Consideremos el grupo de los unidades $U = K-\{0\}$. Este grupo tiene $p^n - 1$ elementos y por el teorema de Lagrange, tenemos que $\forall \alpha \in U. \alpha^{p^n - 1} = 1$. Por tanto, los elementos de este grupo son raíces del polinomio $X^{p^n-1}-1$. Por tanto, los elementos de $K$ son las raíces del polinomio $f = X^{p^n}-X$ que podemos ver como un polinomio en $K[X]$. La unicidad se sigue de la unicidad del cuerpo de descomposición para un polinomio.
+2. La prueba de la unicidad nos dará pista para demostrar la existencia. Demostremos la unicidad. Sea $K$ un cuerpo con $p^n$. Consideremos el grupo de los unidades $U = K \setminus \{0\}$. Este grupo tiene $p^n - 1$ elementos y por el teorema de Lagrange, tenemos que $\forall \alpha \in U. \alpha^{p^n - 1} = 1$. Por tanto, los elementos de este grupo son raíces del polinomio $X^{p^n-1}-1$. Por tanto, los elementos de $K$ son las raíces del polinomio $f = X^{p^n}-X$ que podemos ver como un polinomio en $K[X]$. La unicidad se sigue de la unicidad del cuerpo de descomposición para un polinomio.
 
 Para ver la existencia, demostramos que el cuerpo de descomposición para $f$ tiene exactamente $p^n$ elementos. Como $f' = -1$ tenemos que $f,f'$ no tienen raíces comunes y por tanto, no hay raíces múltiples de $f$, en consecuencia el cuerpo de descomposición contiene exactamente $p^n$ raíces (esto es lo mismo que decir que el polinomio es separable). Para terminar la prueba, necesito ver que el conjunto de dichas raíces es un subcuerpo del cuerpo de descomposición. En efecto, tenemos las siguientes propiedades, sean $u,v$ raíces de $f$ entonces:
 
@@ -95,10 +95,32 @@ Para $0 \le i < n$, $\phi^i \in Gal(\mathbb{F}_q/\mathbb{F}_p)$ y $\alpha \in \m
 Es consecuencia de la demostración de la inclusión a la derecha del teorema anterior. 
 \end{proof}
 
-
 \subsection{Polinomios irreducibles sobre cuerpos finitos}
 
+\subsubsection{Motivación}
+
+Como motivación al estudio de los polinomios irreducibles sobre cuerpos finitos veamos cómo se puede construir cualquier cuerpo finito a partir de ellos:
+
+\begin{proposition}[Construcción de cuerpos finitos con polinomios irreducibles]
+Sea $m \in \mathbb{F}_p[X]$ un polinomio irreducible entonces $\mathbb{F}_{p^n} \cong \frac{\mathbb{F_p}[X]}{\langle m \rangle}$. 
+\end{proposition}
+\begin{proof}
+Como $\mathbb{F}_p[X]$ es un DIP, los ideales maximales deben ser los elementos generados por irreducibles. Como $m$ es irreducibles, $\langle m \rangle$ es maximal y por tanto, $\frac{\mathbb{F_p}[X]}{\langle m \rangle}$ es un cuerpo. 
+
+Para ver el número de elementos del cuerpo, observamos que cada clase $[a] \in \frac{\mathbb{F_p}[X]}{\langle m \rangle}$ tiene un único representante $r$ tal que $[r] = [a]$ y $gr(r) < gr(m)$. Esto lo da la unicidad del resto en el algoritmo de la división. Por otro lado, es claro que cualquier polinomio $r$ con $gr(r) < gr(m)$ nos da una clase del cociente. La unicidad garantiza que ambos conjuntos son biyectivos y por tanto, el cuerpo contiene $p^n$ elementos. 
+
+Por el teorema de Moore se tiene que salvo isomorfismo hay un sólo cuerpo con $p^n$ elementos y de aquí se concluye el enunciado. 
+\end{proof}
+
+\subsubsection{Cálculo del número de polinomios irreducibles}
+
+Vamos a empezar determinando el número de polinomios irreducibles de grado fijo que hay de grado $m$. Claramente, este número es finito para cada $m$. Además, podemos limitarnos a calcular el número de representates de las clases irreducibles para la relación de asociados. Posteriormente, si quisieramos calcular todos los irreducibles bastaría multiplicar el resultado por el número de unidades. Como hay $|K| - 1$ unidades (se quita el cero) en $K[X]$ bastaría multiplicar por $|K| - 1$. 
+
 Sea $N_m = \{f \in \mathbb{F}_p[X]:\text{f es mónico irreducible de grado m}\}$
+
+\begin{example}[Cálculo de $|N_1|$]
+En $\mathbb{F}_p[X]$ los polinomios mónicos lineales son de la forma $x-a$ con $a \in \mathbb{F}_p[X]$ y son todos irreducibles. Por tanto, $|N_1| = p$.	
+\end{example}
 
 \begin{theorem}[Polinomios irreducibles de $\mathbb{F}_p$]
 	Los factores irreducibles de $X^{p^n} - X$ en $\mathbb{F}_p[X]$ son exactamente los polinomios irreducibles de $\mathbb{F}_p[X]$ con grado divisor de $n$. En particular, $$X^{p^n} - X = \prod_{f \in N_m, m|n} f$$ y por tanto, $\sum_{m|n} m |N_m| = p^n$.
@@ -120,15 +142,13 @@ En resumen, podemos escribir $$X^{p^n} - X = \prod_{f \in N_m, m|n} f$$ Tomando 
 	Obsérvese que $\sum_{m|n} m |N_m| = p^n$ y como $n$ es primo tenemos que $|N_1| + n|N_n| = p^n$. Pero $|N_1| = p$ y se sigue la igualdad del enunciado. 
 \end{proof}
 
-Pero no sólo podemos calcular los polinomios mónicos irreducibles de grado primo. Veamos un ejemplo:
+Combinamos lo anterior para $n$ no primo:
 
-\begin{example}
-	En $\mathbb{F}_p[X]$ los polinomios mónicos lineales son de la forma $x-a$ con $a \in \mathbb{F}_p[X]$ y son todos irreducibles. Por tanto, $N_1 = p$.
-	
-	El teorema implica que $p^2 = 2 |N_2| + |N_1| = 2 |N_2| + p$ luego $|N_2| = \frac{p^2 - p}{2}$, análogamente, $|N_4| = \frac{p^4 - p^2}{4}$.
+\begin{example}[Cálculo de $|N_4|$]
+Por el corolario, $|N_2| = \frac{p^2 - p}{2}$ y por el teorema: $$p^4 = |N_4| = |N_1| + 2|N_2| + 4 |N_4| = p + 2 \frac{p^2 - p}{2} + 4|N_4| \implies |N_4| = \frac{p^4-p^2}{4}$$
 \end{example}
 
-Vamos a generalizar esta fórmulas para el cálculo del número de polinomios irreducibles. 
+Vamos a generalizar esta fórmulas para cualquier grado:
 
 \begin{definition}[Función de Mobius]
 	\[
@@ -143,34 +163,105 @@ Vamos a generalizar esta fórmulas para el cálculo del número de polinomios ir
 
 
 \begin{theorem}[Fórmula de Gauss]
-Sea $p$ un número primo y $N_n$ el conjunto de los polinomios mónicos irreducibles de grado $n$ sobre $\mathbb{F}_p$. Se tiene que:
+Sea $p$ un número primo y $N_n = \{f \in \mathbb{F}_p[X]:\text{f es mónico irreducible de grado n}\}$. Se tiene que:
 
-$N_n = \frac{1}{n} \sum_{m|n} \mu(m) p^{\frac{n}{m}}$
+$|N_n| = \frac{1}{n} \sum_{m|n} \mu(m) p^{\frac{n}{m}}$
 \end{theorem}
 \begin{proof}
 La siguiente prueba se encuentra en \cite{counting-irreducible}. 
 	
 Se procede por inducción sobre $n$. 
 	
-Si $n = 1$ entonces el polinomio $x-a$ es irreducible en $\mathbb{F}_p$ para cualquier $a$ por tanto, $N_1| = p = \mu(1)p$. 
+Si $n = 1$ entonces el polinomio $x-a$ es irreducible en $\mathbb{F}_p$ para cualquier $a$ por tanto, $|N_1| = p = \mu(1)p$. 
 	
-Si $n > 1$ y definimos $R_n$ como el conjunto de las raíces de los polinomios de $N_n$. Podemos observar que dichas raíces pertenecen a $\mathbb{F}_{p^n}$ gracias al teorema que da los polinomios irreducibles sobre $\mathbb{F}_p$. Como las raíces en este cuerpo son todas distintas por el teorema de Moore, se deduce que $|R_n| = n |N_n|$. El problema se reduce a calcular este $|R_n|$. Pongamos $n = \prod_{i = 1}^k p_i^{e_i}$. Observamos que: $$R_n = \{\alpha \in \mathbb{F}_{p^n}:[\mathbb{F}_p(\alpha):\mathbb{F}_p] = n \} = \{ \alpha \in \mathbb{F}_{p^n}: \alpha \text{ no    contenido en ningún subcuerpo maximal de } \mathbb{F}_{p^n} \} = \mathbb{F}_{p^n} \setminus \cup_i \mathbb{F}_{p^{n/p_i}}$$ Finalmente, se utiliza el principio de inclusión-exclusión obteniéndose: $$|R_n| = p^n - | \cup_i \mathbb{F}_{p^{n/ p_i} }| = p^n - (\sum_{i = 1}^k p^{n/p_i}) + (\sum_{i,j = 1, i < j}^k p^{n/p_i p_j}) - \ldots +(-1)^k p^{n/ \prod p_i}$$ Recordando la expresión de la función de Mobius: $$\mu(1)p^{n/1}+\sum_{p_i |n} \mu(p_i)p^{n/p_i}+ \ldots \mu(\prod p_i) p^{n/\prod p_i}$$ Obsérvese que para cualquier otro divisor $\mu(d) = 0$. Si se quieren los irreducibles no necesariamente mónicos bastaría multiplicar por $p-1$. 
-	
-	
+Si $n > 1$ y definimos $R_n$ como el conjunto de las raíces de los polinomios de $N_n$. Podemos observar que dichas raíces pertenecen a $\mathbb{F}_{p^n}$ gracias al teorema que da los polinomios irreducibles sobre $\mathbb{F}_p$. Como las raíces en este cuerpo son todas distintas por el teorema de Moore, se deduce que $|R_n| = n |N_n|$. El problema se reduce a calcular este $|R_n|$. Pongamos $n = \prod_{i = 1}^k p_i^{e_i}$. Observamos que: $$R_n = \{\alpha \in \mathbb{F}_{p^n}:[\mathbb{F}_p(\alpha):\mathbb{F}_p] = n \} = \{ \alpha \in \mathbb{F}_{p^n}: \alpha \text{ no    contenido en ningún subcuerpo maximal de } \mathbb{F}_{p^n} \} = \mathbb{F}_{p^n} \setminus \cup_i \mathbb{F}_{p^{n/p_i}}$$ Finalmente, se utiliza el principio de inclusión-exclusión obteniéndose: $$|R_n| = p^n - | \cup_i \mathbb{F}_{p^{n/ p_i} }| = p^n - (\sum_{i = 1}^k p^{n/p_i}) + (\sum_{i,j = 1, i < j}^k p^{n/p_i p_j}) - \ldots +(-1)^k p^{n/ \prod p_i}$$ Recordando la expresión de la función de Mobius: $$\mu(1)p^{n/1}+\sum_{p_i |n} \mu(p_i)p^{n/p_i}+ \ldots \mu(\prod p_i) p^{n/\prod p_i}$$ Obsérvese que para cualquier otro divisor $\mu(d) = 0$. 
 \end{proof}
 
+Si se quieren los irreducibles no necesariamente mónicos bastaría multiplicar por $p-1$. 	
 
+\begin{example}[Cálculo de $|N_6|$]
+$$|N_6| = \frac{1}{6} \sum_{m|6} \mu(m) p^{\frac{6}{m}} =  \frac{1}{6} \Big(\mu(1)p^{6} + \mu(2)p^{3} + \mu(3)p^{2} + \mu(6)p\Big) = \frac{1}{6}(p^{6}-p^{2}-p^{3}+p)$$
+\end{example}
 
+La fórmula anterior nos confirma que existen polinomios irreducibles de cualquier grado sobre $\mathbb{F}_p$ cosa que no ocurre por ejemplo en $\mathbb{R}$. Recordemos que todo polinomio no constante con coeficientes en $\mathbb{R}$ admite una raíz en $\mathbb{C}$. Se observa que un polinomio con coeficientes en $\mathbb{R}$ que admita una raíz compleja, también admite su conjugada. Pero entonces, si $\chi$ es tal raíz, $(x-\chi)(x-\overline{\chi}) = x^2-(2Re(\chi))x + N(\chi)$ sería un factor con coeficientes reales del polinomio. Esto es, los únicos polinomios irreducibles sobre $\mathbb{R}$ son de grado 1 o 2. 
 
+\begin{corollary}[Los cuerpos finitos tienen irreducibles de cualquier grado]
+$\forall n \ge 1. |N_n| > 0$
+\end{corollary}
+\begin{proof}
+$$N_n \ge \frac{1}{n} \sum_{m|n} \mu(\frac{n}{d}) p^d \ge \frac{1}{n} \Big(p^n - \sum_{i = 0}^{m-1} p^i \Big) = \frac{1}{n} \Big(p^n - \frac{p^n - 1}{p - 1} \Big)$$
 
+Pero dado que $p \ge 2$, imponer que el último término sea mayor que cero equivale a que: $$p^{n+1} \ge 2p^n > 2p^n - 1$$ que es siempre cierto. 
+\end{proof}
 
+\subsubsection{Algoritmo de Berlekamp}
 
+Dado un polinomio $f \in \mathbb{F}_p[X]$ queremos dar un algoritmo para determinar si es irreducible. 
 
+Sea $f \in \mathbb{F}_p[X]$ un polinomio de grado $n > 1$ (los de grado 1 son todos irreducibles). Si el polinomio tiene raíces múltiples en un cuerpo de descomposición, no puede ser irreducible ya que, $\mathbb{F}_p$ es un cuerpo perfecto, y por tanto, los irreducibles son separables. En consecuencia, asumamos que $f$ no tiene raíces múltiples en un cuerpo de descomposición.
 
+Sea $R = \frac{\mathbb{F}_p[X]}{\langle f \rangle}$ el cuerpo que define $f$. Ya vimos que todo elemento de $R$ se puede escribir como $\Big(\sum_{i = 0}^{n-1} a_iX^i \Big) + \langle f \rangle$ con $a_i \in \mathbb{F}_p$. Podemos ver $R$ como un espacio vectorial de dimensión $n$ sobre $\mathbb{F}_p$. En estas condiciones tenemos el análogo al endomorfismo de Frobenius, $T:R \to R$ tal que $T(g + \langle f \rangle) = g^p + \langle f \rangle$. Este endormofismo:
 
+\begin{itemize}
+\item Está bien definido. Pues si $g + \langle f \rangle = h + \langle f \rangle$ entonces $g = h + fB$ para $B \in \mathbb{F}_p[X]$ y por tanto por el binomio de Newton: $$g^p = (h+fB)^p = h^p + f^pB^p = h^p + f f^{p-1}B^p$$ de modo que $g^p + \langle f \rangle = h^p + \langle f \rangle$. 
 
+\item Es lineal. Es decir $T(\alpha u + \beta v) = \alpha T(u) + \beta T(v)$ donde $u,v$ son los vectores de coeficientes de los polinomios que representan. De nuevo el truco consiste en aplicar la estrategia del apartado anterior. Si $u = (u_1, \ldots, u_n)$ y $v = (v_1,\ldots,v_n)$ entonces $T(u) = (u_1^p, \ldots, u_n^p)$ y $T(v) = (v_1^p,\ldots,v_n^p)$ de donde se sigue fácilmente el resultado. 
+\end{itemize}
 
+Claramente la identidad $1_R:R \to R$ también es lineal. 
 
+\begin{theorem}[Principio del algoritmo de Berlekamp]
+Sea $f \in \mathbb{F}_p[X]$ un polinomio de grado $n > 1$, y  $R = \frac{\mathbb{F}_p[X]}{\langle f \rangle}$. Entonces, $f$ es irreducible si y sólo la aplicación lineal $T - 1_R: R \to R$ tiene rango $n-1$.  
+\end{theorem}
+\begin{proof}
+$\Rightarrow)$ Si $f$ es irreducible entonces $R$ es un cuerpo y $T$ sería el endomorfismo de Frobenius del cuerpo. Por tanto: $$Ker(T) = \{\alpha \in R: \alpha^p = \alpha \} = \mathbb{F}_p \implies dim(Ker(T)) = 1 \implies rg(T) = dim(Img(T)) = n-1$$
+
+$\Leftarrow)$ Por contrarrecíproco, si $f$ es reducible entonces $f = gh$ con $g,h \in \mathbb{F}_p[X]$ con $gr(g),gr(h) \le gr(f)$. Además, como $f$ no tiene raíces múltiples, $g,h$ en el cuerpo de descomposición factorizan en lineales que no tienen factores comunes y por tanto, son primos relativos. Como el máximo común divisor no depende del cuerpo extensión, deducimos que $f,g$ son primos relativos en $\mathbb{F}_p$. Por el teorema de Bézout, $\exists A,B \in \mathbb{F}_p[X].Ag+Bh = 1$. Vamos a ver que: $$Ag,Bh \in Ker(T - 1_R) \iff (Ag)^p - Ag,(Bh)^p - Bh \in \langle f \rangle$$ Usando el teorema del binomio y que $f = gh$, tenemos que $$(Ag)^p = Ag(1-Bh)^{p-1} = Ag(1-(p-1)Bh+ \ldots + (-1)^{p-1}(Bh)^{p-1}) =  $$ $$ = Ag - gh(p-1)AB+\ldots+gh(-1)^{p-1}AB^{p-1}h^{p-2} \equiv Ag \; mod(f)$$ como queríamos demostrar. Finalmente, probamos que $Ag + \langle f \rangle, Bh + \langle f \rangle$ son linealmente independientes en $R$ con lo que $Ker(T - 1_R) \ge 2$ o equivalentemente $rg(T - 1_R) \le n-2$. Veamos que cualquier combinación igualada a cero es trivial: $$\exists a,b \in \mathbb{F}_p,C \in \mathbb{F}_p[X].aAg + bBh = ghC$$ pero como $mcd(g,h) = 1$, se deduce que $g|bB$ y $h|aA$. Pero al ser $Ag + Bh = 1 \implies mcd(g,B) = gcd(h,A) = 1$ y por el lema de Euclides, $g|b \land h|a$ por grados, necesariamente, $a = b = 0$
+\end{proof}
+
+Veamos ahora un ejemplo de aplicación del teorema anterior:
+
+\begin{example}[Aplicación del principio de Berlekamp]
+Dado el polinomio $f = X^5+X^4+1 \in \mathbb{F}_2[X]$. Determinar si es irreducible. 
+
+\begin{enumerate}
+\item El polinomio no tiene raíces múltiples pues $gcd(f,f') = gcd(X^5+X^4+1, 5X^4) = 1$. 
+
+\item $R = \frac{\mathbb{F}_2[X]}{\langle f \rangle}$ es un espacio vectorial sobre $\mathbb{F}_2$ de dimensión 5, con base $1,x,x^2,x^3,x^4 + \langle f \rangle$.
+
+\item Calculamos la expresión de $T$ a partir de las imágenes de los vectores de la base $T(1) = 1,T(x) = x^2,T(x^2) ) = x^4,T(x^3) = x^6 = 1+x+x^4,T(x^4) = x^8 = 1+x+x^2+x^3+x^4$. 
+
+\item La matriz de $T - 1_R$ es:
+
+\[
+T - 1_R =
+  \begin{bmatrix}
+    1 & 0 & 0 & 1 & 1 \\
+    0 & 0 & 0 & 1 & 1 \\
+    0 & 1 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 0 & 1 \\
+    0 & 0 & 1 & 1 & 1 
+  \end{bmatrix}
+  - \begin{bmatrix}
+      1 & 0 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 & 0 \\
+      0 & 0 & 1 & 0 & 0 \\
+      0 & 0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 0 & 1 
+    \end{bmatrix} 
+    = 
+    \begin{bmatrix}
+        0 & 0 & 0 & 1 & 1 \\
+        0 & 1 & 0 & 1 & 1 \\
+        0 & 1 & 1 & 0 & 1 \\
+        0 & 0 & 0 & 1 & 1 \\
+        0 & 0 & 1 & 1 & 0 
+      \end{bmatrix}
+\] 
+
+\item Esta matriz tiene rango como mucho tres ya que la primera columna es cero y las tres últimas suman cero (estamos en característica 2). Como $3 < 4 = gr(f) - 1$ deducimos que $f$ es reducible. 
+\end{enumerate}
+\end{example}
 
 
 

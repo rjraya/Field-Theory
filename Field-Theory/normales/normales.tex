@@ -60,11 +60,15 @@ Dada una extensión algebraica $\frac{F}{K}$ tal que $F$ un subcuerpo de la clau
 Veamos las implicaciones de forma circular:
 
 \begin{enumerate}
-\item Sea $f$ un irreducible con $u$ una raíz en $F$. Si $f$ no es lineal entonces tendrá alguna raíz $v$ en un cuerpo extensión. Pero las raíces del mismo irreducibles son elementos conjugados sobre $K$ y por tanto existe un automorfismo en $\overline{K}$ que lleva $u$ en $v$. Este automorfismo restringido a $F$ es un homomorfismo y como todo homomorfismo de $F$ a la clausura deja fijo a $F$, en particular, $v \in F$. Se procede por inducción para demostrar que $F$ descompone en lineales sobre $F[X]$. 
-\item Dada $u \in F$, por hipótesis, $Irr(u,F)$ tiene todas sus raíces en $F$. Claramente, $F$ será el cuerpo de descomposición de los polinomios mínimos de sus elementos.
+\item Sea $f$ un irreducible con $u \in F$ raíz. Si $f$ no es lineal entonces tendrá alguna raíz $v$ en un cuerpo extensión. Pero las raíces del mismo irreducible son elementos conjugados sobre $K$ y por tanto existe un automorfismo $\sigma:\overline{K} \to \overline{K}$ sobre $K$ tal que $\sigma(u) = v$. 
+
+$\sigma|_F$ es un homomorfismo y como todo homomorfismo de $F$ a la clausura deja fijo a $F$, en particular, $v \in F$. Se procede por inducción para demostrar que $f$ descompone en lineales sobre $F[X]$. 
+
+\item Dada $u \in F$, por hipótesis, $Irr(u,F)$ tiene todas sus raíces en $F$. Claramente, $F$ será el cuerpo de descomposición de los polinomios mínimos de sus elementos, no pudiendo estos descomponer en ningún subcuerpo intermedio. 
+
 \item Sea $S$ las raíces de la familia de polinomios que tiene a $F$ como su cuerpo de descomposición. Entonces $F = K(S)$. 
 
-Sea $\sigma:F \to \overline{K}$ un homomorfismo sobre $K$. $\sigma(F) \subseteq F$ ya que $\sigma(K) = K$ y si tomo una raíz $u$ un polinomio sobre $K$ entonces $\sigma(u)$ es raíz de ese mismo polinomio. Por tanto, $\sigma$ se puede ver como un endomorfismo en $F$. Como las extensionesson algebraicas todo endomorfismo es automorfismo y por tanto $\sigma(F) = F$. 
+Sea $\sigma:F \to \overline{K}$ un homomorfismo sobre $K$. $\sigma(F) \subseteq F$ ya que $\sigma(K) = K$, de modo que $\sigma$ extiende a la identidad, y por tanto dado un polinomio $f$ de los generadores del cuerpo de descomposición, $\overline{\sigma}(f) = f$ y si tomo una raíz $u$ de $f$ entonces $\sigma(u)$ es raíz de ese mismo polinomio. Por tanto, $\sigma$ se puede ver como un endomorfismo en $F$. Como las extensiones son algebraicas, todo endomorfismo es automorfismo y por tanto $\sigma(F) = F$. 
 \end{enumerate}
 \end{proof}
 
